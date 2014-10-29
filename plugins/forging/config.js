@@ -1,10 +1,20 @@
 (function () {
 'use strict';
+
+/* Only include this plugin when we run as desktop app */
+try {
+  var isNodeJS = typeof require == 'function' && require('child_process');
+  if (!isNodeJS)
+    return;
+} catch (e) {
+  return;
+}
+
 var module = angular.module('fim.base');
 module.run(function (modals, plugins, $q) {
 
   var config = {
-    senderRS:           { type: String }
+    senderRS: { type: String }
   };
   
   /* Register as plugin */
