@@ -1,4 +1,4 @@
-mofo
-====
+fimkrypto
+=========
 
-Multicurrency Operating Financial Offspring - Web/Mobile/Desktop FIMK+NXT Client Software
+Gihub pages project
