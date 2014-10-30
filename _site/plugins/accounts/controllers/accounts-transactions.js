@@ -41,11 +41,20 @@ module.controller('AccountsPluginTransactionsController',
         var api = $scope.selectedAccount ? nxt.get($scope.selectedAccount.id_rs) : null;
         var transactions = [];
         angular.forEach(list, function (transaction) {
-          transactions.push({
-            renderedHTML: api ? api.renderer.getHTML(transaction, translator) : '',
-            date: nxt.util.formatTimestamp(transaction.timestamp), 
-            timeago: nxt.util.formatTimestamp(transaction.timestamp, true), 
-          });
+
+          /* downloaded transaction */
+          if (transaction.timestamp) {
+            transactions.push({
+              renderedHTML: api ? api.renderer.getHTML(transaction, translator) : '',
+              date: nxt.util.formatTimestamp(transaction.timestamp), 
+              timeago: nxt.util.formatTimestamp(transaction.timestamp, true)
+            });
+          }
+          else {
+            transactions.push({
+              transaction: transaction.transaction
+            });
+          }
         });
         $defer.resolve(transactions);
       }

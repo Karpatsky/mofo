@@ -38,10 +38,12 @@ module.run(function (modals, plugins, nxt, alerts, $q, db, $timeout) {
       var explorer = iterator.next();
       db[explorer.table].orderBy('height').last().then(
         function (block) {
-          sub.push({
-            label_pair: [explorer.label, nxt.util.formatTimestamp(block.timestamp), block.height],
-            sref: "blocks({ engine: '"+explorer.id+"', height: '"+block.height+"'})"
-          });
+          if (block) {
+            sub.push({
+              label_pair: [explorer.label, nxt.util.formatTimestamp(block.timestamp), block.height],
+              sref: "blocks({ engine: '"+explorer.id+"', height: '"+block.height+"'})"
+            });
+          }
           iterator.hasMore() ? next() : deferred.resolve(sub);
         }
       );

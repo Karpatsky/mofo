@@ -73,6 +73,7 @@ module.controller('AccountsPluginMessagesController', function($scope, alerts, $
     since this might be called many times. */
   function processMessages() {
     var api = nxt.get($scope.selectedAccount.id_rs);
+    $scope.messages = [];
     angular.forEach($scope.transactions, function (transaction) {
       if (transaction.type == 1 && transaction.subtype == 0) {
         var message   = {};

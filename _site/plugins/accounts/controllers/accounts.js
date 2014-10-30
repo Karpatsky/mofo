@@ -324,13 +324,33 @@ module.controller('AccountsPlugin', function($state, $q, $rootScope,
   }
 
   function sorter(a,b) {
-    return b.timestamp - a.timestamp;
+    var timestamp_a = a.timestamp||0;
+    var timestamp_b = b.timestamp||0;
+    if (timestamp_a > timestamp_b) {
+      return -1;
+    }
+    else if (timestamp_a < timestamp_b) {
+      return 1;
+    }
+    else {
+      if (a.transaction < b.transaction) {
+        return -1;
+      }
+      else if (a.transaction > b.transaction) {
+        return 1;
+      }
+    }
+    return 0;
   }
 
   function filter(array) {
     if ($scope.selectedAccount) {
       var id_rs = $scope.selectedAccount.id_rs
-      return array.filter(function (t) { return t.senderRS == id_rs || t.recipientRS == id_rs });
+      return array.filter(
+        function (t) { 
+          return t.senderRS == id_rs || t.recipientRS == id_rs || 
+                 t.related_rs_a == id_rs || t.related_rs_b == id_rs;
+        });
     }
     return [];
   }
