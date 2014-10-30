@@ -2,12 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mofo Wallet</title>
-    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-</description>
-    <link>http://yourdomain.com/mofo/</link>
-    <atom:link href="http://yourdomain.com/mofo/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 30 Oct 2014 13:53:37 +0100</pubDate>
-    <lastBuildDate>Thu, 30 Oct 2014 13:53:37 +0100</lastBuildDate>
+    <description>Mofo Wallet is an advanced multi currency crypto wallet.</description>
+    <link>http://mofowallet.com/mofo/</link>
+    <atom:link href="http://mofowallet.com/mofo/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Thu, 30 Oct 2014 20:42:33 +0100</pubDate>
+    <lastBuildDate>Thu, 30 Oct 2014 20:42:33 +0100</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -28,8 +27,8 @@
 
 </description>
         <pubDate>Wed, 29 Oct 2014 20:18:04 +0100</pubDate>
-        <link>http://yourdomain.com/mofo/jekyll/update/2014/10/29/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/mofo/jekyll/update/2014/10/29/welcome-to-jekyll.html</guid>
+        <link>http://mofowallet.com/mofo/jekyll/update/2014/10/29/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://mofowallet.com/mofo/jekyll/update/2014/10/29/welcome-to-jekyll.html</guid>
         
         
         <category>jekyll</category>

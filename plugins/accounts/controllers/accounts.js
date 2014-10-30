@@ -46,6 +46,11 @@ module.controller('AccountsPlugin', function($state, $q, $rootScope,
   /* Cleanup when scope is destroyed */
   $scope.$on("$destroy", function() { 
     clearInterval(interval);
+
+    /* Stop the backfill transaction downloader for this account */
+    if ($scope.selectedAccount) {
+      nxt.get($scope.selectedAccount.id_rs).stopDownloadingTransactions($scope.selectedAccount);
+    }
   });
 
   /* Load accounts from database */

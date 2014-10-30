@@ -1,11 +1,61 @@
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width initial-scale=1" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ site.description }}">
+  <meta name="author" content="mofo">  
+  <link rel="icon" href="{{ "/favicon.ico" | prepend: site.baseurl }}">
 
-    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-    <meta name="description" content="{{ site.description }}">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>  
+  <script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <script src="{{ "/js/init.js" | prepend: site.baseurl }}"></script>  
+
+  <style type="text/css">
+    #intro { 
+      background: url({{ "/images/about.png" | prepend: site.baseurl }}) 50% 0 fixed; 
+      height: auto;  
+      margin: 0 auto; 
+      width: 100%; 
+      position: relative; 
+      box-shadow: 0 0 50px rgba(0,0,0,0.8);
+      padding: 100px 0;
+      color: #fff;      
+    }
+    #home { 
+      background: url({{ "/images/Wald.jpg" | prepend: site.baseurl }}) 50% 0 no-repeat fixed; 
+      height: auto;  
+      margin: 0 auto; 
+      width: 100%; 
+      position: relative; 
+      box-shadow: 0 0 50px rgba(0,0,0,0.8);
+      padding: 200px 0;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover; 
+      color: #fff;      
+    }
+    #about { 
+      background: url({{ "/images/about.png" | prepend: site.baseurl }}) 50% 0 fixed; 
+      height: auto;
+      margin: 0 auto; 
+        width: 100%; 
+        position: relative; 
+        box-shadow: 0 0 50px rgba(0,0,0,0.8);
+        padding: 100px 0;
+        color: #fff;
+    }
+
+    /* Non-essential demo stuff */
+    .hero-unit {
+      background-color: #fff;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    .media-object { width: 64px; height: 64px; padding-bottom: 30px }
+  </style>
+
 </head>
