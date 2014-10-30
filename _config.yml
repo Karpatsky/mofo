@@ -1,7 +1,7 @@
 # Site settings
 title: Mofo Wallet
 description: Mofo Wallet is an advanced multi currency crypto wallet.
-baseurl: "/" # the subpath of your site, e.g. /blog/
+baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://mofowallet.com"
 twitter_username: fimkrypto
 github_username:  fimkrypto
