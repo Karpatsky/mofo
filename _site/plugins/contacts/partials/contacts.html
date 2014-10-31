@@ -22,7 +22,7 @@
           <td data-title="'Website'" sortable="website" header-class="text-left">{{c.website}}</td>
           <td data-title="'Actions'" header-class="text-left">
             <ul class="nav nav-pills">
-              <li><button class="btn btn-xs btn-navbar btn-default" ng-click="sendMoney(c)">Payment</button></li>
+              <li><button class="btn btn-xs btn-navbar btn-default" disabled="true" ng-click="sendMoney(c)">Payment</button></li>
               <li><button class="btn btn-xs btn-navbar btn-default" disabled="true" ng-click="sendMessage(c)">Message</button></li>
 
               <!-- Since the contacts array consists of both elements from the contacts table AND the accounts table,
