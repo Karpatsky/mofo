@@ -1,69 +1,69 @@
 
 body {
   background-color: #f2f2f2;
-    font-family: "Lato";
-    font-weight: 300;
-    font-size: 16px;
-    color: #555;
-    padding-top: 50px;
+  font-family: "Lato";
+  font-weight: 300;
+  font-size: 16px;
+  color: #555;
+  padding-top: 50px;
 
-    -webkit-font-smoothing: antialiased;
-    -webkit-overflow-scrolling: touch;
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Titles */
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Raleway";
-    font-weight: 300;
-    color: #333;
+  font-family: "Raleway";
+  font-weight: 300;
+  color: #333;
 }
 
 
 /* Paragraph & Typographic */
 p {
-    line-height: 28px;
-    margin-bottom: 25px;
+  line-height: 28px;
+  margin-bottom: 25px;
 }
 
 .centered {
-    text-align: center;
+  text-align: center;
 }
 
 /* Links */
 a {
-    color: #3bc492;
-    word-wrap: break-word;
+  color: #3bc492;
+  word-wrap: break-word;
 
-    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
-    transition: color 0.1s ease-in, background 0.1s ease-in;
+  -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+  -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+  -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+  -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+  transition: color 0.1s ease-in, background 0.1s ease-in;
 }
 
 a:hover,
 a:focus {
-    color: #c0392b;
-    text-decoration: none;
-    outline: 0;
+  color: #c0392b;
+  text-decoration: none;
+  outline: 0;
 }
 
 a:before,
 a:after {
-    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
-    transition: color 0.1s ease-in, background 0.1s ease-in;
+  -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+  -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+  -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+  -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+  transition: color 0.1s ease-in, background 0.1s ease-in;
 }
 
  hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
 }
 
 
@@ -79,8 +79,7 @@ a:after {
 #headerwrap h1 {
 	margin-top: 30px;
 	color: white;
-	font-size: 70px;
-	
+	font-size: 70px;	
 }
 
 #headerwrap h3 {
@@ -99,20 +98,58 @@ a:after {
 	color: white
 }
 
-/* intro Wrap */
+/* Launch Wrap */
 
-#intro {
-	padding-top: 50px;
-	border-top: #bdc3c7 solid 5px;
+#launchwrap {
+  display: block;  
+  padding-top: 50px;
+  border-top: #bdc3c7 solid 5px;
+}
+#launchwrap a.btn {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-size: 150%;
 }
 
-#features {
-	padding-top: 50px;
-	padding-bottom: 50px;
+/* Download Wrap */
+
+#downloadwrap {
+  display: block;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
-#features .ac a{
-	font-size: 20px;
+/* Feautures Wrap */
+
+#featureswrap {
+  display: block;  
+  background-color: #34495e;
+  color: white;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+#featureswrap h1, #featureswrap h3 {
+  color: white;
+}
+
+#featureswrap .ac a{
+  font-size: 20px;
+}
+
+/* Community Wrap */
+
+#communitywrap {
+  display: block;  
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+/* Platform Wrap */
+
+#platformwrap {
+  display: block;  
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 /* Showcase Wrap */
@@ -124,7 +161,7 @@ a:after {
 	padding-bottom: 50px;
 }
 
-#showcase h1 {
+#showcase h1, #showcase h3 {
 	color: white;
 }
 
@@ -146,6 +183,10 @@ a:after {
 	font-size: 18px;
 }
 
+#footerwrap center {
+  padding-bottom: 30px;
+}
+
 /* Copyright Wrap */
 
 #c {
@@ -158,3 +199,14 @@ a:after {
 	color: white
 }
 
+/* Features */
+
+.feature {
+  padding-bottom: 50px;
+}
+
+.feature > p, .feature > h3, .feature > i {
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: left;
+}

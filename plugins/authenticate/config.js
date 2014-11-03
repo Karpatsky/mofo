@@ -9,5 +9,3 @@ module.config(function($stateProvider) {
   });
 });
 })();
-
-// http://localhost:9000/#/authenticate/FIM-J3Q5-N4P4-L479-2RDGS/Mega%20Loan%20Shark/https://superloans.com/auth.php%3Fu=xxx&p=yyy
