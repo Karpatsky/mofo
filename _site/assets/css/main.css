@@ -173,8 +173,7 @@ a:after {
 	text-align: left;
 }
 
-#footerwrap h3 {
-	font-size: 28px;
+#footerwrap h4 {
 	color: white;
 }
 
@@ -193,6 +192,10 @@ a:after {
 	background: #222222;
 	padding-top: 15px;
 	text-align: right;
+}
+
+#c .social {
+  text-align: left;
 }
 
 #c p {
