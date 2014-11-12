@@ -176,10 +176,10 @@ module.controller('AccountsPlugin', function($state, $q, $rootScope,
     }
 
     /* Start the downloader if it's not yet running */
-    //var downloader = nxt.get(selected.id_rs).downloadTransactions(selected);
+    var downloader = nxt.get(selected.id_rs).downloadTransactions(selected);
 
     /* Look for unconfirmed transactions */ 
-    //downloader.getUnconfirmedTransactions();
+    downloader.getUnconfirmedTransactions();
 
     /* Fetch account info */
     nxt.get(selected.id_rs).getAccount({ account: selected.id_rs }, { podium: podium, priority: 1 }).then(
