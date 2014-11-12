@@ -1,102 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Mofo Wallet is an advanced multi currency crypto wallet.">
   <meta name="author" content="mofo">  
   <link rel="icon" href="favicon.ico">
 
+  <title>Mofo Wallet</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap-theme.min.css">
-  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>  
-  <script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
 
-  <script src="js/init.js"></script>  
-
-  <style type="text/css">
-    #intro { 
-      background: url(images/about.png) 50% 0 fixed; 
-      height: auto;  
-      margin: 0 auto; 
-      width: 100%; 
-      position: relative; 
-      box-shadow: 0 0 50px rgba(0,0,0,0.8);
-      padding: 100px 0;
-      color: #fff;      
-    }
-    #home { 
-      background: url(images/Wald.jpg) 50% 0 no-repeat fixed; 
-      height: auto;  
-      margin: 0 auto; 
-      width: 100%; 
-      position: relative; 
-      box-shadow: 0 0 50px rgba(0,0,0,0.8);
-      padding: 200px 0;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover; 
-      color: #fff;      
-    }
-    #about { 
-      background: url(images/about.png) 50% 0 fixed; 
-      height: auto;
-      margin: 0 auto; 
-      width: 100%; 
-      position: relative; 
-      box-shadow: 0 0 50px rgba(0,0,0,0.8);
-      padding: 100px 0;
-      color: #fff;
-    }
-
-    /* Non-essential demo stuff */
-    .hero-unit {
-      background-color: #fff;
-        box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    }
-    .media-object { width: 64px; height: 64px; padding-bottom: 30px }
-  </style>
-
-</head>
-  <body>
-    <div class="site-wrapper wrapper">
-      <div class="site-wrapper-inner">
-        <div class="cover-container">
-          <div class="navbar navbar-inverse navbar-fixed-top">
+  <script src="assets/css/bootstrap-social.css"></script>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/smoothscroll.js"></script>
+</head> 
+  <body data-spy="scroll" data-offset="0" data-target="#navigation">
+    <!-- Fixed navbar -->
+<div id="navigation" class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
-        data-target="#bs-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="http://mofowallet.com">
-        <span><strong>Mofo</strong>Wallet.com</span>
-      </a>
+      <a class="navbar-brand" href="#home" class="smoothScroll"><b>MofoWallet</b></a>
     </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-collapse-1">
+    <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="https://github.com/fimkrypto/mofowallet" target="_blank">
-          Open Source&nbsp;&nbsp;<span class="fa fa-github"></span></a></li>
-        <li><a href="http://fimk.fi/en" target="_blank">FIMKrypto</a></li>
-        <li><a href="http://forum.fimk.fi" target="_blank">FIMK Forum</a></li>
-        <li><a href="http://nxt.org" target="_blank">NXT Cryptocurrency</a></li>
-        <li><a href="https://nxtforum.org" target="_blank">NXT Forum</a></li>
-        <li><a href="https://dgex.com" target="_blank">DGEX Exchange</a></li>
-
-
+        <li class="active"><a href="#launch" class="smoothScroll">Launch</a></li>        
+        <li><a href="#download" class="smoothScroll">Download</a></li>
+        <li><a href="#features" class="smoothScroll">Features</a></li>
+        <li><a href="#community" class="smoothScroll">Community</a></li>
+        <li><a href="#platform" class="smoothScroll">Platform</a></li>
+        <li><a href="/blog.html" class="smoothScroll"><b>Blog</b></a></li>
       </ul>
-    </div>
+    </div><!--/.nav-collapse -->
   </div>
+<!--   <a href="https://github.com/fimkrypto/mofowallet"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>   -->    
 </div>
-          <div class="post">
+
+
+    <div class="post">
 
   <header class="post-header">
     <h1 class="post-title">About</h1>
@@ -113,9 +67,43 @@
 
 </div>
 
-          
-        </div>
-      </div>
+    <section id="contact" name="contact"></section>
+<div id="footerwrap">
+  <div class="container">
+    <br>
+    <div class="col-md-3">
+      <h4>Powered by FIMKrypto</h4>              
+      <p><a href="http://fimk.fi/en" target="_blank"><img src="images/fimk.png" class="main_logo" style="width:200px"></a></p>
     </div>
+    <div class="col-md-3">
+      <h4>Compatible with FIMK</h4>              
+      <p><a href="http://fimk.fi/en" target="_blank"><img src="images/fimk_coin.png" class="main_logo" style="width:65px"></a></p>
+    </div>        
+    <div class="col-md-3">
+      <h4>Compatible with NXT</h4>
+      <p><a href="http://nxt.org" target="_blank"><img src="images/nxt.png" class="main_logo" style="width:120px"></a></p>
+    </div>
+    <div class="col-md-3">
+      <h4>Sponsored by DGEX</h4>
+      <p><a href="https://dgex.com" target="_blank"><img src="images/dgex.gif" class="main_logo" style="width:170px"></a></p>
+    </div>
+  </div>
+</div>
+<div id="c">
+  <div class="container">
+    <div class="pull-left">
+      <a rel="external" href="https://twitter.com/fimkrypto" target="_blank" 
+        class="btn btn-social-icon btn-twitter"><span class="fa fa-2x fa-twitter"></span></a>
+      <a rel="external" href="https://www.facebook.com/FIMKrypto" target="_blank" 
+        class="btn btn-social-icon btn-facebook"><span class="fa fa-2x fa-facebook"></span></a>
+      <a rel="external" href="http://www.reddit.com/r/FIMK/" target="_blank" 
+        class="btn btn-social-icon btn-reddit"><span class="fa fa-2x fa-reddit"></span></a>
+      <a rel="external" href="https://github.com/fimkrypto/mofowallet" target="_blank" 
+        class="btn btn-social-icon btn-github"><span class="fa fa-2x fa-github"></span></a>
+      <!-- Website: <a href="http://jekyllrb.com/" target="_blank">jekyll</a> -->
+    </div>    
+    <p><b>Mofo</b>Wallet 0.3.1 is powered by <a href="http://fimk.fi">FIMKrypto</a></p>  
+  </div>
+</div>
   </body>
 </html>

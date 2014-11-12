@@ -1,0 +1,29 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Starting up, please wait</h3>
+  </div>
+  <div class="panel-body">
+    <form accept-charset="UTF-8" role="form" name="startupForm" class="form-horizontal">
+      <div class="row">
+        <div class="col-xs-12" style="padding-bottom:20px;padding-top:10px">
+          Please wait while <strong>Mofo</strong>Wallet is initializing.<br>
+          <small ng-if="!isNodeJS">Try refreshing the page to speed up loading.</small>
+        </div>
+      </div>
+      <div class="row" id="startup-real-html-element">
+        <div class="col-xs-12" ng-repeat="a in activities" style="padding-bottom:15px">
+          <div><progressbar class="progress-striped active" type="default" max="100" 
+            value="a.progress" style="margin-bottom: 2px">&nbsp;</progressbar></div>
+          <div style="width: 100%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><span ng-show="a.progress==100"><i class="fa fa-refresh fa-spin"></i>&nbsp;&nbsp;</span>{{a.message}}</div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="panel-footer">
+    <div class="form-group">
+      <div class="col-xs-6 col-xs-offset-3">
+        <button ng-click="close()" type="button" class="btn btn-block btn-default">Run in background</button>
+      </div>
+    </div> 
+  </div>
+</div>

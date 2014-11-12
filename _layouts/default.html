@@ -1,15 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   {% include head.html %}
-  <body>
-    <div class="site-wrapper wrapper">
-      <div class="site-wrapper-inner">
-        <div class="cover-container">
-          {% include header.html %}
-          {{ content }}
-          {% include footer.html %}
-        </div>
-      </div>
-    </div>
+  <body data-spy="scroll" data-offset="0" data-target="#navigation">
+    {% include header.html %}
+    {{ content }}
+    {% include footer.html %}
   </body>
 </html>

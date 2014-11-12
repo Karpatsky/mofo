@@ -54,6 +54,7 @@ module.controller('AccountsPluginSendMoneyModalController', function(items, $mod
     $scope.$evalAsync(function () {
       $scope.recipientChanged();      
       $scope.items.feeNXT = engine == nxt.TYPE_FIM ? '0.1' : '1';
+      $scope.symbol = api.engine.symbol;
     });
 
     /* Loads accounts from database */
@@ -226,12 +227,12 @@ module.controller('AccountsPluginSendMoneyModalController', function(items, $mod
           console.log('account', account);
           if (!account.publicKey) {
             $scope.items.showPublicKey = true;
-            setDescription('warning', i18n.format('recipient_no_public_key', {__nxt__: nxt.util.convertToNXT(account.unconfirmedBalanceNQT) }));
+            setDescription('warning', i18n.format('recipient_no_public_key', {__nxt__: nxt.util.convertToNXT(account.unconfirmedBalanceNQT), __symbol__: $scope.symbol }));
           }
           else {
             $scope.items.recipientPublicKey = account.publicKey;
             $scope.items.recipient = account.account;
-            setDescription('info', i18n.format('recipient_info', {__nxt__: nxt.util.convertToNXT(account.unconfirmedBalanceNQT) })); 
+            setDescription('info', i18n.format('recipient_info', {__nxt__: nxt.util.convertToNXT(account.unconfirmedBalanceNQT), __symbol__: $scope.symbol })); 
           }
         },
         function (error) {

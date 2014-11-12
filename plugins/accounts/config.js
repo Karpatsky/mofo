@@ -28,6 +28,7 @@ module.config(function($stateProvider) {
 module.run(function (modals, plugins, nxt, alerts, $q, db, $timeout, $sce, $state) {
 
   function preload(account) {
+    var deferred = $q.defer();
     var api = nxt.get(account.id_rs);
     var downloader = api.downloadTransactions(account, true);
     downloader.getUnconfirmedTransactions();
@@ -43,32 +44,21 @@ module.run(function (modals, plugins, nxt, alerts, $q, db, $timeout, $sce, $stat
           forgedBalanceNXT: nxt.util.convertToNXT(data.forgedBalanceNQT),
           publicKey: data.publicKey,
           id: data.account
-        });
+        }).then(deferred.resolve, deferred.reject);
       },
       function (error) {
         if (error && error.errorCode == 5) {
           account.update({
             isPublished: false
-          });
+          }).then(deferred.resolve, deferred.reject);
+        }
+        else {
+          deferred.reject();
         }
       }
-    );    
+    );
+    return deferred.promise; 
   }
-
-  var add_account = {
-    clazz: 'success',
-    html: $sce.trustAsHtml('<p><h4 disable-nw-menu="true"><span class="glyphicon glyphicon-plus pull-right"></span><strong>Add Account</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h4></p>'),
-    click: function () {
-      var account = {}
-      plugins.get('accounts').add(account).then(
-        function (items) {
-          $state.go('accounts', {id_rs: items.id_rs});
-        }
-      );
-    }
-  };
-
-  var sub_menu    = [add_account];
 
   function loadAccounts() {
     var deferred = $q.defer();
@@ -88,21 +78,36 @@ module.run(function (modals, plugins, nxt, alerts, $q, db, $timeout, $sce, $stat
               sref: "accounts({ id_rs: '"+account.id_rs+"'})",
               html: $sce.trustAsHtml(content)
             });
-
-            /* Preload transactions and get account state */
             preload(account);
           }
         });
         deferred.resolve(sub);
-      }
-    ).catch(alerts.catch("Could not load accounts"));
+      },
+      deferred.reject
+    );
     return deferred.promise;
-  }
+  } 
+
+  var add_account = {
+    clazz: 'success',
+    html: $sce.trustAsHtml('<p><h4 disable-nw-menu="true"><span class="glyphicon glyphicon-plus pull-right"></span><strong>Add Account</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h4></p>'),
+    click: function () {
+      var account = {}
+      plugins.get('accounts').add(account).then(
+        function (items) {
+          $state.go('accounts', {id_rs: items.id_rs});
+        }
+      );
+    }
+  };
+
+  var sub_menu    = [add_account];
 
   function load() {
     loadAccounts().then(function (_sub_menu) {
-      sub_menu = [add_account].concat(_sub_menu);
-      $timeout(function () {});
+      $timeout(function () {
+        sub_menu = [add_account].concat(_sub_menu);
+      });
     });
   }
   db.accounts.addObserver(null, {
@@ -160,8 +165,15 @@ module.run(function (modals, plugins, nxt, alerts, $q, db, $timeout, $sce, $stat
         }
       });
       return deferred.promise
+    },
+    loadAccounts: function () {
+      var deferred = $q.defer();
+      loadAccounts().then(deferred.resolve, deferred.reject);
+      return deferred.promise;
     }
   });
+
+ 
 
   /* Register modal dialogs */
   modals.register('accountsAdd', { 

@@ -266,6 +266,15 @@ module.controller('AccountsPlugin', function($state, $q, $rootScope,
     );
   };
 
+  $scope.showPublicKey = function () {
+    if ($scope.selectedAccount) {
+      plugins.get('alerts').info({
+        title: 'Public Key',
+        message: $scope.selectedAccount.publicKey
+      });
+    }
+  };
+
   /* Show the edit account modal dialog */
   $scope.editAccount = function (account) {
     modals.open('accountsEdit', {

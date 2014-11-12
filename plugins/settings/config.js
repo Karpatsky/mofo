@@ -32,7 +32,18 @@ module.run(function (plugins, $sce, serverService) {
     click: function () {
       try { 
         if (serverService.isNodeJS()) {
-          require('nw.gui').Window.get().window.location.reload();
+          var wait = 0;
+          if (serverService.isRunning('TYPE_FIM')) {
+            serverService.stopServer('TYPE_FIM');
+            wait = 5000;
+          }
+          if (serverService.isRunning('TYPE_NXT')) {
+            serverService.stopServer('TYPE_NXT');
+            wait = 5000;
+          }
+          $timeout(function () {
+            require('nw.gui').Window.get().window.location.reload();
+          }, wait, false);
         }
         else {
           window.location.reload();

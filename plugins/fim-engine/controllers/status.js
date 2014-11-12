@@ -4,10 +4,10 @@ var module = angular.module('fim.base');
 module.controller('FimEngineStatusPlugin', function($scope, serverService, nxt, $interval, $http, db) {
 
   /* */
-  var SERVER_STATE_INTERVAL = 1000 * 2;
+  var SERVER_STATE_INTERVAL = 1000 * 10;
 
   /* How many blocks before the end until we indicate the blockchain has finished downloading */
-  var DOWNLOAD_DONE = 200;
+  var DOWNLOAD_DONE = 100;
   var api = nxt.fim();
   var id = 'TYPE_FIM';
   var blocks_table = 'fimblocks';
@@ -140,7 +140,7 @@ module.controller('FimEngineStatusPlugin', function($scope, serverService, nxt, 
              * A better solution would be if the api itself performed the check against localhost
              * and that this plugin would listen to the API.
              */
-            api.engine.can_use_localhost = !$scope.downloading;
+            //api.engine.can_use_localhost = !$scope.downloading;
           });
         }
       ).error(

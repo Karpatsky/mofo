@@ -141,12 +141,12 @@ module.controller('AccountsPluginMessagesController', function($scope, alerts, $
       api.getAccount({account: account}).then(
         function (account) {
           if (!account.publicKey) {
-            setDescription('warning', i18n.format('recipient_no_public_key', {__nxt__: nxt.util.convertToNXT(account.unconfirmedBalanceNQT) }));
+            setDescription('warning', i18n.format('recipient_no_public_key', {__nxt__: nxt.util.convertToNXT(account.unconfirmedBalanceNQT), __symbol__: $scope.symbol }));
           }
           else {
             $scope.items.recipientPublicKey = account.publicKey;
             $scope.items.recipient = account.account;
-            setDescription('info', i18n.format('recipient_info', {__nxt__: nxt.util.convertToNXT(account.unconfirmedBalanceNQT) })); 
+            setDescription('info', i18n.format('recipient_info', {__nxt__: nxt.util.convertToNXT(account.unconfirmedBalanceNQT), __symbol__: $scope.symbol })); 
           }
         },
         function (error) {

@@ -3,7 +3,6 @@
 var module = angular.module('fim.base');
 module.controller('AuthenticatePlugin', function($scope, $stateParams, modals, $q, nxt, plugins) {
 
-  var authenticator_rs = 'FIM-XJXA-VCLN-4BWL-2SGAB';
 
   $scope.lender = {}
   $scope.lender.name = $stateParams.name;
@@ -47,22 +46,24 @@ module.controller('AuthenticatePlugin', function($scope, $stateParams, modals, $
    */
   function getAccountPersonalData(secretPhrase, id_rs) {
     var deferred = $q.defer();
-    // nxt.fim().getNamespacedAlias({
-    //   account:    authenticator_rs,
-    //   aliasName:  'STORED:'+id_rs
-    // }).then(
-    //   function (data) {
-    //     deferred.resolve(decryptAlias(secretPhrase, data.aliasURI))
-    //   }
-    // );
-    deferred.resolve(decryptAlias());
+    nxt.fim().getNamespacedAlias({
+      account:    authenticator_rs,
+      aliasName:  'STORED:'+id_rs
+    }).then(
+      function (data) {
+        deferred.resolve(decryptAlias(secretPhrase, data.aliasURI))
+      }
+    );
     return deferred.promise;
   }
 
   $scope.login = function () {
-    getSecretPhrase().then(
-      function (secretPhrase) {
-        var id_rs = getAccountRS(secretPhrase);
+    // getSecretPhrase().then(
+    //   function (secretPhrase) {
+    //     var id_rs = getAccountRS(secretPhrase);
+        var id_rs = customer_rs;
+        var secretPhrase = customer_pass;
+
         getAccountPersonalData(secretPhrase, id_rs).then(
           function (data_str) {
 
@@ -81,8 +82,8 @@ module.controller('AuthenticatePlugin', function($scope, $stateParams, modals, $
             );
           }
         );
-      }
-    );
+    //   }
+    // );
   }
 
   $scope.send = function () {
