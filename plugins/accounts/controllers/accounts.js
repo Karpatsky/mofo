@@ -104,6 +104,9 @@ module.controller('AccountsPlugin', function($state, $q, $rootScope,
     /* Fetch unconfirmed transactions */
     transactionService.getUnconfirmedTransactions(selected.id_rs, api, podium, 10);
 
+    /* Fetch transactions */
+    transactionService.getNewestTransactions(selected.id_rs, api, podium, 10);
+
     /* Fetch account info */
     nxt.get(selected.id_rs).getAccount({ account: selected.id_rs }, { podium: podium, priority: 1 }).then(
       function (data) {

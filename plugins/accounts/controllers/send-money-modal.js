@@ -176,8 +176,10 @@ module.controller('AccountsPluginSendMoneyModalController',
           }
         },
         close: function (items) {
-          var api = nxt.get($scope.selectedAccount.id_rs);
-          transactionService.getUnconfirmedTransactions($scope.selectedAccount.id_rs, api, requests.mainStage, 10);
+          $timeout(function () {
+            var api = nxt.get($scope.selectedAccount.id_rs);
+            transactionService.getUnconfirmedTransactions($scope.selectedAccount.id_rs, api, requests.mainStage, 10);
+          }, 6000, false);
           $modalInstance.close($scope.items);
         },
         cancel: function () {
