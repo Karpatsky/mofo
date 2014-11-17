@@ -89,7 +89,8 @@ function downloadTrades(podium, api, asset_id, $scope, index) {
     priority: 2
   }).then(
     function (trades) {
-
+      var iterator = new Iterator(trades);
+      processTrade(iterator);
       /** 
        * 
        *
@@ -120,6 +121,12 @@ function downloadTrades(podium, api, asset_id, $scope, index) {
 }
 
 "++id,timestamp,quantityQNT,priceNQT,asset,askOrder,bidOrder,block";
+
+function processTrade(iterator) {
+  var trade = 
+}
+
+
 
 function initOrders(api, asset_id, $scope) {
   api.engine.db.orders.where('asset').equals(asset_id).toArray().then(
