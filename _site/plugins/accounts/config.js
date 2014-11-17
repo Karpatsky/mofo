@@ -27,39 +27,6 @@ module.config(function($stateProvider) {
 
 module.run(function (modals, plugins, nxt, alerts, $q, db, $timeout, $sce, $state) {
 
-  function preload(account) {
-    var deferred = $q.defer();
-    var api = nxt.get(account.id_rs);
-    var downloader = api.downloadTransactions(account, true);
-    downloader.getUnconfirmedTransactions();
-
-    /* Fetch account info */
-    api.getAccount({ account: account.id_rs }).then(
-      function (data) {
-        account.update({
-          guaranteedBalanceNXT: nxt.util.convertToNXT(data.guaranteedBalanceNQT),
-          balanceNXT: nxt.util.convertToNXT(data.balanceNQT),
-          effectiveBalanceNXT: nxt.util.commaFormat(String(data.effectiveBalanceNXT)),
-          unconfirmedBalanceNXT: nxt.util.convertToNXT(data.unconfirmedBalanceNQT),
-          forgedBalanceNXT: nxt.util.convertToNXT(data.forgedBalanceNQT),
-          publicKey: data.publicKey,
-          id: data.account
-        }).then(deferred.resolve, deferred.reject);
-      },
-      function (error) {
-        if (error && error.errorCode == 5) {
-          account.update({
-            isPublished: false
-          }).then(deferred.resolve, deferred.reject);
-        }
-        else {
-          deferred.reject();
-        }
-      }
-    );
-    return deferred.promise; 
-  }
-
   function loadAccounts() {
     var deferred = $q.defer();
     var sub = [];
@@ -78,7 +45,6 @@ module.run(function (modals, plugins, nxt, alerts, $q, db, $timeout, $sce, $stat
               sref: "accounts({ id_rs: '"+account.id_rs+"'})",
               html: $sce.trustAsHtml(content)
             });
-            preload(account);
           }
         });
         deferred.resolve(sub);

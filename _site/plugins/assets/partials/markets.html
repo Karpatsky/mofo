@@ -1,0 +1,24 @@
+<div class="row" ng-init="showFoldout=false">
+  <div class="col-md-12">
+    <span>Show: <a href>all</a> | <a href>my holdings</a> | <a href>FIMK</a> | <a href>NXT</a></span>
+    <span class="pull-right">Sort by: <a href>marketcap</a> | <a href>activity</a> | <a href>name</a> | <a href>issuer</a></span>
+  </div>
+  <div class="col-md-1" ng-repeat="a in assets.slice(0,11)">
+    <strong>{{a.name}}</strong>
+    <span ng-bind-html="a.price"></span>
+    <span ng-bind-html="a.diff"></span>
+  </div>
+  <div class="col-md-1">
+    <a href class="btn btn-danger btn-block" style="margin-top:10px" ng-click="showFoldout=!showFoldout">
+      <i ng-if="!showFoldout" class="fa fa-angle-double-down fa-lg"></i>
+      <i ng-if="showFoldout" class="fa fa-angle-double-up fa-lg"></i>
+    </a>
+  </div>
+</div>
+<div class="row" collapse="!showFoldout">
+  <div class="col-md-1" ng-repeat="a in assets.slice(12)">
+    <strong style="text-overflow: ellipsis;">{{a.name}}</strong>
+    <span ng-bind-html="a.price"></span>
+    <span ng-bind-html="a.diff"></span>
+  </div>
+</div>

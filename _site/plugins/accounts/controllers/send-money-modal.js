@@ -1,8 +1,8 @@
 (function () {
 'use strict';
 var module = angular.module('fim.base');
-module.controller('AccountsPluginSendMoneyModalController', function(items, $modalInstance, 
-  $scope, nxt, $timeout, $filter, i18n, alerts, $sce, db, plugins, modals) {
+module.controller('AccountsPluginSendMoneyModalController', 
+  function(items, $modalInstance, $scope, nxt, $timeout, $filter, i18n, alerts, $sce, db, plugins, modals, transactionService, requests) {
 
   $scope.dialogName  = 'Send Money';
   $scope.dialogTitle = $scope.dialogName;
@@ -176,11 +176,8 @@ module.controller('AccountsPluginSendMoneyModalController', function(items, $mod
           }
         },
         close: function (items) {
-
-          /* Schedule a check for unconfirmed transactions */
-          var downloader = api.downloadTransactions($scope.selectedAccount);
-          downloader.getUnconfirmedTransactions();
-
+          var api = nxt.get($scope.selectedAccount.id_rs);
+          transactionService.getUnconfirmedTransactions($scope.selectedAccount.id_rs, api, requests.mainStage, 10);
           $modalInstance.close($scope.items);
         },
         cancel: function () {
