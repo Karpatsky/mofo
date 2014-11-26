@@ -12,5 +12,9 @@ module.controller('StartupStatusPlugin', function($scope, plugins) {
     return !PLUGIN.modalIsOpen() && !PLUGIN.complete;
   }
 
+  $scope.filterStarted = function (list) {
+    return list; //.filter(function (x) { return x.__started});
+  }
+
 });
 })();

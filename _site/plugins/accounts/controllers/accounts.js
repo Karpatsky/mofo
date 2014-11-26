@@ -35,6 +35,7 @@ module.controller('AccountsPlugin', function($state, $q, $rootScope,
 
   $scope.accounts               = [];
   $scope.selectedAccount        = null;
+  $scope.authenticated          = false;
 
   $scope.engine                 = null;
   $scope.symbol                 = '';
@@ -79,6 +80,11 @@ module.controller('AccountsPlugin', function($state, $q, $rootScope,
           return;
         }
 
+        /* Notify the plugin that it's being installed */
+        if (plugin.oninstall) {
+          plugin.oninstall(selectedAccount.id_rs);
+        }
+
         if (plugin.create) {
           $scope.plugins.create.push(plugin);
         }
@@ -108,7 +114,7 @@ module.controller('AccountsPlugin', function($state, $q, $rootScope,
     transactionService.getNewestTransactions(selected.id_rs, api, podium, 10);
 
     /* Fetch account info */
-    nxt.get(selected.id_rs).getAccount({ account: selected.id_rs }, { podium: podium, priority: 1 }).then(
+    api.getAccount({ account: selected.id_rs }, { podium: podium, priority: 1 }).then(
       function (data) {
         $scope.$evalAsync(function () {
           $scope.publicKeyStatusUnknown = false;
@@ -141,13 +147,36 @@ module.controller('AccountsPlugin', function($state, $q, $rootScope,
         }
       }
     );
+
+    if (selected.id_rs.indexOf('FIM-') == 0) {
+      api.getNamespacedAlias({
+        account: 'FIM-M3YE-7Q2G-JEZS-HPHK4',
+        aliasName: 'AUTHENTICATED:'+selected.id_rs,
+      }, {
+        podium: podium,
+        priority: 2
+      }).then(
+        function (alias) {
+          $scope.$evalAsync(function () {
+            $scope.authenticated = true;
+          });
+        }
+      ).catch(
+        function (error) {
+          $scope.$evalAsync(function () {
+            $scope.authenticated = false;
+          });
+        }
+      );
+    }
+
   };
 
   /* handler for rendered transaction identifier onmouseover events */
   $scope.onTransactionIdentifierMouseOver = function (element) {
     var type  = element.getAttribute('data-type');
     var value = element.getAttribute('data-value');
-    console.log('onTransactionIdentifierMouseOver', {type:type,value:value});
+    // console.log('onTransactionIdentifierMouseOver', {type:type,value:value});
     switch (type) {
       case api.renderer.TYPE.ACCOUNT: {
         break;
@@ -160,7 +189,7 @@ module.controller('AccountsPlugin', function($state, $q, $rootScope,
   $scope.onTransactionIdentifierMouseLeave = function (element) {
     var type  = element.getAttribute('data-type');
     var value = element.getAttribute('data-value');
-    console.log('onTransactionIdentifierMouseLeave', {type:type,value:value});
+    // console.log('onTransactionIdentifierMouseLeave', {type:type,value:value});
     switch (type) {
       case api.renderer.TYPE.ACCOUNT: {
         break;

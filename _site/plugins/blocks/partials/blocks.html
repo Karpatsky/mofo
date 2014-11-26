@@ -41,7 +41,7 @@
         <td data-title="'Height'" header-class="text-left"><a href ui-sref="blocks({engine:selectedEngine.id, height:b.height})"
           ui-sref-opts="{reload: true}">{{b.height}}</a></td>
         <td data-title="'Date'" header-class="text-left">{{formatTimestamp(b.timestamp)}}</td>
-        <td data-title="'Count'" header-class="text-left">
+        <td data-title="'Tx count'" header-class="text-left">
           <a ng-if="b.generator" href ng-click="showTransactions(b.id)" ng-disabled="!b.numberOfTransactions.length">{{b.numberOfTransactions}}</a>
           <i ng-if="!b.generator" class="fa fa-circle-o-notch fa-spin"></i>
         </td>

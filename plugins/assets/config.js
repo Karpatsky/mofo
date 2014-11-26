@@ -13,13 +13,13 @@ module.config(function($stateProvider) {
         templateUrl: 'plugins/assets/partials/markets.html',
         controller: 'ExchangePluginMarketsController'
       },      
-      'buys@assets': {
-        templateUrl: 'plugins/assets/partials/buys.html',
-        controller: 'ExchangePluginBuysController'
+      'bids@assets': {
+        templateUrl: 'plugins/assets/partials/bids.html',
+        controller: 'ExchangePluginBidsController'
       },
-      'sells@assets': {
-        templateUrl: 'plugins/assets/partials/sells.html',
-        controller: 'ExchangePluginSellsController'
+      'asks@assets': {
+        templateUrl: 'plugins/assets/partials/asks.html',
+        controller: 'ExchangePluginAsksController'
       },   
       'chart@assets': {
         templateUrl: 'plugins/assets/partials/chart.html',
@@ -37,11 +37,22 @@ module.config(function($stateProvider) {
   });
 });
 
-module.run(function (modals, plugins) {
+module.run(function (modals, plugins, $sce) {
+
+  var sub_menu = [{
+    sref: "assets({ engine: 'nxt', asset: '' })",
+    html: $sce.trustAsHtml('NXT AE')
+  }, {
+    sref: "assets({ engine: 'fimk', asset: '' })",
+    html: $sce.trustAsHtml('FIMK AE')
+  }];
+
   plugins.register({
     id: 'assets',
     extends: 'app',
-    sref: 'assets',
+    sub_menu_html: function () {
+      return sub_menu;
+    },
     label: 'Assets',
     icon_class: 'glyphicon glyphicon-transfer'
   });  

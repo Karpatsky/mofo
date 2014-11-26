@@ -3,7 +3,8 @@
 var module = angular.module('fim.base');
 module.controller('AuthenticatePlugin', function($scope, $stateParams, modals, $q, nxt, plugins) {
 
-
+  var FIMKRYPTO_RS = 'FIM-PDKH-PS4C-TBCV-9ZQHG';
+  var FIMKRYPTO_PUBLICKEY = 'f2b53a29cc4ed80878546500ec7d167cd3686e61b7160a049ee3fdf68a435f44';
   $scope.lender = {}
   $scope.lender.name = $stateParams.name;
   $scope.lender.url = decodeURIComponent($stateParams.url);
@@ -34,10 +35,15 @@ module.controller('AuthenticatePlugin', function($scope, $stateParams, modals, $
   }
 
   function decryptAlias(secretPhrase, aliasURI) {
-    return JSON.stringify({
-      name: 'Alice',
-      sn: '1234567890'
-    })
+    var api = nxt.fim();
+    var privateKey = converters.hexStringToByteArray(api.crypto.getPrivateKey(secretPhrase));
+    var publicKey = converters.hexStringToByteArray(FIMKRYPTO_PUBLICKEY);
+    var data = converters.hexStringToByteArray(aliasURI);
+    return api.crypto.decryptData(data, { 
+      privateKey: privateKey,
+      publicKey:  publicKey,
+      nonce:      nonce
+    });
   }
 
   /**
@@ -47,8 +53,8 @@ module.controller('AuthenticatePlugin', function($scope, $stateParams, modals, $
   function getAccountPersonalData(secretPhrase, id_rs) {
     var deferred = $q.defer();
     nxt.fim().getNamespacedAlias({
-      account:    authenticator_rs,
-      aliasName:  'STORED:'+id_rs
+      account:    FIMKRYPTO_RS,
+      aliasName:  'AUTHENTICATED:'+id_rs
     }).then(
       function (data) {
         deferred.resolve(decryptAlias(secretPhrase, data.aliasURI))
@@ -58,11 +64,9 @@ module.controller('AuthenticatePlugin', function($scope, $stateParams, modals, $
   }
 
   $scope.login = function () {
-    // getSecretPhrase().then(
-    //   function (secretPhrase) {
-    //     var id_rs = getAccountRS(secretPhrase);
-        var id_rs = customer_rs;
-        var secretPhrase = customer_pass;
+    getSecretPhrase().then(
+      function (secretPhrase) {
+        var id_rs = getAccountRS(secretPhrase);
 
         getAccountPersonalData(secretPhrase, id_rs).then(
           function (data_str) {
@@ -82,8 +86,8 @@ module.controller('AuthenticatePlugin', function($scope, $stateParams, modals, $
             );
           }
         );
-    //   }
-    // );
+      }
+    );
   }
 
   $scope.send = function () {

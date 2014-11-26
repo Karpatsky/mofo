@@ -5,12 +5,12 @@ module.run(function (nxt, $q, modals) {
 
   var api = nxt.fim();
 
-  var authenticator_rs = 'FIM-BA8U-LVXC-WBFT-49C4S';
+  var authenticator_rs = 'FIM-PDKH-PS4C-TBCV-9ZQHG';
   var authenticator_pass = 'CENSORED';
-  var authenticator_publickey = 'abb02f3fcdcb9fd059ddce61b792cbbaf0b28561e55a845db51b292d6fe2c172';
+  var authenticator_publickey = 'f2b53a29cc4ed80878546500ec7d167cd3686e61b7160a049ee3fdf68a435f44';
 
-  var customer_rs = 'FIM-7CZJ-CVTH-F4XY-DMWEY';
-  var customer_publickey = 'd8155622e95eb0e28cd7f28b61a63eb11f614cc052d9870ca2afe9612359a06d';
+  var customer_rs = 'FIM-BA8U-LVXC-WBFT-49C4S';
+  var customer_publickey = 'abb02f3fcdcb9fd059ddce61b792cbbaf0b28561e55a845db51b292d6fe2c172';
   var customer_pass = 'CENSORED';
   var customer_data = JSON.stringify({ name:"Alice", sn:"123456789" });
 

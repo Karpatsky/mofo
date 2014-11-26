@@ -1,61 +1,74 @@
 (function () {
 'use strict';
 var module = angular.module('fim.base');
-module.controller('ExchangePluginChartController', function($scope) {
+module.controller('ExchangePluginChartController', function($scope, nxt) {
 
-// MOVING AVERAGE PLUGIN FOR JAVASCRIPT STOCK CHARTS FROM AMCHARTS //
-AmCharts.averageGraphs = 0;
-AmCharts.addMovingAverage = function (dataSet, panel, field) {
-    // update dataset
-    var avgField = "avg"+AmCharts.averageGraphs;
-    dataSet.fieldMappings.push({
-        fromField: avgField,
-        toField: avgField});
+// // MOVING AVERAGE PLUGIN FOR JAVASCRIPT STOCK CHARTS FROM AMCHARTS //
+// AmCharts.averageGraphs = 0;
+// AmCharts.addMovingAverage = function (dataSet, panel, field) {
+//     // update dataset
+//     var avgField = "avg"+AmCharts.averageGraphs;
+//     dataSet.fieldMappings.push({
+//         fromField: avgField,
+//         toField: avgField});
     
-    // calculate moving average
-    var fc = 0;
-    var sum = 0;
-    for (var i = 0; i < dataSet.dataProvider.length; i++) {
-        var dp = dataSet.dataProvider[i];
-        if (dp[field] !== undefined) {
-            sum += dp[field];
-            fc++;
-            dp[avgField] = Math.round(sum / fc * 10) / 10;
-        }
-    }
+//     // calculate moving average
+//     var fc = 0;
+//     var sum = 0;
+//     for (var i = 0; i < dataSet.dataProvider.length; i++) {
+//         var dp = dataSet.dataProvider[i];
+//         if (dp[field] !== undefined) {
+//             sum += dp[field];
+//             fc++;
+//             dp[avgField] = Math.round(sum / fc * 10) / 10;
+//         }
+//     }
     
-    // create a graph
-    var graph = new AmCharts.StockGraph();
-    graph.valueField = avgField;
-    panel.addStockGraph(graph);
+//     // create a graph
+//     var graph = new AmCharts.StockGraph();
+//     graph.valueField = avgField;
+//     panel.addStockGraph(graph);
     
-    // increment average graph count
-    AmCharts.averageGraphs++;
+//     // increment average graph count
+//     AmCharts.averageGraphs++;
     
-    // return newly created StockGraph object
-    return graph;
-}
+//     // return newly created StockGraph object
+//     return graph;
+// }
 
 var chartData = [];
 
 function generateChartData() {
-    var firstDate = new Date();
-    firstDate.setDate(firstDate.getDate() - 500);
-    firstDate.setHours(0, 0, 0, 0);
+  // var firstDate = new Date();
+  // firstDate.setDate(firstDate.getDate() - 500);
+  // firstDate.setHours(0, 0, 0, 0);
 
-    for (var i = 0; i < 500; i++) {
-        var newDate = new Date(firstDate);
-        newDate.setDate(newDate.getDate() + i);
+  // for (var i = 0; i < 500; i++) {
+  //   var newDate = new Date(firstDate);
+  //   newDate.setDate(newDate.getDate() + i);
 
-        var a = Math.round(Math.random() * (40 + i)) + 100 + i;
-        var b = Math.round(Math.random() * (1000 + i)) + 500 + i * 2;
+  //   var a = Math.round(Math.random() * (40 + i)) + 100 + i;
+  //   var b = Math.round(Math.random() * (1000 + i)) + 500 + i * 2;
 
-        chartData.push({
-            date: newDate,
-            value: a,
-            volume: b
-        });
-    }
+  //   chartData.push({
+  //     date: newDate,
+  //     value: a,
+  //     volume: b
+  //   });
+  // }
+
+  var trade, date, decimals=$scope.selectedAsset.decimals;
+  for (var i=0,l=$scope.trades.length; i<l; i++) {
+    trade = $scope.trades[i];
+    date = nxt.util.timestampToDate(trade.timestamp);
+    //console.log('Date', date.now());
+
+    chartData.push({
+      date: date,
+      value: parseFloat(nxt.util.calculateOrderPricePerWholeQNT(trade.priceNQT, decimals)),
+      volume: parseFloat(nxt.util.convertToQNTf(trade.quantityQNT, decimals))
+    });
+  }
 }
 
 function createStockChart() {
@@ -111,7 +124,6 @@ function createStockChart() {
     // set panels to the chart
     chart.panels = [stockPanel1, stockPanel2];
 
-
     // OTHER SETTINGS ////////////////////////////////////
     var sbsettings = new AmCharts.ChartScrollbarSettings();
     sbsettings.graph = graph1;
@@ -143,17 +155,35 @@ function createStockChart() {
     //     label: "MAX"}];
     // chart.periodSelector = periodSelector;
     
-    // ADD AVERAGES //////////////////////////////////////
-    var avgGraph = AmCharts.addMovingAverage(dataSet, stockPanel1, "value");
-    avgGraph.useDataSetColors = false;
-    avgGraph.color = "#ccffcc";
-    avgGraph.title = "Moving average";
+    // // ADD AVERAGES //////////////////////////////////////
+    // var avgGraph = AmCharts.addMovingAverage(dataSet, stockPanel1, "value");
+    // avgGraph.useDataSetColors = false;
+    // avgGraph.color = "#ccffcc";
+    // avgGraph.title = "Moving average";
 
     chart.write('chartdiv');
 }  
 
+var unwatch_selectedAsset = $scope.$watch('selectedAsset', function () {
+  if ($scope.selectedAsset && $scope.trades) {
     generateChartData();
     createStockChart();
+    // unwatch_selectedAsset();
+    // unwatch_trades();
+  }
+});
+
+var unwatch_trades = $scope.$watch('trades', function () {
+  if ($scope.selectedAsset && $scope.trades) {
+    generateChartData();
+    createStockChart();
+    // unwatch_selectedAsset();
+    // unwatch_trades();
+  }
+});
+
+// generateChartData();
+// createStockChart();
 
 
 });
