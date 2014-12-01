@@ -1,7 +1,7 @@
 (function () {
 'use strict';
 var module = angular.module('fim.base');
-module.run(function (plugins, modals, $q, $timeout, db, nxt) {  
+module.run(function (plugins, modals, $q, $timeout, db, nxt, $sce) {  
 
   /* Global variables hidden from outside code | rely on the fact that 
      there is one wallet opened each time */
@@ -208,6 +208,22 @@ module.run(function (plugins, modals, $q, $timeout, db, nxt) {
           deferred.resolve();
         }
       });
+      return deferred.promise;
+    },
+
+    confirmSaveToWallet: function () {
+      var deferred = $q.defer();
+      var html = ['<p class="lead">Do you want to save this secret phrase in a wallet?</p>',
+                  '<p>A wallet is a file that you download and store on your computer.<br> ',
+                  'A wallet is <b>not an alternavtive to remembering or writing down your secret phrase</b>.<br><br> ',
+                  'A wallet is meant as a secure and convenient way of saving your secret phrase in a file, thats all, you still need to back it up somewhere save.<br><br>',
+                  'To make life easier MofoWallet can not only store keys in a wallet, it can also read them from a wallet you provide.</p>']
+      html = $sce.trustAsHtml(html.join(''));
+      plugins.get('alerts').confirm({ html: html }).then(
+        function (confirmed) {
+          deferred.resolve(confirmed);
+        }
+      );
       return deferred.promise;
     }
   });

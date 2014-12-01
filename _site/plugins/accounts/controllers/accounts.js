@@ -242,7 +242,7 @@ module.controller('AccountsPlugin', function($state, $q, $rootScope,
     plugins.get('accounts').add(account).then(
       function (items) {
         console.log('accounts.addAccount', items);
-        $state.go('accounts', {id_rs: items.id_rs});
+        //$state.go('accounts', {id_rs: items.id_rs});
       }
     );
   };  
