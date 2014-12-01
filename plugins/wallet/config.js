@@ -5,10 +5,11 @@ module.run(function (plugins, modals, $q, $timeout, db, nxt) {
 
   /* Global variables hidden from outside code | rely on the fact that 
      there is one wallet opened each time */
-  var gPassword = '';
-  var gFile     = '';
-  var gWallet   = null;
-  var gDeferred = null;
+  var gPassword     = '';
+  var gFile         = '';
+  var gWallet       = null;
+  var gMemoryWallet = null;
+  var gDeferred     = null;
 
   /* Register as plugin */
   plugins.register({
@@ -35,7 +36,7 @@ module.run(function (plugins, modals, $q, $timeout, db, nxt) {
 
     /* Do we have that key? */
     hasKey: function (key) {
-      return gWallet ? !!gWallet[key] : false;
+      return ((gWallet && gWallet[key]) || (gMemoryWallet && gMemoryWallet[key]));
     },
 
     /* Remove an entry from the wallet */
@@ -45,12 +46,27 @@ module.run(function (plugins, modals, $q, $timeout, db, nxt) {
 
     /* Returns the secretPhrase if any */
     getSecretPhrase: function (key) {
-      return (gWallet && gWallet[key]) ? gWallet[key].secretPhrase : null;
+      if (gWallet && gWallet[key]) {
+        return gWallet[key].secretPhrase;
+      }
+      else if (gMemoryWallet && gMemoryWallet[key]) {
+        return gMemoryWallet[key].secretPhrase;
+      }
+      return null;
     },
 
     /* Prompts the user to open a wallet */
     promptForWallet: function () {
       return promptForWallet();
+    },
+
+    /* Saves a secretPhrase to the memory pool */
+    saveToMemory: function (key, secretPhrase) {
+      gMemoryWallet = gMemoryWallet || {};
+      gMemoryWallet[key] = {
+        id_rs:        key,
+        secretPhrase: secretPhrase
+      };
     },
 
     /**
@@ -63,7 +79,7 @@ module.run(function (plugins, modals, $q, $timeout, db, nxt) {
       var deferred    = $q.defer();
 
       /* Wallet is open and key is available */
-      if (gWallet && _getEntry(id_rs)) {
+      if ((gWallet || gMemoryWallet) && _getEntry(id_rs)) {
         deferred.resolve(_getEntry(id_rs));
       }
       else {
@@ -360,7 +376,13 @@ module.run(function (plugins, modals, $q, $timeout, db, nxt) {
   }
 
   function _getEntry(id_rs) {
-    return gWallet ? gWallet[id_rs] : null;
+    if (gWallet && gWallet[id_rs]) {
+      return gWallet[id_rs];
+    }
+    else if (gMemoryWallet && gMemoryWallet[id_rs]) {
+      return gMemoryWallet[id_rs];
+    }
+    return null;
   }
 
 });
