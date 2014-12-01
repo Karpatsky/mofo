@@ -162,18 +162,32 @@ module.controller('AccountsPluginAddModalController',
                     name:         $scope.items.name
                   }).then(
                     function () {
-                      plugins.get('alerts').success({ message: 'You successfully saved the secretphrase to your wallet'});
+                      plugins.get('alerts').success({ message: 'You successfully saved the secretphrase to your wallet'}).then(
+                        function () {
+                          $modalInstance.close($scope.items);
+                        }
+                      );
                     },
                     function () {
-                      plugins.get('alerts').error({ message: 'Could not save secretphrase to wallet'});
+                      plugins.get('alerts').error({ message: 'Could not save secretphrase to wallet'}).then(
+                        function () {
+                          $modalInstance.close($scope.items);
+                        }
+                      );
                     }
                   );
+                }
+                else {
+                  plugins.get('wallet').saveToMemory($scope.items.id_rs, $scope.items.secretPhrase);
+                  $modalInstance.close($scope.items);
                 }
               }
             );
           });
         }
-        $modalInstance.close($scope.items);
+        else {
+          $modalInstance.close($scope.items);
+        }
       }
     ).catch(
       function (error) {
