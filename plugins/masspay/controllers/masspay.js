@@ -5,6 +5,14 @@ module.controller('MasspayPluginController', function($scope, $rootScope, $timeo
   var PLUGIN = plugins.get('masspay');
 
   $scope.items            = {};
+
+
+
+
+
+
+
+  
   $scope.items.csv        = '';
   $scope.items.file       = '';
 
