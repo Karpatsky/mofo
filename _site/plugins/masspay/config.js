@@ -9,10 +9,10 @@ module.run(function (plugins, modals, $q, $timeout) {
     id:       'masspay',
     label:    'Mass Payer',
     author:   'FIMKrypto',
-    version:  '0.1',
+    version:  '0.2',
     extends:  'plugins',
     icon_class:   'glyphicon glyphicon-th',
-    templateURL:  'plugins/masspay/partials/masspay2.html',    
+    templateURL:  'plugins/masspay/partials/masspay.html',    
     createOnWalletFileSelectedPromise: function () {
       gDeferred = $q.defer();
       return gDeferred.promise;
