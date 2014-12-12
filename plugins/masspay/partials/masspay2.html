@@ -50,9 +50,9 @@
   <div ng-show="incomplete">
     <div class="row">
       <div class="col-md-12">
-        <div class="well">It seems your previous session was not run to completion. Please select if you wish to continue with your previous session or if you would like start a new one.</div>
-        <button class="btn btn-primary" ng-click="continuePreviousRun()">Continue Previous Run</button>
-        <button class="btn btn-default" ng-click="startNewRun()">Start New Run</button>
+        <div class="well">It seems your previous session was not session to completion. Please select if you wish to continue with your previous session or if you would like start a new one.</div>
+        <button class="btn btn-primary" ng-click="continuePreviousRun()">Continue Previous Session</button>
+        <button class="btn btn-default" ng-click="startNewRun()">Start New Session</button>
       </div>
     </div>  
   </div>
@@ -75,7 +75,7 @@
         <div class="col-md-12">
           <button class="btn btn-primary" ng-click="startCreatingTransactions()" ng-disabled="isCreating">Create Transactions</button>
           <button class="btn btn-default" ng-click="stopCreatingTransactions()" ng-disabled="!isCreating">Stop</button>
-          <button class="btn btn-default pull-right" ng-click="start()">Start New Run</button>
+          <button class="btn btn-default pull-right" ng-click="start()">Start New Session</button>
         </div>
       </div>
     </div>
@@ -90,7 +90,7 @@
         <div class="col-md-12">
           <button class="btn btn-primary" ng-click="startCreatingTransactions()" ng-disabled="isCreating">Retry to Create Transactions</button>
           <button class="btn btn-default" ng-click="stopCreatingTransactions()" ng-disabled="!isCreating">Stop</button>
-          <button class="btn btn-default pull-right" ng-click="start()">Start New Run</button>
+          <button class="btn btn-default pull-right" ng-click="start()">Start New Session</button>
         </div>
       </div>
     </div>
@@ -105,7 +105,7 @@
         <div class="col-md-12">
           <button class="btn btn-primary" ng-click="startBroadcastingTransactions()" ng-disabled="isBroadcasting">Broadcast Transactions</button>
           <button class="btn btn-default" ng-click="stopBroadcastingTransactions()" ng-disabled="!isBroadcasting">Stop</button>
-          <button class="btn btn-default pull-right" ng-click="start()">Start New Run</button>
+          <button class="btn btn-default pull-right" ng-click="start()">Start New Session</button>
         </div>
       </div>
     </div>
@@ -119,7 +119,7 @@
       <div class="row">
         <div class="col-md-12">
           <button class="btn btn-primary" ng-click="checkBlockchainStatus()">Force Check Confirmed Status</button>
-          <button class="btn btn-default pull-right" ng-click="start()">Start New Run</button>
+          <button class="btn btn-default pull-right" ng-click="start()">Start New Session</button>
         </div>
       </div>
     </div>
@@ -127,7 +127,7 @@
       <div class="row">
         <div class="col-md-12">
           <h1>Congratulations all payments succeeded</h1>
-          <button class="btn btn-default pull-right" ng-click="start()">Start New Run</button>
+          <button class="btn btn-default pull-right" ng-click="start()">Start New Session</button>
         </div>
       </div>
     </div>
