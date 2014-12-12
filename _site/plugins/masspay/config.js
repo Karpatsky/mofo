@@ -12,7 +12,7 @@ module.run(function (plugins, modals, $q, $timeout) {
     version:  '0.1',
     extends:  'plugins',
     icon_class:   'glyphicon glyphicon-th',
-    templateURL:  'plugins/masspay/partials/masspay.html',    
+    templateURL:  'plugins/masspay/partials/masspay2.html',    
     createOnWalletFileSelectedPromise: function () {
       gDeferred = $q.defer();
       return gDeferred.promise;
@@ -20,32 +20,45 @@ module.run(function (plugins, modals, $q, $timeout) {
     save: function (content) {
       var blob = new Blob([content], {type: "text/plain;charset=utf-8"});
       saveAs(blob, gSelectedFile?gSelectedFile.name:'mass-pay.csv');
-    },    
+    },
+    start: function () {
+      var deferred = $q.defer();
+      modals.open('massPaySelectAccount', {
+        resolve: {
+          items: function () { return {}; }
+        },
+        close: function (items) {
+          var accountRS = items.accountRS;
+          var secretPhrase = items.secretPhrase;
+          modals.open('massPaySelectFile', {
+            resolve: {
+              items: function () { return {}; }
+            },
+            close: function (items) {
+              deferred.resolve({
+                file: items.file,
+                fileContent: items.fileContent,
+                accountRS: accountRS,
+                secretPhrase: secretPhrase
+              });
+            },
+            cancel: deferred.reject
+          });
+        },
+        cancel: deferred.reject
+      });
+      return deferred.promise;
+    }
   });
 
-  /** 
-   * Called from <input type="file" onchange="onCSVFileSelected(event)">
-   * Prompts the user for file which is then loaded and it's contents put in the CSV control.
-   */
-  window.onMassPayFileSelected = function (event) {
-    gSelectedFile = event.target.files[0];
-    var reader    = new FileReader();
-    reader.onload = function(event) {
-      gDeferred.resolve({content: event.target.result, file: gSelectedFile});
-    };
-    reader.onerror = function (event) {
-      if (gDeferred) {
-        gDeferred.reject();
-        gDeferred = null;
-      }
-    };
-    reader.onabort = function (event) {
-      if (gDeferred) {
-        gDeferred.reject();
-        gDeferred = null;
-      }
-    };
-    reader.readAsText(gSelectedFile);    
-  };
+  modals.register('massPaySelectAccount', { 
+    templateUrl: 'plugins/masspay/partials/select-account.html', 
+    controller: 'MassPayPluginAccountModalController' 
+  });
+
+  modals.register('massPaySelectFile', { 
+    templateUrl: 'plugins/masspay/partials/select-file.html', 
+    controller: 'MassPayPluginFileModalController' 
+  });
 });
 })();
