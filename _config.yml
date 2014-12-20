@@ -5,7 +5,7 @@ baseurl: "/mofo"
 url: "http://mofowallet.com"
 twitter_username: fimkrypto
 github_username:  fimkrypto
-version: "0.3.6"
+version: "0.3.8"
 
 # Build settings
 markdown: kramdown

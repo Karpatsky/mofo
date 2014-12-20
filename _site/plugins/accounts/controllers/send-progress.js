@@ -156,7 +156,7 @@ module.controller('AccountsPluginSendProgressMoneyModalController', function(ite
           break;
         }
       }
-      if (fn) { fn.call(); }
+      fn && fn.call();
     });
   }
 
