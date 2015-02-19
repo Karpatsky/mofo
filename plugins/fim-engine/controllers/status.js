@@ -1,111 +1,71 @@
 (function () {
 'use strict';
 var module = angular.module('fim.base');
-module.controller('FimEngineStatusPlugin', function($scope, serverService, nxt, $interval, $http, db) {
+module.controller('FimEngineStatusPlugin', function($scope, serverService, nxt, requests, $interval) {
 
-  /* */
-  var SERVER_STATE_INTERVAL = 1000 * 15;
+  /* Only run when in NodeJS environment */
+  if ( ! isNodeJS) {
+    return;
+  }
 
-  /* How many blocks before the end until we indicate the blockchain has finished downloading */
-  var DOWNLOAD_DONE = 100;
-  var api = nxt.fim();
-  var id = 'TYPE_FIM';
-  var blocks_table = 'fimblocks';
+  var DOWNLOADING_THRESHOLD = 60 * 60 * 1000; // 1 hour in MS
+  var api           = nxt.fim();
+  var id            = 'TYPE_FIM';
+  var genesis_stamp = (new Date(Date.UTC(2014, 1, 7, 12, 23, 29, 5))).getTime();
+  var fim_diff      = genesis_stamp - (new Date(Date.UTC(2013, 10, 24, 12, 0, 0, 0))).getTime();
 
   $scope.server_running = serverService.isRunning(id);
-  $scope.downloading = false;
-  $scope.port = api.engine.port,
-  $scope.net_name = api.test?'test-net':'main-net';
-  $scope.test_net = api.test,
-  $scope.requests = [];
-  $scope.show_spinner = false;
-  $scope.numberOfBlocks = 0;
-  $scope.lastBlockchainFeederHeight = 0;
-  $scope.version = 0;  
-  $scope.blockheight = 0;
+  $scope.port           = api.engine.port,
+  $scope.net_name       = api.test?'test-net':'main-net';
+  $scope.test_net       = api.test;
+  $scope.version        = 0;  
+  $scope.blockheight    = 0;
+  $scope.progress       = 0; /* 0 - 100 */
+  $scope.downloading    = false;
 
-  $scope.$on("$destroy", function() { 
-    api.requestHandler.removeObserver(observer);
-    serverService.removeListener(id, 'exit', onExit);
-    serverService.removeListener(id, 'start', onStart);
-    $interval.cancel(interval);
-  });
-
-  var observer = {
-    start: function (methodName, node) {
-      $scope.$evalAsync(function () {
-        $scope.requests.unshift({
-          font_awsome: 'fa fa-circle-o-notch fa-spin',
-          methodName: methodName,
-          url: fixurl(node.url),
-          use_cors: node.require_cors_proxy
+  function getState() {
+    var interval = $interval(function () {
+      api.engine.getLocalHostNode().then(function (node) {
+        var podium = requests.theater.createPodium('fim:status', $scope);
+        api.getState({}, {
+          podium: podium,
+          priority: 10,
+          node: node
+        }).then(function (data) {
+          $interval.cancel(interval);
+          $scope.$evalAsync(function () {
+            $scope.version = data.version
+          })
         });
-        $scope.requests = $scope.requests.slice(0, 6);
       });
-    },
-    success: function (methodName, node, data, tries_left) {
-      $scope.$evalAsync(function () {
-        var url = fixurl(node.url);
-        if (url) {
-          removeEntry($scope.requests, methodName, url);
-          $scope.requests.unshift({
-            glyph_icon: 'glyphicon glyphicon-ok',
-            methodName: methodName,
-            url: url,
-            use_cors: node.require_cors_proxy,
-            tries_left: tries_left
-          });
-          $scope.requests = $scope.requests.slice(0, 6);
-        }
-      });
-    },
-    failed: function (methodName, node, data, tries_left) {
-      if (!node) return; /* Weirdness. Cant pinpoint when and why this keeps happening */
-      $scope.$evalAsync(function () {
-        var url = fixurl(node.url);
-        if (url) {
-          removeEntry($scope.requests, methodName, url);
-          $scope.requests.unshift({
-            clazz: 'danger',
-            glyph_icon: 'glyphicon glyphicon-remove',
-            methodName: methodName,
-            url: url,
-            use_cors: node.require_cors_proxy,
-            tries_left: tries_left            
-          });
-          $scope.requests = $scope.requests.slice(0, 6);
-        }
-      });
-    }
-  };
-
-  function fixurl(url) {
-    return url ? url.replace(/^(http:\/\/)/,'') : '';
+    },5000,0,false);
   }
 
-  function removeEntry(requests, methodName, url) {
-    var index = -1;
-    for (var i=0; i<requests.length; i++) {
-      if (requests[i].methodName == methodName && requests[i].url == url) {
-        index = i;
-        break;
-      }
-    }
-    if (index != -1) {
-      requests.splice(index, 1);
-    }
+  function setCurrentBlock(block) {
+    $scope.$evalAsync(function () {
+      var now            = Date.now();
+      var total          = now - genesis_stamp; // the total time from genesis to now
+      var date           = nxt.util.timestampToDate(block.timestamp);
+      $scope.blockheight = block.height;
+
+      var elapsed        = date.getTime()-genesis_stamp; // elapsed time from genesis to block
+      $scope.progress    = (elapsed * 100) / total;
+      $scope.downloading = (now - date.getTime()) > DOWNLOADING_THRESHOLD;
+    });
   }
 
-  api.requestHandler.addObserver(observer);
+  api.engine.socket().subscribe('blockPopped', setCurrentBlock, $scope);
+  api.engine.socket().subscribe('blockPushed', setCurrentBlock, $scope);
 
   function onExit() {
     $scope.$evalAsync(function () {
       $scope.server_running = false;
-      $scope.downloading = false;
+      $scope.downloading    = false;
     });
   }
 
   function onStart() {
+    getState();
     $scope.$evalAsync(function () {
       $scope.server_running = true;
     });
@@ -114,77 +74,10 @@ module.controller('FimEngineStatusPlugin', function($scope, serverService, nxt, 
   serverService.addListener(id, 'exit', onExit);
   serverService.addListener(id, 'start', onStart);
 
-  // // Initialize one time
-  // api.engine.getLocalHostNode();  
-
-  /* Downloadmonitor is called from an interval. Will do a getState request on the localhost 
-   * and update the progressbar and other indicators accordingly. */
-  var interval = $interval(function interval() {
-
-    /* Update download state for running server */
-    if ($scope.server_running) {
-      // api.getState({}, {
-      //   priority: 1,
-      //   podium: requests.mainStage,
-      //   node: api.engine.localHostNode
-      // }).then(
-      //   function (data) {
-      //     $scope.$evalAsync(function () {
-      //       $scope.numberOfBlocks = data.numberOfBlocks;
-      //       $scope.lastBlockchainFeederHeight = data.lastBlockchainFeederHeight;
-      //       $scope.version = data.version;
-      //       $scope.downloading = ($scope.lastBlockchainFeederHeight - $scope.numberOfBlocks) > DOWNLOAD_DONE;
-      //       //api.engine.can_use_localhost = !$scope.downloading;
-      //     });
-      //   },
-      //   function (data) {
-      //     console.log('Could not getState from localhost',data);
-
-      //     /* XXX - not perfect */
-      //     api.engine.can_use_localhost = false;          
-      //   }
-      // );
-
-      $http({
-        method: 'GET', 
-        dataType: 'json',
-        url: api.engine.localhost+':'+api.engine.port+'/nxt?requestType=getState&random='+Math.random(),
-      }).success(
-        function (data, status, headers, config) {
-          $scope.$evalAsync(function () {
-            $scope.numberOfBlocks = data.numberOfBlocks;
-            $scope.lastBlockchainFeederHeight = data.lastBlockchainFeederHeight;
-            $scope.version = data.version;
-            $scope.downloading = ($scope.lastBlockchainFeederHeight - $scope.numberOfBlocks) > DOWNLOAD_DONE;
-
-            //api.engine.can_use_localhost = !$scope.downloading;
-          });
-        }
-      ).error(
-        function (data, status, headers, config) {
-          console.log('Could not getState from localhost',data);
-
-          // XXX - not perfect
-          api.engine.can_use_localhost = false;
-        }
-      );
-    }
-    else {
-      /* XXX - not perfect */
-      api.engine.can_use_localhost = false;
-    }
-
-    /* Update blockheight */
-    db[blocks_table].orderBy('height').last().then(
-      function (block) {
-        if (block) {
-          $scope.$evalAsync(function () {
-            $scope.blockheight = block.height;
-          });
-        }
-      }
-    );    
-  }, SERVER_STATE_INTERVAL);
+  $scope.$on("$destroy", function() { 
+    serverService.removeListener(id, 'exit', onExit);
+    serverService.removeListener(id, 'start', onStart);
+  });
 
 });
 })();

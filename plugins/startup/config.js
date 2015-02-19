@@ -64,7 +64,7 @@ module.run(function (modals, plugins, $timeout, startupService) {
     controller: 'StartServerModalController' 
   });
 
-  $timeout(function () { plugins.get('startup').showModal() }, 1000, false);  
+  // $timeout(function () { plugins.get('startup').showModal() }, 1000, false);  
   // $timeout(function () { 
   //   modals.open('startNXTServerModal', {
   //     resolve: {
