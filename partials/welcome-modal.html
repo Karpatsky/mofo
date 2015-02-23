@@ -3,8 +3,8 @@
 
     <!-- welcome screen -->
     <div ng-if="items.state==0" class="col-xs-12">
-      <h3 class="text-center" translate="translate.welcome_to_app"></h3>
-      <p translate="translate.select_option_to_continue"></p>
+      <h3 class="text-center" translate="translate.select_option_to_continue"></h3>
+      <!-- <p translate="translate.select_option_to_continue"></p> -->
       <p class="text-center" >
         <button ng-click="items.state=1" class="btn btn-lg btn-block btn-primary">
           <b translate="translate.create_new_account"></b><br>
@@ -17,7 +17,7 @@
           <small>(<span translate="translate.passphrase_not_needed"/>)</small>
         </button>
       </p>
-      <p>
+      <p class="text-center">
         <a href ng-click="close()" translate="translate.let_me_browse"></a>
       </p>
     </div>

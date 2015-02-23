@@ -303,7 +303,7 @@ module.controller('AccountsPlugin', function($location, $q, $scope, modals, $rou
   }
 
   $scope.setAccountInfo = function () {
-    plugins.get('transaction').setAccountInfo($scope.id_rs, {
+    plugins.get('transaction').get('setAccountInfo').execute($scope.id_rs, {
       name: ($scope.selectedAccount ? $scope.selectedAccount.name : ''),
       description: ($scope.selectedAccount ? $scope.selectedAccount.description : ''),
     });

@@ -109,7 +109,7 @@ module.run(function (plugins, modals, $q, $rootScope, nxt) {
     ALPHABET: ALPHABET,
     EXTENDED_ALPHABET: EXTENDED_ALPHABET,
 
-    setAlias: function (senderRS, args) {
+    /*setAlias: function (senderRS, args) {
       args = args||{};
       return create(angular.extend(args, {
         title: 'Set Alias',
@@ -212,7 +212,7 @@ module.run(function (plugins, modals, $q, $rootScope, nxt) {
           required: false
         }]
       }));
-    },
+    },*/
   });
 
   modals.register('transactionCreate', { 

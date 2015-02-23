@@ -64,6 +64,7 @@ module.controller('TransactionCreateModalController', function(items, $modalInst
         function (secret) {
 
           $scope.items.senderRS = $scope.items.senderRS || secret.sender;
+          $scope.items.secretPhrase = secret.secretPhrase
           args                  = angular.extend(args, $scope.items.createArguments($scope.items));          
 
           var message = null, type = null;
@@ -143,47 +144,65 @@ module.controller('TransactionCreateModalController', function(items, $modalInst
                 return;
               }
 
-              progress.setMessage('Signing Transaction');
-              var signature   = api.crypto.signBytes(data.unsignedTransactionBytes, converters.stringToHexString(secretPhrase));
+              /* Secretphrase was send to the server */
+              if (args.secretPhrase) {
+                progress.animateProgress().then(
+                  function () {
+                    //new Audio('images/tada.mp3').play();
+                    new Audio('images/beep.wav').play();
+                    progress.setMessage('Operation complete');
+                    progress.enableCloseBtn();
+                    progress.onclose = function () {
+                      $modalInstance.close($scope.items);
+                    };
+                  }
+                );
+              }
 
-              if (!api.crypto.verifyBytes(signature, data.unsignedTransactionBytes, publicKey)) {
-                var msg = i18n.format('error_signature_verification_client');
-                progress.setErrorMessage(msg);
-                progress.enableCloseBtn();
-                return;
-              } 
+              /* Must sign the txn client side */
               else {
-                var payload = api.verifyAndSignTransactionBytes(data.unsignedTransactionBytes, signature, 
-                                  args.requestType, args, api.type, api.engine.constants());
-                if (!payload) {
-                  var msg = i18n.format('error_signature_verification_server');
+                progress.setMessage('Signing Transaction');
+                var signature   = api.crypto.signBytes(data.unsignedTransactionBytes, converters.stringToHexString(secretPhrase));
+
+                if (!api.crypto.verifyBytes(signature, data.unsignedTransactionBytes, publicKey)) {
+                  var msg = i18n.format('error_signature_verification_client');
                   progress.setErrorMessage(msg);
                   progress.enableCloseBtn();
                   return;
                 } 
-
-                var fullHash = api.crypto.calculateFullHash(data.unsignedTransactionBytes, signature);
-
-                progress.setMessage('Broadcasting Transaction');
-                api.engine.socket().callAPIFunction({ requestType: 'broadcastTransaction', transactionBytes: payload }).then(
-                  function (data) {
-                    progress.animateProgress().then(
-                      function () {
-                        //new Audio('images/tada.mp3').play();
-                        new Audio('images/beep.wav').play();
-                        progress.setMessage('Transaction sent successfully');
-                        progress.enableCloseBtn();
-                        progress.onclose = function () {
-                          $modalInstance.close($scope.items);
-                        };
-                      }
-                    );                        
-                  },
-                  function (data) {
-                    progress.setMessage(JSON.stringify(data));
+                else {
+                  var payload = api.verifyAndSignTransactionBytes(data.unsignedTransactionBytes, signature, 
+                                    args.requestType, args, api.type, api.engine.constants());
+                  if (!payload) {
+                    var msg = i18n.format('error_signature_verification_server');
+                    progress.setErrorMessage(msg);
                     progress.enableCloseBtn();
-                  }
-                )
+                    return;
+                  } 
+
+                  var fullHash = api.crypto.calculateFullHash(data.unsignedTransactionBytes, signature);
+
+                  progress.setMessage('Broadcasting Transaction');
+                  api.engine.socket().callAPIFunction({ requestType: 'broadcastTransaction', transactionBytes: payload }).then(
+                    function (data) {
+                      progress.animateProgress().then(
+                        function () {
+                          //new Audio('images/tada.mp3').play();
+                          new Audio('images/beep.wav').play();
+                          progress.setMessage('Transaction sent successfully');
+                          progress.enableCloseBtn();
+                          progress.onclose = function () {
+                            $modalInstance.close($scope.items);
+                          };
+                        }
+                      );                        
+                    },
+                    function (data) {
+                      progress.setMessage(JSON.stringify(data));
+                      progress.enableCloseBtn();
+                    }
+                  )
+                }
               }
             },
             function (data) {

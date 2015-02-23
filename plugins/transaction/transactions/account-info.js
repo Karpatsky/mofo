@@ -9,12 +9,13 @@ module.run(function (plugins, modals, $q, $rootScope, nxt) {
   plugin.add({
     label: 'Set account info',
     id: 'setAccountInfo',
-    execute: function (args) {
+    execute: function (senderRS, args) {
       args = args||{};
       return plugin.create(angular.extend(args, {
         title: 'Set account info',
         message: 'Set your publicly visible account name and description',
         requestType: 'setAccountInfo',
+        senderRS: senderRS,
         canHaveRecipient: false,
         createArguments: function (items) {
           return { 

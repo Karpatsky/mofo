@@ -146,7 +146,7 @@
       </div>
 
       <!-- Fee and deadline input control -->
-      <div class="form-group col-xs-12" collapse="!show.advanced"
+      <div class="form-group col-xs-12" ng-if="!items.hideFee" collapse="!show.advanced"
           ng-class="{ 'has-error' : (paymentCreateForm.fee.$invalid && !paymentCreateForm.fee.$pristine) || (paymentCreateForm.deadline.$invalid && !paymentCreateForm.deadline.$pristine) }">
         <div class="row">
           <div class="col-xs-6">
@@ -163,7 +163,7 @@
       </div>      
 
       <!-- Show Fee + Deadline + Message-->
-      <div class="form-group col-xs-12">
+      <div class="form-group col-xs-12" ng-if="!items.hideFee">
         <span class="form-control-static">
           <span ng-show="!items.showMessage && !items.hideMessage">
             <a href ng-click="show.message = !show.message" 

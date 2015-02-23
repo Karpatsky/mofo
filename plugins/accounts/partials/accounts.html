@@ -250,6 +250,9 @@
         <div class="media">
           <a class="pull-left" style="width: 100px">
             <i class="fa fa-user fa-5x text-muted"></i>
+            <div class="pull-right">
+              <span ng-if="account.isForging" tooltip="Account is forging"><i class="fa fa-circle-o-notch fa-spin"></i></span>
+            </div>            
           </a>
           <div class="media-body" style="min-height: 120px">
             <h4 class="media-heading">{{account.name||id_rs}}<small ng-if="account.name"><br>{{id_rs}}</small></h4>
@@ -277,10 +280,14 @@
               <div class="media">
                 <a class="pull-left" style="width: 100px">
                   <i class="fa fa-user fa-5x text-muted"></i>
+                  <div class="pull-right">
+                    <span ng-if="account.isForging" tooltip="Account is forging"><i class="fa fa-circle-o-notch fa-spin"></i></span>
+                  </div>
                 </a>
                 <div class="media-body" style="min-height: 120px">
                   <h4 class="media-heading">{{account.name||id_rs}}<small ng-if="account.name">&nbsp;&nbsp;|&nbsp;&nbsp;{{id_rs}}</small></h4>
                   <p>{{account.description}}<span ng-if="!account.description">no description</span></p>
+                  <!-- <p>{{account|json}}</p> -->
                 </div>
               </div>
             </div>

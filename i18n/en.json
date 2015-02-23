@@ -23,7 +23,7 @@
     "select_option_to_continue": "Please select an option below to continue.",
     "create_new_account":   "Create new account",
     "and_get_free_coins":   "and get <u>free</u> FIMK/NXT",
-    "add_existing_account": "Add existing account",
+    "add_existing_account": "Add existing account (FIMK or NXT)",
     "passphrase_not_needed": "passphrase <u>not</u> required",
     "let_me_browse":        "No thanks, just let me browse around",
     "dashboard":            "Dashboard",
