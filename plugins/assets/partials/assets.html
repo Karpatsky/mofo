@@ -57,7 +57,7 @@
 
     <div ng-if="paramSection=='pulse'">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-7">
           <div class="media">
             <a class="pull-left" style="width: 100px">
               <i class="fa fa-pie-chart fa-5x text-muted"></i>
@@ -71,6 +71,19 @@
               </h4>
               <p>{{assetDescription}}<span ng-if="!assetDescription">no description</span></p>
             </div>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <a href class="pull-right" ng-init="hideTable=false" ng-click="hideTable=!hideTable">Hide</a>
+          <div  collapse="hideTable">
+            <table class="table table-condensed">
+              <tr><td>Name</td><td colspan="3">{{assetName}}</td></tr>
+              <tr><td>Id</td><td colspan="3"><a ng-href="#/assets/{{paramEngine}}/{{asset}}/pulse">{{asset}}</a></td></tr>
+              <tr><td>Issuer</td colspan="3"><td><a ng-href="#/accounts/{{assetIssuerRS}}/pulse/latest">{{assetIssuerName||assetIssuerRS}}</a></td></tr>
+              <tr><td>Type</td><td colspan="3">private</td></tr>            
+              <tr><td>Quantity</td><td>{{assetQuantity}}</td><td>Decimals</td><td>{{assetDecimals}}</td></tr>
+              <tr><td>Trades</td><td>{{assetTrades}}</td><td>Transfers</td><td>{{assetTransfers}}</td></tr>
+            </table>
           </div>
         </div>
       </div>

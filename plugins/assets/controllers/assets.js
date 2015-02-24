@@ -52,7 +52,6 @@ module.controller('AssetsPlugin', function($scope, $rootScope, $location, $route
   $scope.assetTrades      = '';
   $scope.assetAccounts    = '';
   $scope.assetTransfers   = '';
-  $scope.assetComments    = [];
 
   $scope.accounts         = {};
 
