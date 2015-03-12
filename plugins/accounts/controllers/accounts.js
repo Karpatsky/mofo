@@ -286,7 +286,11 @@ module.controller('AccountsPlugin', function($location, $q, $scope, modals, $rou
   }
 
   $scope.sendMoney = function () {
-    plugins.get('transaction').get('sendMoney').execute($scope.id_rs);
+    plugins.get('transaction').get('tipUser').execute({ recipient: $scope.id_rs });
+  }
+
+  $scope.sendMessage = function () {
+    plugins.get('transaction').get('accountMessage').execute({ recipient: $scope.id_rs });
   }
 
   $scope.receiveMoney = function () {
@@ -316,7 +320,7 @@ module.controller('AccountsPlugin', function($location, $q, $scope, modals, $rou
         break;
       }
       default: {
-        plugins.get('transaction').get(id).execute($scope.id_rs);
+        plugins.get('transaction').get(id).execute($scope.id_rs, {});
         break;
       }
     }

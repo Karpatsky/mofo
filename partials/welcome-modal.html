@@ -81,7 +81,7 @@
               <button class="btn btn-block btn-default btn-lg" ng-click="setEngineType('TYPE_FIM')" 
               ng-class="{'btn-success': items.engineType == 'TYPE_FIM'}"><b><u>FIMK</u></b></button>
             </div>
-            <div class="col-xs-6">
+            <div class="col-xs-6" ng-if="enableDualEngines">
               <button class="btn btn-block btn-default btn-lg" ng-click="setEngineType('TYPE_NXT')" 
               ng-class="{'btn-success': items.engineType == 'TYPE_NXT'}"><b><u>NXT</u></b></button>
             </div>
@@ -160,7 +160,7 @@
     <div ng-if="items.state==6" class="col-xs-12">
       <div>
         <h3 class="text-center" translate="translate.add_existing_account"></h3>
-        <p>Add your existing FIMK or NXT account.</p>
+        <p>Add your existing FIMK <span ng-if="enableDualEngines">or NXT</span> account.</p>
         <p>
           <form accept-charset="UTF-8" role="form" name="addAccountForm" novalidate>
             <div class="form-group" ng-class="{ 'has-error' : !addAccountForm.$valid && !addAccountForm.$pristine }">
@@ -194,7 +194,7 @@
       </div>
       <div class="row" ng-init="saveEnabled=false">
         <div class="col-xs-6">
-          <a class="btn btn-block btn-default" href ng-click="items.state=4" translate="translate.back"></a>
+          <a class="btn btn-block btn-default" href ng-click="items.state=6" translate="translate.back"></a>
         </div>
         <div class="col-xs-6">
           <a class="btn btn-block btn-success" href ng-click="saveExistingAccount()" translate="translate.save"></a>

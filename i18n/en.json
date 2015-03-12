@@ -16,6 +16,16 @@
   "language":               "Language",
 
   "translate": {
+    "dashboard_explained":  "<p><h3>This is your dashboard.</h3></p><p>On it you will find all combined activity of all accounts that you follow.<br>To follow an account click \"Follow user\" when you are on that accounts page.<br>To stop following an account click \"Stop following user\" when on that accounts page.</p>",
+    "send_message":         "Send message",
+    "server":               "Server",
+    "config":               "Config",
+    "console":              "Console",
+    "start_server":         "Start server",
+    "stop_server":          "Stop server",
+    "server_is_running":    "{{symbol}} server is <b class=\"text-success\">running</b>",
+    "server_is_off":        "{{symbol}} server is <b class=\"text-danger\">off</b>",
+    "no_thanks":            "No thanks",
     "selected_language":    "Selected language is {{name}}",
     "available_languages":  "Available languages",
     "continue_with_lang":   "Continue in {{name}}",
@@ -134,7 +144,9 @@
     "send":                 "Send",
     "load_more_posts":      "Load more posts",
     "no_activities":        "There are no activities for {{user}}",
-    "write_post":           "Write post"
+    "write_post":           "Write post",
+    "fim_server":           "FIM server",
+    "nxt_server":           "NXT server"
   },
 
   "filter": {

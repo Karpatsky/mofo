@@ -19,6 +19,7 @@ module.run(function (plugins, modals, $q, $rootScope, nxt) {
         hideMessage: true,
         hideSender: true,
         hideFee: true,
+        forceLocal: true,
         createArguments: function (items) {
           return {
             secretPhrase: items.secretPhrase

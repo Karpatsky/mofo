@@ -350,7 +350,7 @@
                   <tr ng-repeat="b in provider.entities">
                     <td>{{b.height}}</td>
                     <td>{{b.date}}</td>
-                    <td><a ng-href="#/accounts/{{b.generator}}/pulse/latest">{{b.generator}}</a></td>
+                    <td><a ng-href="#/accounts/{{b.generator}}/activity/latest">{{b.generator}}</a></td>
                     <td>{{b.numberOfTransactions}}</td>
                     <td>{{b.totalAmountNXT}}</td>
                     <td>{{b.totalFeeNXT}}</td>
@@ -381,7 +381,7 @@
               </thead>
               <tbody>
                 <tr ng-repeat="f in provider.forgers">
-                  <td><a ng-href="#/accounts/{{f.accountRS}}/pulse/latest">{{f.accountRS}}</td>
+                  <td><a ng-href="#/accounts/{{f.accountRS}}/activity/latest">{{f.accountRS}}</td>
                   <td>{{f.accountName}}</td>
                   <td>{{f.count}}</td>
                   <td>{{f.totalFeeNXT}}</td>
@@ -410,9 +410,9 @@
                 <tbody>
                   <tr ng-repeat="a in provider.entities">
                     <td>{{a.name}}</td>
-                    <td><a ng-href="#/assets/{{paramEngine}}/{{a.asset}}/pulse">{{a.asset}}</a></td>
+                    <td><a ng-href="#/assets/{{paramEngine}}/{{a.asset}}/trade">{{a.asset}}</a></td>
                     <td>{{a.quantity}}</td>
-                    <td><a ng-href="#/accounts/{{a.accountRS}}/pulse/latest">{{a.accountRS}}</a></td>
+                    <td><a ng-href="#/accounts/{{a.accountRS}}/activity/latest">{{a.accountRS}}</a></td>
                     <td>{{a.numberOfTrades}}</td>
                     <td>{{a.numberOfTransfers}}</td>
                     <td>{{a.numberOfAccounts}}</td>

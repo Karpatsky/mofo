@@ -15,7 +15,6 @@
     DEBUG = false;
     </script>
 
-
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="shortcut icon" href="/favicon.ico?v=6" />
 
@@ -24,7 +23,7 @@
 
     <link type="text/css" rel="stylesheet" href="amstockchart/amcharts/style.css" />
     
-    <link rel="stylesheet" href="styles/main.49282ea4.css">
+    <link rel="stylesheet" href="styles/main.48bdf420.css">
 
     <style>
       a[title="JavaScript charts"] {
@@ -44,7 +43,7 @@
         console.log('=========================================')
     </script>-->
 
-     <script src="scripts/scripts.44dfb93e.js"></script>
+    <script src="scripts/scripts.8e299fee.js"></script>
 
     <!-- Nxt engine (extends system) -->
     <!--<script src="plugins/nxt-engine/config.js"></script>
@@ -54,6 +53,8 @@
 
   </head>
   <body ng-class="{'showing-landing-page': showingLandingPage}">
+
+    <audio preload="auto"><source src="images/beep.wav"></audio>
 
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -68,11 +69,17 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" ng-href="#/start"><i class="fa fa-home text-success"></i>&nbsp;<strong>Mofo</strong>Wallet&nbsp;<span class="text-danger"><b>{{isTestnet? 'TEST' : 'BETA'}}</b></span></a>
-        <!-- <a class="navbar-brand" ng-href="#/home/fim/latest"><strong>My</strong>Bit<strong>Work</strong></a> -->
       </div>
 
       <div class="collapse navbar-collapse navbar-default" id="navbar">
         <ul class="nav navbar-nav" nav-menu="active">
+          <li>
+            <a href="javascript:window.history.back()"><i class="fa fa-arrow-left"></i></a>
+          </li>
+          <li>
+            <a href="javascript:window.history.forward()"><i class="fa fa-arrow-right"></i></a>
+          </li>
+
           <!-- <li route-active="start/">
             <a ng-href="#/start"><i class="fa fa-home text-success"></i>&nbsp;&nbsp;{{'translate.home' | translate}}</a>
           </li> -->
@@ -85,7 +92,7 @@
             <a ng-href="#/activity/{{paramEngine}}/activity/latest"><i class="fa fa-cloud"></i>&nbsp;&nbsp;{{'translate.explorer' | translate}}</a>
           </li>
 
-          <li route-active="activity/">
+          <li route-active="activity/{{paramEngine}}/assets">
             <a ng-href="#/activity/{{paramEngine}}/assets/latest"><i class="fa fa-line-chart"></i>&nbsp;&nbsp;Assets</a>
           </li>          
         </ul>
@@ -106,7 +113,7 @@
             </ul>
           </li> -->
 
-          <li route-active="settings">
+          <li style="margin-right: 10px" route-active="settings">
             <a href class="dropdown-toggle" data-toggle="dropdown">
               <span class="glyphicon glyphicon-wrench"></span>&nbsp;&nbsp;{{'settings' | translate}}&nbsp;<span class="caret"></span>
             </a>
@@ -116,8 +123,11 @@
                 <a ng-href="#/settings/themes"><span class="glyphicon glyphicon-fire"></span>&nbsp;&nbsp;{{'themes' | translate}}</a> 
               </li>
               <li route-active ng-if="isNodeJS">
-                <a ng-href="#/settings/full-node"><span class="glyphicon glyphicon-hdd"></span>&nbsp;&nbsp;{{'full_node' | translate}}</a> 
+                <a ng-href="#/server/fim/console"><span class="glyphicon glyphicon-hdd"></span>&nbsp;&nbsp;{{'translate.fim_server' | translate}}</a> 
               </li>
+              <li route-active ng-if="isNodeJS && enableDualEngines">
+                <a ng-href="#/server/fim/console"><span class="glyphicon glyphicon-hdd"></span>&nbsp;&nbsp;{{'translate.nxt_server' | translate}}</a>
+              </li>              
               <li route-active>
                 <a ng-href="#/settings/wallet"><span class="glyphicon glyphicon-briefcase"></span>&nbsp;&nbsp;{{'wallet' | translate}}</a> 
               </li>
@@ -141,7 +151,7 @@
             </ul>
           </li> 
 
-          <li style="margin-right: 10px">
+          <li style="margin-right: 10px" ng-if="multiLanguage">
             <a href class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-globe text-danger"></i>&nbsp;&nbsp;{{'language'|translate}}&nbsp;<span class="caret"></span>
             </a>
@@ -216,11 +226,11 @@
       </div>
     </nav>
 
-    <div class="container-fluid">
+    <div class="container-fluid" style="padding-bottom: 50px">
       <div ng-view></div>
     </div>
 
-    <nav ng-if="isNodeJS" class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+    <nav ng-if="isNodeJS" class="navbar navbar-default navbar-fixed-bottom">
       <div class="container-fluid">
         <div ng-repeat="p in systemPlugins">
           <ng-include src="p.templateURL"></ng-include>

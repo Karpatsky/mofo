@@ -10,6 +10,11 @@
 'use strict';
 var module = angular.module('fim.base');
 module.run(function (plugins, modals, $q, $rootScope, nxt) {
+
+  /* disable until monetary system is ready */
+  if (!$rootScope.MONETARY_SYSTEM) {
+    return;
+  }
   
   var plugin = plugins.get('transaction');
 

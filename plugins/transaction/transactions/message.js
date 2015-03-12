@@ -6,6 +6,10 @@ module.run(function (plugins, modals, $q, $rootScope, nxt) {
   
   var plugin = plugins.get('transaction');
 
+  /**
+   * Sends a message to recipient where the sender of the message can be selected 
+   * from a menu or entered by hand.
+   */
   plugin.add({
     label: 'Send Message',
     id: 'accountMessage',
@@ -17,7 +21,7 @@ module.run(function (plugins, modals, $q, $rootScope, nxt) {
         message: 'Send an encrypted (private) message to recipient',
         requestType: 'sendMessage',
         hideMessage: true,
-        hideSender: true,
+        editSender: true,
         createArguments: function (items) {
           return { 
             recipient: nxt.util.convertRSAddress(items.recipient),
@@ -36,7 +40,58 @@ module.run(function (plugins, modals, $q, $rootScope, nxt) {
             if (plugin.validators.address(text) === false) { this.errorMsg = 'Invalid address'; }
             return ! this.errorMsg;
           },
-          required: false
+          required: false,
+          readonly: true
+        }, {
+          label: 'Message',
+          name: 'message',
+          type: 'textarea',
+          value: args.message||'',
+          validate: function (text) { 
+            this.errorMsg = null;
+            if (!text) { this.errorMsg = null; }
+            else {
+              if (plugin.getByteLen(text) > 1000) { this.errorMsg = 'To much characters'; }
+            }
+            return ! this.errorMsg;
+          },
+          required: true
+        }]
+      }));
+    }
+  });
+
+  /* Sends a message from a preset sender, allows the recipient to be edited */
+  plugin.add({
+    label: 'Send Message',
+    id: 'sendMessage',
+    execute: function (senderRS, args) {
+      args = args||{};
+      return plugin.create(angular.extend(args, {
+        title: 'Send Message',
+        message: 'Send an encrypted (private) message to recipient',
+        requestType: 'sendMessage',
+        hideMessage: true,
+        senderRS: senderRS,
+        createArguments: function (items) {
+          return { 
+            recipient: nxt.util.convertRSAddress(items.recipient),
+            sender: nxt.util.convertRSAddress(items.senderRS),
+            txnMessageType: 'to_recipient',
+            txnMessage: items.message
+          }
+        },
+        fields: [{
+          label: 'Recipient',
+          name: 'recipient',
+          type: 'text',
+          value: args.recipient||'',
+          validate: function (text) { 
+            this.errorMsg = null;
+            if (plugin.validators.address(text) === false) { this.errorMsg = 'Invalid address'; }
+            return ! this.errorMsg;
+          },
+          required: true
         }, {
           label: 'Message',
           name: 'message',

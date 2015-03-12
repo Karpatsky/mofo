@@ -55,14 +55,14 @@ module.run(function (modals, plugins, $timeout, startupService) {
     templateUrl: 'plugins/startup/partials/startup.html', 
     controller: 'StartupModalController' 
   });
-  modals.register('startNXTServerModal', { 
-    templateUrl: 'plugins/startup/partials/start-server.html', 
-    controller: 'StartServerModalController' 
-  });
-  modals.register('startFIMServerModal', { 
-    templateUrl: 'plugins/startup/partials/start-server.html', 
-    controller: 'StartServerModalController' 
-  });
+  // modals.register('startNXTServerModal', { 
+  //   templateUrl: 'plugins/startup/partials/start-server.html', 
+  //   controller: 'StartServerModalController' 
+  // });
+  // modals.register('startFIMServerModal', { 
+  //   templateUrl: 'plugins/startup/partials/start-server.html', 
+  //   controller: 'StartServerModalController' 
+  // });
 
   // $timeout(function () { plugins.get('startup').showModal() }, 1000, false);  
   // $timeout(function () { 

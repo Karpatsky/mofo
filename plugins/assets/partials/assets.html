@@ -1,14 +1,19 @@
 <div ng-init="offCanvas=false" class="row row-offcanvas row-offcanvas-left" ng-class="{active: offCanvas}">
   <div class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar">
     <ul class="nav navbar-stacked">
+      <li role="presentation" route-active="assets/{{paramEngine}}/{{paramAsset}}/trade">
+        <a href="#/assets/{{paramEngine}}/{{paramAsset}}/trade" translate-cloak>
+          <i class="fa fa-line-chart"></i>&nbsp;&nbsp;<span translate="translate.trade" />
+        </a>
+      </li>
       <li role="presentation" route-active="assets/{{paramEngine}}/{{paramAsset}}/pulse">
         <a href="#/assets/{{paramEngine}}/{{paramAsset}}/pulse" translate-cloak>
           <i class="fa fa-heartbeat"></i>&nbsp;&nbsp;<span translate="translate.pulse" />
         </a>
       </li>
-      <li role="presentation" route-active="assets/{{paramEngine}}/{{paramAsset}}/trade">
-        <a href="#/assets/{{paramEngine}}/{{paramAsset}}/trade" translate-cloak>
-          <i class="fa fa-line-chart"></i>&nbsp;&nbsp;<span translate="translate.trade" />
+      <li role="presentation" route-active="assets/{{paramEngine}}/{{paramAsset}}/private">
+        <a href="#/assets/{{paramEngine}}/{{paramAsset}}/private" translate-cloak>
+          <i class="fa fa-university"></i>&nbsp;&nbsp;<span>Private</span>
         </a>
       </li>
       <li role="presentation" >
@@ -57,30 +62,23 @@
 
     <div ng-if="paramSection=='pulse'">
       <div class="row">
-        <div class="col-md-7">
+        <div class="col-md-6">
           <div class="media">
             <a class="pull-left" style="width: 100px">
               <i class="fa fa-pie-chart fa-5x text-muted"></i>
             </a>
             <div class="media-body" style="min-height: 120px">
-              <h4 class="media-heading">{{assetName}}
-                <small><br>
-                  <a ng-href="#/assets/{{paramEngine}}/{{asset}}/pulse">{{asset}}</a> |
-                  <a ng-href="#/accounts/{{assetIssuerRS}}/pulse/latest">{{assetIssuerName||assetIssuerRS}}</a>
-                </small>
-              </h4>
+              <h4 class="media-heading">{{assetName}}</h4>
               <p>{{assetDescription}}<span ng-if="!assetDescription">no description</span></p>
             </div>
           </div>
         </div>
-        <div class="col-md-5">
-          <a href class="pull-right" ng-init="hideTable=false" ng-click="hideTable=!hideTable">Hide</a>
-          <div  collapse="hideTable">
+        <div class="col-md-6">
+          <div>
             <table class="table table-condensed">
-              <tr><td>Name</td><td colspan="3">{{assetName}}</td></tr>
-              <tr><td>Id</td><td colspan="3"><a ng-href="#/assets/{{paramEngine}}/{{asset}}/pulse">{{asset}}</a></td></tr>
-              <tr><td>Issuer</td colspan="3"><td><a ng-href="#/accounts/{{assetIssuerRS}}/pulse/latest">{{assetIssuerName||assetIssuerRS}}</a></td></tr>
-              <tr><td>Type</td><td colspan="3">private</td></tr>            
+              <tr><td>Id</td><td colspan="3"><a ng-href="#/assets/{{paramEngine}}/{{paramAsset}}/trade">{{paramAsset}}</a></td></tr>
+              <tr><td>Issuer</td colspan="3"><td><a ng-href="#/accounts/{{assetIssuerRS}}/activity/latest">{{assetIssuerName||assetIssuerRS}}</a></td></tr>
+              <tr><td>Type</td><td colspan="3"></td></tr>            
               <tr><td>Quantity</td><td>{{assetQuantity}}</td><td>Decimals</td><td>{{assetDecimals}}</td></tr>
               <tr><td>Trades</td><td>{{assetTrades}}</td><td>Transfers</td><td>{{assetTransfers}}</td></tr>
             </table>
@@ -148,7 +146,7 @@
                           </div>                                
                         </a>
                         <div class="media-body">
-                          <h4 class="media-heading"><small><a ng-href="#/accounts/{{c.senderRS}}/pulse/latest">{{c.senderName||c.senderRS}}</a>&nbsp;&nbsp;{{c.date}}&nbsp;&nbsp;
+                          <h4 class="media-heading"><small><a ng-href="#/accounts/{{c.senderRS}}/activity/latest">{{c.senderName||c.senderRS}}</a>&nbsp;&nbsp;{{c.date}}&nbsp;&nbsp;
                             <a href><i class="fa fa-twitter text-muted"></i></a>&nbsp;&nbsp;
                             <a href><i class="fa fa-facebook text-muted"></i></a>&nbsp;&nbsp;
                             <a href><i class="fa fa-linkedin text-muted"></i></a>&nbsp;&nbsp;
@@ -186,19 +184,19 @@
         <div class="col-md-12">
           <div>
             <h4 class="account-header" style="margin-top: 5px">
-              {{assetName}}
+              {{assetName}}&nbsp;&nbsp;
+              <span>
+                <small>
+                  <a href="#/assets/{{paramEngine}}/{{paramAsset}}/trade">
+                    <i class="fa fa-link"></i>&nbsp;&nbsp;{{paramAsset}}
+                  </a>
+                </small>
+              </span>
               <span class="pull-right">
                 <b>{{trades.entities[0].price}}</b>
-                <span style="color:green">&nbsp;+ 0.98%</span><br>
+                <!-- <span style="color:green">&nbsp;+ 0.98%</span><br> -->
               </span>
-            </h4>
-            <span>
-              <small>
-                <a href="#/assets/{{paramEngine}}/{{paramAsset}}/trade">
-                  <i class="fa fa-link"></i>&nbsp;&nbsp;{{paramAsset}}
-                </a>
-              </small>
-            </span>            
+            </h4>        
           </div>
         </div>
       </div>
@@ -260,7 +258,7 @@
                                 tooltip="{{ 'translate.cancel_own_order' | translate }}" style="cursor:pointer" class="text-muted">
                             <i class="fa fa-hand-o-left"></i>
                           </span>
-                          <a ng-if="!accounts[o.accountRS]" ng-href="#/accounts/{{o.accountRS}}/pulse/latest"
+                          <a ng-if="!accounts[o.accountRS]" ng-href="#/accounts/{{o.accountRS}}/activity/latest"
                               tooltip="{{o.accountRS}}" class="text-muted">
                             <i class="fa fa-user"></i>
                           </a>
@@ -322,7 +320,7 @@
                                 tooltip="{{ 'translate.cancel_own_order' | translate }}" style="cursor:pointer" class="text-muted">
                             <i class="fa fa-hand-o-left"></i>
                           </span>
-                          <a ng-if="!accounts[o.accountRS]" ng-href="#/accounts/{{o.accountRS}}/pulse/latest"
+                          <a ng-if="!accounts[o.accountRS]" ng-href="#/accounts/{{o.accountRS}}/activity/latest"
                               tooltip="{{o.accountRS}}" class="text-muted">
                             <i class="fa fa-user"></i>
                           </a>
@@ -386,8 +384,8 @@
                         <td>{{o.price}}</td>
                         <td>{{o.quantity}}</td>
                         <td>{{o.total}}</td>
-                        <td class="hidden-xs"><a ng-href="#/accounts/{{o.sellerRS}}/pulse/latest">{{o.sellerName||o.sellerRS}}</a></td>
-                        <td class="hidden-xs"><a ng-href="#/accounts/{{o.buyerRS}}/pulse/latest">{{o.buyerName||o.buyerRS}}</a></td>
+                        <td class="hidden-xs"><a ng-href="#/accounts/{{o.sellerRS}}/activity/latest">{{o.sellerName||o.sellerRS}}</a></td>
+                        <td class="hidden-xs"><a ng-href="#/accounts/{{o.buyerRS}}/activity/latest">{{o.buyerName||o.buyerRS}}</a></td>
                       </tr>
                     </tbody>
                   </table>
@@ -448,7 +446,7 @@
                         <td>{{o.quantity}}</td>                      
                         <td>{{o.price}}</td>
                         <td>{{o.total}}</td>
-                        <td class="hidden-xs"><a ng-href="#/accounts/{{a.accountRS}}/pulse/latest">{{o.accountName||o.accountRS}}</a></td>
+                        <td class="hidden-xs"><a ng-href="#/accounts/{{a.accountRS}}/activity/latest">{{o.accountName||o.accountRS}}</a></td>
                         <td><a href ng-click="cancelOrder(o)">Cancel</a></td>
                       </tr>
                     </tbody>

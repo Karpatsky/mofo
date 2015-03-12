@@ -1,7 +1,7 @@
 (function () {
 module.controller('AssetsPlugin', function($scope, $rootScope, $location, $routeParams, nxt, plugins,
   ChartsProvider, AskOrderProvider, BidOrderProvider, AssetInfoProvider, TradesProvider, AssetPostProvider, 
-  accountsService, MyOrdersProvider) {
+  accountsService, MyOrdersProvider, PrivateAccountsProvider) {
 
   $rootScope.paramEngine  = $routeParams.engine;
   $scope.paramEngine      = $routeParams.engine;
@@ -104,6 +104,11 @@ module.controller('AssetsPlugin', function($scope, $rootScope, $location, $route
         $scope.trades = new TradesProvider(api, $scope, 10, $scope.paramAsset);
         $scope.trades.reload();
         break;
+      }
+      case 'private': {
+        $scope.provider = new PrivateAccountsProvider(api, $scope, 10, $scope.asset);
+        $scope.provider.reload();
+        break
       }
     }
   }

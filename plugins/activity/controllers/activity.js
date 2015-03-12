@@ -9,7 +9,7 @@ module.controller('ActivityPlugin', function($scope, $location, $routeParams, nx
   $scope.paramEngine      = $routeParams.engine;
   $scope.paramSection     = $routeParams.section;
   $scope.paramPeriod      = $routeParams.period;
-  $scope.paramTimestamp   = nxt.util.convertToEpochTimestamp(Date.now()) + (24 * 60 * 60);
+  $scope.paramTimestamp   = 0;//nxt.util.convertToEpochTimestamp(Date.now()) + (24 * 60 * 60);
   $scope.statistics       = {};
   $scope.blockstate       = {};
   $scope.breadcrumb       = [];
@@ -81,8 +81,10 @@ module.controller('ActivityPlugin', function($scope, $location, $routeParams, nx
   $scope.blockstate['TYPE_FIM'] = new BlockStateProvider(nxt.fim(), $scope);
   $scope.blockstate['TYPE_FIM'].load();
 
-  $scope.blockstate['TYPE_NXT'] = new BlockStateProvider(nxt.nxt(), $scope);
-  $scope.blockstate['TYPE_NXT'].load();
+  if ($rootScope.enableDualEngines) {
+    $scope.blockstate['TYPE_NXT'] = new BlockStateProvider(nxt.nxt(), $scope);
+    $scope.blockstate['TYPE_NXT'].load();
+  }
 
   switch ($scope.paramSection) {
     case 'activity':

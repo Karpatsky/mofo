@@ -134,8 +134,10 @@ module.controller('TransactionCreateModalController', function(items, $modalInst
       plugins.get('alerts').progress({ title: "Please wait" }).then(
         function (progress) {
 
+          var socket = args.forceLocal ? api.engine.localSocket() : api.engine.socket();
+
           progress.setMessage('Creating Transaction');
-          api.engine.socket().callAPIFunction(args).then(
+          socket.callAPIFunction(args).then(
             function (data) {
 
               if (data.error || data.errorDescription) {
@@ -183,10 +185,11 @@ module.controller('TransactionCreateModalController', function(items, $modalInst
                   var fullHash = api.crypto.calculateFullHash(data.unsignedTransactionBytes, signature);
 
                   progress.setMessage('Broadcasting Transaction');
-                  api.engine.socket().callAPIFunction({ requestType: 'broadcastTransaction', transactionBytes: payload }).then(
+                  socket.callAPIFunction({ requestType: 'broadcastTransaction', transactionBytes: payload }).then(
                     function (data) {
                       progress.animateProgress().then(
                         function () {
+
                           //new Audio('images/tada.mp3').play();
                           new Audio('images/beep.wav').play();
                           progress.setMessage('Transaction sent successfully');

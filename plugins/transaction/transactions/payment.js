@@ -9,7 +9,6 @@ module.run(function (plugins, modals, $q, $rootScope, nxt) {
   plugin.add({
     label: 'Send Money',
     id: 'sendMoney',
-    exclude: true,
     execute: function (senderRS, args) {
       args = args||{};
       return plugin.create(angular.extend(args, {
@@ -19,10 +18,14 @@ module.run(function (plugins, modals, $q, $rootScope, nxt) {
         requestType: 'sendMoney',
         canHaveRecipient: true,
         createArguments: function (items) {
-          return {
+          var _args = {
             recipient: nxt.util.convertRSAddress(items.recipient),
             amountNQT: nxt.util.convertToNQT(items.amountNXT)
           }
+          if (items.recipientPublicKey) {
+            _args.recipientPublicKey = items.recipientPublicKey;
+          }
+          return _args;
         },
         fields: [{
           label: 'Recipient',
@@ -34,6 +37,12 @@ module.run(function (plugins, modals, $q, $rootScope, nxt) {
             if (plugin.validators.address(text) === false) { this.errorMsg = 'Invalid address'; }
             return ! this.errorMsg;
           },
+          required: true
+        }, {
+          label: 'Recipient public key (optional)',
+          name: 'recipientPublicKey',
+          type: 'text',
+          value: args.recipientPublicKey||'',
           required: false
         }, {
           label: 'Amount',
@@ -53,16 +62,20 @@ module.run(function (plugins, modals, $q, $rootScope, nxt) {
     execute: function (args) {
       args = args||{};
       return plugin.create(angular.extend(args, {
-        title: 'Tip User',
-        message: 'Send this user a tip',
+        title: 'Send Money',
+        message: 'Sends money to recipient',
         editSender: true,
         requestType: 'sendMoney',
         canHaveRecipient: true,
         createArguments: function (items) {
-          return {
+          var _args = {
             recipient: nxt.util.convertRSAddress(items.recipient),
             amountNQT: nxt.util.convertToNQT(items.amountNXT)
           }
+          if (items.recipientPublicKey) {
+            _args.recipientPublicKey = items.recipientPublicKey;
+          }
+          return _args;
         },
         fields: [{
           label: 'Recipient',
@@ -70,6 +83,12 @@ module.run(function (plugins, modals, $q, $rootScope, nxt) {
           type: 'text',
           value: args.recipient||'',
           readonly: true
+        }, {
+          label: 'Recipient public key',
+          name: 'recipientPublicKey',
+          type: 'text',
+          value: args.recipientPublicKey||'',
+          required: false
         }, {
           label: 'Amount',
           name: 'amountNXT',

@@ -20,7 +20,7 @@
         <hr class="stacked-divider">
       </li> 
       <li ng-repeat="a in accounts">
-        <a ng-href="#/accounts/{{a.id_rs}}/pulse/latest">{{a.name||a.id_rs}}</a>
+        <a ng-href="#/accounts/{{a.id_rs}}/activity/latest">{{a.name||a.id_rs}}</a>
       </li>
       <li>
         <a href ng-click="addAccount()">
@@ -194,7 +194,10 @@
         
         <!-- section: inbox and activity -->
         <div ng-if="paramSection == 'activity' || paramSection == 'inbox'">
-          <div infinite-scroll="transactionProvider.loadMore()" infinite-scroll-distance="0">
+          <div ng-if="transactionProvider.entities == 0">
+            <div class="well" translate="translate.dashboard_explained"></div>
+          </div>
+          <div ng-if="transactionProvider.entities > 0" infinite-scroll="transactionProvider.loadMore()" infinite-scroll-distance="0">
             <table class="table table-striped activity-table">
               <tbody>
                 <tr ng-repeat="a in transactionProvider.entities" ng-class="{ success: a.confirmations == 0 }">
