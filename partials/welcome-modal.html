@@ -30,7 +30,7 @@
         <p>The key to your account is a 12 word sentence called a <u>passphrase</u>, if asked for your passphrase remember to enter the words in the same order.</p>
         <p>Make sure you write down your passphrase before you continue.</p>
         <p>
-          <div class="form-group">
+          <div class="form-group" ng-init="generatePassphrase()">
             <label>This is your passphrase - <a href ng-click="generatePassphrase()">click to generate another passphrase</a></label>
             <textarea rows="2" class="form-control" ng-model="items.passphrase" select-on-click></textarea>
           </div>
@@ -168,6 +168,14 @@
               <input type="text" class="form-control" ng-model="items.id_rs" required 
                 ui-validate=" 'isValidID($value)' " ui-validate-watch=" 'items.id_rs' " name="id_rs">
             </div>
+            <div class="form-group">
+              <label>Or enter passphrase here</label>
+              <input type="password" class="form-control" ng-model="items.passphrase" ng-change="passphraseChanged()">
+            </div>
+            <div class="form-group">
+              <label>Account public key (calculated from passphrase)</label>
+              <input type="text" class="form-control" ng-model="items.publicKey">
+            </div>            
           </form>
         </p>
         <br>        
