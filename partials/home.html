@@ -197,7 +197,7 @@
           <div ng-if="transactionProvider.entities == 0">
             <div class="well" translate="translate.dashboard_explained"></div>
           </div>
-          <div ng-if="transactionProvider.entities > 0" infinite-scroll="transactionProvider.loadMore()" infinite-scroll-distance="0">
+          <div ng-if="transactionProvider.entities.length > 0" infinite-scroll="transactionProvider.loadMore()" infinite-scroll-distance="0">
             <table class="table table-striped activity-table">
               <tbody>
                 <tr ng-repeat="a in transactionProvider.entities" ng-class="{ success: a.confirmations == 0 }">
