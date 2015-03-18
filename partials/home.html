@@ -1,6 +1,16 @@
 <div ng-init="offCanvas=false" class="row row-offcanvas row-offcanvas-left" ng-class="{active: offCanvas}">
   <div class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar">
     <ul class="nav navbar-stacked">
+
+      <li ng-if="enableDualEngines">
+        <a ng-href="#/home/fim/activity/latest" translate-cloak>{{ 'home.dashboard' | translate:"{symbol:'FIM'}" }}</a>
+      </li>
+      <li ng-if="enableDualEngines">
+        <a ng-href="#/home/nxt/activity/latest" translate-cloak>{{ 'home.dashboard' | translate:"{symbol:'NXT'}" }}</a>
+      </li>
+      <li ng-if="enableDualEngines">
+        <hr class="stacked-divider">
+      </li> 
       <li route-active="home/">
         <a href="#/home/fim/activity/latest">
           <i class="fa fa-book"></i>&nbsp;&nbsp;{{'translate.activity' | translate}}
@@ -138,28 +148,6 @@
       </button>
     </p>
 
-    <div class="row" ng-if="enableDualEngines">
-      <div class="col-md-12">
-        <ul class="nav nav-tabs">
-          <li role="presentation" route-active="home/fim">
-            <a ng-href="#/home/fim/latest" translate-cloak>{{ 'home.dashboard' | translate:"{symbol:'FIM'}" }}</a>
-          </li>
-          <li role="presentation" route-active="home/nxt">
-            <a ng-href="#/home/nxt/latest" translate-cloak>{{ 'home.dashboard' | translate:"{symbol:'NXT'}" }}</a>
-          </li>
-          <div class="hidden-xs pull-right" ng-show="paramPeriod!='latest'">
-            <span style="font-size: 20px;" class="text-danger">
-              <span translate translate-cloak>home.show_results_before</span>&nbsp;<b>{{paramPeriod}}</b>
-            </span>&nbsp;&nbsp;
-            <a href ng-ref="#/home/{{paramEngine}}/latest">
-              <small>
-                <i class="fa fa-times"></i>&nbsp;<span translate translate-cloak>home.show_latest</span>
-              </small>
-            </a>
-          </div>
-        </ul>
-      </div>
-    </div>
     <div class="row">
       <div class="col-md-12">
         <ol class="breadcrumb">
@@ -189,6 +177,7 @@
         </ol>
       </div>
     </div>
+
     <div class="row">
       <div class="col-md-12">
         

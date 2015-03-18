@@ -166,7 +166,7 @@
             <div class="form-group" ng-class="{ 'has-error' : !addAccountForm.$valid && !addAccountForm.$pristine }">
               <label>Enter account here&nbsp;&nbsp;<span class="text-danger" ng-show="!addAccountForm.$valid && !addAccountForm.$pristine">Invalid address</span></label>
               <input type="text" class="form-control" ng-model="items.id_rs" required 
-                ui-validate=" 'isValidID($value)' " ui-validate-watch=" 'items.id_rs' " name="id_rs">
+                ui-validate=" 'isValidID($value)' " ui-validate-watch=" 'items.id_rs' " name="id_rs" ng-change="accountIDChanged()">
             </div>
             <div class="form-group">
               <label>Or enter passphrase here</label>

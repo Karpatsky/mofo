@@ -10,7 +10,12 @@
         <a href="#/server/fim/config">
           <i class="fa fa-file-text-o"></i>&nbsp;&nbsp;FIMK config
         </a>
-      </li>       
+      </li>
+      <li route-active="server/fim/peers">
+        <a href="#/server/fim/peers">
+          <i class="fa fa-globe"></i>&nbsp;&nbsp;FIMK peers
+        </a>
+      </li>
       <li ng-show="!isRunning['TYPE_FIM']">
         <a href ng-click="startServer('TYPE_FIM')">
           Start server
@@ -31,6 +36,9 @@
           Delete blockchain
         </a>
       </li>
+      <li ng-show="enableDualEngines">
+        <hr class="stacked-divider">
+      </li>      
       <li route-active="server/nxt/console" ng-if="enableDualEngines">
         <a href="#/server/nxt/console">
           <i class="fa fa-desktop"></i>&nbsp;&nbsp;NXT console
@@ -39,6 +47,11 @@
       <li route-active="server/nxt/config" ng-if="enableDualEngines">
         <a href="#/server/nxt/config">
           <i class="fa fa-file-text-o"></i>&nbsp;&nbsp;NXT config
+        </a>
+      </li>
+      <li route-active="server/nxt/peers" ng-if="enableDualEngines">
+        <a href="#/server/nxt/peers">
+          <i class="fa fa-globe"></i>&nbsp;&nbsp;NXT peers
         </a>
       </li>
       <li ng-show="!isRunning['TYPE_NXT']" ng-if="enableDualEngines">
@@ -142,6 +155,36 @@
 
         <!-- see serverConfigTable directive in controllers/server.js -->
         <div server-config-table provider="provider"></div>
+      </div>
+
+      <!-- peers section -->
+      <div ng-if="paramSection=='peers'" class="col-md-12">
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <tbody>
+              <tr>
+                <th>Address</th>
+                <th>State</th>
+                <th>Weight</th>
+                <th>Download</th>
+                <th>Upload</th>
+                <th></th>
+                <th>Blacklisted</th>
+                <th>Last update</th>
+              </tr>
+              <tr ng-repeat="p in provider.peers | slice:0:30" class="{{p.stateClass}}">
+                <td class="text-primary">{{p.address}}</td>
+                <td>{{p.stateStr}}</td>
+                <td>{{p.weightStr}}</td>
+                <td>{{p.downloadedVolumeBytes}} b</td>
+                <td>{{p.uploadedVolumeBytes}} b</td>
+                <td>{{p.application}} - {{p.version}} - {{p.platform}}</td>
+                <td><span ng-show="p.blacklisted"><b>blacklisted</b></span></td>
+                <td>{{p.lastUpdatedStr}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>

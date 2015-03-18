@@ -105,7 +105,7 @@ module.controller('ActivityPlugin', function($scope, $location, $routeParams, nx
       break;
     case 'assets':
       $scope.showFilter = false;
-      $scope.provider = new AllAssetsProvider(api, $scope);
+      $scope.provider = new AllAssetsProvider(api, $scope, 10);
       $scope.provider.reload();
       break;      
     default:

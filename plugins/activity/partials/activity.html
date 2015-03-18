@@ -53,11 +53,11 @@
         </ul>
       </li>
 
-      <li role="presentation" ng-if="enableDualEngines">
+      <li role="presentation" ng-show="enableDualEngines">
         <a href class="text-success" ng-init="nxtCollapse=true" 
-            ng-click="loadStatistics('TYPE_FIM', 'nxtCollapse')">
+            ng-click="loadStatistics('TYPE_NXT', 'nxtCollapse')">
           <b>NXT</b>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;<span>{{blockstate['TYPE_NXT'].height}}</span><br>
-          <span class="text-muted">{{blockstate['TYPE_NXT'].date}}</span>&nbsp;&nbsp;<span class="caret"></span>
+          <span class="text-muted" translate translate-values="{seconds: blockstate['TYPE_NXT'].seconds_ago}">translate.seconds_ago</span>&nbsp;&nbsp;<span class="caret"></span>
         </a>
         <ul class="nav navbar-stacked" collapse="nxtCollapse">
           <li>

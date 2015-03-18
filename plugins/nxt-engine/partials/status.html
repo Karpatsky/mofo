@@ -7,36 +7,44 @@
          this file.
 
          The only way the plugins differ is at the top of the status.js controller. -->
+
     <li>&nbsp;</li>
     <li style="padding-top: 2px">
       <div class="btn-group dropup">
-        <button style="text-align: left; padding-left:10px" type="button" class="btn btn-default navbar-btn" 
-        ui-sref="blocks({engine:'fimk'})">
-          <span>
-            NXT&nbsp;
-            <span ng-if="server_running && !downloading">{{blockheight}}&nbsp;<i class="fa fa-lightbulb-o"></i></span>
-            <span ng-if="server_running &&  downloading">{{blockheight}}&nbsp;<i class="fa fa-cog fa-spin"></i></span>
-            <span ng-if="!server_running">{{blockheight}}</span>
-          </span>
+
+        <a href class="btn btn-default navbar-btn">NXT</a>
+
+        <!-- global network - always displays the height of the connected public node -->              
+        <a style="text-align: left;" class="btn btn-default navbar-btn" 
+            href="#/activity/fim/activity/latest">
+          <i class="fa fa-globe"></i><span>&nbsp;&nbsp;{{provider.remoteheight}}</span>
+        </a>
+
+        <!-- local network - when server is off it displays -->
+        <a style="text-align: left; padding-left:10px" class="btn btn-default navbar-btn" 
+            href="#/server/fim/console">
+          <i class="fa fa-desktop"></i><span ng-show="provider.server_running">&nbsp;&nbsp;{{provider.blockheight}}</span>
           <div style="position: absolute; width: 100%; left: 5px; top: 2px; padding-right: 10px;">
-            <progressbar ng-if="downloading" style="max-height:5px; padding: 0px; border: 0px;" class="progress-striped active" type="default" max="100" value="progress" >&nbsp;</progressbar>
-          </div>       
-        </button>
-        <button type="button" class="btn btn-default navbar-btn dropdown-toggle" data-toggle="dropdown">
+            <progressbar ng-if="provider.downloading" style="max-height:5px; padding: 0px; border: 0px;" class="progress-striped active" 
+            type="default" max="100" value="provider.progress" >&nbsp;</progressbar>
+          </div>
+        </a>
+
+        <!-- <a class="btn btn-default navbar-btn dropdown-toggle" data-toggle="dropdown">
           <span class="caret"></span>
           <span class="sr-only">Toggle Dropdown</span>
-        </button>
+        </a>
         <div class="panel panel-default dropdown-menu">
           <div class="panel-body status-popup">
-            <div>Connected to <strong>{{net_name}}</strong> on port <strong>{{port}}</strong></div>
-            <div ng-if="!server_running">Local server <strong><a href="#/settings/full-node">not running</a></strong></div>
-            <div ng-if="server_running">Local server <strong><a href="#/settings/full-node">running</a></strong> version {{version}} <span class="pull-right">{{blockheight}}</span></div>
-            <div ng-if="server_running && downloading">
-              <p>Blockchain download in progress <strong>{{numberOfBlocks}}</strong></p>
-              <p><progressbar class="progress-striped active" type="default" max="100" value="progress" >&nbsp;</progressbar></p>
+            <div>Connected to <strong>{{provider.net_name}}</strong> on port <strong>{{provider.port}}</strong></div>
+            <div ng-if="!provider.server_running">Local server <strong><a href="#/server/fim/console">not running</a></strong></div>
+            <div ng-if="provider.server_running">Local server <strong><a href="#/server/fim/console">running</a></strong> version {{provider.version}} <span class="pull-right">{{provider.blockheight}}</span></div>
+            <div ng-if="provider.server_running && provider.downloading">
+              <p>Blockchain download in progress <strong>{{provider.blockheight}}</strong></p>
+              <p><progressbar class="progress-striped active" type="default" max="100" value="provider.progress" >&nbsp;</progressbar></p>
             </div>
           </div>
-        </div>    
+        </div> -->
       </div>
     </li>
   </ul>
