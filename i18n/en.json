@@ -18,6 +18,7 @@
   "translate": {
     "dashboard_explained":  "<p><h3>This is your dashboard.</h3></p><p>On it you will find all combined activity of all accounts that you follow.<br>To follow an account click \"Follow user\" when you are on that accounts page.<br>To stop following an account click \"Stop following user\" when on that accounts page.</p>",
     "send_message":         "Send message",
+    "peers":                "Peers",
     "server":               "Server",
     "config":               "Config",
     "console":              "Console",

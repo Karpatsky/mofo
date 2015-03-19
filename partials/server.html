@@ -172,7 +172,7 @@
                 <th>Blacklisted</th>
                 <th>Last update</th>
               </tr>
-              <tr ng-repeat="p in provider.peers | slice:0:30" class="{{p.stateClass}}">
+              <tr ng-repeat="p in provider.peers | slice:0:40" class="{{p.stateClass}}">
                 <td class="text-primary">{{p.address}}</td>
                 <td>{{p.stateStr}}</td>
                 <td>{{p.weightStr}}</td>
@@ -182,6 +182,7 @@
                 <td><span ng-show="p.blacklisted"><b>blacklisted</b></span></td>
                 <td>{{p.lastUpdatedStr}}</td>
               </tr>
+              <tr><td colspan="8">Displaying 40 most recent active peers. Total number of peers is {{provider.peers.length}}.</td></tr>
             </tbody>
           </table>
         </div>
