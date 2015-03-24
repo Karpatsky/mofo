@@ -14,6 +14,7 @@ module.run(function (plugins, modals, $q, $rootScope, nxt) {
         title: 'Set Alias',
         message: 'Set or update an alias',
         senderRS: senderRS,
+        editSender: true,        
         requestType: 'setAlias',
         canHaveRecipient: false,
         createArguments: function (items) {
@@ -67,7 +68,9 @@ module.run(function (plugins, modals, $q, $rootScope, nxt) {
                  "A pending sale can be canceled by selling again to self for a price of zero.",
         senderRS: senderRS,
         requestType: 'sellAlias',
-        canHaveRecipient: false,
+        canHaveRecipient: true,
+        editRecipient: true,
+        recipient: args.recipient||'',
         createArguments: function (items) {
           var args = { priceNQT: nxt.util.convertToNQT(items.priceNXT) };
           if (items.alias) { args.alias = items.alias; }
@@ -101,17 +104,6 @@ module.run(function (plugins, modals, $q, $rootScope, nxt) {
           },
           required: false
         }, {
-          label: 'Recipient',
-          name: 'recipient',
-          type: 'text',
-          value: args.recipient||'',
-          validate: function (text) { 
-            this.errorMsg = null;
-            if (plugin.validators.address(text) === false) { this.errorMsg = 'Invalid address'; }
-            return ! this.errorMsg;
-          },
-          required: false
-        }, {
           label: 'Price',
           name: 'priceNXT',
           type: 'money',
@@ -132,6 +124,7 @@ module.run(function (plugins, modals, $q, $rootScope, nxt) {
         title: 'Buy Alias',
         message: "Buy an alias. Please enter the Alias <b>name</b> or it's <b>identifier</b>.",
         senderRS: senderRS,
+        editSender: true,
         requestType: 'buyAlias',
         canHaveRecipient: false,
         createArguments: function (items) {
@@ -189,6 +182,8 @@ module.run(function (plugins, modals, $q, $rootScope, nxt) {
         senderRS: senderRS,
         requestType: 'sellAlias',
         canHaveRecipient: true,
+        editRecipient: true,
+        recipient: args.recipient||'',
         createArguments: function (items) {
           var args = { priceNQT: '0' };
           if (items.alias) { args.alias = items.alias; }
@@ -218,17 +213,6 @@ module.run(function (plugins, modals, $q, $rootScope, nxt) {
             if (!text) { this.errorMsg = null; }
             else if ( ! plugin.ALPHABET.test(text)) { this.errorMsg = 'Invalid character'; }
             else if (plugin.getByteLen(text) > 100) { this.errorMsg = 'To much characters'; }
-            return ! this.errorMsg;
-          },
-          required: false
-        }, {
-          label: 'Recipient',
-          name: 'recipient',
-          type: 'text',
-          value: args.recipient||'',
-          validate: function (text) { 
-            this.errorMsg = null;
-            if (plugin.validators.address(text) === false) { this.errorMsg = 'Invalid address'; }
             return ! this.errorMsg;
           },
           required: false

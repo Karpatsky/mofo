@@ -25,6 +25,7 @@ module.run(function (plugins, modals, $q, $rootScope, nxt) {
         feeNXT: '1000',
         requestType: 'issueAsset',
         canHaveRecipient: false,
+        editSender: true,
         createArguments: function (items) {
           var args = {
             name:         items.name,

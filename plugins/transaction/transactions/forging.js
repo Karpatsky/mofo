@@ -17,7 +17,7 @@ module.run(function (plugins, modals, $q, $rootScope, nxt) {
         senderRS: senderRS,
         canHaveRecipient: false,
         hideMessage: true,
-        hideSender: true,
+        editSender: true,
         hideFee: true,
         forceLocal: true,
         createArguments: function (items) {
@@ -25,15 +25,34 @@ module.run(function (plugins, modals, $q, $rootScope, nxt) {
             secretPhrase: items.secretPhrase
           }
         },
-        fields: [/*{
-          label: 'Passphrase',
-          name: 'passphrase',
-          type: 'text',
-          value: args.passphrase||'',
-          required: true
-        }*/]
+        fields: []
       });
     }
   });
+
+  plugin.add({
+    label: 'Stop Forging',
+    id: 'stopForging',
+    execute: function (senderRS) {
+      return plugin.create({
+        title: 'Stop Forging',
+        message: 'Stopping forging will send your passphrase to the server',
+        requestType: 'stopForging',
+        senderRS: senderRS,
+        canHaveRecipient: false,
+        hideMessage: true,
+        editSender: true,
+        hideFee: true,
+        forceLocal: true,
+        createArguments: function (items) {
+          return {
+            secretPhrase: items.secretPhrase
+          }
+        },
+        fields: []
+      });
+    }
+  });
+
 });
 })();

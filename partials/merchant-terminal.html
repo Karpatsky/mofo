@@ -28,29 +28,6 @@
             </span>
           </div>
         </p>
-        <!-- <p>
-          <div class="form-group">
-            <span class="form-control-static">
-              <label class="control-label">Sender</label>
-              <div class="input-group">
-                <input class="form-control" ng-model="items.senderRS" type="text" 
-                     required ui-validate=" 'validateSender($value)' " ui-validate-watch=" 'items.senderRS' "
-                     name="senderField">
-                <div class="input-group-btn">
-                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
-                  <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                    <li ng-repeat="a in items.accounts" class="input">
-                      <a href ng-click="items.senderRS = a.id_rs">
-                        <span style="font-family: monospace !important;">{{a.id_rs}}&nbsp;&nbsp;</span>
-                        <span ng-if="a.name" class="badge"><b>{{a.name}}</b></span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </span>
-          </div>
-        </p> -->
         <p>
           <a class="btn btn-lg btn-success pull-right" href ng-click="payNow()">
             <i class="fa fa-1x fa-paper-plane-o"></i>&nbsp;&nbsp;Pay now</a>

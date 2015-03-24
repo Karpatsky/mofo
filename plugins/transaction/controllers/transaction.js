@@ -25,7 +25,7 @@ module.controller('TransactionCreateModalController', function(items, $modalInst
   $scope.items.message        = $sce.trustAsHtml(items.message);
   $scope.items.accounts       = [];
 
-  if ($scope.items.editSender) {
+  if ($scope.items.editSender || $scope.items.editRecipient) {
     var promise = accountsService.getAll(api.engine.type == nxt.TYPE_FIM ? accountsService.FIM_FILTER : accountsService.NXT_FILTER);
     promise.then(function (accounts) {
       $scope.$evalAsync(function () {
@@ -34,7 +34,18 @@ module.controller('TransactionCreateModalController', function(items, $modalInst
     });
   }
 
-  $scope.validateSender = function (id_rs) {
+  /* Add watches for fields supporting a show expression */
+  angular.forEach($scope.items.fields, function (field) {
+    field.__show = true;
+    if (field.show) {
+      field.__show = !!$scope.$eval(field.show);
+      $scope.$watch(field.show, function (val) {
+        field.__show = !!val;
+      });
+    }
+  });
+
+  $scope.validateAddress = function (id_rs) {
     var address = api.createAddress();
     return address.set(id_rs);
   }
@@ -134,7 +145,7 @@ module.controller('TransactionCreateModalController', function(items, $modalInst
       plugins.get('alerts').progress({ title: "Please wait" }).then(
         function (progress) {
 
-          var socket = args.forceLocal ? api.engine.localSocket() : api.engine.socket();
+          var socket = $scope.items.forceLocal ? api.engine.localSocket() : api.engine.socket();
 
           progress.setMessage('Creating Transaction');
           socket.callAPIFunction(args).then(

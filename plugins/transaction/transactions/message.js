@@ -22,26 +22,28 @@ module.run(function (plugins, modals, $q, $rootScope, nxt) {
         requestType: 'sendMessage',
         hideMessage: true,
         editSender: true,
+        editRecipient: true,
+        recipient: args.recipient||'',
+        canHaveRecipient: true,
         createArguments: function (items) {
-          return { 
+          var _args = { 
             recipient: nxt.util.convertRSAddress(items.recipient),
             sender: nxt.util.convertRSAddress(items.senderRS),
             txnMessageType: 'to_recipient',
             txnMessage: items.message
-          }
+          };
+          if (items.recipientPublicKey) {
+            _args.recipientPublicKey = items.recipientPublicKey;
+          }          
+          return _args;
         },
         fields: [{
-          label: 'Recipient',
-          name: 'recipient',
+          label: 'Recipient public key',
+          name: 'recipientPublicKey',
           type: 'text',
-          value: args.recipient||'',
-          validate: function (text) { 
-            this.errorMsg = null;
-            if (plugin.validators.address(text) === false) { this.errorMsg = 'Invalid address'; }
-            return ! this.errorMsg;
-          },
+          value: args.recipientPublicKey||'',
           required: false,
-          readonly: true
+          show: 'show.showPublicKey'          
         }, {
           label: 'Message',
           name: 'message',
@@ -61,37 +63,40 @@ module.run(function (plugins, modals, $q, $rootScope, nxt) {
     }
   });
 
-  /* Sends a message from a preset sender, allows the recipient to be edited */
   plugin.add({
-    label: 'Send Message',
+    label: 'Send message from',
     id: 'sendMessage',
     execute: function (senderRS, args) {
       args = args||{};
       return plugin.create(angular.extend(args, {
-        title: 'Send Message',
+        title: 'Send message from',
         message: 'Send an encrypted (private) message to recipient',
         requestType: 'sendMessage',
         hideMessage: true,
         senderRS: senderRS,
+        editSender: true, 
+        editRecipient: true,
+        recipient: args.recipient||'',
+        canHaveRecipient: true,        
         createArguments: function (items) {
-          return { 
+          var _args = { 
             recipient: nxt.util.convertRSAddress(items.recipient),
             sender: nxt.util.convertRSAddress(items.senderRS),
             txnMessageType: 'to_recipient',
             txnMessage: items.message
           }
+          if (items.recipientPublicKey) {
+            _args.recipientPublicKey = items.recipientPublicKey;
+          }          
+          return _args;
         },
         fields: [{
-          label: 'Recipient',
-          name: 'recipient',
+          label: 'Recipient public key',
+          name: 'recipientPublicKey',
           type: 'text',
-          value: args.recipient||'',
-          validate: function (text) { 
-            this.errorMsg = null;
-            if (plugin.validators.address(text) === false) { this.errorMsg = 'Invalid address'; }
-            return ! this.errorMsg;
-          },
-          required: true
+          value: args.recipientPublicKey||'',
+          required: false,
+          show: 'show.showPublicKey'          
         }, {
           label: 'Message',
           name: 'message',
@@ -102,52 +107,6 @@ module.run(function (plugins, modals, $q, $rootScope, nxt) {
             if (!text) { this.errorMsg = null; }
             else {
               if (plugin.getByteLen(text) > 1000) { this.errorMsg = 'To much characters'; }
-            }
-            return ! this.errorMsg;
-          },
-          required: true
-        }]
-      }));
-    }
-  });
-
-  plugin.add({
-    label: 'Leave comment',
-    id: 'accountComment',
-    exclude: true,
-    execute: function (args) {
-      args = args||{};
-      return plugin.create(angular.extend(args, {
-        title: 'Leave Comment',
-        message: 'Comments can be read by anyone and are permanantly stored in the blockchain',
-        requestType: 'sendMessage',
-        hideMessage: true,
-        hideSender: true,
-        createArguments: function (items) {
-          return { 
-            recipient: nxt.util.convertRSAddress(items.recipient),
-            sender: nxt.util.convertRSAddress(items.senderRS),
-            txnMessageType: 'public',
-            txnMessage: 'comment:' + items.message
-          }
-        },
-        fields: [{
-          label: 'Recipient',
-          name: 'recipient',
-          type: 'text',
-          value: args.recipient||'',
-          readonly: true
-        }, {
-          label: 'Comment',
-          name: 'message',
-          type: 'textarea',
-          value: args.message||'',
-          validate: function (text) { 
-            this.errorMsg = null;
-            if (!text) { this.errorMsg = null; }
-            else {
-              var _text = 'comment:' + text;
-              if (plugin.getByteLen(_text) > 1000) { this.errorMsg = 'To much characters'; }
             }
             return ! this.errorMsg;
           },
@@ -245,7 +204,7 @@ module.run(function (plugins, modals, $q, $rootScope, nxt) {
         message: 'Comments can be read by anyone and are permanantly stored in the blockchain',
         requestType: 'sendMessage',
         hideMessage: true,
-        hideSender: true,
+        editSender: true, 
         createArguments: function (items) {
           return { 
             recipient: nxt.util.convertRSAddress(items.recipient),

@@ -17,6 +17,8 @@ module.run(function (plugins, modals, $q, $rootScope, nxt) {
         senderRS: senderRS,
         requestType: 'leaseBalance',
         canHaveRecipient: true,
+        editSender: true,
+        editRecipient: true,
         createArguments: function (items) {
           return {
             recipient: nxt.util.convertRSAddress(items.recipient),
@@ -24,17 +26,6 @@ module.run(function (plugins, modals, $q, $rootScope, nxt) {
           }
         },
         fields: [{
-          label: 'Recipient',
-          name: 'recipient',
-          type: 'text',
-          value: args.recipient||'',
-          validate: function (text) { 
-            this.errorMsg = null;
-            if (plugin.validators.address(text) === false) { this.errorMsg = 'Invalid address'; }
-            return ! this.errorMsg;
-          },
-          required: true
-        }, {
           label: 'Period',
           name: 'period',
           type: 'text',

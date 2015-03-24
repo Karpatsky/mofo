@@ -17,6 +17,7 @@ module.run(function (plugins, modals, $q, $rootScope, nxt) {
         requestType: 'setAccountInfo',
         senderRS: senderRS,
         canHaveRecipient: false,
+        editSender: true, 
         createArguments: function (items) {
           return { 
             name: items.name,

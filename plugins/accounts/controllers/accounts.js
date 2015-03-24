@@ -3,12 +3,13 @@
 var module = angular.module('fim.base');
 module.controller('AccountsPlugin', function($location, $q, $scope, modals, $routeParams, nxt, db, plugins, requests, $timeout, 
   ActivityProvider, MessagesProvider, BlocksProvider, AliasProvider, AssetsProvider, CurrencyProvider, AccountProvider, 
-  BuyOrderProvider, SellOrderProvider, AccountPostProvider, dateParser, dateFilter, accountsService) {
+  BuyOrderProvider, SellOrderProvider, AccountPostProvider, AccountForgerProvider, AccountLessorsProvider, 
+  dateParser, dateFilter, accountsService) {
 
   $scope.id_rs          = $routeParams.id_rs;
   $scope.paramSection   = $routeParams.section;
   $scope.paramPeriod    = $routeParams.period || 'latest';
-  $scope.paramTimestamp = nxt.util.convertToEpochTimestamp(Date.now()) + (24 * 60 * 60);
+  $scope.paramTimestamp = 0; //nxt.util.convertToEpochTimestamp(Date.now()) + (24 * 60 * 60);
   $scope.breadcrumb     = [];
   $scope.filter         = {};
   $scope.following      = false;
@@ -112,6 +113,9 @@ module.controller('AccountsPlugin', function($location, $q, $scope, modals, $rou
   $scope.account = new AccountProvider(api, $scope, $scope.id_rs);
   $scope.account.reload();
 
+  $scope.forger = new AccountForgerProvider(api, $scope, $scope.id_rs);
+  $scope.forger.reload();
+
   switch ($scope.paramSection) {
     case 'pulse':
       $scope.breadcrumb[2].label = 'translate.pulse';
@@ -171,6 +175,8 @@ module.controller('AccountsPlugin', function($location, $q, $scope, modals, $rou
       break;
     case 'leasing':
       $scope.breadcrumb[2].label = 'translate.balance_leasing';
+      $scope.provider = new AccountLessorsProvider(api, $scope, $scope.id_rs);
+      $scope.provider.reload();       
       break;
     default:
       throw new Error('Not reached');
@@ -308,15 +314,39 @@ module.controller('AccountsPlugin', function($location, $q, $scope, modals, $rou
 
   $scope.setAccountInfo = function () {
     plugins.get('transaction').get('setAccountInfo').execute($scope.id_rs, {
-      name: ($scope.selectedAccount ? $scope.selectedAccount.name : ''),
-      description: ($scope.selectedAccount ? $scope.selectedAccount.description : ''),
+      name: ($scope.account ? $scope.account.name : ''),
+      description: ($scope.account ? $scope.account.description : ''),
     });
   }
+
+  function startForging() {
+    plugins.get('transaction').get('startForging').execute($scope.id_rs).then(
+      function () {
+        $scope.forger.reload();
+      }
+    );
+  }
+
+  function stopForging() {
+    plugins.get('transaction').get('stopForging').execute($scope.id_rs).then(
+      function () {
+        $scope.forger.reload();
+      }
+    );
+  }  
 
   $scope.executeTransaction = function (id) {
     switch (id) {
       case 'setAccountInfo': {
         $scope.setAccountInfo();
+        break;
+      }
+      case 'startForging': {
+        startForging();
+        break;
+      }
+      case 'stopForging': {
+        stopForging();
         break;
       }
       default: {

@@ -18,9 +18,6 @@ module.run(function (modals, plugins, nxt, alerts, $q, $sce) {
   }
 
   var sub_menu = [{
-    href: '#/plugins/faucet',
-    html: content('Faucet','DGEX','0.1')
-  },{
     href: '#/plugins/masspay',
     html: content('Mass Pay','FIMKrypto','0.1')
   }];
