@@ -2,7 +2,7 @@
 <html lang="en" ng-app="fim.base" ng-controller="appController">
   <head>
     <meta charset="utf-8">
-    <title>Mofo Wallet 0.4.1</title>
+    <title>Mofo Wallet 0.4.2</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>.ng-cloak { display:none; }</style>
@@ -43,7 +43,7 @@
         console.log('=========================================')
     </script>-->
 
-    <script src="scripts/scripts.2ea3a7fc.js"></script>
+    <script src="scripts/scripts.4968d61d.js"></script>
 
     <!-- Nxt engine (extends system) -->
     <!--<script src="plugins/nxt-engine/config.js"></script>
@@ -96,22 +96,31 @@
             <a ng-href="#/activity/{{paramEngine}}/assets/latest"><i class="fa fa-line-chart"></i>&nbsp;&nbsp;Assets</a>
           </li>          
         </ul>
-        <ul class="nav navbar-nav navbar-right" nav-menu="active">
-          
-          <!-- <li route-active="plugins">
-            <a href class="dropdown-toggle" data-toggle="dropdown">
-              <span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;{{'plugins' | translate}}&nbsp;<span class="caret"></span>
-            </a>
 
+        <ul class="nav navbar-nav navbar-right" nav-menu="active">
+          <!-- <li>
+            <form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search" style="max-width: 250px" ng-model="search.query" ng-changed="search.changed($value)">
+              </div>
+            </form>
+          </li>
+          <li class="dropdown">
+            <a href class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+              <i class="fa fa-search"></i>&nbsp;<span class="caret"></span>
+            </a>
             <ul class="dropdown-menu" role="menu">
-              <li route-active>
-                <a ng-href="#/plugins/faucet">{{'faucet' | translate}}</a> 
-              </li>
-              <li route-active>
-                <a ng-href="#/plugins/masspay">Mass Payment</a> 
+              <li ng-repeat="p in search.providers">
+                <a href ng-click="p.search()">{{p.label}}</a>
               </li>
             </ul>
           </li> -->
+
+          <li>
+            <a href="#/search/fim/accounts/">
+              <i class="fa fa-search"></i>&nbsp;&nbsp;{{'translate.search' | translate}}
+            </a>
+          </li>          
 
           <li style="margin-right: 10px" route-active="settings">
             <a href class="dropdown-toggle" data-toggle="dropdown">

@@ -32,6 +32,10 @@ module.controller('AssetsPlugin', function($scope, $rootScope, $location, $route
     translate: true
   });
   $scope.breadcrumb.push({
+    label: $scope.paramEngine,
+    active: true
+  });  
+  $scope.breadcrumb.push({
     label: $scope.paramAsset,
     href: "#/assets/"+$scope.paramEngine+"/"+$scope.paramAsset+"/trade"
   });
