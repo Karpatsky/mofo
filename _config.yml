@@ -2,10 +2,10 @@
 title: Mofo Wallet
 description: Mofo Wallet is an advanced multi currency crypto wallet.
 baseurl: "/mofo"
-url: "http://mofowallet.com"
+url: "https://www.mofowallet.com"
 twitter_username: fimkrypto
 github_username:  fimkrypto
-version: "0.3.8"
+version: "0.4.1"
 
 # Build settings
 markdown: kramdown

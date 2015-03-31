@@ -32,7 +32,7 @@ module.controller('SettingsPluginDBController', function($scope, db, $compile, n
     }).then(
       function (value) {
         if (value) {
-          indexedDB.deleteDatabase('fimkrypto-db');
+          indexedDB.deleteDatabase('fimkrypto-db2');
           alerts.success('Successfully deleted database.');
           alerts.failed('You must reload your browser for the changes to take effect.');
         }

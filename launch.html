@@ -13,6 +13,11 @@
       isNodeJS = false;
     }
     DEBUG = false;
+
+    if (("www.mofowallet.com" == window.location.host || 
+         "mofowallet.com" == window.location.host) && (window.location.protocol != "https:")) {
+      window.location.protocol = "https";
+    }
     </script>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -43,7 +48,7 @@
         console.log('=========================================')
     </script>-->
 
-    <script src="scripts/scripts.4968d61d.js"></script>
+    <script src="scripts/scripts.b62bc173.js"></script>
 
     <!-- Nxt engine (extends system) -->
     <!--<script src="plugins/nxt-engine/config.js"></script>

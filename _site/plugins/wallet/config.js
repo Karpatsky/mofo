@@ -161,7 +161,7 @@ module.run(function (plugins, modals, $q, $timeout, db, nxt, $sce) {
      */
     createOnWalletFileSelectedPromise: function ($scope) {
       if ($scope) {
-        $scope.$on('destroy', function () {
+        $scope.$on('$destroy', function () {
           if (gDeferred) {
             gDeferred.reject();
             gDeferred = null;

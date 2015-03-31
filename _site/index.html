@@ -9,19 +9,25 @@
 
   <title>Mofo Wallet</title>
 
-  <!-- Bootstrap core CSS -->
   <link href="assets/css/bootstrap.css" rel="stylesheet">
-
-  <!-- Custom styles for this template -->
   <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/bootstrap-social.css" rel="stylesheet">
+
+  <link rel="canonical" href="https://www.mofowallet.com/index.html" />  
 
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">  
-  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
 
-  <script src="assets/css/bootstrap-social.css"></script>
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/smoothscroll.js"></script>
+
+  <script type="text/javascript">
+    if (("www.mofowallet.com" == window.location.host || "mofowallet.com" == window.location.host) && 
+        (window.location.protocol != "https:")) {
+      window.location.protocol = "https";
+    }
+  </script>  
 </head> 
   <body data-spy="scroll" data-offset="0" data-target="#navigation">
     <!-- Fixed navbar -->
@@ -37,16 +43,16 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="#launch" class="smoothScroll">Launch</a></li>        
+        <li class="active"><a href="#launch" class="smoothScroll">Browser</a></li>        
         <li><a href="#download" class="smoothScroll">Download</a></li>
         <li><a href="#features" class="smoothScroll">Features</a></li>
         <li><a href="#community" class="smoothScroll">Community</a></li>
         <li><a href="#platform" class="smoothScroll">Platform</a></li>
-        <li><a href="#blog" class="smoothScroll"><b>Blog</b></a></li>
+        <li><a target="_blank" href="http://fimkchat.com" class="smoothScroll"><b>Blog</b></a></li>
+        <li><a target="_blank" href="https://www.mofowallet.com/launch.html" class="smoothScroll"><b>Wallet</b></a></li>
       </ul>
-    </div><!--/.nav-collapse -->
+    </div>
   </div>
-<!--   <a href="https://github.com/fimkrypto/mofowallet"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>   -->    
 </div>
 
 
@@ -61,7 +67,7 @@
       </div>
       <div class="col-md-2">
         <h5>Runs Everywhere</h5>
-        <p>Available as <a href="#download">cross platform download</a> and as web app <a href="https://fimkrypto.github.io/mofo/launch.html#/home" target="_blank">that simply runs in your browser</a>.</p>
+        <p>Available as <a href="#download">cross platform download</a> and as web app <a href="https://www.mofowallet.com/launch.html" target="_blank">that simply runs in your browser</a>.</p>
         <img class="hidden-xs hidden-sm" src="assets/img/arrow1.png">
       </div>
       <div class="col-md-8">
@@ -93,8 +99,8 @@
       <div class="col-md-2">
         <br>
         <img class="hidden-xs hidden-sm" src="assets/img/arrow2.png">
-        <h5>Plugins</h5>
-        <p>Easily write plugins that access the FIMK and NXT blockchains. We'll make those plugins available to a world wide audience <a href>read more</a>.</p>
+        <h5>Realtime WebSockets</h5>
+        <p>Mofo Wallet is the first ever crypto client to communicate exclusively over fast WebSockets.</p>
       </div>
     </div>
   </div>
@@ -108,12 +114,12 @@
       <h1 class="centered">It runs in your Browser</h1>
       <br>
       <div class="col-md-10 col-md-offset-1">
-        <p>Mofo Wallet is available as <a href="#download">cross platform installable download</a> (available for Windows, Mac and Linux) but also runs straight from your browser. Securing a browser application is not an easy thing <a href>click here to read</a> about our current setup where we host Mofo Wallet Web on github servers.</p>
+        <p>Mofo Wallet is available as <a href="#download">cross platform installable download</a> (available for Windows, Mac and Linux) but also runs straight from your browser.</p>
         <br>
       </div>
       <div class="col-md-4 col-md-offset-4">
         <p>
-          <a type="button" href="https://fimkrypto.github.io/mofo/launch.html" target="_blank" 
+          <a type="button" href="https://www.mofowallet.com/launch.html" target="_blank" 
           class="btn btn-primary btn-block btn-lg">
             <i style="vertical-align:middle" class="fa fa-shield fa-3x"></i>&nbsp;&nbsp;
             <span style="vertical-align:middle; font-size:120%" >Click to Launch</span>
@@ -155,7 +161,7 @@
   <div class="container">
     <div class="row centered">
       <h1>Download &amp; Install</h1>
-      <small>Latest version 0.3.8 (<a href="https://github.com/fimkrypto/mofowallet/releases/tag/v0.3.8">release notes | pgp | sha &amp; md5</a>)</small>
+      <small>Latest version 0.4.1 (<a href="https://github.com/fimkrypto/mofowallet/releases/tag/v0.4.1">release notes | pgp | sha &amp; md5</a>)</small>
     </div>
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
@@ -169,17 +175,17 @@
     <div class="row centered">        
       <div class="col-md-4">
         <i class="fa fa-windows fa-5x"></i>
-        <h3><a href="https://github.com/fimkrypto/mofowallet/releases/download/v0.3.8/mofowallet.windows-0.3.8.zip">Windows</a></h3>
+        <h3><a href="https://github.com/fimkrypto/mofowallet/releases/download/v0.4.1/mofowallet.windows-0.4.1.zip">Windows</a></h3>
         <p>Download for Windows XP, Vista, 7, 8, 10</p>
       </div>
       <div class="col-md-4">
         <i class="fa fa-apple fa-5x"></i>
-        <h3><a href="https://github.com/fimkrypto/mofowallet/releases/download/v0.3.8/mofowallet.osx-0.3.8.zip">Mac</a></h3>
+        <h3><a href="https://github.com/fimkrypto/mofowallet/releases/download/v0.4.1/mofowallet.osx-0.4.1.zip">Mac</a></h3>
         <p>Download for Mac 10.7+</p>
       </div>
       <div class="col-md-4">
         <i class="fa fa-linux fa-5x"></i>
-        <h3><a href="https://github.com/fimkrypto/mofowallet/releases/download/v0.3.8/mofowallet.linux-0.3.8.zip">Linux</a></h3>
+        <h3><a href="https://github.com/fimkrypto/mofowallet/releases/download/v0.4.1/mofowallet.linux-0.4.1.zip">Linux</a></h3>
         <p>Download for Linux</p>
       </div>
     </div>
@@ -302,38 +308,13 @@
       <br>
       <div class="col-md-12">
         <p>With Mofo Wallet we enable software authors to write distributed applications that are always up, scale inifinetly and that have full access to the FIMK and NXT blockchains. We hope to kickstart a new breed of distributed applications that live on the second generation blockchains. Building applications on a blockchain offers <i>1.</i> payments <i>2.</i> messages <i>3.</i> encryption <i>4.</i> trading and much more decentralized and distributed computing power for everyone (almost) free of charge.</p>
-        <p>In Mofo Wallet applications are created as plugins and require nothing but HTML and Javascript. Once a plugin has been made available on the Web Wallet is becomes directly accessible from the internet. Through a unique url you can access your plugin and pass arguments to your plugin through the URL. For an example 
-        <a href="https://fimkrypto.github.io/mofo/launch.html#/authenticate/FIM-J3Q5-N4P4-L479-2RDGS/Loans%20Inc./https://superloans.com/auth.php%3Fu=xxx&p=yyy" target="_blank">click here to open a sample plugin</a> that offers strong customer authorization through use of blockchain technologies like trusted blockchain storage and encryption to protect privacy sensitive information.</p>
+        <p>In Mofo Wallet applications are created as plugins and require nothing but HTML and Javascript. Once a plugin has been made available on the Web Wallet is becomes directly accessible from the internet. Through a unique url you can access your plugin and pass arguments to your plugin through the URL.</p>
         <p>Instructions and documentation for making plugins is planned and will follow shortly, check out our blog for articles and instructions on how to build plugins.</p>
       </div>
     </div>
     <br>
     <br>
     <hr>     
-  </div>
-</div>
-
-<section id="blog" name="blog"></section>
-<!-- Community WRAP -->
-<div id="blogwrap">
-  <div class="container">
-    <div class="row">
-      <h1 class="centered">Blog</h1>
-      <br>
-      <br>
-      <div class="col-md-12">
-        <p>We are working on getting our blog up and running. Until that is ready we are using the forum for communication purposes.</p>
-        <p><small>November 1 - 2014</small> <a href="http://forum.fimk.fi/index.php?topic=428.msg2275#msg2275" target="_blank">Introducing MofoWallet</a></p>
-        <p><small>November 4 - 2014</small> <a href="http://forum.fimk.fi/index.php?topic=428.msg2350#msg2350" target="_blank">How MofoWallet handles FIM/NXT public keys</a></p>
-        <p><small>November 5 - 2014</small> <a href="http://forum.fimk.fi/index.php?topic=428.msg2382#msg2382" target="_blank">Things we learned after running a couple of days</a></p>
-        <p><small>November 12 - 2014</small> <a href="http://forum.fimk.fi/index.php?topic=428.msg2465#msg2465" target="_blank">MofoWallet 0.3.2 - explains how we made MofoWallet much faster (introducing the Fork Scanner)</a></p>
-        <p><small>November 26 - 2014</small> <a href="http://forum.fimk.fi/index.php?topic=455.0" target="_blank">MofoWallet 0.3.3 - biggest update to date adds Asset Exchange and much better stability</a></p>
-        <p><small>December 1 - 2014</small> <a href="http://forum.fimk.fi/index.php?topic=459.0" target="_blank">MofoWallet 0.3.4 - enables the start of the FIMKrypto basic income for Finnish citizens</a></p>
-        <p><small>December 14 - 2014</small> <a href="http://forum.fimk.fi/index.php?topic=477.0" target="_blank">MofoWallet 0.3.5 - revamped mass payment plugin</a></p>
-        <p><small>December 14 - 2014</small> <a href="http://imgur.com/a/S91zS#0" target="_blank">Screenshots and tutorial for using the mass payment plugin</a></p>
-        <p><small>December 16 - 2014</small> <a href="http://forum.fimk.fi/index.php?topic=479.0" target="_blank">MofoWallet 0.3.6 - hotfix for forking problem</a></p>
-      </div>
-    </div>
   </div>
 </div>
 
@@ -461,21 +442,17 @@ $('.carousel').carousel({
 <div id="footerwrap">
   <div class="container">
     <br>
-    <div class="col-md-3">
+    <div class="col-md-4">
       <h4>Powered by FIMKrypto</h4>              
       <p><a href="http://fimk.fi/en" target="_blank"><img src="images/fimk.png" class="main_logo" style="width:200px"></a></p>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
       <h4>Compatible with FIMK</h4>              
       <p><a href="http://fimk.fi/en" target="_blank"><img src="images/fimk_coin.png" class="main_logo" style="width:65px"></a></p>
     </div>        
-    <div class="col-md-3">
+    <div class="col-md-4">
       <h4>Compatible with NXT</h4>
       <p><a href="http://nxt.org" target="_blank"><img src="images/nxt.png" class="main_logo" style="width:120px"></a></p>
-    </div>
-    <div class="col-md-3">
-      <h4>Sponsored by DGEX</h4>
-      <p><a href="https://dgex.com" target="_blank"><img src="images/dgex.gif" class="main_logo" style="width:170px"></a></p>
     </div>
   </div>
 </div>
@@ -492,7 +469,7 @@ $('.carousel').carousel({
         class="btn btn-social-icon btn-github"><span class="fa fa-2x fa-github"></span></a>
       <!-- Website: <a href="http://jekyllrb.com/" target="_blank">jekyll</a> -->
     </div>    
-    <p><b>Mofo</b>Wallet 0.3.8 is powered by <a href="http://fimk.fi">FIMKrypto</a></p>  
+    <p><b>Mofo</b>Wallet 0.4.1 is powered by <a href="http://fimk.fi">FIMKrypto</a></p>  
   </div>
 </div>
   </body>

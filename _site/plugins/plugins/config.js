@@ -1,12 +1,12 @@
 (function () {
 'use strict';
 var module = angular.module('fim.base');
-module.config(function($stateProvider) {  
-  $stateProvider.state('plugins', {
-    url: '/plugins/:id',
-    templateUrl: 'plugins/plugins/partials/plugins.html',
-    controller: 'PluginsPlugin'
-  });
+module.config(function($routeProvider) {  
+  $routeProvider
+    .when('/plugins/:id', {
+      templateUrl: 'plugins/plugins/partials/plugins.html',
+      controller: 'PluginsPlugin'
+    });
 });
 
 module.run(function (modals, plugins, nxt, alerts, $q, $sce) {
@@ -18,10 +18,7 @@ module.run(function (modals, plugins, nxt, alerts, $q, $sce) {
   }
 
   var sub_menu = [{
-    sref: 'plugins({id: "faucet"})',
-    html: content('Faucet','DGEX','0.1')
-  },{
-    sref: 'plugins({id: "masspay"})',
+    href: '#/plugins/masspay',
     html: content('Mass Pay','FIMKrypto','0.1')
   }];
 
@@ -31,7 +28,6 @@ module.run(function (modals, plugins, nxt, alerts, $q, $sce) {
     sub_menu_html: function () {
       return sub_menu;
     },
-    sref: 'plugins',
     label: 'Plugins',
     icon_class: 'glyphicon glyphicon-cog',
   });

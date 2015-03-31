@@ -1,7 +1,7 @@
 (function () {
 'use strict';
 var module = angular.module('fim.base');
-module.controller('SettingsPluginFullNodeController', function($scope, serverService, $timeout, $stateParams, settings) {
+module.controller('SettingsPluginFullNodeController', function($scope, serverService, $timeout, $routeParams, settings) {
   
   $scope.bufferSize = 1000;
 
@@ -59,7 +59,7 @@ module.controller('SettingsPluginFullNodeController', function($scope, serverSer
       serverService.addListener(this.id, 'stdout', this.onUpdate);  
       serverService.addListener(this.id, 'stderr', this.onUpdate); 
 
-      $scope.$on('destroy', function () {
+      $scope.$on('$destroy', function () {
         serverService.removeListener(self.id, 'start', self.onStart);
         serverService.removeListener(self.id, 'exit', self.onExit);
         serverService.removeListener(self.id, 'stdout', self.onUpdate);  

@@ -3,10 +3,10 @@
   <channel>
     <title>Mofo Wallet</title>
     <description>Mofo Wallet is an advanced multi currency crypto wallet.</description>
-    <link>http://mofowallet.com/mofo/</link>
-    <atom:link href="http://mofowallet.com/mofo/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 20 Dec 2014 21:02:41 +0100</pubDate>
-    <lastBuildDate>Sat, 20 Dec 2014 21:02:41 +0100</lastBuildDate>
+    <link>https://www.mofowallet.com/mofo/</link>
+    <atom:link href="https://www.mofowallet.com/mofo/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Tue, 31 Mar 2015 11:04:59 +0200</pubDate>
+    <lastBuildDate>Tue, 31 Mar 2015 11:04:59 +0200</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -27,8 +27,8 @@
 
 </description>
         <pubDate>Wed, 29 Oct 2014 20:18:04 +0100</pubDate>
-        <link>http://mofowallet.com/mofo/jekyll/update/2014/10/29/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://mofowallet.com/mofo/jekyll/update/2014/10/29/welcome-to-jekyll.html</guid>
+        <link>https://www.mofowallet.com/mofo/jekyll/update/2014/10/29/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">https://www.mofowallet.com/mofo/jekyll/update/2014/10/29/welcome-to-jekyll.html</guid>
         
         
         <category>jekyll</category>

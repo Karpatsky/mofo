@@ -1,51 +1,255 @@
-<!doctype html> <html lang="en" ng-app="fim.base" ng-controller="appController"> <head> <meta charset="utf-8"> <title>Mofo Wallet 0.3.8</title> <meta name="description" content=""> <meta name="viewport" content="width=device-width,initial-scale=1"> <style>.ng-cloak { display:none; }</style> <script type="text/javascript">try {
+<!doctype html>
+<html lang="en" ng-app="fim.base" ng-controller="appController">
+  <head>
+    <meta charset="utf-8">
+    <title>Mofo Wallet 0.4.2</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>.ng-cloak { display:none; }</style>
+    <script type="text/javascript">
+    try {
       isNodeJS = typeof require == 'function' && require('child_process');
     } catch (e) {
       isNodeJS = false;
     }
-    DEBUG = false;</script> <!-- Place favicon.ico and apple-touch-icon.png in the root directory --> <link rel="shortcut icon" href="/favicon.ico?v=6"> <!-- Bootswatch theme switcher --> <link type="text/css" rel="stylesheet" href="plugins/themes/css/spacelab.bootstrap.min.css" id="bootswatch.style"> <link rel="stylesheet" href="styles/main.40c50035.css"> <!--[if lt IE 9]>
+    DEBUG = false;
+
+    if (("www.mofowallet.com" == window.location.host || 
+         "mofowallet.com" == window.location.host) && (window.location.protocol != "https:")) {
+      window.location.protocol = "https";
+    }
+    </script>
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="/favicon.ico?v=6" />
+
+    <!-- Bootswatch theme switcher -->
+    <link type="text/css" rel="stylesheet" href="plugins/themes/css/spacelab.bootstrap.min.css" id="bootswatch.style" />
+
+    <link type="text/css" rel="stylesheet" href="amstockchart/amcharts/style.css" />
+    
+    <link rel="stylesheet" href="styles/main.48bdf420.css">
+
+    <style>
+      a[title="JavaScript charts"] {
+        display: none !important;
+      }
+    </style>
+
+    <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/json3/lib/json3.min.js"></script>
-    <![endif]--> <!-- DISABLE FOR NOW
-    <script src="scripts/lib/IndexedDBShim.min.js"></script>
-    --> <!--<script type="text/javascript" src="https://rawgithub.com/stacktracejs/stacktrace.js/stable/stacktrace.js"></script>
+    <![endif]-->
+
+    <!--<script type="text/javascript" src="https://rawgithub.com/stacktracejs/stacktrace.js/stable/stacktrace.js"></script>
     <script type="text/javascript">
         console.log('=========================================')
         console.log('== REMOVE https://rawgithub.com/stacktracejs/stacktrace.js/stable/stacktrace.js');
         console.log('=========================================')
-    </script>--> <script src="scripts/scripts.39df0f9a.js"></script> <!-- <script src="plugins/authenticate/test/main.js"></script> -->  <body> <!--[if lt IE 7]>
+    </script>-->
+
+    <script src="scripts/scripts.b62bc173.js"></script>
+
+    <!-- Nxt engine (extends system) -->
+    <!--<script src="plugins/nxt-engine/config.js"></script>
+    <script src="plugins/nxt-engine/controllers/status.js"></script>-->
+
+    <!-- <script src="plugins/authenticate/test/main.js"></script> -->
+
+  </head>
+  <body ng-class="{'showing-landing-page': showingLandingPage}">
+
+    <audio preload="auto"><source src="images/beep.wav"></audio>
+
+    <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]--> <nav class="navbar navbar-default navbar-fixed-top" role="navigation"> <div class="container ng-cloak" ng-cloak> <div class="navbar-header"> <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a class="navbar-brand" ui-sref="home"><strong>Mofo</strong>Wallet</a> </div> <div class="collapse navbar-collapse"> <ul class="nav navbar-nav"> <li ng-repeat="p in plugins" ng-class="{active: stateIncludes(p.sref||p.extends)}"> <!-- No submenu support --> <a href ng-if="!p.sub_menu && !p.sub_menu_html" ui-sref="{{p.sref}}" ui-sref-opts="{reload: true}"><span class="{{p.icon_class}}"></span>&nbsp;&nbsp;{{p.label}}</a> <!-- This header is shared between simple submenu and html submenu states --> <a href ng-if="p.sub_menu || p.sub_menu_html" class="dropdown-toggle" data-toggle="dropdown" ng-click="p.sub_menu_activate && p.sub_menu_activate()"> <span class="{{p.icon_class}}"></span>&nbsp;&nbsp;{{p.label}}&nbsp;<span class="caret"></span> </a> <!-- Simple key value based submenu --> <ul ng-if="p.sub_menu" class="dropdown-menu" role="menu"> <li ng-repeat="sub in p.sub_menu()" ui-sref="{{sub.sref}}" ui-sref-opts="{reload: true}"> <a ng-if="sub.label" href>{{sub.label}}</a> <a ng-if="sub.label_pair" href> <p><h4>{{sub.label_pair[0]}}<small class="pull-right">{{sub.label_pair[2]}}</small> <br><br><small class="pull-right">{{sub.label_pair[1]}}</small><br></h4></p><p> </p></a> </li> </ul> <!-- Submenu based on HTML --> <ul ng-if="p.sub_menu_html" class="dropdown-menu" role="menu"> <li ng-repeat="sub in p.sub_menu_html()"> <a ng-if="sub.sref" href ui-sref="{{sub.sref}}" ui-sref-opts="{reload: true}" ng-bind-html="sub.html"></a> <a ng-if="sub.click" href ng-click="sub.click()" ng-bind-html="sub.html"></a> <a ng-if="p.sub_menu" href class="dropdown-toggle" data-toggle="dropdown" ng-click="p.sub_menu_activate && p.sub_menu_activate()"> <span class="{{p.icon_class}}"></span>&nbsp;&nbsp;{{p.label}}&nbsp;<span class="caret"></span> </a> <ul ng-if="p.sub_menu" class="dropdown-menu" role="menu"> <li ng-repeat="sub2 in sub.sub_menu()" ng-click="sub2.click()">{{sub2.label}}</li> </ul> </li> </ul> </li> </ul> </div> </div> </nav> <!-- Shown on xs (mobiles) only --> <!--     <div class="visible-xs-block ng-cloak">
-      <div class="collapse navbar-collapse" collapsed="navCollapsed">
-        <ul class="nav navbar-nav">
-          <li ng-repeat="p in plugins" ng-class="{active: stateIncludes(p.sref||p.extends)}">
-            <a href ng-if="!p.sub_menu && !p.sub_menu_html" ui-sref="{{p.sref}}"><span class="{{p.icon_class}}"></span>&nbsp;&nbsp;{{p.label}}</a>
-            <a href ng-if="p.sub_menu || p.sub_menu_html" class="dropdown-toggle" data-toggle="dropdown" ng-click="p.sub_menu_activate && p.sub_menu_activate()">
-              <span class="{{p.icon_class}}"></span>&nbsp;&nbsp;{{p.label}}&nbsp;<span class="caret"></span>
-            </a>
-            <ul ng-if="p.sub_menu" class="dropdown-menu" role="menu">
-              <li ng-repeat="sub in p.sub_menu()" ui-sref="{{sub.sref}}">
-                <a ng-if="sub.label" href>{{sub.label}}</a>
-                <a ng-if="sub.label_pair" href>
-                  <p><h4>{{sub.label_pair[0]}}<small class="pull-right">{{sub.label_pair[2]}}</small>
-                    <br><br><small class="pull-right">{{sub.label_pair[1]}}</small><br></h4><p>
-                </a>
-              </li>
-            </ul>
-            <ul ng-if="p.sub_menu_html" class="dropdown-menu" role="menu">
-              <li ng-repeat="sub in p.sub_menu_html()">
-                <a ng-if="sub.sref" href ui-sref="{{sub.sref}}" ng-bind-html="sub.html"></a>
-                <a ng-if="sub.click" href ng-click="sub.click()" ng-bind-html="sub.html"></a>
-                <a ng-if="p.sub_menu" href class="dropdown-toggle" data-toggle="dropdown" ng-click="p.sub_menu_activate && p.sub_menu_activate()">
-                  <span class="{{p.icon_class}}"></span>&nbsp;&nbsp;{{p.label}}&nbsp;<span class="caret"></span>
-                </a>
-                <ul ng-if="p.sub_menu" class="dropdown-menu" role="menu">
-                  <li ng-repeat="sub2 in sub.sub_menu()" ng-click="sub2.click()">{{sub2.label}}</li>
-                </ul>
-              </li>
-            </ul>
+    <![endif]-->
+
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+          <span class="sr-only" translate translate-cloak>Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" ng-href="#/start"><i class="fa fa-home text-success"></i>&nbsp;<strong>Mofo</strong>Wallet&nbsp;<span class="text-danger"><b>{{isTestnet? 'TEST' : 'BETA'}}</b></span></a>
+      </div>
+
+      <div class="collapse navbar-collapse navbar-default" id="navbar">
+        <ul class="nav navbar-nav" nav-menu="active">
+          <li>
+            <a href="javascript:window.history.back()"><i class="fa fa-arrow-left"></i></a>
           </li>
+          <li>
+            <a href="javascript:window.history.forward()"><i class="fa fa-arrow-right"></i></a>
+          </li>
+
+          <!-- <li route-active="start/">
+            <a ng-href="#/start"><i class="fa fa-home text-success"></i>&nbsp;&nbsp;{{'translate.home' | translate}}</a>
+          </li> -->
+
+          <li route-active="home/">
+            <a ng-href="#/home/{{paramEngine}}/activity/latest"><i class="fa fa-tachometer"></i>&nbsp;&nbsp;{{'translate.dashboard' | translate}}</a>
+          </li>          
+          
+          <li route-active="activity/">
+            <a ng-href="#/activity/{{paramEngine}}/activity/latest"><i class="fa fa-cloud"></i>&nbsp;&nbsp;{{'translate.explorer' | translate}}</a>
+          </li>
+
+          <li route-active="activity/{{paramEngine}}/assets">
+            <a ng-href="#/activity/{{paramEngine}}/assets/latest"><i class="fa fa-line-chart"></i>&nbsp;&nbsp;Assets</a>
+          </li>          
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right" nav-menu="active">
+          <!-- <li>
+            <form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search" style="max-width: 250px" ng-model="search.query" ng-changed="search.changed($value)">
+              </div>
+            </form>
+          </li>
+          <li class="dropdown">
+            <a href class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+              <i class="fa fa-search"></i>&nbsp;<span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li ng-repeat="p in search.providers">
+                <a href ng-click="p.search()">{{p.label}}</a>
+              </li>
+            </ul>
+          </li> -->
+
+          <li>
+            <a href="#/search/fim/accounts/">
+              <i class="fa fa-search"></i>&nbsp;&nbsp;{{'translate.search' | translate}}
+            </a>
+          </li>          
+
+          <li style="margin-right: 10px" route-active="settings">
+            <a href class="dropdown-toggle" data-toggle="dropdown">
+              <span class="glyphicon glyphicon-wrench"></span>&nbsp;&nbsp;{{'settings' | translate}}&nbsp;<span class="caret"></span>
+            </a>
+
+            <ul class="dropdown-menu" role="menu">
+              <li route-active>
+                <a ng-href="#/settings/themes"><span class="glyphicon glyphicon-fire"></span>&nbsp;&nbsp;{{'themes' | translate}}</a> 
+              </li>
+              <li route-active ng-if="isNodeJS">
+                <a ng-href="#/server/fim/console"><span class="glyphicon glyphicon-hdd"></span>&nbsp;&nbsp;{{'translate.fim_server' | translate}}</a> 
+              </li>
+              <li route-active ng-if="isNodeJS && enableDualEngines">
+                <a ng-href="#/server/nxt/console"><span class="glyphicon glyphicon-hdd"></span>&nbsp;&nbsp;{{'translate.nxt_server' | translate}}</a>
+              </li>              
+              <li route-active>
+                <a ng-href="#/settings/wallet"><span class="glyphicon glyphicon-briefcase"></span>&nbsp;&nbsp;{{'wallet' | translate}}</a> 
+              </li>
+              <li route-active>
+                <a ng-href="#/settings/contacts"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;{{'contacts' | translate}}</a> 
+              </li>
+              <li route-active>
+                <a ng-href="#/settings/database"><span class="glyphicon glyphicon-tasks"></span>&nbsp;&nbsp;{{'database' | translate}}</a> 
+              </li>
+              <li route-active ng-show="false">
+                <a ng-href="#/settings/nodes"><span class="glyphicon glyphicon-tree-deciduous"></span>&nbsp;&nbsp;{{'public_nodes' | translate}}</a> 
+              </li>
+              <li ng-if="isNodeJS">
+                <a href ng-click="openDevTools()">
+                  <span class="glyphicon glyphicon-dashboard"></span>&nbsp;&nbsp;{{'dev_tools' | translate}}
+                </a> 
+              </li>
+              <li ng-if="isNodeJS">
+                <a href ng-click="reloadMofoWallet()"><span class="glyphicon glyphicon-refresh"></span>&nbsp;&nbsp;{{'reload_application' | translate}}</a> 
+              </li>
+            </ul>
+          </li> 
+
+          <li style="margin-right: 10px" ng-if="multiLanguage">
+            <a href class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-globe text-danger"></i>&nbsp;&nbsp;{{'language'|translate}}&nbsp;<span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu lang-columns" role="menu">
+              <li><a href ng-click="setLang('af')">Afrikaans - ({{'lang.Afrikaans'|translate}})</a></li>
+              <li><a href ng-click="setLang('sq')">Shqip - ({{'lang.Albanian'|translate}})</a></li>
+              <li><a href ng-click="setLang('ar')">العربية - ({{'lang.Arabic'|translate}})</a></li>
+              <li><a href ng-click="setLang('az')">azərbaycan dili - ({{'lang.Azerbaijani'|translate}})</a></li>
+              <li><a href ng-click="setLang('eu')">euskara - ({{'lang.Basque'|translate}})</a></li>
+              <li><a href ng-click="setLang('bn')">বাংলা - ({{'lang.Bengali'|translate}})</a></li>
+              <li><a href ng-click="setLang('be')">беларуская мова - ({{'lang.Belarusian'|translate}})</a></li>
+              <li><a href ng-click="setLang('bg')">български език - ({{'lang.Bulgarian'|translate}})</a></li>
+              <li><a href ng-click="setLang('ca')">català - ({{'lang.Catalan'|translate}})</a></li>
+              <li><a href ng-click="setLang('zh')">简化中国 - ({{'lang.Chinese_Simplified'|translate}})</a></li>
+              <li><a href ng-click="setLang('zh-TW')">中國傳統 - ({{'lang.Chinese_Traditional'|translate}})</a></li>
+              <li><a href ng-click="setLang('hr')">hrvatski jezik - ({{'lang.Croatian'|translate}})</a></li>
+              <li><a href ng-click="setLang('cs')">čeština, český jazyk - ({{'lang.Czech'|translate}})</a></li>
+              <li><a href ng-click="setLang('da')">dansk - ({{'lang.Danish'|translate}})</a></li>
+              <li><a href ng-click="setLang('nl')">Nederlands - ({{'lang.Dutch'|translate}})</a></li>
+              <li><a href ng-click="setLang('en')">English - ({{'lang.English'|translate}})</a></li>
+              <li><a href ng-click="setLang('eo')">Esperanto - ({{'lang.Esperanto'|translate}})</a></li>
+              <li><a href ng-click="setLang('et')">eesti - ({{'lang.Estonian'|translate}})</a></li>
+              <li><a href ng-click="setLang('tl')">Wikang Filipino - ({{'lang.Filipino'|translate}})</a></li>
+              <li><a href ng-click="setLang('fi')">Suomi - ({{'lang.Finnish'|translate}})</a></li>
+              <li><a href ng-click="setLang('fr')">Français - ({{'lang.French'|translate}})</a></li>
+              <li><a href ng-click="setLang('gl')">Galego - ({{'lang.Galician'|translate}})</a></li>
+              <li><a href ng-click="setLang('ka')">ქართული - ({{'lang.Georgian'|translate}})</a></li>
+              <li><a href ng-click="setLang('de')">Deutsch - ({{'lang.German'|translate}})</a></li>
+              <li><a href ng-click="setLang('el')">Ελληνικά - ({{'lang.Greek'|translate}})</a></li>
+              <li><a href ng-click="setLang('gu')">ગુજરાતી - ({{'lang.Gujarati'|translate}})</a></li>
+              <li><a href ng-click="setLang('ht')">Kreyòl Ayisyen - ({{'lang.Haitian_Creole'|translate}})</a></li>
+              <li><a href ng-click="setLang('iw')">עברית - ({{'lang.Hebrew'|translate}})</a></li>
+              <li><a href ng-click="setLang('hi')">हिन्दी - ({{'lang.Hindi'|translate}})</a></li>
+              <li><a href ng-click="setLang('hu')">Magyar - ({{'lang.Hungarian'|translate}})</a></li>
+              <li><a href ng-click="setLang('is')">Íslenska - ({{'lang.Icelandic'|translate}})</a></li>
+              <li><a href ng-click="setLang('id')">Bahasa Indonesia - ({{'lang.Indonesian'|translate}})</a></li>
+              <li><a href ng-click="setLang('ga')">Gaeilge - ({{'lang.Irish'|translate}})</a></li>
+              <li><a href ng-click="setLang('it')">Italiano - ({{'lang.Italian'|translate}})</a></li>
+              <li><a href ng-click="setLang('ja')">日本語 - ({{'lang.Japanese'|translate}})</a></li>
+              <li><a href ng-click="setLang('kn')">ಕನ್ನಡ - ({{'lang.Kannada'|translate}})</a></li>
+              <li><a href ng-click="setLang('ko')">조선말 - ({{'lang.Korean'|translate}})</a></li>
+              <li><a href ng-click="setLang('la')">Latina - ({{'lang.Latin'|translate}})</a></li>
+              <li><a href ng-click="setLang('lv')">Latviešu - ({{'lang.Latvian'|translate}})</a></li>
+              <li><a href ng-click="setLang('lt')">Lietuvių - ({{'lang.Lithuanian'|translate}})</a></li>
+              <li><a href ng-click="setLang('mk')">Mакедонски - ({{'lang.Macedonian'|translate}})</a></li>
+              <li><a href ng-click="setLang('ms')">Bahasa Melayu - ({{'lang.Malay'|translate}})'|translate}})</a></li>
+              <li><a href ng-click="setLang('mt')">Malti - ({{'lang.Maltese'|translate}})</a></li>
+              <li><a href ng-click="setLang('no')">Norsk - ({{'lang.Norwegian'|translate}})</a></li>
+              <li><a href ng-click="setLang('fa')">فارسی - ({{'lang.Persian'|translate}})</a></li>
+              <li><a href ng-click="setLang('pl')">Polski - ({{'lang.Polish'|translate}})</a></li>
+              <li><a href ng-click="setLang('pt')">Português - ({{'lang.Portuguese'|translate}})</a></li>
+              <li><a href ng-click="setLang('ro')">Română - ({{'lang.Romanian'|translate}})'|translate}})</a></li>
+              <li><a href ng-click="setLang('ru')">Русский - ({{'lang.Russian'|translate}})</a></li>
+              <li><a href ng-click="setLang('sr')">Српски - ({{'lang.Serbian'|translate}})</a></li>
+              <li><a href ng-click="setLang('sk')">Slovenčina - ({{'lang.Slovak'|translate}})</a></li>
+              <li><a href ng-click="setLang('sl')">Slovenščina - ({{'lang.Slovenian'|translate}})</a></li>
+              <li><a href ng-click="setLang('es')">Español - ({{'lang.Spanish'|translate}})</a></li>
+              <li><a href ng-click="setLang('sw')">Kiswahili - ({{'lang.Swahili'|translate}})</a></li>
+              <li><a href ng-click="setLang('sv')">Svenska - ({{'lang.Swedish'|translate}})</a></li>
+              <li><a href ng-click="setLang('ta')">தமிழ் - ({{'lang.Tamil'|translate}})</a></li>
+              <li><a href ng-click="setLang('te')">తెలుగు - ({{'lang.Telugu'|translate}})</a></li>
+              <li><a href ng-click="setLang('th')">ไทย - ({{'lang.Thai'|translate}})</a></li>
+              <li><a href ng-click="setLang('tr')">Türkçe - ({{'lang.Turkish'|translate}})</a></li>
+              <li><a href ng-click="setLang('uk')">українська мова - ({{'lang.Ukrainian'|translate}})</a></li>
+              <li><a href ng-click="setLang('ur')">اردو - ({{'lang.Urdu'|translate}})</a></li>
+              <li><a href ng-click="setLang('vi')">Việtnam - ({{'lang.Vietnamese'|translate}})</a></li>
+              <li><a href ng-click="setLang('cy')">Cymraeg - ({{'lang.Welsh'|translate}})</a></li>
+              <li><a href ng-click="setLang('yi')">ייִדיש - ({{'lang.Yiddish'|translate}})</a></li>                
+            </ul>
+          </li>           
         </ul>
       </div>
+    </nav>
+
+    <div class="container-fluid" style="padding-bottom: 50px">
+      <div ng-view></div>
     </div>
- --> <!-- MAIN CONTENT --> <div class="container ng-cloak scrollable-content" ng-cloak> <div ui-view></div> <div style="position: absolute; z-index: 10; top: 80px; right: 10px; background-color: transparent" ng-show="alerts.length"> <alert ng-repeat="a in alerts" type="{{a.type}}" style="max-width: 500px; min-width: 500px"> <strong ng-bind="a.msg.split('|')[0]"></strong> </alert> </div> </div> <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation"> <div class="container"> <div ng-repeat="p in systemPlugins"> <ng-include src="p.templateURL"></ng-include> </div> </div> </nav>  
+
+    <nav ng-if="isNodeJS" class="navbar navbar-default navbar-fixed-bottom">
+      <div class="container-fluid">
+        <div ng-repeat="p in systemPlugins">
+          <ng-include src="p.templateURL"></ng-include>
+        </div>
+      </div>
+    </nav>
+  </body> 
+</html>
