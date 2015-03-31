@@ -18,6 +18,9 @@
          "mofowallet.com" == window.location.host) && (window.location.protocol != "https:")) {
       window.location.protocol = "https";
     }
+    else if ("fimkrypto.github.io" == window.location.host) {
+      window.location = "https://www.mofowallet.com/launch.html" + window.location.hash;
+    }
     </script>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
