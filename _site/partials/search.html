@@ -92,7 +92,7 @@
         
         <!-- search accounts -->
         <div ng-if="paramCategory == 'accounts'">
-          <div ng-if="provider.entities == 0">
+          <div ng-if="provider.entities == 0 && paramQuery">
             <div translate="translate.no_search_results"></div>
           </div>
           <div ng-if="provider.entities.length > 0" infinite-scroll="provider.loadMore()" infinite-scroll-distance="0">
@@ -118,7 +118,7 @@
 
         <!-- search assets -->
         <div ng-if="paramCategory == 'assets'">
-          <div ng-if="provider.entities == 0">
+          <div ng-if="provider.entities == 0 && paramQuery">
             <div translate="translate.no_search_results"></div>
           </div>
           <div ng-if="provider.entities.length > 0" infinite-scroll="provider.loadMore()" infinite-scroll-distance="0">
@@ -140,7 +140,7 @@
 
         <!-- search aliases -->
         <div ng-if="paramCategory == 'aliases'">
-          <div ng-if="provider.entities == 0">
+          <div ng-if="provider.entities == 0 && paramQuery">
             <div translate="translate.no_search_results"></div>
           </div>
           <div ng-if="provider.entities.length > 0" infinite-scroll="provider.loadMore()" infinite-scroll-distance="0">
@@ -162,7 +162,7 @@
 
         <!-- search goods -->
         <div ng-if="paramCategory == 'market'">
-          <div ng-if="provider.entities == 0">
+          <div ng-if="provider.entities == 0 && paramQuery">
             <div translate="translate.no_search_results"></div>
           </div>
           <div ng-if="provider.entities.length > 0" infinite-scroll="provider.loadMore()" infinite-scroll-distance="0">

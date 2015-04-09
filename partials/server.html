@@ -1,12 +1,12 @@
 <div ng-init="offCanvas=false" class="row row-offcanvas row-offcanvas-left" ng-class="{active: offCanvas}">
   <div class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar">
     <ul class="nav navbar-stacked">
-      <li route-active="server/fim/console">
+      <li route-active="server/fim/console" ng-if="!forceLocalHost">
         <a href="#/server/fim/console">
           <i class="fa fa-desktop"></i>&nbsp;&nbsp;FIMK console
         </a>
       </li>  
-      <li route-active="server/fim/config">
+      <li route-active="server/fim/config" ng-if="!forceLocalHost">
         <a href="#/server/fim/config">
           <i class="fa fa-file-text-o"></i>&nbsp;&nbsp;FIMK config
         </a>
@@ -16,12 +16,12 @@
           <i class="fa fa-globe"></i>&nbsp;&nbsp;FIMK peers
         </a>
       </li>
-      <li ng-show="!isRunning['TYPE_FIM']">
+      <li ng-show="!isRunning['TYPE_FIM']" ng-if="!forceLocalHost">
         <a href ng-click="startServer('TYPE_FIM')">
           Start server
         </a>
       </li>
-      <li ng-show="isRunning['TYPE_FIM']">
+      <li ng-show="isRunning['TYPE_FIM']" ng-if="!forceLocalHost">
         <a href ng-click="stopServer('TYPE_FIM')">
           Stop server
         </a>

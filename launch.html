@@ -2,7 +2,7 @@
 <html lang="en" ng-app="fim.base" ng-controller="appController">
   <head>
     <meta charset="utf-8">
-    <title>Mofo Wallet 0.4.2</title>
+    <title ng-bind="TITLE"></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>.ng-cloak { display:none; }</style>
@@ -31,7 +31,7 @@
 
     <link type="text/css" rel="stylesheet" href="amstockchart/amcharts/style.css" />
     
-    <link rel="stylesheet" href="styles/main.48bdf420.css">
+    <link rel="stylesheet" href="styles/main.9c1c29d4.css">
 
     <style>
       a[title="JavaScript charts"] {
@@ -51,7 +51,7 @@
         console.log('=========================================')
     </script>-->
 
-    <script src="scripts/scripts.205c95b3.js"></script>
+    <script src="scripts/scripts.74c2771f.js"></script>
 
     <!-- Nxt engine (extends system) -->
     <!--<script src="plugins/nxt-engine/config.js"></script>
@@ -138,6 +138,10 @@
             <ul class="dropdown-menu" role="menu">
               <li route-active>
                 <a ng-href="#/settings/themes"><span class="glyphicon glyphicon-fire"></span>&nbsp;&nbsp;{{'themes' | translate}}</a> 
+              </li>
+              <!-- only displayed when running as front end for FIMK server package-->
+              <li route-active ng-if="forceLocalHost && !enableDualEngines">
+                <a ng-href="#/server/fim/peers"><i class="fa fa-globe"></i>&nbsp;&nbsp;{{'translate.peers' | translate}}</a> 
               </li>
               <li route-active ng-if="isNodeJS">
                 <a ng-href="#/server/fim/console"><span class="glyphicon glyphicon-hdd"></span>&nbsp;&nbsp;{{'translate.fim_server' | translate}}</a> 
