@@ -287,7 +287,7 @@
             <span ng-if="b.period">
               <span translate translate-cloak>translate.show_results_before</span>&nbsp;<b>{{paramPeriod}}</b>
               <a href="#/activity/{{paramEngine}}/{{paramSection}}/latest">
-                <i class="fa fa-times"></i>&nbsp;<span translate translate-cloak>translate.show_latest</span>
+                <i class="fa fa-times"></i>&nbsp;<span translate="translate.show_latest"></span>
               </a>
             </span>
           </li>
@@ -423,7 +423,7 @@
             <div class="load-more-button" ng-show="provider.hasMore">
               <a href ng-click="provider.loadMore()" class="text-lowercase text-muted">
                 <span ng-show="provider.isLoading"><i class="fa fa-refresh fa-spin"></i></span>
-                <span translate-cloak>{{ 'translate.load_more_assets' | translate }}</span>
+                <span translate="translate.load_more_assets"></span>
               </a>
             </div>            
           </div>
