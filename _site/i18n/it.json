@@ -172,7 +172,8 @@
     "share_translation": "Condividi traduzione",
     "my_translation": "La mia traduzione",
     "translate_intro": "<p> 1. Scegliere la lingua che si desidera tradurre dal selettore in basso <br> 2. Migliorare le traduzioni in terza colonna che si ritiene non sono corrette. <br> 3. Mentre si digita le correzioni vengono memorizzati automaticamente, è possibile chiudere il browser e tornare e rimarrai le modifiche. <br> 4. Quando hai finito di migliorare la traduzione fare clic sul pulsante <b>Condividi traduzione</b> e seguire le istruzioni. <br><br></p><p> E 'importante che si lascia il markup HTML (ad esempio <code>&lt;b&gt;Text here&lt;/b&gt;</code> ), e le variabili (ad esempio <code>❴❴variable❵❵</code> ) in tatto. Il contenuto del tag HTML devono essere tradotti, il contenuto delle variabili non devono essere tradotte. </p><p> Non è necessario che si traduce tutto prima di condividere la vostra traduzione. </p>",
-    "translate_sharehowto": "Per condividere la tua traduzione scaricare il file di traduzione e inviarlo all'indirizzo e-mail indicato di seguito."
+    "translate_sharehowto": "Per condividere la tua traduzione scaricare il file di traduzione e inviarlo all'indirizzo e-mail indicato di seguito.",
+    "dashboard_symbol": "{{symbol}} Cruscotto"
   },
   "filter": {
     "filter": "Filtro",
@@ -312,5 +313,21 @@
     "Vietnamese": "Vietnamita",
     "Welsh": "Gallese",
     "Yiddish": "Yiddish"
+  },
+  "time": {
+    "suffixAgo": "fa",
+    "suffixFromNow": "da ora",
+    "inPast": "da un momento all'altro",
+    "seconds": "meno di un minuto",
+    "minute": "circa un minuto",
+    "minutes": "{{val}} verbale",
+    "hour": "circa un ora",
+    "hours": "su {{val}} orario",
+    "day": "un giorno",
+    "days": "{{val}} giorni",
+    "month": "circa un mese",
+    "months": "{{val}} mesi",
+    "year": "circa un anno",
+    "years": "{{val}} anni"
   }
 }

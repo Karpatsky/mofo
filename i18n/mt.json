@@ -172,7 +172,8 @@
     "share_translation": "Traduzzjoni Share",
     "my_translation": "Traduzzjoni My",
     "translate_intro": "<p> 1. Agħżel il-lingwa li trid tittraduċi mir-selettur hawn taħt <br> 2. Ittejjeb it-traduzzjonijiet fit-tielet kolonna li inti temmen li huma żbaljati. <br> 3. Filwaqt li inti tip korrezzjonijiet tiegħek huma awtomatikament maħżuna, inti tista 'qrib browser tiegħek u terga&#39; lura u bidliet tiegħek se jibqgħu. <br> 4. Meta inti qed isir titjib t-traduzzjoni ikklikkja l-buttuna <b>traduzzjoni Share</b> u segwi l-istruzzjonijiet. <br><br></p><p> Huwa importanti li inti tħalli l-awment HTML (per eżempju <code>&lt;b&gt;Text here&lt;/b&gt;</code> ) u l-varjabbli (pereżempju <code>❴❴variable❵❵</code> ) fil tact. Il-kontenut tal-HTML tags għandhom jiġu tradotti, il-kontenut tal-varjabbli m&#39;għandhomx ikunu tradotti. </p><p> Mhuwiex meħtieġ li inti tittraduċi kollox qabel int taqsam traduzzjoni tiegħek. </p>",
-    "translate_sharehowto": "Biex jaqsmu traduzzjoni tiegħek jekk jogħġbok niżżel il-fajl traduzzjoni u tibgħatha lill-indirizz email elenkati hawn taħt."
+    "translate_sharehowto": "Biex jaqsmu traduzzjoni tiegħek jekk jogħġbok niżżel il-fajl traduzzjoni u tibgħatha lill-indirizz email elenkati hawn taħt.",
+    "dashboard_symbol": "{{symbol}} Dashboard"
   },
   "filter": {
     "filter": "Iffiltra",
@@ -312,5 +313,21 @@
     "Vietnamese": "Vjetnamiż",
     "Welsh": "Welsh",
     "Yiddish": "Jiddix"
+  },
+  "time": {
+    "suffixAgo": "ilu",
+    "suffixFromNow": "minn issa",
+    "inPast": "kwalunkwe mument issa",
+    "seconds": "inqas minn minuta",
+    "minute": "madwar minuta",
+    "minutes": "{{val}} minuti",
+    "hour": "madwar siegħa",
+    "hours": "dwar {{val}} sigħat",
+    "day": "kuljum",
+    "days": "{{val}} jiem",
+    "month": "madwar xahar",
+    "months": "{{val}} xhur",
+    "year": "madwar sena",
+    "years": "{{val}} snin"
   }
 }

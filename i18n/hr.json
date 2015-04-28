@@ -172,7 +172,8 @@
     "share_translation": "Podijeli prijevod",
     "my_translation": "Moj prijevod",
     "translate_intro": "<p> 1. Odaberite jezik koji želite prevesti iz izbornika ispod <br> 2. Poboljšati prijevode u trećem stupcu da smatramo da su netočni. <br> 3. Dok upisujete vaše korekcije automatski spremaju, možete zatvoriti svoj preglednik i vratiti i promjene će ostati. <br> 4. Kada ste gotovi poboljšanje prijevod pritisnite gumb <b>Share prijevod</b> i slijedite upute. <br><br></p><p> Važno je da ostavite HTML oznake (npr <code>&lt;b&gt;Text here&lt;/b&gt;</code> ) i varijable (na primjer <code>❴❴variable❵❵</code> ) u takt. Sadržaj HTML oznake trebaju biti prevedeni, sadržaj varijable ne bi trebao biti prevedene. </p><p> To ne zahtijeva da li prevesti sve što prije podijeliti svoj prijevod. </p>",
-    "translate_sharehowto": "Da biste podijeliti svoje prijevod preuzmite prijevod datoteku i poslati ga na e-mail adresu navedenu u nastavku."
+    "translate_sharehowto": "Da biste podijeliti svoje prijevod preuzmite prijevod datoteku i poslati ga na e-mail adresu navedenu u nastavku.",
+    "dashboard_symbol": "{{symbol}} Kontrolna ploča"
   },
   "filter": {
     "filter": "Filter",
@@ -312,5 +313,21 @@
     "Vietnamese": "Vijetnamski",
     "Welsh": "Velški",
     "Yiddish": "Jidiš"
+  },
+  "time": {
+    "suffixAgo": "prije",
+    "suffixFromNow": "od sada",
+    "inPast": "u svakom trenutku",
+    "seconds": "manje od minute",
+    "minute": "oko minutu",
+    "minutes": "{{val}} minuta",
+    "hour": "oko sat vremena",
+    "hours": "o {{val}} vrijeme",
+    "day": "dan",
+    "days": "{{val}} dana",
+    "month": "oko mjesec dana",
+    "months": "{{val}} mjeseci",
+    "year": "oko godinu dana",
+    "years": "{{val}} godina"
   }
 }

@@ -172,7 +172,8 @@
     "share_translation": "Share itzulpena",
     "my_translation": "Nire itzulpena",
     "translate_intro": "<p> 1. Hizkuntza aukeratu hautatzaileak behetik itzuli nahi dituzun <br> 2.- Hirugarren zutabean itzulpenak uste okerrak dira duzun hobetzea. <br> Idazten duzun zure zuzenketak automatikoki gordetzen dira 3. bitartean, zure nabigatzailea itxi daiteke eta itzultzeko eta aldaketak egingo dira. <br> 4. Amaitutakoan hobetzeko itzulpenean klik <b>Share itzulpen</b> botoia eta argibideak. <br><br></p><p> Garrantzitsua da HTML marka uztea (adibidez <code>&lt;b&gt;Text here&lt;/b&gt;</code> ) eta aldagaiak (adibidez <code>❴❴variable❵❵</code> ) biribilen. HTML tags edukiek itzuli beharko lirateke, aldagaien edukiak behar ez da itzulia. </p><p> Ez da beharrezkoa translate duzula dena zure share aurretik. </p>",
-    "translate_sharehowto": "Zure itzulpen partekatzeko deskargatu itzulpen fitxategia eta bidali behean zerrendatzen helbide elektronikora."
+    "translate_sharehowto": "Zure itzulpen partekatzeko deskargatu itzulpen fitxategia eta bidali behean zerrendatzen helbide elektronikora.",
+    "dashboard_symbol": "{{symbol}} Arbela"
   },
   "filter": {
     "filter": "Filter",
@@ -312,5 +313,21 @@
     "Vietnamese": "Vietnamese",
     "Welsh": "Welsh",
     "Yiddish": "Yiddish"
+  },
+  "time": {
+    "suffixAgo": "Duela",
+    "suffixFromNow": "Hemendik aurrera",
+    "inPast": "Edozein unetan orain",
+    "seconds": "Minutu bat baino gutxiago",
+    "minute": "minutu bat",
+    "minutes": "{{val}} minutu",
+    "hour": "ordubete inguru",
+    "hours": "buruz {{val}} ordu",
+    "day": "egun bat",
+    "days": "{{val}} egunak",
+    "month": "hilabete inguru",
+    "months": "{{val}} hilabete",
+    "year": "urte bat inguru",
+    "years": "{{val}} urte"
   }
 }

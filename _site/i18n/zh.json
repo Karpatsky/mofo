@@ -172,7 +172,8 @@
     "share_translation": "分享翻译",
     "my_translation": "我的翻译",
     "translate_intro": "<p> 1.选择语言，你想从下面选择翻译<br> 2.提高您认为是不正确的，在第三列的翻译。 <br> 3.当你键入您的更正自动存储，您可以关闭浏览器，然后回来和您的更改将保留。 <br> 4.当您完成提高翻译点击<b>分享</b>按钮， <b>转换</b> ，并按照说明进行操作。 <br><br></p><p>你离开的HTML标记是很重要的（例如<code>&lt;b&gt;Text here&lt;/b&gt;</code>和变量（例如<code>❴❴variable❵❵</code>机智）。 HTML标签的内容应该翻译，变量的内容不应翻译。 </p><p>你翻译的一切你分享你的翻译之前，它不是必需的。 </p>",
-    "translate_sharehowto": "分享你的翻译，请下载翻译文件并将其发送到下面列出的电子邮件地址。"
+    "translate_sharehowto": "分享你的翻译，请下载翻译文件并将其发送到下面列出的电子邮件地址。",
+    "dashboard_symbol": "{{symbol}}仪表盘"
   },
   "filter": {
     "filter": "过滤器",
@@ -312,5 +313,21 @@
     "Vietnamese": "越南",
     "Welsh": "威尔士",
     "Yiddish": "意第绪语"
+  },
+  "time": {
+    "suffixAgo": "前",
+    "suffixFromNow": "从现在开始",
+    "inPast": "现在任何时刻",
+    "seconds": "不到一分钟",
+    "minute": "大约一分钟",
+    "minutes": "{{val}}分钟",
+    "hour": "大约一个小时",
+    "hours": "大约{{val}}小时",
+    "day": "每天",
+    "days": "{{val}}天",
+    "month": "大约一个月",
+    "months": "{{val}}个月",
+    "year": "大约一年",
+    "years": "{{val}}岁月"
   }
 }

@@ -172,7 +172,8 @@
     "share_translation": "Delen vertaling",
     "my_translation": "Mijn vertaling",
     "translate_intro": "<p> 1. Kies de gewenste taal te vertalen uit de onderstaande selector <br> 2. Verbetering van de vertalingen in de derde kolom waarvan u denkt dat onjuist. <br> 3. Terwijl u typt uw ​​correcties worden automatisch opgeslagen, kunt u uw browser afsluit en terug te komen en uw wijzigingen zullen blijven. <br> 4. Wanneer u klaar bent met het verbeteren van de vertaling klik op de <b>Share vertaling</b> knop en volg de instructies. <br><br></p><p> Het is belangrijk dat u de HTML-opmaak te verlaten (bijvoorbeeld <code>&lt;b&gt;Text here&lt;/b&gt;</code> ) en de variabelen (bijvoorbeeld <code>❴❴variable❵❵</code> ) in tact. De inhoud van HTML-tags moeten worden vertaald, de inhoud van variabelen wordt niet vertaald. </p><p> Het is niet vereist dat je alles te vertalen voordat u uw vertaling te delen. </p>",
-    "translate_sharehowto": "Om uw vertaling te delen download dan de vertaling bestand en stuur het naar het e-mailadres hieronder vermeld."
+    "translate_sharehowto": "Om uw vertaling te delen download dan de vertaling bestand en stuur het naar het e-mailadres hieronder vermeld.",
+    "dashboard_symbol": "{{symbol}} Dashboard"
   },
   "filter": {
     "filter": "Filter",
@@ -312,5 +313,21 @@
     "Vietnamese": "Vietnamese",
     "Welsh": "Wels",
     "Yiddish": "Jiddisch"
+  },
+  "time": {
+    "suffixAgo": "geleden",
+    "suffixFromNow": "vanaf nu",
+    "inPast": "elk moment nu",
+    "seconds": "minder dan een minuut",
+    "minute": "ongeveer een minuut",
+    "minutes": "{{val}} notulen",
+    "hour": "ongeveer een uur",
+    "hours": "over {{val}} uur",
+    "day": "een dag",
+    "days": "{{val}} dagen",
+    "month": "ongeveer een maand",
+    "months": "{{val}} maanden",
+    "year": "ongeveer een jaar",
+    "years": "{{val}} jaar"
   }
 }

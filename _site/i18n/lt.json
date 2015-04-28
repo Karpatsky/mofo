@@ -172,7 +172,8 @@
     "share_translation": "Dalintis vertimas",
     "my_translation": "Mano vertimas",
     "translate_intro": "<p> 1. Pasirinkite kalbą norite išversti iš žemiau selektorių <br> 2. Gerinti trečioje skiltyje vertimus, kad jums manyti, yra neteisingi. <br> 3. Nors įvedate savo taisymais yra automatiškai saugomi, galite uždaryti naršyklę ir vėl ir pakeitimai bus. <br> 4. Kai baigsite pagerinti vertimą spustelėkite <b>Bendrinti vertimo</b> mygtuką ir sekite instrukcijas. <br><br></p><p> Svarbu, kad jūs paliekate HTML žymėjimo (pvz <code>&lt;b&gt;Text here&lt;/b&gt;</code> ) ir kintamieji (pvz <code>❴❴variable❵❵</code> ) taktiškumas. Iš HTML žymes turinys turi būti išversti, kintamųjų turinys neturėtų būti verčiami. </p><p> Tai nėra būtina, kad galite išversti viską prieš praleisite savo vertimo. </p>",
-    "translate_sharehowto": "Norėdami pasidalinti savo vertimą atsisiųskite vertimo failą ir siųsti jį į elektroninio pašto adresą žemiau."
+    "translate_sharehowto": "Norėdami pasidalinti savo vertimą atsisiųskite vertimo failą ir siųsti jį į elektroninio pašto adresą žemiau.",
+    "dashboard_symbol": "{{symbol}} Prietaisų skydas"
   },
   "filter": {
     "filter": "Filtras",
@@ -312,5 +313,21 @@
     "Vietnamese": "Vietnamiečių",
     "Welsh": "Velso",
     "Yiddish": "Jidiš"
+  },
+  "time": {
+    "suffixAgo": "prieš",
+    "suffixFromNow": "nuo dabar",
+    "inPast": "bet kuriuo metu dabar",
+    "seconds": "mažiau nei minutę",
+    "minute": "apie minutę",
+    "minutes": "{{val}} protokolas",
+    "hour": "apie valandą",
+    "hours": "apie {{val}} valandos",
+    "day": "diena",
+    "days": "{{val}} dienos",
+    "month": "apie mėnesį",
+    "months": "{{val}} mėnesių",
+    "year": "apie metus",
+    "years": "{{val}} metų"
   }
 }

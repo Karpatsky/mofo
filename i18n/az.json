@@ -172,7 +172,8 @@
     "share_translation": "Share tərcümə",
     "my_translation": "Mənim tərcümə",
     "translate_intro": "<p> Dil seçin 1. aşağıdakı selector tərcümə etmək istədiyiniz <br> 2. yanlış hesab üçüncü sütununda tərcümə təkmilləşdirilməsi. <br> Siz düzəlişlər avtomatik saxlanılır növü 3. baxmayaraq, sizin brauzerinizin yaxın və geri gəlmək və dəyişikliklər qalacaq bilər. <br> 4. təkmilləşdirilməsi edilir zaman tərcümə <b>Share tərcümə</b> düyməsinə basın və təlimatlara əməl edin. <br><br></p><p> Bu HTML biçimlendirme tərk vacibdir (məsələn <code>&lt;b&gt;Text here&lt;/b&gt;</code> ) və (məsələn üçün dəyişənlərin <code>❴❴variable❵❵</code> ) ədəb. HTML tags məzmunu dəyişənlərin məzmunu tərcümə edilə bilməz, tərcümə olunmalıdır. </p><p> Bu sizin tərcümə paylaşmaq əvvəl hər şeyi tərcümə tələb olunmur. </p>",
-    "translate_sharehowto": "Sizin tərcümə bölüşmək üçün tərcümə fayl yükləyə və aşağıdakı e-poçt ünvanına göndərin."
+    "translate_sharehowto": "Sizin tərcümə bölüşmək üçün tərcümə fayl yükləyə və aşağıdakı e-poçt ünvanına göndərin.",
+    "dashboard_symbol": "{{symbol}} Dashboard"
   },
   "filter": {
     "filter": "Filtr",
@@ -312,5 +313,21 @@
     "Vietnamese": "Vietnamese",
     "Welsh": "Welsh",
     "Yiddish": "Yiddish"
+  },
+  "time": {
+    "suffixAgo": "əvvəl",
+    "suffixFromNow": "indi",
+    "inPast": "İndi hər an",
+    "seconds": "Bir dəqiqədən az",
+    "minute": "Bir dəqiqə haqqında",
+    "minutes": "{{val}} dəqiqə",
+    "hour": "təxminən bir saat",
+    "hours": "haqqında {{val}} saat",
+    "day": "bir gün",
+    "days": "{{val}} gün",
+    "month": "bir ay",
+    "months": "{{val}} ay",
+    "year": "təxminən bir il",
+    "years": "{{val}} il"
   }
 }

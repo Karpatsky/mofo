@@ -172,7 +172,8 @@
     "share_translation": "Jaga tõlge",
     "my_translation": "Minu tõlge",
     "translate_intro": "<p> 1. Vali keel, mida soovid tõlkida valijat alla <br> 2. Parandada tõlkeid kolmandas veerus, et sa usud on valed. <br> 3. Kui kirjutad oma parandusi salvestatakse automaatselt, saate oma brauseri sulgeda ja tagasi tulla ja oma muudatused jäävad. <br> 4. Kui olete teinud parandada tõlke kliki <b>Share tõlke</b> nuppu ja järgige juhiseid. <br><br></p><p> On oluline, et jätad HTML Markup (näiteks <code>&lt;b&gt;Text here&lt;/b&gt;</code> ) ja muutujad (nt <code>❴❴variable❵❵</code> ) taktitunne. Sisu HTML tuleb tõlkida, sisu muutujad ei tohiks tõlkida. </p><p> Ei ole nõutud, et te tõlkida kõike, enne kui jagada oma tõlge. </p>",
-    "translate_sharehowto": "Jagada oma tõlke laadige tõlkefaili ja saatke see e-posti aadress allpool."
+    "translate_sharehowto": "Jagada oma tõlke laadige tõlkefaili ja saatke see e-posti aadress allpool.",
+    "dashboard_symbol": "{{symbol}} Armatuurlaud"
   },
   "filter": {
     "filter": "Filter",
@@ -312,5 +313,21 @@
     "Vietnamese": "Vietnami",
     "Welsh": "Welsh",
     "Yiddish": "Yiddish"
+  },
+  "time": {
+    "suffixAgo": "tagasi",
+    "suffixFromNow": "nüüd",
+    "inPast": "nüüd igal hetkel",
+    "seconds": "minut",
+    "minute": "umbes minut",
+    "minutes": "{{val}} protokoll",
+    "hour": "umbes tund",
+    "hours": "umbes {{val}} tööaeg",
+    "day": "päeval",
+    "days": "{{val}} päeva",
+    "month": "umbes kuu",
+    "months": "{{val}} kuud",
+    "year": "Umbes aasta",
+    "years": "{{val}} aastat"
   }
 }

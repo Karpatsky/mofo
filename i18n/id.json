@@ -172,7 +172,8 @@
     "share_translation": "Terjemahan berbagi",
     "my_translation": "Terjemahan saya",
     "translate_intro": "<p> 1. Pilih bahasa yang Anda ingin menerjemahkan dari pemilih di bawah ini <br> 2. Meningkatkan terjemahan pada kolom ketiga yang Anda percaya tidak benar. <br> 3. Ketika Anda mengetik koreksi Anda secara otomatis disimpan, Anda dapat menutup browser Anda dan kembali dan perubahan akan tetap. <br> 4. Setelah selesai memperbaiki terjemahan klik tombol <b>terjemahan Share</b> dan ikuti petunjuk. <br><br></p><p> Adalah penting bahwa Anda meninggalkan markup HTML (misalnya <code>&lt;b&gt;Text here&lt;/b&gt;</code> ) dan variabel (misalnya <code>❴❴variable❵❵</code> ) dalam bijaksana. Isi tag HTML harus diterjemahkan, isi variabel tidak boleh diterjemahkan. </p><p> Hal ini tidak diperlukan bahwa Anda menerjemahkan segala sesuatu sebelum Anda berbagi terjemahan Anda. </p>",
-    "translate_sharehowto": "Untuk berbagi terjemahan Anda silahkan download file terjemahan dan mengirimkannya ke alamat email yang terdaftar di bawah ini."
+    "translate_sharehowto": "Untuk berbagi terjemahan Anda silahkan download file terjemahan dan mengirimkannya ke alamat email yang terdaftar di bawah ini.",
+    "dashboard_symbol": "{{symbol}} Dasbor"
   },
   "filter": {
     "filter": "Filter",
@@ -312,5 +313,21 @@
     "Vietnamese": "Vietnam",
     "Welsh": "Welsh",
     "Yiddish": "Yiddi"
+  },
+  "time": {
+    "suffixAgo": "silam",
+    "suffixFromNow": "mulai sekarang",
+    "inPast": "setiap saat sekarang",
+    "seconds": "kurang dari satu menit",
+    "minute": "sekitar satu menit",
+    "minutes": "{{val}} menit",
+    "hour": "sekitar satu jam",
+    "hours": "tentang {{val}} jam",
+    "day": "satu hari",
+    "days": "{{val}} hari-hari",
+    "month": "sekitar sebulan",
+    "months": "{{val}} bulan",
+    "year": "sekitar satu tahun",
+    "years": "{{val}} tahun"
   }
 }

@@ -172,7 +172,8 @@
     "share_translation": "Deel vertaling",
     "my_translation": "My vertaling",
     "translate_intro": "<p> 1. Kies die taal wat jy wil vertaal uit die selector hieronder <br> 2. Verbeter die vertalings in die derde kolom wat jy glo is verkeerd. <br> 3. Terwyl jy tik jou korreksies outomaties gestoor word, kan jy die leser sluit en terug te kom en om jou veranderinge sal bly. <br> 4. Wanneer jy klaar is die verbetering van die vertaling op die <b>Deel vertaling</b> knoppie en volg die instruksies. <br><br></p><p> Dit is belangrik dat jy die HTML opmaak (byvoorbeeld <code>&lt;b&gt;Text here&lt;/b&gt;</code> ) en die veranderlikes (byvoorbeeld <code>❴❴variable❵❵</code> ) in stand. Die inhoud van HTML tags vertaal moet word, die inhoud van veranderlikes moet nie vertaal word nie. </p><p> Dit is nie nodig dat jy vertaal alles voor jy jou vertaling. </p>",
-    "translate_sharehowto": "Jou vertaling te deel laai asseblief die vertaling lêer en stuur dit na die e-pos adres hieronder gelys."
+    "translate_sharehowto": "Jou vertaling te deel laai asseblief die vertaling lêer en stuur dit na die e-pos adres hieronder gelys.",
+    "dashboard_symbol": "{{symbol}} Dashboard"
   },
   "filter": {
     "filter": "Filter",
@@ -312,5 +313,21 @@
     "Vietnamese": "Vietnamese",
     "Welsh": "Welsh",
     "Yiddish": "Yiddish"
+  },
+  "time": {
+    "suffixAgo": "gelede",
+    "suffixFromNow": "van nou af",
+    "inPast": "enige oomblik nou",
+    "seconds": "minder as 'n minuut",
+    "minute": "ongeveer 'n minuut",
+    "minutes": "{{val}} minute",
+    "hour": "ongeveer 'n uur",
+    "hours": "oor {{val}} uur",
+    "day": "'n dag",
+    "days": "{{val}} dae",
+    "month": "ongeveer 'n maand",
+    "months": "{{val}} maande",
+    "year": "sowat 'n jaar",
+    "years": "{{val}} jaar"
   }
 }

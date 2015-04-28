@@ -172,7 +172,8 @@
     "share_translation": "Konigi traduko",
     "my_translation": "Mia traduko",
     "translate_intro": "<p> 1. Elektu la lingvon vi volas traduki la seleccionador sube <br> 2. Plibonigi la tradukoj en la tria kolumno kiu vi kredas estas malĝustaj. <br> 3. Dum vi tajpas vian korektoj aŭtomate stokita, vi povas fermi via retumilo kaj revenu kaj viajn ŝanĝojn restos. <br> 4. Kiam vi finis plibonigi la tradukon alklaku la <b>Konigi traduko</b> butonon kaj sekvi instrukciojn. <br><br></p><p> Gravas ke vi lasus la HTML markado (ekzemple <code>&lt;b&gt;Text here&lt;/b&gt;</code> ) kaj la variabloj (ekzemple <code>❴❴variable❵❵</code> ) en takto. La enhavoj de HTML etikedoj devus esti tradukitaj, la enhavon de variabloj ne devus esti tradukitaj. </p><p> Ĝi ne postulas ke vi traduku ĉion antaŭ vi dividas vian tradukon. </p>",
-    "translate_sharehowto": "Havebligi viajn tradukado bonvolu elŝuti tradukitajn dosierojn kaj sendi ĝin al la retadreso cxi-sube."
+    "translate_sharehowto": "Havebligi viajn tradukado bonvolu elŝuti tradukitajn dosierojn kaj sendi ĝin al la retadreso cxi-sube.",
+    "dashboard_symbol": "{{symbol}} Dashboard"
   },
   "filter": {
     "filter": "Filtrilo",
@@ -312,5 +313,21 @@
     "Vietnamese": "Vjetnama",
     "Welsh": "Kimra",
     "Yiddish": "Jida"
+  },
+  "time": {
+    "suffixAgo": "antaŭ",
+    "suffixFromNow": "ekde nun",
+    "inPast": "ajna momento nun",
+    "seconds": "malpli ol unu minuto",
+    "minute": "proksimume minuto",
+    "minutes": "{{val}} minutoj",
+    "hour": "proksimume horo",
+    "hours": "proksimume {{val}} horojn",
+    "day": "tago",
+    "days": "{{val}} tagoj",
+    "month": "proksimume monato",
+    "months": "{{val}} monatoj",
+    "year": "proksimume jaro",
+    "years": "{{val}} jaroj"
   }
 }

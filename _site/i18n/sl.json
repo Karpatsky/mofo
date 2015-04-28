@@ -172,7 +172,8 @@
     "share_translation": "Share prevod",
     "my_translation": "Moj prevod",
     "translate_intro": "<p> 1. Izberite jezik, ki ga želite prevesti iz selektorja spodaj <br> 2. Izboljšanje prevode v tretjem stolpcu, ki mislite, da so napačni. <br> 3. Medtem ko vnašate popravke se samodejno shranijo, lahko zaprete brskalnik in prišel nazaj in vaše spremembe bodo ostali. <br> 4. Ko ste končali izboljšati prevod kliknite gumb <b>Share prevod</b> in sledite navodilom. <br><br></p><p> Pomembno je, da pustite HTML markup (na primer <code>&lt;b&gt;Text here&lt;/b&gt;</code> ) in spremenljivke (na primer <code>❴❴variable❵❵</code> ) v takta. Vsebino HTML je treba prevesti, vsebina spremenljivk ni treba prevesti. </p><p> To ni potrebno, da ste prevesti vse, preden daste prevod. </p>",
-    "translate_sharehowto": "Da delite svoje prevod prenesite prevod datoteko in jo pošljete na e-poštni naslov spodaj navedenih."
+    "translate_sharehowto": "Da delite svoje prevod prenesite prevod datoteko in jo pošljete na e-poštni naslov spodaj navedenih.",
+    "dashboard_symbol": "{{symbol}} Nadzorna plošča"
   },
   "filter": {
     "filter": "Filter",
@@ -312,5 +313,21 @@
     "Vietnamese": "Vietnamski",
     "Welsh": "Welsh",
     "Yiddish": "Jidiš"
+  },
+  "time": {
+    "suffixAgo": "nazaj",
+    "suffixFromNow": "od zdaj",
+    "inPast": "koli trenutek zdaj",
+    "seconds": "manj kot minuto",
+    "minute": "približno minuto",
+    "minutes": "{{val}} minut",
+    "hour": "približno eno uro",
+    "hours": "približno {{val}} ur",
+    "day": "dan",
+    "days": "{{val}} dni",
+    "month": "približno en mesec",
+    "months": "{{val}} mesecev",
+    "year": "približno eno leto",
+    "years": "{{val}} let"
   }
 }

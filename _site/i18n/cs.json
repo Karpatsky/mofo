@@ -172,7 +172,8 @@
     "share_translation": "Share překlad",
     "my_translation": "Můj překlad",
     "translate_intro": "<p> 1. Vyberte jazyk, který chcete přeložit z níže uvedeného voliče <br> 2. Zlepšit překlady ve třetím sloupci, že si myslíte, že jsou nesprávné. <br> 3. I když zadáte vaše opravy jsou automaticky ukládány, můžete zavřít prohlížeč a vrátit se a změny zůstanou. <br> 4. Po dokončení zlepšuje překlad klikněte na tlačítko <b>Share překladu</b> a postupujte podle pokynů. <br><br></p><p> Je důležité, že necháte HTML kódu (například <code>&lt;b&gt;Text here&lt;/b&gt;</code> ) a proměnné (například <code>❴❴variable❵❵</code> ) v taktu. Obsah HTML tagy by měly být přeloženy, obsah proměnných, by neměly být přeložen. </p><p> Není nutné, aby jste všechno překládat, než budete sdílet svůj překlad. </p>",
-    "translate_sharehowto": "Chcete-li sdílet svůj překlad si stáhněte soubor překladu a odeslat ji na e-mailovou adresu uvedenou níže."
+    "translate_sharehowto": "Chcete-li sdílet svůj překlad si stáhněte soubor překladu a odeslat ji na e-mailovou adresu uvedenou níže.",
+    "dashboard_symbol": "{{symbol}} Palubní deska"
   },
   "filter": {
     "filter": "Filtr",
@@ -312,5 +313,21 @@
     "Vietnamese": "Vietnamec",
     "Welsh": "Velšský",
     "Yiddish": "Jidiš"
+  },
+  "time": {
+    "suffixAgo": "před",
+    "suffixFromNow": "od teď",
+    "inPast": "Každou chvíli",
+    "seconds": "méně než minutu",
+    "minute": "o minutu",
+    "minutes": "{{val}} zápis",
+    "hour": "asi hodinu",
+    "hours": "o {{val}} hodiny",
+    "day": "den",
+    "days": "{{val}} dny",
+    "month": "o měsíc",
+    "months": "{{val}} měsíce",
+    "year": "asi rok",
+    "years": "{{val}} léta"
   }
 }

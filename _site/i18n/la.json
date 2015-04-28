@@ -172,7 +172,8 @@
     "share_translation": "Share Translation",
     "my_translation": "Et dans",
     "translate_intro": "<p> 1. eligite lingua vis ut ex infra electrix <br> Vestibulum in tertia columna 2. translationibus credis esse falsum. <br> 3. Dum vobis corrigenda sunt, a se condita type possis tuos pasco quod mutationes tuas redi remanebit. <br> 4 et dicebat eis quocumque fit translatio melius click in puga pyga, et <b>translatio Share</b> sequi praecepta. <br><br></p><p> Illud dimiseritis HTML ch (exempli <code>&lt;b&gt;Text here&lt;/b&gt;</code> ) et variabilium (exempli <code>❴❴variable❵❵</code> ) in ingenio. Summa HTML tags quod interpretatur variabiles contenta non transtulit. </p><p> Non requiritur ut tibi reddo tuum ante omnia falsa. </p>",
-    "translate_sharehowto": "Socium tibi in translatione translation Download file et mitte inscriptio recensentur infra."
+    "translate_sharehowto": "Socium tibi in translatione translation Download file et mitte inscriptio recensentur infra.",
+    "dashboard_symbol": "{{symbol}} Dashboard"
   },
   "filter": {
     "filter": "Filter",
@@ -312,5 +313,21 @@
     "Vietnamese": "Vietnamese",
     "Welsh": "Walensium",
     "Yiddish": "Yiddish"
+  },
+  "time": {
+    "suffixAgo": "ago",
+    "suffixFromNow": "ex nunc",
+    "inPast": "jam jam",
+    "seconds": "minus quam a minute",
+    "minute": "de minutis",
+    "minutes": "{{val}} minutes",
+    "hour": "circa horam",
+    "hours": "about {{val}} horis",
+    "day": "a die",
+    "days": "{{val}} diebus",
+    "month": "circiter mensem",
+    "months": "{{val}} mensibus",
+    "year": "anno fere",
+    "years": "{{val}} annis"
   }
 }

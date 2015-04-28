@@ -172,7 +172,8 @@
     "share_translation": "traduction Partager",
     "my_translation": "Ma traduction",
     "translate_intro": "<p> 1. Choisissez la langue que vous voulez traduire le sélecteur ci-dessous <br> 2. Améliorer les traductions dans la troisième colonne que vous pensez qu'ils sont inexacts. <br> 3. Pendant que vous tapez vos corrections sont automatiquement stockés, vous pouvez fermer votre navigateur et revenir et vos modifications resterez. <br> 4. Lorsque vous avez terminé l&#39;amélioration de la traduction cliquez sur le bouton <b>de traduction Partager</b> et suivez les instructions. <br><br></p><p> Il est important que vous quittez le balisage HTML (par exemple <code>&lt;b&gt;Text here&lt;/b&gt;</code> ) et les variables (par exemple <code>❴❴variable❵❵</code> ) dans le tact. Le contenu de balises HTML doivent être traduits, le contenu des variables ne doivent pas être traduits. </p><p> Il ne est pas nécessaire que vous traduisez tout avant de partager votre traduction. </p>",
-    "translate_sharehowto": "Pour partager votre traduction se il vous plaît télécharger le fichier de traduction et l'envoyer à l&#39;adresse électronique ci-dessous."
+    "translate_sharehowto": "Pour partager votre traduction se il vous plaît télécharger le fichier de traduction et l'envoyer à l&#39;adresse électronique ci-dessous.",
+    "dashboard_symbol": "{{symbol}} Tableau de bord"
   },
   "filter": {
     "filter": "Filtre",
@@ -312,5 +313,21 @@
     "Vietnamese": "Vietnamien",
     "Welsh": "Gallois",
     "Yiddish": "Yiddish"
+  },
+  "time": {
+    "suffixAgo": "Il ya",
+    "suffixFromNow": "à partir de maintenant",
+    "inPast": "ne importe quel moment maintenant",
+    "seconds": "moins d'une minute",
+    "minute": "environ une minute",
+    "minutes": "{{val}} procès-verbal",
+    "hour": "environ une heure",
+    "hours": "sur {{val}} heures",
+    "day": "un jour",
+    "days": "{{val}} journées",
+    "month": "environ un mois",
+    "months": "{{val}} mois",
+    "year": "environ un an",
+    "years": "{{val}} ans"
   }
 }

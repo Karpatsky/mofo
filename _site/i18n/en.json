@@ -10,7 +10,7 @@
     "language":             "Language",
     "download_translation": "Download translation",
     "toggle_navigation":    "Toggle navigation",
-    "dashboard":            "{{symbol}} Dashboard",
+    "dashboard_symbol":     "{{symbol}} Dashboard",
     "dashboard_explained":  "<p><h3>This is your dashboard.</h3></p><p>On it you will find all combined activity of all accounts that you follow.<br>To follow an account click \"Follow user\" when you are on that accounts page.<br>To stop following an account click \"Stop following user\" when on that accounts page.</p>",
     "leasing_explained":    "<p><h3>Balance leasing.</h3></p><p>Here you will find a list of accounts that have currently leased their balance to this account.<br>Leasing your balance to an account will add your balance to the other accounts forging power.</p>",
     "blocks_explained":     "<p><h3>Blocks forged.</h3></p><p>Here you see all blocks forged by this account.</p>",
@@ -174,7 +174,26 @@
     "share_translation":    "Share translation",
     "my_translation":       "My translation",
     "translate_intro":      "<p>1. Choose the language you want to translate from the selector below<br>2. Improve the translations in the third column that you believe are incorrect.<br>3. While you type your corrections are automatically stored, you can close your browser and come back and your changes will remain.<br>4. When you are done improving the translation click the <b>Share translation</b> button and follow instructions.<br><br></p><p>It is important that you leave the HTML markup (for example <code>&lt;b&gt;Text here&lt;/b&gt;</code>) and the variables (for example <code>&#10100;&#10100;variable&#10101;&#10101;</code>) in tact. The contents of HTML tags should be translated, the contents of variables should not be translated.</p><p>It is not required that you translate everything before you share your translation.</p>",
-    "translate_sharehowto": "To share your translation please download the translation file and send it to the email address listed below."
+    "translate_sharehowto": "To share your translation please download the translation file and send it to the email address listed below.",
+    "edit":                 "Edit",
+    "delete":               "Delete"
+  },
+
+  "time": {
+    "suffixAgo": "ago",
+    "suffixFromNow": "from now",
+    "inPast": "any moment now",
+    "seconds": "less than a minute",
+    "minute": "about a minute",
+    "minutes": "{{val}} minutes",
+    "hour": "about an hour",
+    "hours": "about {{val}} hours",
+    "day": "a day",
+    "days": "{{val}} days",
+    "month": "about a month",
+    "months": "{{val}} months",
+    "year": "about a year",
+    "years": "{{val}} years"
   },
 
   "filter": {

@@ -172,7 +172,8 @@
     "share_translation": "Chia sẻ dịch",
     "my_translation": "Bản dịch của tôi",
     "translate_intro": "<p> 1. Chọn ngôn ngữ mà bạn muốn dịch từ bộ chọn dưới đây <br> 2. Cải thiện bản dịch trong cột thứ ba mà bạn tin là không chính xác. <br> 3. Trong khi bạn gõ chỉnh sửa của bạn sẽ được tự động lưu trữ, bạn có thể đóng trình duyệt và quay trở lại và thay đổi của bạn sẽ vẫn còn. <br> 4. Khi bạn đang thực hiện việc cải thiện dịch nhấp vào nút <b>Share dịch</b> và làm theo hướng dẫn. <br><br></p><p> Điều quan trọng là bạn bỏ đánh dấu HTML (ví dụ <code>&lt;b&gt;Text here&lt;/b&gt;</code> ) và các biến (ví dụ <code>❴❴variable❵❵</code> ) trong sự khéo léo. Các nội dung của các thẻ HTML nên được dịch, các nội dung của các biến không nên dịch. </p><p> Nó không phải là yêu cầu mà bạn dịch tất cả mọi thứ trước khi bạn chia sẻ bản dịch của bạn. </p>",
-    "translate_sharehowto": "Để chia sẻ bản dịch của bạn xin vui lòng tải về các tập tin thông dịch và gửi đến địa chỉ email được liệt kê dưới đây."
+    "translate_sharehowto": "Để chia sẻ bản dịch của bạn xin vui lòng tải về các tập tin thông dịch và gửi đến địa chỉ email được liệt kê dưới đây.",
+    "dashboard_symbol": "{{symbol}} Bảng điều khiển"
   },
   "filter": {
     "filter": "Lọc",
@@ -312,5 +313,21 @@
     "Vietnamese": "Tiếng Việt",
     "Welsh": "Welsh",
     "Yiddish": "Yiddish"
+  },
+  "time": {
+    "suffixAgo": "cách đây",
+    "suffixFromNow": "từ giờ",
+    "inPast": "bất kỳ thời điểm hiện nay",
+    "seconds": "ít hơn một phút",
+    "minute": "khoảng một phút",
+    "minutes": "{{val}} từ phút",
+    "hour": "khoảng một giờ",
+    "hours": "về {{val}} giờ",
+    "day": "một ngày",
+    "days": "{{val}} ngày",
+    "month": "khoảng một tháng",
+    "months": "{{val}} tháng",
+    "year": "khoảng một năm",
+    "years": "{{val}} năm"
   }
 }

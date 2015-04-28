@@ -172,7 +172,8 @@
     "share_translation": "공유 번역",
     "my_translation": "내 번역",
     "translate_intro": "<p> 언어를 선택 1. 아래의 선택에서 번역 할 <br> 2. 잘못된 생각 세 번째 열에서 번역을 향상시킬 수 있습니다. <br> 당신이 당신의 수정이 자동으로 저장됩니다 입력 3. 동안, 당신은 당신의 브라우저를 닫고 다시 와서 변경 사항이 남아 있습니다. <br> 4. 당신이 개선을 완료하면 번역이 <b>공유 번역 버튼을</b> 클릭하고 지시 사항을 따르십시오. <br><br></p><p> 그것은 당신이 HTML 마크 업을 유지하는 것이 중요하다 (예를 들어 <code>&lt;b&gt;Text here&lt;/b&gt;</code> )와 (예를 들어 대한 변수 <code>❴❴variable❵❵</code> ) 전술에. HTML 태그의 내용은, 변수의 내용을 변환되지 않아야 번역되어야한다. </p><p> 그것은 당신이 당신의 번역을 공유하기 전에 모든 것을 번역 할 필요는 없습니다. </p>",
-    "translate_sharehowto": "번역을 공유하려면 번역 파일을 다운로드하여 아래의 메일 주소로 보내 주시기 바랍니다."
+    "translate_sharehowto": "번역을 공유하려면 번역 파일을 다운로드하여 아래의 메일 주소로 보내 주시기 바랍니다.",
+    "dashboard_symbol": "{{symbol}} 계기판"
   },
   "filter": {
     "filter": "필터",
@@ -312,5 +313,21 @@
     "Vietnamese": "베트남의",
     "Welsh": "웨일스 말",
     "Yiddish": "이디시 말의"
+  },
+  "time": {
+    "suffixAgo": "전",
+    "suffixFromNow": "지금부터",
+    "inPast": "지금 어느 순간",
+    "seconds": "분 미만",
+    "minute": "약 1 분",
+    "minutes": "{{val}} 분",
+    "hour": "약 1 시간",
+    "hours": "약 {{val}} 시간",
+    "day": "하루",
+    "days": "{{val}} 일",
+    "month": "한 달에 약",
+    "months": "{{val}} 달",
+    "year": "약 1 년",
+    "years": "{{val}} 년"
   }
 }

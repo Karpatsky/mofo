@@ -172,7 +172,8 @@
     "share_translation": "Terjemahan Share",
     "my_translation": "Terjemahan saya",
     "translate_intro": "<p> 1. Pilih bahasa yang anda mahu untuk menterjemahkan dari pemilih di bawah <br> 2. Meningkatkan terjemahan dalam ruang ketiga yang anda percaya adalah tidak benar. <br> 3. Semasa anda menaip pembetulan anda disimpan secara automatik, anda boleh menutup pelayar anda dan datang semula dan perubahan anda akan kekal. <br> 4. Apabila anda telah selesai memperbaiki terjemahan klik butang <b>terjemahan Share</b> dan ikut arahan. <br><br></p><p> Ia adalah penting bahawa anda meninggalkan markup HTML (contohnya <code>&lt;b&gt;Text here&lt;/b&gt;</code> ) dan pembolehubah (contohnya <code>❴❴variable❵❵</code> ) dalam kebijaksanaan. Kandungan tag HTML beerti, kandungan pembolehubah tidak boleh diterjemahkan. </p><p> Ia tidak perlu bahawa anda menterjemahkan segala-galanya sebelum anda berkongsi terjemahan anda. </p>",
-    "translate_sharehowto": "Untuk berkongsi terjemahan anda sila muat turun fail terjemahan dan hantar ke alamat e-mel yang disenaraikan di bawah."
+    "translate_sharehowto": "Untuk berkongsi terjemahan anda sila muat turun fail terjemahan dan hantar ke alamat e-mel yang disenaraikan di bawah.",
+    "dashboard_symbol": "{{symbol}} Dashboard"
   },
   "filter": {
     "filter": "Penapis",
@@ -312,5 +313,21 @@
     "Vietnamese": "Vietnam",
     "Welsh": "Wales",
     "Yiddish": "Yiddish"
+  },
+  "time": {
+    "suffixAgo": "lalu",
+    "suffixFromNow": "dari sekarang",
+    "inPast": "bila-bila masa sekarang",
+    "seconds": "kurang daripada satu minit",
+    "minute": "kira-kira satu minit",
+    "minutes": "{{val}} minit",
+    "hour": "kira-kira sejam",
+    "hours": "mengenai {{val}} jam",
+    "day": "sehari",
+    "days": "{{val}} hari",
+    "month": "kira-kira sebulan",
+    "months": "{{val}} bulan",
+    "year": "kira-kira setahun",
+    "years": "{{val}} tahun"
   }
 }

@@ -172,7 +172,8 @@
     "share_translation": "Share përkthim",
     "my_translation": "Përkthimi im",
     "translate_intro": "<p> 1. Zgjidhni gjuhën që doni të përktheni nga përzgjedhës poshtë <br> 2. Përmirësimi i përkthime në kolonën e tretë që ju besoni se janë të pasakta. <br> 3. Ndërsa ju shkruani korrigjimet tuaja janë ruajtur automatikisht, ju mund të mbyllni shfletuesin tuaj dhe të vijnë përsëri dhe ndryshimet tuaja do të mbeten. <br> 4. Kur ju jeni bërë përmirësimin përkthim klikoni butonin <b>Share përkthimit</b> dhe ndiqni udhëzimet. <br><br></p><p> Është e rëndësishme që ju të largoheni nga Markup HTML (për shembull <code>&lt;b&gt;Text here&lt;/b&gt;</code> ) dhe variablat (për shembull <code>❴❴variable❵❵</code> ) në takt. Përmbajtja e HTML tags duhet të përkthehet, përmbajtja e variablave nuk duhet të përkthehet. </p><p> Nuk është e nevojshme që ju të përkthyer çdo gjë para se ju ndani përkthimit tuaj. </p>",
-    "translate_sharehowto": "Për të ndarë përkthimit tuaj, ju lutem shkarkoni skedarin e përkthimit dhe për të dërguar atë në adresën e-mail të listuara më poshtë."
+    "translate_sharehowto": "Për të ndarë përkthimit tuaj, ju lutem shkarkoni skedarin e përkthimit dhe për të dërguar atë në adresën e-mail të listuara më poshtë.",
+    "dashboard_symbol": "{{symbol}} Baltëpritëse"
   },
   "filter": {
     "filter": "Filtër",
@@ -312,5 +313,21 @@
     "Vietnamese": "Vietnamisht",
     "Welsh": "I Uellsit",
     "Yiddish": "Jidish"
+  },
+  "time": {
+    "suffixAgo": "më parë",
+    "suffixFromNow": "nga tani",
+    "inPast": "çdo moment tani",
+    "seconds": "më pak se nje minute",
+    "minute": "rreth një minutë",
+    "minutes": "{{val}} minuta",
+    "hour": "rreth një orë",
+    "hours": "për {{val}} orë",
+    "day": "një ditë",
+    "days": "{{val}} ditë",
+    "month": "rreth një muaj",
+    "months": "{{val}} muaj",
+    "year": "rreth një vit",
+    "years": "{{val}} vjet"
   }
 }

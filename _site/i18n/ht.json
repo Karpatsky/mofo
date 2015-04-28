@@ -172,7 +172,8 @@
     "share_translation": "Share tradiksyon",
     "my_translation": "Tradiksyon mwen",
     "translate_intro": "<p> 1. Chwazi lang a ou vle tradui soti nan seleksyon ki anba a <br> 2. Amelyore tradiksyon yo nan twazyèm kolòn nan ke ou kwè yo se kòrèk. <br> 3. Pandan ke ou tape koreksyon ou yo se otomatikman ki estoke, ou ka fèmen navigatè ou a, li tounen ak chanjman ou a ap rete. <br> 4. Lè w ap fè amelyore tradiksyon an klike sou bouton an <b>Share tradiksyon</b> ak swiv enstriksyon yo. <br><br></p><p> Li enpòtan pou ke ou kite markeup a HTML (pou egzanp <code>&lt;b&gt;Text here&lt;/b&gt;</code> ) ak varyab yo (pou egzanp <code>❴❴variable❵❵</code> ) nan kontakte. Sa ki nan Tags HTML yo dwe tradui, sa ki nan varyab pa ta dwe tradui. </p><p> Li pa mande pou ou tradui tout bagay anvan ou pataje tradiksyon ou yo. </p>",
-    "translate_sharehowto": "Yo pataje tradiksyon ou, tanpri download dosye a tradiksyon ak voye li nan adrès imel la ki nan lis anba a."
+    "translate_sharehowto": "Yo pataje tradiksyon ou, tanpri download dosye a tradiksyon ak voye li nan adrès imel la ki nan lis anba a.",
+    "dashboard_symbol": "{{symbol}} Dach"
   },
   "filter": {
     "filter": "Filter",
@@ -312,5 +313,21 @@
     "Vietnamese": "Vietnamese",
     "Welsh": "Welsh",
     "Yiddish": "Yiddish"
+  },
+  "time": {
+    "suffixAgo": "Anons sa pibliye depi",
+    "suffixFromNow": "soti nan kounye a",
+    "inPast": "nenpòt ki moman kounye a",
+    "seconds": "mwens pase yon minit",
+    "minute": "apeprè yon minit",
+    "minutes": "{{val}} minit",
+    "hour": "sou yon èdtan",
+    "hours": "sou {{val}} èdtan",
+    "day": "yon jou",
+    "days": "{{val}} jou",
+    "month": "apeprè yon mwa",
+    "months": "{{val}} mwa",
+    "year": "sou yon ane",
+    "years": "{{val}} ane"
   }
 }

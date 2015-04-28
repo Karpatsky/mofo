@@ -172,7 +172,8 @@
     "share_translation": "Ibahagi ang pagsasalin",
     "my_translation": "Aking Mga pagsasalin",
     "translate_intro": "<p> 1. Piliin ang wikang nais mong i-translate mula sa tagapili sa ibaba <br> 2. Pagbutihin ang mga pagsasalin sa ikatlong haligi na sa tingin mo ay hindi tama. <br> 3. Habang nagta-type ka sa iyong mga pagwawasto ay awtomatikong naka-imbak, maaari mong isara ang iyong browser at bumalik at ang iyong mga pagbabago ay mananatiling. <br> 4. Kapag tapos ka na pagpapabuti ng pagsasalin click ang pindutan ng <b>Ibahagi ang pagsasalin</b> at sundin ang mga tagubilin. <br><br></p><p> Mahalaga na iniwan mo ang HTML markup (halimbawa <code>&lt;b&gt;Text here&lt;/b&gt;</code> ) at ang mga variable (halimbawa <code>❴❴variable❵❵</code> ) sa taktika. Ang mga nilalaman ng mga tag na HTML ay dapat na isinalin, ang mga nilalaman ng variable ay hindi dapat isalin. </p><p> Ito ay hindi kinakailangan na i-translate ang lahat ng bagay bago mong ibahagi ang iyong pagsasaling-wika. </p>",
-    "translate_sharehowto": "Upang ibahagi ang iyong mga pagsasalin paki-download ang pagsasalin file at ipadala ito sa email address na nakalista sa ibaba."
+    "translate_sharehowto": "Upang ibahagi ang iyong mga pagsasalin paki-download ang pagsasalin file at ipadala ito sa email address na nakalista sa ibaba.",
+    "dashboard_symbol": "{{symbol}} Dashboard"
   },
   "filter": {
     "filter": "Salain",
@@ -312,5 +313,21 @@
     "Vietnamese": "Vietnamese",
     "Welsh": "Welsh",
     "Yiddish": "Yidish"
+  },
+  "time": {
+    "suffixAgo": "nakararaan",
+    "suffixFromNow": "mula ngayon",
+    "inPast": "anumang sandali ngayon",
+    "seconds": "wala pang isang minuto",
+    "minute": "tungkol sa isang minuto",
+    "minutes": "{{val}} minuto",
+    "hour": "tungkol sa isang oras",
+    "hours": "tungkol sa {{val}} oras",
+    "day": "sa isang araw",
+    "days": "{{val}} araw",
+    "month": "tungkol sa isang buwan",
+    "months": "{{val}} na buwan",
+    "year": "tungkol sa isang taon",
+    "years": "{{val}} taon"
   }
 }

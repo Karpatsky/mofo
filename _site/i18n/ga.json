@@ -172,7 +172,8 @@
     "share_translation": "Aistriúchán Comhroinn",
     "my_translation": "Mo aistriúchán",
     "translate_intro": "<p> 1. Roghnaigh an teanga a ba mhaith leat a aistriú as an roghnóir thíos <br> 2. Feabhas a chur ar na haistriúcháin sa tríú colún a chreideann tú go bhfuil mícheart. <br> 3. Cé a scríobhann tú do ceartúcháin a stóráil go huathoibríoch, is féidir leat a dhúnadh do bhrabhsálaí agus teacht ar ais agus beidh do chuid athruithe fós. <br> 4. an t-aistriúchán Nuair atá tú ag déanamh a fheabhsú cliceáil an cnaipe <b>aistriúcháin Comhroinn</b> agus treoracha a leanúint. <br><br></p><p> Tá sé tábhachtach go fhágann tú na marcála HTML (mar shampla <code>&lt;b&gt;Text here&lt;/b&gt;</code> ) agus na hathróga (mar shampla <code>❴❴variable❵❵</code> ) i tact. Ba chóir go mbeadh ábhar na clibeanna HTML a aistriú, níor chóir an t-ábhar na n-athróg a aistriú. </p><p> Níl sé ag teastáil go bhfuil tú gach rud a aistriú sula roinneann tú do chuid aistriúcháin. </p>",
-    "translate_sharehowto": "A roinnt do aistriúchán thoil íoslódáil an comhad aistriúcháin agus é a sheoladh chuig an seoladh r-phoist atá liostaithe thíos."
+    "translate_sharehowto": "A roinnt do aistriúchán thoil íoslódáil an comhad aistriúcháin agus é a sheoladh chuig an seoladh r-phoist atá liostaithe thíos.",
+    "dashboard_symbol": "{{symbol}} Painéal na nIonstraimí"
   },
   "filter": {
     "filter": "Scagaire",
@@ -312,5 +313,21 @@
     "Vietnamese": "Vítneaimis",
     "Welsh": "Breatnais",
     "Yiddish": "Giúdais"
+  },
+  "time": {
+    "suffixAgo": "ó shin",
+    "suffixFromNow": "ó anois",
+    "inPast": "ar bith anois",
+    "seconds": "níos lú ná nóiméad",
+    "minute": "faoi ​​nóiméad",
+    "minutes": "{{val}} nóiméad",
+    "hour": "uair an chloig",
+    "hours": "faoi {{val}} uair an chloig",
+    "day": "in aghaidh an lae",
+    "days": "{{val}} laethanta",
+    "month": "tuairim is mí",
+    "months": "{{val}} mhí",
+    "year": "thart ar bhliain",
+    "years": "{{val}} bliana"
   }
 }

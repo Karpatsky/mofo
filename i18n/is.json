@@ -172,7 +172,8 @@
     "share_translation": "Share þýðingar",
     "my_translation": "Þýðingar mín",
     "translate_intro": "<p> 1. Veldu tungumálið sem þú vilt að þýða úr val fyrir neðan <br> 2. Bæta þýðingar í þriðja dálki sem þú telur eru rangar. <br> 3. Á meðan þú skrifar leiðréttingar eru sjálfkrafa vistaðar er hægt að loka vafranum og koma aftur og breytingarnar áfram. <br> 4. Þegar þú ert búinn að bæta þýðingin smella á <b>Share þýðingu</b> hnappinn og fylgja leiðbeiningunum. <br><br></p><p> Það er mikilvægt að þú hættir HTML Markup (td <code>&lt;b&gt;Text here&lt;/b&gt;</code> ) og breytur (til dæmis <code>❴❴variable❵❵</code> ) í háttvísi. Innihald HTML tags ætti að þýða, innihald breytur ættu ekki að vera þýdd. </p><p> Það er ekki skilyrði að þú þýða allt áður en þú deilir þýðingu þína. </p>",
-    "translate_sharehowto": "Til að deila þýðingu þína skaltu sækja þýðingu skrá og senda það á netfangið hér fyrir neðan."
+    "translate_sharehowto": "Til að deila þýðingu þína skaltu sækja þýðingu skrá og senda það á netfangið hér fyrir neðan.",
+    "dashboard_symbol": "{{symbol}} Mælaborð"
   },
   "filter": {
     "filter": "Sía",
@@ -312,5 +313,21 @@
     "Vietnamese": "Vietnamese",
     "Welsh": "Welsh",
     "Yiddish": "Jiddíska"
+  },
+  "time": {
+    "suffixAgo": "síðan",
+    "suffixFromNow": "héðan",
+    "inPast": "allir augnablik nú",
+    "seconds": "minna en mínútu",
+    "minute": "um eina mínútu",
+    "minutes": "{{val}} mínútur",
+    "hour": "um klukkustund",
+    "hours": "um {{val}} klst",
+    "day": "á dag",
+    "days": "{{val}} daga",
+    "month": "um mánuði",
+    "months": "{{val}} mánuðum",
+    "year": "um ári",
+    "years": "{{val}} ár"
   }
 }

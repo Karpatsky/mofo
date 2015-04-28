@@ -172,7 +172,8 @@
     "share_translation": "Shiriki tafsiri",
     "my_translation": "Tafsiri My",
     "translate_intro": "<p> 1. Chagua lugha unataka kutafsiri kutoka selector chini <br> 2. Kuboresha tafsiri katika safu ya tatu ambayo unaamini kwamba ni sahihi. <br> 3. Wakati unapoandika masahihisho yako ni moja kwa moja kuhifadhiwa, unaweza karibu browser yako na kuja nyuma na mabadiliko yako utabaki. <br> 4. Wakati wewe ni kufanyika kuboresha tafsiri bonyeza kifungo <b>Share tafsiri</b> na kufuata maelekezo. <br><br></p><p> Ni muhimu kwamba wewe kuondoka HTML ghafi (kwa mfano <code>&lt;b&gt;Text here&lt;/b&gt;</code> ) na vigezo (kwa mfano <code>❴❴variable❵❵</code> ) katika tact. yaliyomo ya HTML tags lazima kutafsiriwa, yaliyomo ya vigezo haipaswi kutafsiriwa. </p><p> Ni si required kwamba kutafsiri kila kitu kabla ya kushiriki tafsiri yako. </p>",
-    "translate_sharehowto": "Ili kushiriki tafsiri yako tafadhali download faili tafsiri na kutuma kwa anuani ya barua pepe hapa chini."
+    "translate_sharehowto": "Ili kushiriki tafsiri yako tafadhali download faili tafsiri na kutuma kwa anuani ya barua pepe hapa chini.",
+    "dashboard_symbol": "{{symbol}} Dashboard"
   },
   "filter": {
     "filter": "Filter",
@@ -312,5 +313,21 @@
     "Vietnamese": "Kivietinamu",
     "Welsh": "Welsh",
     "Yiddish": "Yiddish"
+  },
+  "time": {
+    "suffixAgo": "iliyopita",
+    "suffixFromNow": "kuanzia sasa",
+    "inPast": "wakati wowote sasa",
+    "seconds": "chini ya dakika",
+    "minute": "kuhusu dakika",
+    "minutes": "{{val}} dakika",
+    "hour": "yapata saa",
+    "hours": "kuhusu {{val}} masaa",
+    "day": "siku",
+    "days": "{{val}} siku",
+    "month": "kuhusu mwezi",
+    "months": "{{val}} miezi",
+    "year": "kuhusu mwaka",
+    "years": "{{val}} miaka"
   }
 }

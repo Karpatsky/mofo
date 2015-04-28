@@ -172,7 +172,8 @@
     "share_translation": "Rhannu cyfieithu",
     "my_translation": "Fy cyfieithu",
     "translate_intro": "<p> 1. Dewiswch yr iaith rydych am ei gyfieithu gan y dewisydd isod <br> 2. Gwella cyfieithiadau yn y drydedd golofn eich bod yn credu yn anghywir. <br> 3. Wrth i chi deipio eich cywiriadau yn cael eu storio yn awtomatig, gallwch gau eich porwr ac yn dod yn ôl a bydd eich newidiadau yn parhau. <br> 4. Pan fyddwch yn gwneud gwella'r cyfieithiad cliciwch y botwm <b>Rhannu cyfieithu</b> a dilyn cyfarwyddiadau. <br><br></p><p> Mae&#39;n bwysig eich bod yn gadael y markup HTML (er enghraifft <code>&lt;b&gt;Text here&lt;/b&gt;</code> ) a&#39;r newidynnau (er enghraifft <code>❴❴variable❵❵</code> ) mewn tact. Dylai cynnwys y tagiau HTML yn cael ei gyfieithu, ni ddylid cynnwys y newidynnau yn cael eu cyfieithu. </p><p> Nid yw&#39;n ofynnol eich bod yn cyfieithu popeth cyn i chi rannu eich cyfieithiad. </p>",
-    "translate_sharehowto": "I rannu eich cyfieithiad lawrlwythwch y ffeil cyfieithu a'i anfon at y cyfeiriad e-bost a restrir isod."
+    "translate_sharehowto": "I rannu eich cyfieithiad lawrlwythwch y ffeil cyfieithu a'i anfon at y cyfeiriad e-bost a restrir isod.",
+    "dashboard_symbol": "{{symbol}} Dangosfwrdd"
   },
   "filter": {
     "filter": "Hidlo",
@@ -312,5 +313,21 @@
     "Vietnamese": "Fietnameg",
     "Welsh": "Cymraeg",
     "Yiddish": "Iddeweg"
+  },
+  "time": {
+    "suffixAgo": "yn ôl",
+    "suffixFromNow": "o hyn",
+    "inPast": "unrhyw adeg yn awr",
+    "seconds": "llai na munud",
+    "minute": "tua munud",
+    "minutes": "{{val}} cofnodion",
+    "hour": "tua awr",
+    "hours": "am {{val}} Oriau",
+    "day": "diwrnod",
+    "days": "{{val}} diwrnod",
+    "month": "tua mis",
+    "months": "{{val}} mis",
+    "year": "tua blwyddyn",
+    "years": "{{val}} flynyddoedd"
   }
 }

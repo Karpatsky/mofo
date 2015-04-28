@@ -172,7 +172,8 @@
     "share_translation": "Compartir traducción",
     "my_translation": "Mi traducción",
     "translate_intro": "<p> 1. Elija el idioma que desea traducir en el selector de abajo <br> 2. Mejorar las traducciones en la tercera columna que usted cree que son incorrectos. <br> 3. Mientras escribe sus correcciones se guardan automáticamente, puede cerrar el navegador y volver y sus cambios permanecerán. <br> 4. Cuando haya terminado la mejora de la traducción, haga clic en el botón <b>Compartir traducción</b> y siga las instrucciones. <br><br></p><p> Es importante que usted deja el marcado HTML (por ejemplo, <code>&lt;b&gt;Text here&lt;/b&gt;</code> ) y las variables (por ejemplo <code>❴❴variable❵❵</code> ) en el tacto. El contenido de las etiquetas HTML deben ser traducidos, el contenido de las variables no deben ser traducidos. </p><p> No es necesario que usted traduce todo antes de compartir su traducción. </p>",
-    "translate_sharehowto": "Para compartir su traducción, descargue el archivo de traducción y enviarlo a la dirección de correo electrónico que aparece a continuación."
+    "translate_sharehowto": "Para compartir su traducción, descargue el archivo de traducción y enviarlo a la dirección de correo electrónico que aparece a continuación.",
+    "dashboard_symbol": "{{symbol}} Salpicadero"
   },
   "filter": {
     "filter": "Filtro",
@@ -312,5 +313,21 @@
     "Vietnamese": "Vietnamita",
     "Welsh": "Galés",
     "Yiddish": "Yídish"
+  },
+  "time": {
+    "suffixAgo": "hace",
+    "suffixFromNow": "desde ahora",
+    "inPast": "de un momento a",
+    "seconds": "menos de un minuto",
+    "minute": "alrededor de un minuto",
+    "minutes": "{{val}} acta",
+    "hour": "aproximadamente una hora",
+    "hours": "acerca de {{val}} horas",
+    "day": "un día",
+    "days": "{{val}} día",
+    "month": "aproximadamente un mes",
+    "months": "{{val}} meses",
+    "year": "alrededor de un año",
+    "years": "{{val}} año"
   }
 }

@@ -172,7 +172,8 @@
     "share_translation": "Teilen Übersetzung",
     "my_translation": "Meine Übersetzung",
     "translate_intro": "<p> 1. Wählen Sie die Sprache Wählen Sie aus der folgenden Wahl übersetzen <br> 2. Verbessern Sie die Übersetzungen in der dritten Spalte, die Sie glauben, sind falsch. <br> 3. Während Sie tippen Ihre Korrekturen werden automatisch gespeichert werden, können Sie Ihren Browser schließen und kommen zurück und die Änderungen bleiben erhalten. <br> 4. Wenn Sie fertig sind die Verbesserung der Übersetzungs klicken Sie auf die Schaltfläche <b>Teilen Übersetzung</b> und folgen Sie den Anweisungen. <br><br></p><p> Es ist wichtig, dass Sie den HTML-Code zu verlassen (zB <code>&lt;b&gt;Text here&lt;/b&gt;</code> ) und die Variablen (zB <code>❴❴variable❵❵</code> ) in Takt. Der Inhalt der HTML-Tags übersetzt werden soll, wird der Inhalt der Variablen sollten nicht übersetzt werden. </p><p> Es ist nicht erforderlich, dass Sie alles übersetzen, bevor Sie Ihre Übersetzung zu teilen. </p>",
-    "translate_sharehowto": "Um Ihre Übersetzung Aktien laden Sie bitte die Übersetzungsdatei aus und senden es an die unten aufgeführte E-Mail-Adresse ein."
+    "translate_sharehowto": "Um Ihre Übersetzung Aktien laden Sie bitte die Übersetzungsdatei aus und senden es an die unten aufgeführte E-Mail-Adresse ein.",
+    "dashboard_symbol": "{{symbol}} Armaturenbrett"
   },
   "filter": {
     "filter": "Filter",
@@ -312,5 +313,21 @@
     "Vietnamese": "Vietnamesisch",
     "Welsh": "Walisisch",
     "Yiddish": "Jiddisch"
+  },
+  "time": {
+    "suffixAgo": "vor",
+    "suffixFromNow": "in",
+    "inPast": "jeden Moment",
+    "seconds": "weniger als einer Minute",
+    "minute": "etwa eine Minute",
+    "minutes": "{{val}} Minuten",
+    "hour": "ungefähr eine Stunde",
+    "hours": "über {{val}} Stunden",
+    "day": "ein tag",
+    "days": "{{val}} Tage",
+    "month": "etwa einen Monat",
+    "months": "{{val}} Monate",
+    "year": "etwa ein Jahr",
+    "years": "{{val}} Jahre"
   }
 }

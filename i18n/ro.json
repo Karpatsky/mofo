@@ -172,7 +172,8 @@
     "share_translation": "Traducere Spune-le prietenilor",
     "my_translation": "Traducere meu",
     "translate_intro": "<p> 1. Alegeți limba în care doriți să traduceți din selectorul de mai jos <br> 2. Îmbunătățirea traducerile din coloana a treia care credeți că sunt incorecte. <br> 3. În timp ce tastați corecțiile sunt stocate automat, puteți închide browser-ul și reveni și modificările vor rămâne. <br> 4. Când ați terminat îmbunătățirea traducerea faceți clic pe butonul <b>de traducere Ponderea</b> și urmați instrucțiunile. <br><br></p><p> Este important să lăsați marcajul HTML (de exemplu, <code>&lt;b&gt;Text here&lt;/b&gt;</code> ) și variabilele (de exemplu <code>❴❴variable❵❵</code> ) în tact. Conținutul tag-uri HTML ar trebui să fie traduse, conținutul variabilelor nu ar trebui să fie traduse. </p><p> Nu este necesar să traduceți tot înainte de a vă împărtăși traducerea. </p>",
-    "translate_sharehowto": "Pentru a partaja Traducere dumneavoastră vă rugăm să descărcați fișierul de traducere și trimiteți-l la adresa de e-mail de mai jos."
+    "translate_sharehowto": "Pentru a partaja Traducere dumneavoastră vă rugăm să descărcați fișierul de traducere și trimiteți-l la adresa de e-mail de mai jos.",
+    "dashboard_symbol": "{{symbol}} Tablou de bord"
   },
   "filter": {
     "filter": "Filtru",
@@ -312,5 +313,21 @@
     "Vietnamese": "Vietnameză",
     "Welsh": "Velșă",
     "Yiddish": "Idiș"
+  },
+  "time": {
+    "suffixAgo": "în urmă",
+    "suffixFromNow": "de acum",
+    "inPast": "orice clipă acum",
+    "seconds": "mai puțin de un minut",
+    "minute": "aproximativ un minut",
+    "minutes": "{{val}} minute",
+    "hour": "aproximativ o oră",
+    "hours": "despre {{val}} ore",
+    "day": "o zi",
+    "days": "{{val}} zi",
+    "month": "aproximativ o lună",
+    "months": "{{val}} luni",
+    "year": "aproximativ un an",
+    "years": "{{val}} an"
   }
 }

@@ -172,7 +172,8 @@
     "share_translation": "Ossza fordítás",
     "my_translation": "Saját fordítás",
     "translate_intro": "<p> 1. Válassza ki a kívánt nyelvet lefordítani a választó alábbi <br> 2. Javítani kell a fordítások a harmadik oszlopban, hogy hiszel helytelenek. <br> 3. Miközben beírja a korrekciókat automatikusan tárolja, akkor zárja be a böngészőt, és gyere vissza, és a módosítások marad. <br> 4. Ha kész javítása fordítás kattintson a <b>Megosztás fordítás</b> gombra és kövesse az utasításokat. <br><br></p><p> Fontos, hogy hagyja a HTML-forrás (például <code>&lt;b&gt;Text here&lt;/b&gt;</code> ), és a változók (pl <code>❴❴variable❵❵</code> ) tapintat. A tartalom a HTML címkék kell lefordítani, tartalmát változók nem kell lefordítani. </p><p> Ehhez nem szükséges az, hogy mindent lefordítani, mielőtt ossza meg fordítást. </p>",
-    "translate_sharehowto": "Hogy megoszthassa fordítás töltse le a fordítás fájlt, és küldje el e-mail címre alább felsorolt."
+    "translate_sharehowto": "Hogy megoszthassa fordítás töltse le a fordítás fájlt, és küldje el e-mail címre alább felsorolt.",
+    "dashboard_symbol": "{{symbol}} Műszerfal"
   },
   "filter": {
     "filter": "Szűrő",
@@ -312,5 +313,21 @@
     "Vietnamese": "Vietnami",
     "Welsh": "Walesi",
     "Yiddish": "Jiddis"
+  },
+  "time": {
+    "suffixAgo": "ezelőtt",
+    "suffixFromNow": "mostantól",
+    "inPast": "Bármelyik pillanatban",
+    "seconds": "kevesebb, mint egy perc alatt",
+    "minute": "Körülbelül egy perc",
+    "minutes": "{{val}} jegyzőkönyv",
+    "hour": "körülbelül egy óra",
+    "hours": "körülbelül {{val}} óra",
+    "day": "a nap",
+    "days": "{{val}} nap",
+    "month": "Körülbelül egy hónapja",
+    "months": "{{val}} hónap",
+    "year": "Körülbelül egy éve",
+    "years": "{{val}} év"
   }
 }

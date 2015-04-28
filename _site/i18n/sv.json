@@ -172,7 +172,8 @@
     "share_translation": "Dela översättning",
     "my_translation": "Min översättning",
     "translate_intro": "<p> 1. Välj det språk som du vill översätta från väljaren nedan <br> 2. Förbättra översättningarna i den tredje kolumnen som du tror är felaktiga. <br> 3. Medan du skriver dina korrigeringar lagras automatiskt, kan du stänger din webbläsare och komma tillbaka och dina ändringar kommer att förbli. <br> 4. När du är klar förbättra översättningen klickar du på knappen <b>Share översättning</b> och följ instruktionerna. <br><br></p><p> Det är viktigt att du lämnar HTML-kod (t.ex. <code>&lt;b&gt;Text here&lt;/b&gt;</code> ) och variablerna (t.ex. <code>❴❴variable❵❵</code> ) i takt. Innehållet i HTML-taggar bör översättas, innehållet i variablerna bör inte översättas. </p><p> Det krävs inte att du översätta allt innan du delar din översättning. </p>",
-    "translate_sharehowto": "Om du vill dela din översättning kan du ladda ner översättningsfilen och skicka den till den e-postadress nedan."
+    "translate_sharehowto": "Om du vill dela din översättning kan du ladda ner översättningsfilen och skicka den till den e-postadress nedan.",
+    "dashboard_symbol": "{{symbol}} Instrumentbräda"
   },
   "filter": {
     "filter": "Filtrera",
@@ -312,5 +313,21 @@
     "Vietnamese": "Vietnamesiskt",
     "Welsh": "Welsh",
     "Yiddish": "Jiddisch"
+  },
+  "time": {
+    "suffixAgo": "sedan",
+    "suffixFromNow": "från och med nu",
+    "inPast": "helst nu",
+    "seconds": "mindre än en minut",
+    "minute": "ungefär en minut",
+    "minutes": "{{val}} minuter",
+    "hour": "ungefär en timme",
+    "hours": "om {{val}} timmar",
+    "day": "en dag",
+    "days": "{{val}} dagar",
+    "month": "ungefär en månad",
+    "months": "{{val}} månader",
+    "year": "ungefär ett år",
+    "years": "{{val}} år"
   }
 }

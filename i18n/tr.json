@@ -172,7 +172,8 @@
     "share_translation": "Hisse çeviri",
     "my_translation": "Benim çeviri",
     "translate_intro": "<p> Dil seçin 1. aşağıdaki seçicinin çevirmek istiyorum <br> 2. yanlış olduğuna inanıyoruz üçüncü sütunda çeviriler geliştirin. <br> Eğer düzeltmeler otomatik olarak saklanır yazın 3. iken, tarayıcınızı kapatın ve geri gelmek ve değişiklikler kalacaktır yapabilirsiniz. <br> 4. iyileştirilmesi bittiğinde çeviri <b>Hisse çeviri</b> düğmesini tıklatın ve yönergeleri izleyin. <br><br></p><p> Bu HTML biçimlendirmesi terk önemlidir (örneğin <code>&lt;b&gt;Text here&lt;/b&gt;</code> ) ve (örnek için değişkenler <code>❴❴variable❵❵</code> ) inceliğini. HTML etiketleri içeriği değişkenlerin içeriğini tercüme edilmemelidir, tercüme edilmelidir. </p><p> Bu sizin çeviri paylaşmadan önce her şeyi tercüme olduğu gerekli değildir. </p>",
-    "translate_sharehowto": "Çeviri paylaşabilirsiniz çeviri dosyasını indirmek ve aşağıda listelenen e-posta adresine gönderiniz."
+    "translate_sharehowto": "Çeviri paylaşabilirsiniz çeviri dosyasını indirmek ve aşağıda listelenen e-posta adresine gönderiniz.",
+    "dashboard_symbol": "{{symbol}} Gösterge paneli"
   },
   "filter": {
     "filter": "Filtre",
@@ -312,5 +313,21 @@
     "Vietnamese": "Vietnam",
     "Welsh": "Sözünü tutmamak",
     "Yiddish": "Eskenazi dili"
+  },
+  "time": {
+    "suffixAgo": "önce",
+    "suffixFromNow": "şu andan itibaren",
+    "inPast": "Şimdi her an",
+    "seconds": "Bir dakikadan az",
+    "minute": "yaklaşık bir dakika",
+    "minutes": "{{val}} dakika",
+    "hour": "Yaklaşık bir saat",
+    "hours": "hakkında {{val}} saat",
+    "day": "bir gün",
+    "days": "{{val}} günler",
+    "month": "yaklaşık bir ay",
+    "months": "{{val}} ay",
+    "year": "yaklaşık bir yıl",
+    "years": "{{val}} yıl"
   }
 }

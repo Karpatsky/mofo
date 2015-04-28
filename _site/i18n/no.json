@@ -172,7 +172,8 @@
     "share_translation": "Del oversettelse",
     "my_translation": "Min oversettelse",
     "translate_intro": "<p> 1. Velg språket du vil oversette fra velgeren nedenfor <br> 2. Forbedre oversettelsene i den tredje kolonnen som du mener er feil. <br> 3. Mens du skriver dine korrigeringer lagres automatisk, kan du lukke nettleseren din og komme tilbake og endringene vil forbli. <br> 4. Når du er ferdig med å forbedre oversettelsen klikke <b>Del oversettelse</b> knappen og følger instruksjonene. <br><br></p><p> Det er viktig at du lar HTML markup (for eksempel <code>&lt;b&gt;Text here&lt;/b&gt;</code> ) og variablene (for eksempel <code>❴❴variable❵❵</code> ) i takt. Innholdet i HTML-kodene skal oversettes, innholdet i variablene bør ikke oversettes. </p><p> Det kreves ikke at du oversette alt før du deler din oversettelse. </p>",
-    "translate_sharehowto": "Hvis du vil dele din oversettelse kan du laste ned oversettelses fil og sende den til e-postadressen nedenfor."
+    "translate_sharehowto": "Hvis du vil dele din oversettelse kan du laste ned oversettelses fil og sende den til e-postadressen nedenfor.",
+    "dashboard_symbol": "{{symbol}} Dashbord"
   },
   "filter": {
     "filter": "Filter",
@@ -312,5 +313,21 @@
     "Vietnamese": "Vietnamesisk",
     "Welsh": "Welsh",
     "Yiddish": "Yiddish"
+  },
+  "time": {
+    "suffixAgo": "siden",
+    "suffixFromNow": "fra nå",
+    "inPast": "hvert øyeblikk nå",
+    "seconds": "mindre enn ett minutt",
+    "minute": "omtrent et minutt",
+    "minutes": "{{val}} minutter",
+    "hour": "omtrent en time",
+    "hours": "omtrent {{val}} timer",
+    "day": "en dag",
+    "days": "{{val}} dager",
+    "month": "om en måned",
+    "months": "{{val}} måneder",
+    "year": "om et år",
+    "years": "{{val}} år"
   }
 }

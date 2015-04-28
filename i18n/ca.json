@@ -172,7 +172,8 @@
     "share_translation": "Compartir traducció",
     "my_translation": "El meu traducció",
     "translate_intro": "<p> 1. Trieu l'idioma que voleu traduir al gestor de sota <br> 2. Millorar les traduccions en la tercera columna que vostè creu que són incorrectes. <br> 3. Mentre escriu les seves correccions es guarden automàticament, pot tancar el navegador i tornar i seus canvis romandran. <br> 4. Quan hagi acabat la millora de la traducció, feu clic al botó <b>Compartir traducció</b> i seguiu les instruccions. <br><br></p><p> És important que vostè deixa el marcat HTML (per exemple, <code>&lt;b&gt;Text here&lt;/b&gt;</code> ) i les variables (per exemple <code>❴❴variable❵❵</code> ) en el tacte. El contingut de les etiquetes HTML han de ser traduïts, el contingut de les variables no han de ser traduïts. </p><p> No cal que vostè tradueix tot abans de compartir la seva traducció. </p>",
-    "translate_sharehowto": "Per compartir la seva traducció, descarregui l'arxiu de traducció i enviar-lo a l&#39;adreça de correu electrònic que apareix a continuació."
+    "translate_sharehowto": "Per compartir la seva traducció, descarregui l'arxiu de traducció i enviar-lo a l&#39;adreça de correu electrònic que apareix a continuació.",
+    "dashboard_symbol": "{{symbol}} Quadre de comandament"
   },
   "filter": {
     "filter": "Filtre",
@@ -312,5 +313,21 @@
     "Vietnamese": "Vietnamita",
     "Welsh": "Galés",
     "Yiddish": "Jiddisch"
+  },
+  "time": {
+    "suffixAgo": "fa",
+    "suffixFromNow": "des d'ara",
+    "inPast": "d'un moment a",
+    "seconds": "menys d'un minut",
+    "minute": "al voltant d'un minut",
+    "minutes": "{{val}} acta",
+    "hour": "aproximadament una hora",
+    "hours": "sobre {{val}} hores",
+    "day": "un dia",
+    "days": "{{val}} dia",
+    "month": "aproximadament un mes",
+    "months": "{{val}} mesos",
+    "year": "voltant d'un any",
+    "years": "{{val}} any"
   }
 }

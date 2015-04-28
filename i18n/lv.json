@@ -172,7 +172,8 @@
     "share_translation": "Daļa tulkojumu",
     "my_translation": "Mans tulkojums",
     "translate_intro": "<p> 1. Izvēlieties valodu jūs vēlaties tulkot no zemāk selektoru <br> 2. Uzlabot tulkojumus trešajā slejā, kas jūsuprāt ir nepareizi. <br> 3. Kamēr rakstāt jūsu labojumi tiek automātiski saglabāti, jūs varat aizvērt pārlūkprogrammu un nāk atpakaļ, un jūsu izmaiņas paliks. <br> 4. Kad esat beidzis uzlabot tulkojumu noklikšķiniet uz pogas <b>Share tulkošanas</b> un sekot instrukcijām. <br><br></p><p> Ir svarīgi, ka jūs atstāt HTML atzīmes (piemēram, <code>&lt;b&gt;Text here&lt;/b&gt;</code> ) un mainīgos lielumus (piemēram <code>❴❴variable❵❵</code> ) takts. Saturs HTML tagus būtu jātulko, saturs mainīgo nebūtu jātulko. </p><p> Tas nav nepieciešams, ka jūs tulkot visu, pirms jūs dalīties ar savu tulkojumu. </p>",
-    "translate_sharehowto": "Lai koplietotu savu tulkojumu lūdzu lejupielādēt tulkošanas failu un nosūtīt to uz e-pasta adresi, kas norādīta zemāk."
+    "translate_sharehowto": "Lai koplietotu savu tulkojumu lūdzu lejupielādēt tulkošanas failu un nosūtīt to uz e-pasta adresi, kas norādīta zemāk.",
+    "dashboard_symbol": "{{symbol}} Mērinstrumentu panelis"
   },
   "filter": {
     "filter": "Filtrs",
@@ -312,5 +313,21 @@
     "Vietnamese": "Vjetnamiešu",
     "Welsh": "Velsiešu",
     "Yiddish": "Jidiša"
+  },
+  "time": {
+    "suffixAgo": "pirms",
+    "suffixFromNow": "no šī brīža",
+    "inPast": "jebkurā brīdī tagad",
+    "seconds": "mazāk nekā minūtes",
+    "minute": "par minūti",
+    "minutes": "{{val}} protokols",
+    "hour": "apmēram stundu",
+    "hours": "par {{val}} stundas",
+    "day": "diena",
+    "days": "{{val}} dienas",
+    "month": "apmēram mēnesi",
+    "months": "{{val}} mēneši",
+    "year": "par gadu",
+    "years": "{{val}} gadiem"
   }
 }
