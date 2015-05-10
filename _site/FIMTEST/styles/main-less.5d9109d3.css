@@ -1,0 +1,214 @@
+@media screen and (max-width: 991px) {
+  .lang-columns {
+    height: 320px;
+    overflow: scroll;
+  }
+}
+@media screen and (min-width: 992px) {
+  .lang-columns {
+    -moz-column-count: 4;
+    -webkit-column-count: 4;
+    column-count: 4;
+    width: 940px;
+  }
+}
+@media (min-width: 768px) {
+  .pull-right-sm {
+    float: right;
+  }
+}
+@media (min-width: 768px) {
+  .pull-right-sm {
+    float: right;
+  }
+}
+@media screen and (max-width: 768px) {
+  h3.account-header {
+    font-size: 14px;
+  }
+}
+.account-panel {
+  background-color: #eeeeee;
+  border: solid 1px #777777;
+  padding: 15px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+}
+.account-panel h3,
+.account-panel h4 {
+  margin-top: 5px;
+}
+.account-panel table td:nth-child(2) {
+  padding-left: 15px;
+}
+.account-panel table .balance {
+  font-size: 16px;
+}
+table.activity-table tr {
+  -webkit-transition: all 2s 1.5s ease-out;
+  -moz-transition: all 1.5s ease-out;
+  transition: all 1.5s ease-out;
+  list-style: none;
+  padding: 10px;
+}
+table.activity-table .highlight-enter-setup {
+  background: #337ab7;
+}
+table.activity-table .highlight-enter-start {
+  background: white;
+}
+/*.ng-enter, .ng-move {
+  -webkit-animation: fadeIn 1s;
+  -moz-animation: fadeIn 1s;
+  -o-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+.ng-leave {
+  -webkit-animation: fadeOut 1s;
+  -moz-animation: fadeOut 1s;
+  -o-animation: fadeOut 1s;
+  animation: fadeOut 1s;
+}*/
+.account-list-item {
+  cursor: pointer;
+}
+.account-list-item .account-settings-btn .dropdown-toggle {
+  cursor: pointer;
+}
+.account-list-item .account-settings-btn .dropdown-toggle i {
+  color: #777777;
+}
+.account-list-item .account-settings-btn .dropdown-toggle i:hover {
+  color: #555555;
+}
+.account-list-item:hover {
+  background-color: #eeeeee;
+}
+.load-more-button {
+  padding-bottom: 20px;
+  margin: 15px;
+}
+.load-more-button .btn:hover {
+  color: #ffffff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+}
+.panel-heading a.no-glyph:after {
+  content: "";
+}
+.elipses {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+hr.stacked-divider {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+/* Compacted forms */
+.form-compact {
+  font-size: 0.8em;
+}
+.form-compact .form-control {
+  padding: 1px 2px;
+  height: 24px;
+  font-size: 1em;
+}
+.form-compact label {
+  margin-bottom: 1px;
+}
+.form-compact .form-group {
+  margin-bottom: 0px;
+}
+.form-compact .form-control-static {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+.statistics-form {
+  margin-left: 0px !important;
+  marging-top: 0px;
+}
+.statistics-form .form-control-static {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+.start-pane .panel-body {
+  height: 250px;
+}
+.start-pane .panel-body table {
+  height: 100%;
+}
+.start-pane .panel-body table tr:first-child td {
+  vertical-align: top !important;
+}
+.start-pane .panel-body table tr:last-child td {
+  vertical-align: bottom !important;
+}
+@media screen and (max-width: 992px) {
+  .start-pane .panel-body {
+    height: 100%;
+  }
+}
+.language-select h1 {
+  font-size: 500%;
+}
+.language-select .language-select-scroller {
+  max-height: 300px;
+  overflow-y: auto;
+}
+@media screen and (max-width: 768px) {
+  .language-select h2 {
+    font-size: 150%;
+  }
+  .language-select .language-select-scroller {
+    max-height: 320px;
+    overflow-y: auto;
+  }
+}
+/* Slide in sidebar */
+.sidebar-offcanvas {
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+}
+@media screen and (max-width: 767px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all 0.25s ease-out;
+    -o-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+  }
+  .row-offcanvas-right {
+    right: 0;
+  }
+  .row-offcanvas-right .sidebar-offcanvas {
+    right: -50%;
+    /* 6 columns */
+  }
+  .row-offcanvas-left {
+    left: 0;
+  }
+  .row-offcanvas-left .sidebar-offcanvas {
+    left: -50%;
+    /* 6 columns */
+  }
+  .row-offcanvas-right.active {
+    right: 50%;
+    /* 6 columns */
+  }
+  .row-offcanvas-left.active {
+    left: 50%;
+    /* 6 columns */
+  }
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    /* 6 columns */
+    padding-left: 15px;
+  }
+}
+#fake-console p {
+  margin: 0 0 0;
+}
