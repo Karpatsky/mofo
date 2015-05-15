@@ -218,7 +218,7 @@
           <div class="panel panel-default" style="margin-top: 5px">
             <div class="panel-heading">
               <b>{{ 'translate.sell_orders' | translate }}</b>
-              <a class="pull-right no-glyph" href ng-click="buyAsset()">{{ 'translate.buy' | translate }}</a>
+              <a class="pull-right no-glyph" href ng-click="sellAsset()">{{ 'translate.sell' | translate }}</a>
             </div>
             <div class="panel-body" style="padding: 0px; height: 250px; overflow-y: scroll">
               <!-- <div infinite-scroll="askOrders.loadMore()" infinite-scroll-distance="0" infinite-scroll-immediate-check="false"> -->
@@ -236,7 +236,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr ng-repeat="o in askOrders.entities" ng-class="{'text-danger': o.cancellers}" ng-hide="o.cancel_height">
+                      <tr ng-repeat="o in askOrders.entities" ng-class="{'text-danger': o.cancellers}" ng-hide="o.cancelled || o.quantity=='0'">
                         <td>
                           <span ng-if="o.confirmations <= 0" class="text-muted">
                             <i class="fa fa-spinner fa-spin"></i>
@@ -281,7 +281,7 @@
           <div class="panel panel-default" style="margin-top: 5px">
             <div class="panel-heading">
               <b>{{ 'translate.buy_orders' | translate }}</b>
-              <a class="pull-right no-glyph" href ng-click="sellAsset()">{{ 'translate.sell' | translate }}</a>
+              <a class="pull-right no-glyph" href ng-click="buyAsset()">{{ 'translate.buy' | translate }}</a>
             </div>
             <div class="panel-body" style="padding: 0px; height: 250px; overflow-y: scroll">
               <!-- <div infinite-scroll="bidOrders.loadMore()" infinite-scroll-distance="0" infinite-scroll-immediate-check="false"> -->
@@ -299,7 +299,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr ng-repeat="o in bidOrders.entities" ng-class="{'text-danger': o.cancellers}" ng-hide="o.cancel_height">
+                      <tr ng-repeat="o in bidOrders.entities" ng-class="{'text-danger': o.cancellers}" ng-hide="o.cancelled || o.quantity=='0'">
                         <td>
                           <span ng-if="o.confirmations <= 0" class="text-muted">
                             <i class="fa fa-spinner fa-spin"></i>
@@ -446,7 +446,7 @@
                         <td>{{o.quantity}}</td>                      
                         <td>{{o.price}}</td>
                         <td>{{o.total}}</td>
-                        <td class="hidden-xs"><a ng-href="#/accounts/{{a.accountRS}}/activity/latest">{{o.accountName||o.accountRS}}</a></td>
+                        <td class="hidden-xs"><a ng-href="#/accounts/{{o.accountRS}}/activity/latest">{{o.accountName||o.accountRS}}</a></td>
                         <td><a href ng-click="cancelOrder(o)">Cancel</a></td>
                       </tr>
                     </tbody>
