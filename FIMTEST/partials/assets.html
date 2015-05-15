@@ -224,15 +224,15 @@
                         <th>{{ 'translate.height' | translate }}</th>
                         <th>{{ 'translate.type' | translate }}</th>
                         <!-- <th class="hidden-xs">{{ 'translate.order' | translate }}</th> -->
-                        <th>{{ 'translate.quantity' | translate }}</th>
                         <th>{{ 'translate.price' | translate }}</th>
+                        <th>{{ 'translate.quantity' | translate }}</th>
                         <th>{{ 'translate.total' | translate }}</th>
                         <th class="hidden-xs">{{ 'translate.account' | translate }}</th>
                         <th></th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr ng-repeat="o in my_orders.entities" ng-class="{'text-danger': o.cancellers}" ng-hide="o.cancel_height">
+                      <tr ng-repeat="o in my_orders.entities" ng-class="{'text-danger': o.cancellers}" ng-hide="o.cancelled || o.quantity=='0'">
                         <td>
                           <span ng-if="o.confirmations <= 0" class="text-muted">
                             <i class="fa fa-spinner fa-spin"></i>
@@ -248,8 +248,8 @@
                         <td>{{o.height}}</td>
                         <td style="color: {{my_orders.getTypeColor(o.type)}}">{{o.type}}</td>                      
                         <!-- <td class="hidden-xs">{{o.order}}</td> -->
-                        <td>{{o.quantity}}</td>                      
                         <td>{{o.price}}</td>
+                        <td>{{o.quantity}}</td>                      
                         <td>{{o.total}}</td>
                         <td class="hidden-xs"><a ng-href="#/accounts/{{o.accountRS}}/activity/latest">{{o.accountName||o.accountRS}}</a></td>
                         <td><a href ng-click="cancelOrder(o)">Cancel</a></td>
@@ -290,7 +290,7 @@
                         <th>{{ 'translate.price' | translate }}</th>
                         <th>{{ 'translate.quantity' | translate }}</th>
                         <th>{{ 'translate.total' | translate }}</th>
-                        <th></th>
+                        <!-- <th></th> -->
                       </tr>
                     </thead>
                     <tbody>
@@ -311,7 +311,7 @@
                         <td>{{o.price}}</td>
                         <td>{{o.quantity}}</td>
                         <td>{{o.total}}</td>
-                        <td>
+                        <!-- <td>
                           <span ng-if="accounts[o.accountRS]" ng-click="cancelOrder(o)" 
                                 tooltip="{{ 'translate.cancel_own_order' | translate }}" style="cursor:pointer" class="text-muted">
                             <i class="fa fa-hand-o-left"></i>
@@ -320,7 +320,7 @@
                               tooltip="{{o.accountRS}}" class="text-muted">
                             <i class="fa fa-user"></i>
                           </a>
-                        </td>
+                        </td> -->
                       </tr>
                     </tbody>
                   </table>
@@ -353,7 +353,7 @@
                         <th>{{ 'translate.price' | translate }}</th>
                         <th>{{ 'translate.quantity' | translate }}</th>
                         <th>{{ 'translate.total' | translate }}</th>
-                        <th></th>
+                        <!-- <th></th> -->
                       </tr>
                     </thead>
                     <tbody>
@@ -373,7 +373,7 @@
                         <td>{{o.price}}</td>
                         <td>{{o.quantity}}</td>
                         <td>{{o.total}}</td>
-                        <td>
+                        <!-- <td>
                           <span ng-if="accounts[o.accountRS]" ng-click="cancelOrder(o)" 
                                 tooltip="{{ 'translate.cancel_own_order' | translate }}" style="cursor:pointer" class="text-muted">
                             <i class="fa fa-hand-o-left"></i>
@@ -382,7 +382,7 @@
                               tooltip="{{o.accountRS}}" class="text-muted">
                             <i class="fa fa-user"></i>
                           </a>
-                        </td>
+                        </td> -->
                       </tr>
                     </tbody>
                   </table>
