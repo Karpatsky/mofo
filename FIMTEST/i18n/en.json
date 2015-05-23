@@ -95,6 +95,7 @@
     "height":               "Height",
     "price":                "Price",
     "total":                "Total",
+    "total_price":          "Total price",
     "confirmations":        "Confirmations",
     "cancel_own_order":     "Cancel my own order",
     "load_more_ask_orders": "Load more sell orders",
@@ -106,7 +107,8 @@
     "seller":               "Seller",
     "buyer":                "Buyer",
     "load_more_trades":     "Load more trades",
-    "my_orders":            "My orders",
+    "my_bid_orders":        "My buy orders",
+    "my_ask_orders":        "My sell orders",
     "order":                "Order",
     "load_more_orders":     "Load more orders",
     "account":              "Account",
@@ -185,7 +187,16 @@
     "show":                 "Show",
     "all":                  "All",
     "allowed":              "Allowed",
-    "prohibited":           "Prohibited"
+    "prohibited":           "Prohibited",
+    "marketcap":            "Market Cap",
+    "last_price":           "Last price",
+    "volume_today":         "24hr Volume",
+    "volume_total":         "Total volume",
+    "show_pulse":           "Show Pulse",
+    "how_many_shares":      "How many shares?",
+    "enter_amount":         "Enter amount",
+    "price_per_share":      "Price per share?",
+    "enter_price":          "Enter price"
   },
 
   "time": {
