@@ -16,7 +16,7 @@
           <i class="fa fa-university"></i>&nbsp;&nbsp;<span>Private</span>
         </a>
       </li>
-      <li role="presentation" >
+      <!-- <li role="presentation" >
         <a href ng-click="buyAsset()" translate="translate.buy"></a>
       </li>
       <li role="presentation" >
@@ -24,7 +24,7 @@
       </li>
       <li role="presentation" >
         <a href ng-click="writePost()" translate="translate.write_post"></a>
-      </li>      
+      </li> -->      
     </ul>
   </div>
 
@@ -51,7 +51,6 @@
               <span ng-if="!b.href">{{ b.label }}</span>              
             </span>
           </li>
-
           <a href ng-click="reload()" class="pull-right">
             {{ 'translate.reload' | translate }}&nbsp;&nbsp;
             <i class="fa fa-refresh" ng-class="{'fa-spin': my_orders.isLoading || chart.isLoading || askOrders.isLoading || bidOrders.isLoading || trades.isLoading }"></i>
@@ -184,6 +183,7 @@
     </style>
 
     <div ng-if="paramSection=='trade'">
+
       <!-- Chart + Description -->
 
       <div class="row">
@@ -218,11 +218,11 @@
       <div class="row">
         <!-- Buy/Bid orders -->
         <div class="col-md-4">
-          <div class="panel panel-default" style="margin-top: 5px; height: 250px;">
+          <div class="panel panel-default" style="margin-top: 5px; ">
             <div class="panel-heading">
               <b>{{ 'translate.buy_orders' | translate }}</b>
             </div>
-            <div class="panel-body" style="padding: 0px; overflow-y: auto;">
+            <div class="panel-body" style="padding: 0px; overflow-y: auto; height: 250px;">
               <div class="table-responsive">
                 <table class="table table-striped table-condensed">
                   <thead>
@@ -295,13 +295,13 @@
               </div>
               <div class="row">
                 <div class="col-xs-6">
-                  <button class="btn btn-success btn-block text-center">
+                  <button class="btn btn-success btn-block text-center" ng-click="buyAsset()" ng-disabled="!selectedAccount">
                     <big><b><span translate="translate.buy"></span></b></big><br>
                     <small>Click to send order</small>
                   </button>
                 </div>
                 <div class="col-xs-6">
-                  <button class="btn btn-danger btn-block text-center">
+                  <button class="btn btn-danger btn-block text-center" ng-click="sellAsset()" ng-disabled="!selectedAccount">
                     <big><b><span translate="translate.sell"></span></b></big><br>
                     <small>Click to send order</small>
                   </button>
@@ -312,11 +312,11 @@
         </div>
         <!-- Sell/Ask orders -->
         <div class="col-md-4">
-          <div class="panel panel-default" style="margin-top: 5px; height: 250px;">
+          <div class="panel panel-default" style="margin-top: 5px; ">
             <div class="panel-heading">
               <b>{{ 'translate.sell_orders' | translate }}</b>
             </div>
-            <div class="panel-body" style="padding: 0px; overflow-y: auto;">
+            <div class="panel-body" style="padding: 0px; overflow-y: auto; height: 250px;">
               <div class="table-responsive">
                 <table class="table table-striped table-condensed">
                   <thead>
@@ -362,9 +362,9 @@
       <div class="row">
         <!-- Recent trades -->
         <div class="col-md-4">
-          <div class="panel panel-default" style="margin-top: 5px">
+          <div class="panel panel-default" style="margin-top: 5px;">
             <div class="panel-heading"><b>{{ 'translate.recent_trades' | translate }}</b></div>
-            <div class="panel-body" style="padding: 0px; height: 250px; overflow-y: scroll">
+            <div class="panel-body" style="padding: 0px; overflow-y: auto; height: 250px">
               <div class="table-responsive">
                 <table class="table table-striped table-condensed">
                   <thead>
@@ -411,9 +411,9 @@
 
         <!-- My buy orders -->
         <div class="col-md-4">
-          <div class="panel panel-default" style="margin-top: 5px; height: 250px;">
+          <div class="panel panel-default" style="margin-top: 5px; ">
             <div class="panel-heading"><b>{{ 'translate.my_bid_orders' | translate }}</b></div>
-            <div class="panel-body" style="padding: 0px; overflow-y: auto;">
+            <div class="panel-body" style="padding: 0px; overflow-y: auto; height: 250px">
               <div class="table-responsive">
                 <table class="table table-striped table-condensed">
                   <thead>
@@ -442,26 +442,26 @@
                       <td>{{o.price}}</td>
                       <td>{{o.quantity}}</td>                      
                       <td>{{o.total}}</td>
-                      <td><a href ng-click="cancelOrder(o)">Cancel</a></td>
+                      <td><a href ng-click="cancelOrder(o)" class="pull-right">Cancel</a></td>
                     </tr>
                   </tbody>
                 </table>
               </div>
+              <div class="load-more-button" ng-show="myBidOrders.hasMore">
+                <a href ng-click="myBidOrders.loadMore()" class="text-lowercase text-muted">
+                  <span ng-show="myBidOrders.isLoading"><i class="fa fa-refresh fa-spin"></i></span>
+                  <span translate-cloak>{{ 'translate.load_more_orders' | translate }}</span>
+                </a>
+              </div>
             </div>            
-            <div class="load-more-button" ng-show="myBidOrders.hasMore">
-              <a href ng-click="myBidOrders.loadMore()" class="text-lowercase text-muted">
-                <span ng-show="myBidOrders.isLoading"><i class="fa fa-refresh fa-spin"></i></span>
-                <span translate-cloak>{{ 'translate.load_more_orders' | translate }}</span>
-              </a>
-            </div>
           </div>
         </div>
 
         <!-- My sell orders -->
         <div class="col-md-4">
-          <div class="panel panel-default" style="margin-top: 5px; height: 250px;">
+          <div class="panel panel-default" style="margin-top: 5px; ">
             <div class="panel-heading"><b>{{ 'translate.my_ask_orders' | translate }}</b></div>
-            <div class="panel-body" style="padding: 0px; overflow-y: auto;">
+            <div class="panel-body" style="padding: 0px; overflow-y: auto; height: 250px">
               <div class="table-responsive">
                 <table class="table table-striped table-condensed">
                   <thead>
@@ -490,18 +490,18 @@
                       <td>{{o.price}}</td>
                       <td>{{o.quantity}}</td>                      
                       <td>{{o.total}}</td>
-                      <td><a href ng-click="cancelOrder(o)">Cancel</a></td>
+                      <td><a href ng-click="cancelOrder(o)" class="pull-right">Cancel</a></td>
                     </tr>
                   </tbody>
                 </table>
               </div>
+              <div class="load-more-button" ng-show="myAskOrders.hasMore">
+                <a href ng-click="myAskOrders.loadMore()" class="text-lowercase text-muted">
+                  <span ng-show="myAskOrders.isLoading"><i class="fa fa-refresh fa-spin"></i></span>
+                  <span translate-cloak>{{ 'translate.load_more_orders' | translate }}</span>
+                </a>
+              </div>
             </div>            
-            <div class="load-more-button" ng-show="myAskOrders.hasMore">
-              <a href ng-click="myAskOrders.loadMore()" class="text-lowercase text-muted">
-                <span ng-show="myAskOrders.isLoading"><i class="fa fa-refresh fa-spin"></i></span>
-                <span translate-cloak>{{ 'translate.load_more_orders' | translate }}</span>
-              </a>
-            </div>
           </div>
         </div>
       </div>

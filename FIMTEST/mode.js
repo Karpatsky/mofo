@@ -5,3 +5,4 @@ var IS_TEST_NET=true;
 var FORCE_LOCAL_HOST=false;
 var PRIVATE_ENABLED=true;
 var WALLET_NAME='FIMK';
+var TRADE_UI_ONLY=true;
