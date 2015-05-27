@@ -186,17 +186,20 @@
 
       <!-- Chart + Description -->
 
-      <div class="row">
+      <div class="row" ng-init="chartType='old'">
         <div class="col-md-6">
           <div class="panel panel-default" style="width: 100%">
-            <div class="panel-heading"><b>Price chart</b></div>
+            <div class="panel-heading">
+              <b>Price chart</b>
+              <span class="pull-right"> 
+                Show&nbsp;<a href ng-click="chartType='old'">old</a>&nbsp;/&nbsp;<a href ng-click="chartType='new'">new</a>
+              </span>
+            </div>
             <div class="panel-body" style="padding: 0px; height: 250px; width: 100%;">
               
-              <!-- <div id="chartdiv" style="width:100%; height:100%"></div>     -->
+              <div id="chartdiv" style="width:100%; height:100%" ng-show="chartType=='old'"></div> 
 
-              <!-- <nvd3 options="options" data="data"></nvd3> -->
-
-              <price-chart data="data" style="width:100%; height:100%"></price-chart>
+              <price-chart chart="chart" style="width:100%; height:100%" ng-show="chartType=='new'"></price-chart>
 
             </div>
           </div>
@@ -230,7 +233,7 @@
             </div>
             <div class="panel-body" style="padding: 0px; overflow-y: auto; height: 250px;">
               <div class="table-responsive">
-                <table class="table table-striped table-condensed">
+                <table class="table table-striped table-condensed table-hover">
                   <thead>
                     <tr translate-cloak>
                       <th></th>
@@ -240,7 +243,8 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr ng-repeat="o in bidOrders.entities" ng-class="{'text-danger': o.cancellers}" ng-hide="o.cancelled || o.quantity=='0'">
+                    <tr ng-repeat="o in bidOrders.entities" ng-class="{'text-danger': o.cancellers}" 
+                      ng-hide="o.cancelled || o.quantity=='0'" style="cursor:pointer" ng-click="bidOrderClicked(o)">
                       <td>
                         <span ng-if="o.confirmations <= 0" class="text-muted">
                           <i class="fa fa-spinner fa-spin"></i>
@@ -280,7 +284,7 @@
                       <div class="form-group">
                         <label translate="translate.how_many_shares"></label>&nbsp;
                         <input type="text" class="form-control" placeholder="{{'translate.enter_amount' | translate}}"
-                          ng-model="order.quantity" ng-change="order.reCalculate()">
+                          ng-model="order.quantity" ng-change="order.reCalculate()" money>
                       </div>
                     </form>
                   </p>
@@ -289,7 +293,7 @@
                       <div class="form-group">
                         <label translate="translate.price_per_share"></label>&nbsp;
                         <input type="text" class="form-control" placeholder="{{'translate.enter_price' | translate}}"
-                          ng-model="order.priceNXT" ng-change="order.reCalculate()">
+                          ng-model="order.priceNXT" ng-change="order.reCalculate()" money>
                       </div>
                     </form>
                   </p>
@@ -324,7 +328,7 @@
             </div>
             <div class="panel-body" style="padding: 0px; overflow-y: auto; height: 250px;">
               <div class="table-responsive">
-                <table class="table table-striped table-condensed">
+                <table class="table table-striped table-condensed  table-hover">
                   <thead>
                     <tr translate-cloak>
                       <th></th>
@@ -334,7 +338,8 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr ng-repeat="o in askOrders.entities" ng-class="{'text-danger': o.cancellers}" ng-hide="o.cancelled || o.quantity=='0'">
+                    <tr ng-repeat="o in askOrders.entities" ng-class="{'text-danger': o.cancellers}" 
+                      ng-hide="o.cancelled || o.quantity=='0'" style="cursor:pointer" ng-click="askOrderClicked(o)">
                       <td>
                         <span ng-if="o.confirmations <= 0" class="text-muted">
                           <i class="fa fa-spinner fa-spin"></i>
