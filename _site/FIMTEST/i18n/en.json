@@ -95,7 +95,7 @@
     "height":               "Height",
     "price":                "Price",
     "total":                "Total",
-    "total_price":          "Total price",
+    "total_price":          "Total expected price",
     "confirmations":        "Confirmations",
     "cancel_own_order":     "Cancel my own order",
     "load_more_ask_orders": "Load more sell orders",

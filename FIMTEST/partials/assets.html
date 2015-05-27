@@ -11,7 +11,8 @@
           <i class="fa fa-heartbeat"></i>&nbsp;&nbsp;<span translate="translate.pulse" />
         </a>
       </li>
-      <li role="presentation" route-active="assets/{{paramEngine}}/{{paramAsset}}/private" ng-show="privateEnabled && isPrivate">
+      <li role="presentation" route-active="assets/{{paramEngine}}/{{paramAsset}}/private" 
+          ng-show="privateEnabled && isPrivate && showPrivate">
         <a href="#/assets/{{paramEngine}}/{{paramAsset}}/private" translate-cloak>
           <i class="fa fa-university"></i>&nbsp;&nbsp;<span>Private</span>
         </a>
@@ -195,12 +196,9 @@
                 Show&nbsp;<a href ng-click="chartType='old'">old</a>&nbsp;/&nbsp;<a href ng-click="chartType='new'">new</a>
               </span>
             </div>
-            <div class="panel-body" style="padding: 0px; height: 250px; width: 100%;">
-              
-              <div id="chartdiv" style="width:100%; height:100%" ng-show="chartType=='old'"></div> 
-
+            <div class="panel-body" style="padding: 0px; height: 250px; width: 100%;">              
+              <div id="chartdiv" style="width:100%; height:100%" ng-show="chartType=='old'"></div>
               <price-chart chart="chart" style="width:100%; height:100%" ng-show="chartType=='new'"></price-chart>
-
             </div>
           </div>
         </div>
@@ -218,6 +216,13 @@
               <p><span translate="translate.volume_today"></span>:&nbsp;{{details.data.volumeToday}}&nbsp;{{assetName}}&nbsp;({{details.data.numberOfTradesToday}}&nbsp;{{ 'translate.trades' | translate }})</p>
               <p><span translate="translate.volume_total"></span>:&nbsp;{{details.data.volumeTotal}}&nbsp;{{assetName}}&nbsp;({{details.data.numberOfTrades}}&nbsp;{{ 'translate.trades' | translate }})</p>
               <p ng-show="isPrivate"><span translate="translate.order_fee"></span>:&nbsp;{{details.data.orderFee}}%&nbsp;<span translate="translate.trade_fee"></span>:&nbsp;{{details.data.tradeFee}}%</p>
+              <p ng-show="unconfirmedAssetBalance">
+                Balance:&nbsp;
+                <span>
+                  <b>{{unconfirmedAssetBalance}}</b> 
+                  <span class="text-muted" ng-show="unconfirmedAssetBalance!=assetBalance">({{assetBalance}})</span> {{assetName}}
+                </span>
+              </p>
               <p class="text-muted">{{details.data.description}}</p>
             </div>
           </div>
@@ -299,7 +304,7 @@
                   </p>
                   <p>
                     <span translate="translate.total_price"></span>&nbsp;<b>{{order.totalPriceNXT}}</b>&nbsp;{{symbol}}&nbsp;
-                    <span class="text-muted">(<span translate="translate.order_fee"></span>&nbsp;<b>{{order.orderFeeNXT}}</b>&nbsp;{{symbol}})</span>
+                    <span class="text-muted">(<span translate="translate.order_fee"></span>&nbsp;<b>{{order.orderFeeNXT}}</b>&nbsp;{{symbol}}, transaction fee {{order.transactionFeeNXT}})</span>
                   </p>
                 </div>
               </div>
@@ -445,7 +450,8 @@
                         <span ng-if="o.confirmations > 0 && o.confirmations <= 10" class="text-muted">
                           <b>{{o.confirmations}}</b>
                         </span>
-                        <span ng-if="o.confirmations > 10" tooltip="{{o.confirmations}} {{ 'translate.confirmations' | translate }}" 
+                        <span ng-if="o.confirmations > 10" 
+                              tooltip="{{o.confirmations}} {{ 'translate.confirmations' | translate }}" 
                               ng-class="{'text-danger': o.cancellers, 'text-success': !o.cancellers}">
                           <i class="fa fa-check"></i>
                         </span>
@@ -453,7 +459,8 @@
                       <td>{{o.price}}</td>
                       <td>{{o.quantity}}</td>                      
                       <td>{{o.total}}</td>
-                      <td><a href ng-click="cancelOrder(o)" class="pull-right">Cancel</a></td>
+                      <td><a href ng-click="cancelOrder(o)" class="pull-right"
+                        ng-hide="o.confirmations < 1">Cancel</a></td>
                     </tr>
                   </tbody>
                 </table>
@@ -493,7 +500,8 @@
                         <span ng-if="o.confirmations > 0 && o.confirmations <= 10" class="text-muted">
                           <b>{{o.confirmations}}</b>
                         </span>
-                        <span ng-if="o.confirmations > 10" tooltip="{{o.confirmations}} {{ 'translate.confirmations' | translate }}" 
+                        <span ng-if="o.confirmations > 10" 
+                              tooltip="{{o.confirmations}} {{ 'translate.confirmations' | translate }}" 
                               ng-class="{'text-danger': o.cancellers, 'text-success': !o.cancellers}">
                           <i class="fa fa-check"></i>
                         </span>
@@ -501,7 +509,8 @@
                       <td>{{o.price}}</td>
                       <td>{{o.quantity}}</td>                      
                       <td>{{o.total}}</td>
-                      <td><a href ng-click="cancelOrder(o)" class="pull-right">Cancel</a></td>
+                      <td><a href ng-click="cancelOrder(o)" class="pull-right" 
+                          ng-hide="o.confirmations < 1">Cancel</a></td>
                     </tr>
                   </tbody>
                 </table>
