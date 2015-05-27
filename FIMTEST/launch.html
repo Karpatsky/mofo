@@ -53,7 +53,7 @@
     <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
-    <script src="scripts/scripts.7daa9edb.js"></script>
+    <script src="scripts/scripts.46dcabc4.js"></script>
 
   </head>
   <body ng-class="{'showing-landing-page': showingLandingPage}">
@@ -73,7 +73,8 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" ng-href="#/start"><i class="fa fa-home text-success"></i>&nbsp;<strong ng-bind="WALLET_NAME"></strong>Wallet&nbsp;<span class="text-danger"><b>{{isTestnet? 'TEST' : 'BETA'}}</b></span></a>
+        <a ng-hide="TRADE_UI_ONLY" class="navbar-brand" ng-href="#/start"><i class="fa fa-home text-success"></i>&nbsp;<strong ng-bind="WALLET_NAME"></strong>Wallet&nbsp;<span class="text-danger"><b>{{isTestnet? 'TEST' : 'BETA'}}</b></span></a>
+        <a ng-show="TRADE_UI_ONLY" class="navbar-brand" ng-href="#/activity/fim/assets/latest"><i class="fa fa-home text-success"></i>&nbsp;<strong ng-bind="WALLET_NAME"></strong>Wallet&nbsp;<span class="text-danger"><b>{{isTestnet? 'TEST' : 'BETA'}}</b></span></a>
       </div>
 
       <div class="collapse navbar-collapse navbar-default" collapse="mainMenuCollapsed">
@@ -102,8 +103,8 @@
           </li> 
 
           <li ng-show="TRADE_UI_ONLY && selectedAccount">
+            <!-- <span>Account:&nbsp;<b>{{selectedAccount.name || selectedAccount.id_rs}}</b></span>&nbsp;&nbsp; -->            
             <a href>
-              <span>Account:&nbsp;<b>{{selectedAccount.name || selectedAccount.id_rs}}</b></span>&nbsp;&nbsp;
               <span>Trading balance:&nbsp;<b>{{selectedAccount.unconfirmedBalanceNXT}}</b>
                 <span class="text-muted" ng-show="selectedAccount.unconfirmedBalanceNXT!=selectedAccount.balanceNXT">({{selectedAccount.balanceNXT}})</span> {{selectedAccount.symbol}}
               </span>
@@ -112,8 +113,8 @@
         </ul>
 
         <ul class="nav navbar-nav navbar-right" nav-menu="active">
-          <li>
-            <a href="#/search/fim/accounts/" ng-hide="TRADE_UI_ONLY">
+          <li ng-hide="TRADE_UI_ONLY">
+            <a href="#/search/fim/accounts/">
               <i class="fa fa-search"></i>&nbsp;&nbsp;{{'translate.search' | translate}}
             </a>
           </li>          
@@ -128,22 +129,22 @@
                 <a ng-href="#/settings/themes"><span class="glyphicon glyphicon-fire"></span>&nbsp;&nbsp;{{'translate.themes' | translate}}</a> 
               </li>
               <!-- only displayed when running as front end for FIMK server package-->
-              <li route-active ng-if="forceLocalHost && !enableDualEngines">
+              <li route-active ng-if="forceLocalHost && !enableDualEngines" ng-hide="TRADE_UI_ONLY">
                 <a ng-href="#/server/fim/peers"><i class="fa fa-globe"></i>&nbsp;&nbsp;{{'translate.peers' | translate}}</a> 
               </li>
-              <li route-active ng-if="isNodeJS">
+              <li route-active ng-if="isNodeJS" ng-hide="TRADE_UI_ONLY">
                 <a ng-href="#/server/fim/console"><span class="glyphicon glyphicon-hdd"></span>&nbsp;&nbsp;{{'translate.fim_server' | translate}}</a> 
               </li>
-              <li route-active ng-if="isNodeJS && enableDualEngines">
+              <li route-active ng-if="isNodeJS && enableDualEngines" ng-hide="TRADE_UI_ONLY">
                 <a ng-href="#/server/nxt/console"><span class="glyphicon glyphicon-hdd"></span>&nbsp;&nbsp;{{'translate.nxt_server' | translate}}</a>
               </li>              
-              <li route-active>
+              <li route-active ng-hide="TRADE_UI_ONLY">
                 <a ng-href="#/settings/wallet"><span class="glyphicon glyphicon-briefcase"></span>&nbsp;&nbsp;{{'translate.wallet' | translate}}</a> 
               </li>
-              <li route-active>
+              <li route-active ng-hide="TRADE_UI_ONLY">
                 <a ng-href="#/settings/contacts"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;{{'translate.contacts' | translate}}</a> 
               </li>
-              <li route-active>
+              <li route-active ng-hide="TRADE_UI_ONLY">
                 <a ng-href="#/settings/database"><span class="glyphicon glyphicon-tasks"></span>&nbsp;&nbsp;{{'translate.database' | translate}}</a> 
               </li>
               <li route-active ng-show="false">
@@ -269,4 +270,4 @@
       </div>
     </nav>
   </body> 
-</html><!--Wed May 27 13:27:41 CEST 2015-->
+</html><!--Wed May 27 19:58:05 CEST 2015-->

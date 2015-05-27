@@ -77,7 +77,13 @@
           <div>
             <table class="table table-condensed">
               <tr><td>Id</td><td colspan="3"><a ng-href="#/assets/{{paramEngine}}/{{paramAsset}}/trade">{{paramAsset}}</a></td></tr>
-              <tr><td>Issuer</td colspan="3"><td><a ng-href="#/accounts/{{assetIssuerRS}}/activity/latest">{{assetIssuerName||assetIssuerRS}}</a></td></tr>
+              <tr>
+                <td>Issuer</td colspan="3">
+                <td>
+                  <a ng-href="#/accounts/{{assetIssuerRS}}/activity/latest" ng-hide="TRADE_UI_ONLY">{{assetIssuerName||assetIssuerRS}}</a>
+                  <span ng-show="TRADE_UI_ONLY">{{assetIssuerName||assetIssuerRS}}</span>
+                </td>
+              </tr>
               <tr ng-if="isPrivate"><td>Type</td><td colspan="3"><b>Private</b></td></tr>            
               <tr><td>Quantity</td><td>{{assetQuantity}}</td><td>Decimals</td><td>{{assetDecimals}}</td></tr>
               <tr><td>Trades</td><td>{{assetTrades}}</td><td>Transfers</td><td>{{assetTransfers}}</td></tr>
@@ -289,7 +295,7 @@
                       <div class="form-group">
                         <label translate="translate.how_many_shares"></label>&nbsp;
                         <input type="text" class="form-control" placeholder="{{'translate.enter_amount' | translate}}"
-                          ng-model="order.quantity" ng-change="order.reCalculate()" money>
+                          ng-model="order.quantity" ng-change="order.reCalculate()" money precision="{{assetDecimals}}">
                       </div>
                     </form>
                   </p>
@@ -298,7 +304,7 @@
                       <div class="form-group">
                         <label translate="translate.price_per_share"></label>&nbsp;
                         <input type="text" class="form-control" placeholder="{{'translate.enter_price' | translate}}"
-                          ng-model="order.priceNXT" ng-change="order.reCalculate()" money>
+                          ng-model="order.priceNXT" ng-change="order.reCalculate()" money precision="8">
                       </div>
                     </form>
                   </p>
@@ -310,13 +316,15 @@
               </div>
               <div class="row">
                 <div class="col-xs-6">
-                  <button class="btn btn-success btn-block text-center" ng-click="buyAsset()" ng-disabled="!selectedAccount">
+                  <button class="btn btn-success btn-block text-center" ng-click="buyAsset()" 
+                    ng-disabled="!selectedAccount || !order.priceNXT || !order.quantity">
                     <big><b><span translate="translate.buy"></span></b></big><br>
                     <small>Click to send order</small>
                   </button>
                 </div>
                 <div class="col-xs-6">
-                  <button class="btn btn-danger btn-block text-center" ng-click="sellAsset()" ng-disabled="!selectedAccount">
+                  <button class="btn btn-danger btn-block text-center" ng-click="sellAsset()" 
+                    ng-disabled="!selectedAccount || !order.priceNXT || !order.quantity">
                     <big><b><span translate="translate.sell"></span></b></big><br>
                     <small>Click to send order</small>
                   </button>
@@ -581,10 +589,12 @@
                       <td><a href="#/accounts/{{a.id_rs}}/activity/latest">{{a.id_rs}}</a></td>
                       <!-- <td>{{a.quantity}}</td> -->
                       <td>
-                        <a class="pull-right" ng-if="!a.allowed" href ng-click="addPrivateAssetAccount(a.id_rs)"
-                          translate="translate.add_account"></a>
-                        <a class="pull-right" ng-if="a.allowed" href ng-click="removePrivateAssetAccount(a.id_rs)"
-                          translate="translate.remove_account"></a>
+                        <span ng-hide="a.confirmations <= 0">
+                          <a class="pull-right" ng-if="!a.allowed" href ng-click="addPrivateAssetAccount(a.id_rs)"
+                            translate="translate.add_account"></a>
+                          <a class="pull-right" ng-if="a.allowed" href ng-click="removePrivateAssetAccount(a.id_rs)"
+                            translate="translate.remove_account"></a>
+                        </span>
                       </td>
                     </tr>
                   </tbody>
