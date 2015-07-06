@@ -108,7 +108,7 @@
         <hr class="stacked-divider">
       </li>
 
-      <li role="presentation" route-active="activity/{{paramEngine}}/activity">
+      <li role="presentation" route-active="activity/{{paramEngine}}/activity" ng-hide="TRADE_UI_ONLY">
         <a href ng-init="activityCollapse=true" ng-click="activityCollapse=!activityCollapse">
           <i class="fa fa-book"></i>&nbsp;&nbsp;{{'translate.activity'|translate}}&nbsp;<span class="caret"></span>
         </a>
@@ -118,7 +118,7 @@
         </ul>
       </li>
 
-      <li role="presentation" route-active="activity/{{paramEngine}}/blockchain">
+      <li role="presentation" route-active="activity/{{paramEngine}}/blockchain" ng-hide="TRADE_UI_ONLY">
         <a href ng-init="blockchainCollapse=true" ng-click="blockchainCollapse=!blockchainCollapse">
           <i class="fa fa-cubes"></i>&nbsp;&nbsp;{{'translate.blockchain'|translate}}&nbsp;<span class="caret"></span>
         </a>
@@ -128,7 +128,7 @@
         </ul>
       </li>
 
-      <li role="presentation" route-active="activity/{{paramEngine}}/forgers">
+      <li role="presentation" route-active="activity/{{paramEngine}}/forgers" ng-hide="TRADE_UI_ONLY">
         <a href ng-init="forgersCollapse=true" ng-click="forgersCollapse=!forgersCollapse">
           <i class="fa fa-wrench"></i>&nbsp;&nbsp;{{'translate.forgers'|translate}}&nbsp;<span class="caret"></span>
         </a>
@@ -138,7 +138,7 @@
         </ul>
       </li>
 
-      <li role="presentation" route-active="activity/{{paramEngine}}/assets">
+      <li role="presentation" route-active="activity/{{paramEngine}}/assets" ng-hide="TRADE_UI_ONLY">
         <a href ng-init="assetsCollapse=true" ng-click="assetsCollapse=!assetsCollapse">
           <i class="fa fa-line-chart"></i>&nbsp;&nbsp;{{'translate.assets'|translate}}&nbsp;<span class="caret"></span>
         </a>
@@ -394,6 +394,12 @@
         <div ng-if="paramSection=='assets'">
           <div infinite-scroll="provider.loadMore()" 
             infinite-scroll-distance="0" infinite-scroll-immediate-check="false">
+            <form class="form-inline">
+              <div class="form-group">
+                <span>Filter on asset name and description</span>&nbsp;&nbsp;
+                <input type="text" ng-model="provider.filter" ng-change="provider.reload()" class="form-control" placeholder="Filter">
+              </div>
+            </form>            
             <div class="table-responsive">
               <table class="table table-striped">
                 <thead>
@@ -405,6 +411,7 @@
                     <th>{{ 'translate.trades' | translate }}</th>
                     <th>{{ 'translate.transfers' | translate }}</th>
                     <th>{{ 'translate.accounts' | translate }}</th>
+                    <th>{{ 'translate.private' | translate }}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -416,6 +423,7 @@
                     <td>{{a.numberOfTrades}}</td>
                     <td>{{a.numberOfTransfers}}</td>
                     <td>{{a.numberOfAccounts}}</td>
+                    <td><span class="text-success" ng-show="a.isPrivate"><i class="fa fa-lock"></i></span></td>
                   </tr>
                 </tbody>
               </table>

@@ -1,4 +1,4 @@
-<div class="panel panel-primary" ng-init="items.initialize && items.initialize(items)">
+<div class="panel panel-primary" ng-init="items.initialize && items.initialize(items)" ng-hide="items.autoSubmit">
   <div class="panel-heading">
     <h3 class="panel-title" ng-bind="items.title"></h3>
   </div>
@@ -92,9 +92,9 @@
             </div>
           </div>
         </span>
-      </div>      
+      </div>
 
-      <div ng-repeat="f in items.fields" ng-show="f.__show">
+      <div ng-repeat="f in items.fields" ng-show="f.label && f.__show">
         <ng-form name="userFieldForm">
           <div class="form-group col-xs-12" 
             ng-class="{ 'has-error' : userFieldForm.userFieldName.$invalid && ! userFieldForm.userFieldName.$pristine }">
@@ -141,6 +141,28 @@
                          type="text" ng-model="f.value" ng-disabled="sendSuccess"
                          ng-readonly="f.readonly"
                          ng-change="f.onchange && f.onchange(items)">
+                </div>
+              </div>
+              <div ng-switch-when="radio">
+                <div ng-if="f.required">
+                  <input type="radio"  name="userFieldName" ng-model="f.value" checked
+                         ng-disabled="sendSuccess" required
+                         ng-readonly="f.readonly" ng-value="true"
+                         ng-change="f.onchange && f.onchange(items)">&nbsp;&nbsp;Yes&nbsp;&nbsp;
+                  <input type="radio"  name="userFieldName" ng-model="f.value"
+                         ng-disabled="sendSuccess" required
+                         ng-readonly="f.readonly" ng-value="false"
+                         ng-change="f.onchange && f.onchange(items)">&nbsp;&nbsp;No
+                </div>
+                <div ng-if="!f.required">
+                  <input type="radio"  name="userFieldName" ng-model="f.value" checked
+                         ng-disabled="sendSuccess" ng-value="true"
+                         ng-readonly="f.readonly"
+                         ng-change="f.onchange && f.onchange(items)">&nbsp;&nbsp;Yes&nbsp;&nbsp;
+                  <input type="radio" name="userFieldName" ng-model="f.value"
+                         ng-disabled="sendSuccess" ng-value="false"
+                         ng-readonly="f.readonly"
+                         ng-change="f.onchange && f.onchange(items)">&nbsp;&nbsp;No                  
                 </div>
               </div>
               <div ng-switch-when="textarea">

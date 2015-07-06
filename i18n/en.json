@@ -45,6 +45,7 @@
     "latest":               "Latest",
     "inbox":                "Inbox",
     "add_account":          "Add Account",
+    "remove_account":       "Remove Account",
     "import_wallet":        "Import Wallet",
     "balance":              "Balance",
     "filter":               "Filter",
@@ -94,6 +95,7 @@
     "height":               "Height",
     "price":                "Price",
     "total":                "Total",
+    "total_price":          "Total expected price",
     "confirmations":        "Confirmations",
     "cancel_own_order":     "Cancel my own order",
     "load_more_ask_orders": "Load more sell orders",
@@ -105,7 +107,8 @@
     "seller":               "Seller",
     "buyer":                "Buyer",
     "load_more_trades":     "Load more trades",
-    "my_orders":            "My orders",
+    "my_bid_orders":        "My buy orders",
+    "my_ask_orders":        "My sell orders",
     "order":                "Order",
     "load_more_orders":     "Load more orders",
     "account":              "Account",
@@ -176,7 +179,24 @@
     "translate_intro":      "<p>1. Choose the language you want to translate from the selector below<br>2. Improve the translations in the third column that you believe are incorrect.<br>3. While you type your corrections are automatically stored, you can close your browser and come back and your changes will remain.<br>4. When you are done improving the translation click the <b>Share translation</b> button and follow instructions.<br><br></p><p>It is important that you leave the HTML markup (for example <code>&lt;b&gt;Text here&lt;/b&gt;</code>) and the variables (for example <code>&#10100;&#10100;variable&#10101;&#10101;</code>) in tact. The contents of HTML tags should be translated, the contents of variables should not be translated.</p><p>It is not required that you translate everything before you share your translation.</p>",
     "translate_sharehowto": "To share your translation please download the translation file and send it to the email address listed below.",
     "edit":                 "Edit",
-    "delete":               "Delete"
+    "delete":               "Delete",
+    "private":              "Private",
+    "order_fee":            "Order fee",
+    "trade_fee":            "Trade fee",
+    "set_fees":             "Set fees",
+    "show":                 "Show",
+    "all":                  "All",
+    "allowed":              "Allowed",
+    "prohibited":           "Prohibited",
+    "marketcap":            "Market Cap",
+    "last_price":           "Last price",
+    "volume_today":         "24hr Volume",
+    "volume_total":         "Total volume",
+    "show_pulse":           "Show Pulse",
+    "how_many_shares":      "How many shares?",
+    "enter_amount":         "Enter amount",
+    "price_per_share":      "Price per share?",
+    "enter_price":          "Enter price"
   },
 
   "time": {
@@ -268,7 +288,10 @@
       "8":                  "{{sender}} deleted currency {{code}} {{name}} {{details}} {{message}}"
     },
     "40": {
-      "0":                  "{{sender}} set namespaced alias {{aliasName}} to {{aliasURI}} {{details}} {{message}}"
+      "0":                  "{{sender}} set namespaced alias {{aliasName}} to {{aliasURI}} {{details}} {{message}}",
+      "1":                  "{{sender}} adds {{recipient}} to {{assetName}} allowed accounts {{details}} {{message}}",
+      "2":                  "{{sender}} removed {{recipient}} from {{assetName}} allowed accounts {{details}} {{message}}",
+      "3":                  "{{sender}} set {{assetName}} order fee {{orderFee}}% trade fee {{tradeFee}}% {{details}} {{message}}"
     }
   },
 
