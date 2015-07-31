@@ -60,10 +60,17 @@
                 </a>
               </td>
               <td>
-                <a class="btn btn-success pull-right" ng-click="toggleReply()">
-                  <span ng-show="ui.replyCollapse"><i class="fa fa-envelope-o"></i></span>
-                  <span ng-show="!ui.replyCollapse"><i class="fa fa-times"></i></span>
-                </a>
+                <span class="pull-right">
+                  <a class="btn btn-success" ng-click="toggleReply(); ui.permanentReply=true" ng-show="ui.replyCollapse">
+                    <i class="fa fa-envelope-o"></i>&nbsp;<b>{{feeCost}}</b>
+                  </a>
+                  <a class="btn btn-success" ng-click="toggleReply(); ui.transientReply=true" ng-show="ui.replyCollapse">
+                    <i class="fa fa-envelope-o"></i>&nbsp;<b>free</b>
+                  </a>
+                  <a class="btn btn-danger" ng-click="toggleReply()" ng-show="!ui.replyCollapse">
+                    <i class="fa fa-times"></i>
+                  </a>
+                </span>
               </td>
             </tr>
           </table>
@@ -112,15 +119,15 @@
               </tab>
               <tab>
                 <tab-heading><i class="emoji emoji-sunny"></i></tab-heading>
-                <a href ng-repeat="e in emoji.groups.nature" title="{{e}}" ng-click="insertEmoji(e)"><i class="emoji emoji-{{e}}"></i></a>                    
+                <a href ng-repeat="e in emoji.groups.nature" title="{{e}}" ng-click="insertEmoji(e)"><i class="emoji emoji-{{e}}"></i></a>
               </tab>
               <tab>
                 <tab-heading><i class="emoji emoji-bamboo"></i></tab-heading>
-                <a href ng-repeat="e in emoji.groups.life" title="{{e}}" ng-click="insertEmoji(e)"><i class="emoji emoji-{{e}}"></i></a>                    
+                <a href ng-repeat="e in emoji.groups.life" title="{{e}}" ng-click="insertEmoji(e)"><i class="emoji emoji-{{e}}"></i></a>
               </tab>
               <tab>
                 <tab-heading><i class="emoji emoji-house"></i></tab-heading>
-                <a href ng-repeat="e in emoji.groups.travel" title="{{e}}" ng-click="insertEmoji(e)"><i class="emoji emoji-{{e}}"></i></a>                    
+                <a href ng-repeat="e in emoji.groups.travel" title="{{e}}" ng-click="insertEmoji(e)"><i class="emoji emoji-{{e}}"></i></a>
               </tab>
               <tab>
                 <tab-heading><i class="emoji emoji-one"></i></tab-heading>
@@ -171,17 +178,23 @@
         <div class="col-md-12">
           <div class="btn-toolbar" role="toolbar">
             <div class="btn-group" role="group">
-              <button class="btn btn-primary navbar-btn" ng-disabled="!ui.replyCollapse"
-                ng-click="toggleReply()">Reply to <b>{{contactName||contactRS}}</b></button>
+              <button class="btn btn-default navbar-btn" ng-disabled="!ui.replyCollapse"
+                ng-class="{'btn-primary': ui.permanentReply}"
+                ng-click="toggleReply();ui.permanentReply=true">
+                <i class="fa fa-check"></i>&nbsp;&nbsp;Permanent Reply&nbsp;<b>({{feeCost}})</b>
+              </button>
             </div>
+            <div class="btn-group" role="group">
+              <button class="btn btn-default navbar-btn" ng-disabled="!ui.replyCollapse"
+                ng-class="{'btn-primary': ui.transientReply}"
+                ng-click="toggleReply();ui.transientReply=true">
+                <i class="fa fa-clock-o"></i>&nbsp;&nbsp;Transient Reply&nbsp;<b>(free)</b>
+              </button>
+            </div>            
             <div class="btn-group" role="group" ng-show="!ui.replyCollapse">
               <button class="btn btn-danger navbar-btn" ng-show="!ui.replyCollapse"
                 ng-click="toggleReply()">Cancel</button>                
             </div>
-            <!-- <div class="btn-group pull-right" role="group">
-              <a href="#/accounts/{{contactRS}}/activity/latest"
-                 class="btn btn-default navbar-btn"><i class="fa fa-link"></i>&nbsp;&nbsp;{{contactRS}}</a>
-            </div> -->
           </div>
         </div>
       </div>
@@ -216,19 +229,19 @@
               </tab>
               <tab>
                 <tab-heading><i class="emoji emoji-sunny"></i></tab-heading>
-                <a href ng-repeat="e in emoji.groups.nature" title="{{e}}" ng-click="insertEmoji(e)"><i class="emoji emoji-{{e}}"></i></a>                    
+                <a href ng-repeat="e in emoji.groups.nature" title="{{e}}" ng-click="insertEmoji(e)"><i class="emoji emoji-{{e}}"></i></a>
               </tab>
               <tab>
                 <tab-heading><i class="emoji emoji-bamboo"></i></tab-heading>
-                <a href ng-repeat="e in emoji.groups.life" title="{{e}}" ng-click="insertEmoji(e)"><i class="emoji emoji-{{e}}"></i></a>                    
+                <a href ng-repeat="e in emoji.groups.life" title="{{e}}" ng-click="insertEmoji(e)"><i class="emoji emoji-{{e}}"></i></a>
               </tab>
               <tab>
                 <tab-heading><i class="emoji emoji-house"></i></tab-heading>
-                <a href ng-repeat="e in emoji.groups.travel" title="{{e}}" ng-click="insertEmoji(e)"><i class="emoji emoji-{{e}}"></i></a>                    
+                <a href ng-repeat="e in emoji.groups.travel" title="{{e}}" ng-click="insertEmoji(e)"><i class="emoji emoji-{{e}}"></i></a>
               </tab>
               <tab>
                 <tab-heading><i class="emoji emoji-one"></i></tab-heading>
-                <a href ng-repeat="e in emoji.groups.signs" title="{{e}}" ng-click="insertEmoji(e)"><i class="emoji emoji-{{e}}"></i></a>                    
+                <a href ng-repeat="e in emoji.groups.signs" title="{{e}}" ng-click="insertEmoji(e)"><i class="emoji emoji-{{e}}"></i></a>
               </tab>
             </tabset>
           </div>
@@ -250,7 +263,21 @@
 
             <div ng-repeat="e in chatMessagesProvider.entities">
               <div class="{{e.clazz}}" style="margin-bottom: 10px">
-                <span ng-show="e.encrypted"><i class="fa fa-lock"></i>&nbsp;</span>
+                <span ng-if="e.transient">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                <span ng-if="!e.transient">
+                  <span ng-if="e.confirmations <= 0">
+                    <i class="fa fa-spinner fa-spin"></i>
+                  </span>
+                  <span ng-if="e.confirmations > 0 && e.confirmations <= 10">
+                    <b>{{e.confirmations}}</b>
+                  </span>
+                  <span ng-if="e.confirmations > 10" tooltip="{{e.confirmations}} confirmations">
+                    <i class="fa fa-check"></i>
+                  </span>
+                </span>                
+                <span><i class="fa" ng-class="{'fa-key':e.encrypted}"></i>&nbsp;</span>
                 <span ng-bind-html="e.text || '[encrypted]'" 
                       style="word-wrap: break-word; word-break: break-all; white-space: normal;"></span><br>
                 <small class="{{e.pull_clazz}}">{{e.date}}</small>

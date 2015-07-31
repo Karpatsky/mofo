@@ -201,9 +201,20 @@
               <tbody>
                 <tr ng-repeat="a in transactionProvider.entities" ng-class="{ success: a.confirmations == 0 }">
                   <td>
-                    <span ng-if="a.confirmations == 0"><i class="fa fa-refresh fa-spin"></i></span>
-                    <span ng-if="a.confirmations > 0 && a.confirmations <= 10" class="text-danger"><b>{{a.confirmations}}</b></span>
-                    <span ng-if="a.confirmations > 10" tooltip="{{a.confirmations}} confirmations"><i class="fa fa-check text-success"></i></span>
+                    <span ng-if="a.transient">
+                      <i class="fa fa-clock-o text-muted"></i>
+                    </span>
+                    <span ng-if="!a.transient">
+                      <span ng-if="a.confirmations <= 0">
+                        <i class="fa fa-spinner fa-spin text-muted"></i>
+                      </span>
+                      <span ng-if="a.confirmations > 0 && a.confirmations <= 10" class="text-danger">
+                        <b>{{a.confirmations}}</b>
+                      </span>
+                      <span ng-if="a.confirmations > 10" tooltip="{{a.confirmations}} confirmations">
+                        <i class="fa fa-check text-success"></i>
+                      </span>
+                    </span>
                   </td>
                   <td style="word-wrap: break-word; word-break: break-all; white-space: normal; width: 100%;" 
                     ng-bind-html="a.renderedHTML" ng-if="!IS_SMALL_DEVICE"></td>

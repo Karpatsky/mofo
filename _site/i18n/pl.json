@@ -248,7 +248,8 @@
     "price_per_share": "Cena za jedną akcję?",
     "enter_price": "Podaj cenę",
     "msg_must_save_secret": "<h3> <b>Bardzo ważny!</b> </h3> To jest twój <b>sekret zdanie.</b> <br> {{symbol}} Sieć jest zdecentralizowana, tylko <b>trzeba</b> ten przycisk, aby uzyskać dostęp do portfela. <br> <b>Proszę zapisać te dwanaście słów!</b>",
-    "msg_confirm_secret_saved": "<b>Potwierdź swoje tajne przechowywane frazę.</b> <br> Bez prawidłowego tajnej frazy stracisz dostęp do swojego konta. <br> <b>Wszystkie Twoje</b> {{symbol}} <b>zostaną utracone.</b>"
+    "msg_confirm_secret_saved": "<b>Potwierdź swoje tajne przechowywane frazę.</b> <br> Bez prawidłowego tajnej frazy stracisz dostęp do swojego konta. <br> <b>Wszystkie Twoje</b> {{symbol}} <b>zostaną utracone.</b>",
+    "forward": "Naprzód"
   },
   "filter": {
     "filter": "Filtr",

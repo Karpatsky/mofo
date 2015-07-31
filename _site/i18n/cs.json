@@ -248,7 +248,8 @@
     "price_per_share": "Cena za akcii?",
     "enter_price": "Zadejte cenu",
     "msg_must_save_secret": "<h3> <b>Velmi důležité!</b> </h3> Toto je vaše <b>tajemství fráze.</b> <br> {{symbol}} síť je decentralizovaná, jen <b>musíte</b> tento klíč pro přístup k peněženku. <br> <b>Prosím, napište si tato slova dvanáct!</b>",
-    "msg_confirm_secret_saved": "<b>Potvrďte jste uložili svůj tajný frázi.</b> <br> Bez správného tajnou frázi ztratíte přístup ke svému účtu. <br> <b>Všechny vaše</b> {{symbol}} <b>budou ztraceny.</b>"
+    "msg_confirm_secret_saved": "<b>Potvrďte jste uložili svůj tajný frázi.</b> <br> Bez správného tajnou frázi ztratíte přístup ke svému účtu. <br> <b>Všechny vaše</b> {{symbol}} <b>budou ztraceny.</b>",
+    "forward": "Vpřed"
   },
   "filter": {
     "filter": "Filtr",

@@ -248,7 +248,8 @@
     "price_per_share": "Verð á hlut?",
     "enter_price": "Sláðu verð",
     "msg_must_save_secret": "<h3> <b>Ákaflega mikilvægt!</b> </h3> Þetta er <b>leyndarmál setningu.</b> <br> The {{symbol}} netið er dreifð, aðeins <b>þú</b> hefur þennan takka til að komast veskið þitt. <br> <b>Vinsamlega skrifaðu niður þessar tólf orð!</b>",
-    "msg_confirm_secret_saved": "<b>Staðfestu að þú geymt leyndarmál setningu þinni.</b> <br> Án þess að leiðrétta leyndarmál setningu sem þú missir aðgang að reikningnum þínum. <br> <b>Allt þitt</b> {{symbol}} <b>glatast.</b>"
+    "msg_confirm_secret_saved": "<b>Staðfestu að þú geymt leyndarmál setningu þinni.</b> <br> Án þess að leiðrétta leyndarmál setningu sem þú missir aðgang að reikningnum þínum. <br> <b>Allt þitt</b> {{symbol}} <b>glatast.</b>",
+    "forward": "Áfram"
   },
   "filter": {
     "filter": "Sía",

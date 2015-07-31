@@ -248,7 +248,8 @@
     "price_per_share": "Pris per aksje?",
     "enter_price": "Tast pris",
     "msg_must_save_secret": "<h3> <b>Ekstremt viktig!</b> </h3> Dette er din <b>hemmelighet setning.</b> <br> Den {{symbol}} Nettverket er desentralisert, bare <b>du</b> har denne tasten for å få tilgang til lommeboken. <br> <b>Skriv ned disse tolv ord!</b>",
-    "msg_confirm_secret_saved": "<b>Bekreft at du lagret ditt hemmelige setning.</b> <br> Uten riktig hemmelig uttrykket du mister tilgang til kontoen din. <br> <b>All din</b> {{symbol}} <b>vil gå tapt.</b>"
+    "msg_confirm_secret_saved": "<b>Bekreft at du lagret ditt hemmelige setning.</b> <br> Uten riktig hemmelig uttrykket du mister tilgang til kontoen din. <br> <b>All din</b> {{symbol}} <b>vil gå tapt.</b>",
+    "forward": "Forward"
   },
   "filter": {
     "filter": "Filter",

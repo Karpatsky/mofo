@@ -1,7 +1,6 @@
 {
   "force_translate": [ 
-    "translate.msg_confirm_secret_saved",
-    "translate.msg_must_save_secret"
+    "translate.must.exist"
   ],
   "translate": {
     "address":              "Address",
@@ -201,6 +200,7 @@
     "load_more_assets":     "Load more assets",
     "continue":             "Continue",
     "back":                 "Back",
+    "forward":              "Forward",
     "save":                 "Save",
     "no_thanks_faucet":     "No thanks, I don't want to use the faucet",
     "send":                 "Send",
