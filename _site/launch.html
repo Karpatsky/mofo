@@ -39,7 +39,7 @@
     <!-- Bootswatch theme switcher -->
     <link type="text/css" rel="stylesheet" href="plugins/themes/css/spacelab.bootstrap.min.css" id="bootswatch.style" />
 
-    <link rel="stylesheet" href="styles/main.02a29dc0.css">
+    <link rel="stylesheet" href="styles/main.c64b9dd9.css">
 
     <!--<link type="text/css" rel="stylesheet" href="/amstockchart/amcharts/style.css"> 
     <style>
@@ -56,10 +56,12 @@
     <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
-    <script src="scripts/scripts.82b93f42.js"></script>
+    <script src="scripts/scripts.471047fa.js"></script>
 
   </head>
   <body ng-class="{'showing-landing-page': showingLandingPage}">
+
+    <div id="smallScreenTest" class="visible-xs"></div>
 
     <audio preload="auto"><source src="images/beep.wav"></audio>
 
@@ -68,7 +70,7 @@
     <![endif]-->
 
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="navbar-header" ng-init="mainMenuCollapsed=true">
+      <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed"
             ng-click="mainMenuCollapsed=!mainMenuCollapsed">
           <span class="sr-only" translate="translate.toggle_navigation"></span>
@@ -76,16 +78,33 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a ng-hide="TRADE_UI_ONLY" class="navbar-brand" ng-href="#/start"><i class="fa fa-home text-success"></i>&nbsp;<strong ng-bind="WALLET_NAME"></strong>Wallet&nbsp;<span class="text-danger"><b>{{isTestnet? 'TEST' : 'BETA'}}</b></span></a>
-        <a ng-show="TRADE_UI_ONLY" class="navbar-brand" ng-href="#/activity/fim/assets/latest"><i class="fa fa-home text-success"></i>&nbsp;<strong ng-bind="WALLET_NAME"></strong>Wallet&nbsp;<span class="text-danger"><b>{{isTestnet? 'TEST' : 'BETA'}}</b></span></a>
+        <a ng-hide="TRADE_UI_ONLY" class="navbar-brand" ng-href="#/start"><strong ng-bind="WALLET_NAME"></strong><span class="text-danger"><b>{{isTestnet? ' TEST' : ''}}</b></span>
+        </a>
+        <a ng-show="TRADE_UI_ONLY" class="navbar-brand" ng-href="#/activity/fim/assets/latest"><strong ng-bind="WALLET_NAME"></strong>Wallet&nbsp;<span class="text-danger"><b>{{isTestnet? 'TEST' : 'BETA'}}</b></span>
+        </a>
       </div>
 
-      <div class="collapse navbar-collapse navbar-default" collapse="mainMenuCollapsed">
+      <div class="collapse navbar-collapse navbar-default" collapse="mainMenuCollapsed" menu-close="mainMenuCollapsed=true">
         <ul class="nav navbar-nav" nav-menu="active">
-          <li>
+          <li ng-if="IS_SMALL_DEVICE">
+            <div class="btn-group btn-group-justified">
+              <div class="btn-group" role="group">
+                <a href="javascript:window.history.back()" class="btn btn-default">
+                  <i class="fa fa-arrow-left"></i>&nbsp;Back
+                </a>
+              </div>
+              <div class="btn-group" role="group">
+                <a href="javascript:window.history.forward()" class="btn btn-default">
+                  Forward&nbsp;<i class="fa fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </li>
+
+          <li ng-if="!IS_SMALL_DEVICE">
             <a href="javascript:window.history.back()"><i class="fa fa-arrow-left"></i></a>
           </li>
-          <li>
+          <li ng-if="!IS_SMALL_DEVICE">
             <a href="javascript:window.history.forward()"><i class="fa fa-arrow-right"></i></a>
           </li>
 
@@ -93,16 +112,29 @@
             <a ng-href="#/start"><i class="fa fa-home text-success"></i>&nbsp;&nbsp;{{'translate.home' | translate}}</a>
           </li> -->
 
+          <li route-active="accounts/{{currentAccount.id_rs}}/" ng-show="currentAccount">
+            <a ng-href="#/accounts/{{currentAccount.id_rs}}/activity/latest">
+              <b><i class="fa fa-home text-danger"></i></b>
+            </a>
+          </li>
+          <li role="presentation" route-active="messenger/{{currentAccount.id_rs}}" ng-show="currentAccount">
+            <a href="#/messenger/{{currentAccount.id_rs}}">
+              <i class="fa fa-comment-o"></i><span class="hidden-sm">&nbsp;&nbsp;<span translate="translate.messenger"/></span>
+            </a>
+          </li>
+       
           <li route-active="home/" ng-hide="TRADE_UI_ONLY">
-            <a ng-href="#/home/{{paramEngine}}/activity/latest"><i class="fa fa-tachometer"></i>&nbsp;&nbsp;{{'translate.dashboard' | translate}}</a>
+            <a ng-href="#/home/{{paramEngine}}/activity/latest">
+              <i class="fa fa-users"></i><span class="hidden-sm">&nbsp;&nbsp;{{'translate.dashboard' | translate}}</span>
+            </a>
           </li>          
           
           <li route-active="activity/" ng-hide="TRADE_UI_ONLY">
-            <a ng-href="#/activity/{{paramEngine}}/activity/latest"><i class="fa fa-cloud"></i>&nbsp;&nbsp;{{'translate.explorer' | translate}}</a>
+            <a ng-href="#/activity/{{paramEngine}}/activity/latest"><i class="fa fa-cloud"></i><span class="hidden-sm">&nbsp;&nbsp;{{'translate.explorer' | translate}}</span></a>
           </li>
 
-          <li route-active="activity/{{paramEngine}}/assets">
-            <a ng-href="#/activity/{{paramEngine}}/assets/latest"><i class="fa fa-line-chart"></i>&nbsp;&nbsp;{{'translate.assets' | translate}}</a>
+          <li>
+            <a ng-href="#/activity/{{paramEngine}}/assets/latest"><i class="fa fa-line-chart"></i><span class="hidden-sm">&nbsp;&nbsp;{{'translate.assets' | translate}}</span></a>
           </li> 
 
           <li ng-show="TRADE_UI_ONLY && selectedAccount">
@@ -118,18 +150,17 @@
         <ul class="nav navbar-nav navbar-right" nav-menu="active">
           <li ng-hide="TRADE_UI_ONLY">
             <a href="#/search/fim/accounts/">
-              <i class="fa fa-search"></i>&nbsp;&nbsp;{{'translate.search' | translate}}
+              <i class="fa fa-search"></i><span class="hidden-md hidden-sm">&nbsp;&nbsp;{{'translate.search' | translate}}</span>
             </a>
           </li>          
 
-          <li style="margin-right: 10px" route-active="settings" dropdown>
+          <li route-active="settings" dropdown>
             <a href class="dropdown-toggle" dropdown-toggle>
-              <span class="glyphicon glyphicon-wrench"></span>&nbsp;&nbsp;{{'translate.settings' | translate}}&nbsp;<span class="caret"></span>
+              <span class="glyphicon glyphicon-wrench"></span><span class="hidden-md hidden-sm">&nbsp;&nbsp;{{'translate.settings' | translate}}</span>&nbsp;<span class="caret"></span>
             </a>
-
             <ul class="dropdown-menu" role="menu">
               <li route-active>
-                <a ng-href="#/settings/themes"><span class="glyphicon glyphicon-fire"></span>&nbsp;&nbsp;{{'translate.themes' | translate}}</a> 
+                <a ng-href="#/settings/themes"><span class="glyphicon glyphicon-fire"></span>&nbsp;&nbsp;{{'translate.themes' | translate}}</a>
               </li>
               <!-- only displayed when running as front end for FIMK server package-->
               <li route-active ng-if="forceLocalHost && !enableDualEngines" ng-hide="TRADE_UI_ONLY">
@@ -150,9 +181,6 @@
               <li route-active ng-hide="TRADE_UI_ONLY">
                 <a ng-href="#/settings/database"><span class="glyphicon glyphicon-tasks"></span>&nbsp;&nbsp;{{'translate.database' | translate}}</a> 
               </li>
-              <li route-active ng-show="false">
-                <a ng-href="#/settings/nodes"><span class="glyphicon glyphicon-tree-deciduous"></span>&nbsp;&nbsp;{{'translate.public_nodes' | translate}}</a> 
-              </li>
               <li ng-if="isNodeJS">
                 <a href ng-click="openDevTools()">
                   <span class="glyphicon glyphicon-dashboard"></span>&nbsp;&nbsp;{{'translate.dev_tools' | translate}}
@@ -161,102 +189,26 @@
               <li ng-if="isNodeJS">
                 <a href ng-click="reloadMofoWallet()"><span class="glyphicon glyphicon-refresh"></span>&nbsp;&nbsp;{{'translate.reload_application' | translate}}</a> 
               </li>
-            </ul>
-          </li> 
-
-          <li style="margin-right: 10px" ng-if="multiLanguage" dropdown>
-            <a href class="dropdown-toggle" dropdown-toggle>
-              <i class="fa fa-globe text-danger"></i>&nbsp;&nbsp;{{'translate.language'|translate}}&nbsp;<span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu lang-columns" role="menu">
-              <li><a ><b class="text-warning"><i class="fa fa-exclamation-triangle"></i></b><b class="text-danger">&nbsp;&nbsp;Experimental!</b></a></li>
               <li>
-                <a href="#/translation/en">
-                  <b class="text-primary"><i class="fa fa-users"></i></b><b class="text-success">&nbsp;&nbsp;Help Translate.</b>
-                </a>
+                <a href="#/translation/en"><i class="fa fa-globe"></i>&nbsp;&nbsp;{{'translate.translator' | translate}}</a> 
               </li>
-              <li><a href ng-click="setLang('af')">Afrikaans - ({{'lang.Afrikaans'|translate}})</a></li>
-              <li><a href ng-click="setLang('sq')">Shqip - ({{'lang.Albanian'|translate}})</a></li>
-              <li><a href ng-click="setLang('ar')">العربية - ({{'lang.Arabic'|translate}})</a></li>
-              <li><a href ng-click="setLang('az')">azərbaycan dili - ({{'lang.Azerbaijani'|translate}})</a></li>
-              <li><a href ng-click="setLang('eu')">euskara - ({{'lang.Basque'|translate}})</a></li>
-              <li><a href ng-click="setLang('bn')">বাংলা - ({{'lang.Bengali'|translate}})</a></li>
-              <li><a href ng-click="setLang('be')">беларуская мова - ({{'lang.Belarusian'|translate}})</a></li>
-              <li><a href ng-click="setLang('bg')">български език - ({{'lang.Bulgarian'|translate}})</a></li>
-              <li><a href ng-click="setLang('ca')">català - ({{'lang.Catalan'|translate}})</a></li>
-              <li><a href ng-click="setLang('zh')">简化中国 - ({{'lang.Chinese_Simplified'|translate}})</a></li>
-              <li><a href ng-click="setLang('zh-TW')">中國傳統 - ({{'lang.Chinese_Traditional'|translate}})</a></li>
-              <li><a href ng-click="setLang('hr')">hrvatski jezik - ({{'lang.Croatian'|translate}})</a></li>
-              <li><a href ng-click="setLang('cs')">čeština, český jazyk - ({{'lang.Czech'|translate}})</a></li>
-              <li><a href ng-click="setLang('da')">dansk - ({{'lang.Danish'|translate}})</a></li>
-              <li><a href ng-click="setLang('nl')">Nederlands - ({{'lang.Dutch'|translate}})</a></li>
-              <li><a href ng-click="setLang('en')"><b>English - ({{'lang.English'|translate}})</b></a></li>
-              <li><a href ng-click="setLang('eo')">Esperanto - ({{'lang.Esperanto'|translate}})</a></li>
-              <li><a href ng-click="setLang('et')">eesti - ({{'lang.Estonian'|translate}})</a></li>
-              <li><a href ng-click="setLang('tl')">Wikang Filipino - ({{'lang.Filipino'|translate}})</a></li>
-              <li><a href ng-click="setLang('fi')"><b>Suomi - ({{'lang.Finnish'|translate}})</b></a></li>
-              <li><a href ng-click="setLang('fr')">Français - ({{'lang.French'|translate}})</a></li>
-              <li><a href ng-click="setLang('gl')">Galego - ({{'lang.Galician'|translate}})</a></li>
-              <li><a href ng-click="setLang('ka')">ქართული - ({{'lang.Georgian'|translate}})</a></li>
-              <li><a href ng-click="setLang('de')">Deutsch - ({{'lang.German'|translate}})</a></li>
-              <li><a href ng-click="setLang('el')">Ελληνικά - ({{'lang.Greek'|translate}})</a></li>
-              <li><a href ng-click="setLang('gu')">ગુજરાતી - ({{'lang.Gujarati'|translate}})</a></li>
-              <li><a href ng-click="setLang('ht')">Kreyòl Ayisyen - ({{'lang.Haitian_Creole'|translate}})</a></li>
-              <li><a href ng-click="setLang('iw')">עברית - ({{'lang.Hebrew'|translate}})</a></li>
-              <li><a href ng-click="setLang('hi')">हिन्दी - ({{'lang.Hindi'|translate}})</a></li>
-              <li><a href ng-click="setLang('hu')">Magyar - ({{'lang.Hungarian'|translate}})</a></li>
-              <li><a href ng-click="setLang('is')">Íslenska - ({{'lang.Icelandic'|translate}})</a></li>
-              <li><a href ng-click="setLang('id')">Bahasa Indonesia - ({{'lang.Indonesian'|translate}})</a></li>
-              <li><a href ng-click="setLang('ga')">Gaeilge - ({{'lang.Irish'|translate}})</a></li>
-              <li><a href ng-click="setLang('it')">Italiano - ({{'lang.Italian'|translate}})</a></li>
-              <li><a href ng-click="setLang('ja')">日本語 - ({{'lang.Japanese'|translate}})</a></li>
-              <li><a href ng-click="setLang('kn')">ಕನ್ನಡ - ({{'lang.Kannada'|translate}})</a></li>
-              <li><a href ng-click="setLang('ko')">조선말 - ({{'lang.Korean'|translate}})</a></li>
-              <li><a href ng-click="setLang('la')">Latina - ({{'lang.Latin'|translate}})</a></li>
-              <li><a href ng-click="setLang('lv')">Latviešu - ({{'lang.Latvian'|translate}})</a></li>
-              <li><a href ng-click="setLang('lt')">Lietuvių - ({{'lang.Lithuanian'|translate}})</a></li>
-              <li><a href ng-click="setLang('mk')">Mакедонски - ({{'lang.Macedonian'|translate}})</a></li>
-              <li><a href ng-click="setLang('ms')">Bahasa Melayu - ({{'lang.Malay'|translate}})'|translate}})</a></li>
-              <li><a href ng-click="setLang('mt')">Malti - ({{'lang.Maltese'|translate}})</a></li>
-              <li><a href ng-click="setLang('no')">Norsk - ({{'lang.Norwegian'|translate}})</a></li>
-              <li><a href ng-click="setLang('fa')">فارسی - ({{'lang.Persian'|translate}})</a></li>
-              <li><a href ng-click="setLang('pl')">Polski - ({{'lang.Polish'|translate}})</a></li>
-              <li><a href ng-click="setLang('pt')">Português - ({{'lang.Portuguese'|translate}})</a></li>
-              <li><a href ng-click="setLang('ro')">Română - ({{'lang.Romanian'|translate}})'|translate}})</a></li>
-              <li><a href ng-click="setLang('ru')">Русский - ({{'lang.Russian'|translate}})</a></li>
-              <li><a href ng-click="setLang('sr')">Српски - ({{'lang.Serbian'|translate}})</a></li>
-              <li><a href ng-click="setLang('sk')">Slovenčina - ({{'lang.Slovak'|translate}})</a></li>
-              <li><a href ng-click="setLang('sl')">Slovenščina - ({{'lang.Slovenian'|translate}})</a></li>
-              <li><a href ng-click="setLang('es')">Español - ({{'lang.Spanish'|translate}})</a></li>
-              <li><a href ng-click="setLang('sw')">Kiswahili - ({{'lang.Swahili'|translate}})</a></li>
-              <li><a href ng-click="setLang('sv')">Svenska - ({{'lang.Swedish'|translate}})</a></li>
-              <li><a href ng-click="setLang('ta')">தமிழ் - ({{'lang.Tamil'|translate}})</a></li>
-              <li><a href ng-click="setLang('te')">తెలుగు - ({{'lang.Telugu'|translate}})</a></li>
-              <li><a href ng-click="setLang('th')">ไทย - ({{'lang.Thai'|translate}})</a></li>
-              <li><a href ng-click="setLang('tr')">Türkçe - ({{'lang.Turkish'|translate}})</a></li>
-              <li><a href ng-click="setLang('uk')">українська мова - ({{'lang.Ukrainian'|translate}})</a></li>
-              <li><a href ng-click="setLang('ur')">اردو - ({{'lang.Urdu'|translate}})</a></li>
-              <li><a href ng-click="setLang('vi')">Việtnam - ({{'lang.Vietnamese'|translate}})</a></li>
-              <li><a href ng-click="setLang('cy')">Cymraeg - ({{'lang.Welsh'|translate}})</a></li>
-              <li><a href ng-click="setLang('yi')">ייִדיש - ({{'lang.Yiddish'|translate}})</a></li>
             </ul>
           </li>
-          <li style="margin-right: 10px" dropdown>
-            <a href class="dropdown-toggle" dropdown-toggle>
-              <span ng-show="!selectedAccountUnlocked"><i class="fa fa-lock"></i></span>
-              <span ng-show="selectedAccountUnlocked"><i class="fa fa-unlock-alt text-success"></i></span>
-              &nbsp;
-              <span ng-show="selectedAccount"><b>{{ selectedAccount.name || selectedAccount.id_rs }}</b></span>
-              <span ng-show="!selectedAccount"><b>Login</b></span>
-              &nbsp;<span class="caret"></span>
+          <li ng-if="multiLanguage">
+            <a href ng-click="showLanguageModal()">
+              <i class="fa fa-globe"></i><span class="hidden-md hidden-sm">&nbsp;&nbsp;{{'translate.language'|translate}}</span>
             </a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href ng-click="loginAddAccount()">Add account</a></li>
-              <li ng-repeat="a in selectableAccounts">
-                <a href ng-click="setSelectedAccount(a)">{{ a.name || a.id_rs }}</a>
-              </li>
-            </ul>
           </li>
+          <li style="margin-right: 10px">
+            <a href="#/login-to">
+              <span ng-show="!currentAccount">
+                <i class="fa fa-sign-in"></i>&nbsp;&nbsp;<span translate="translate.sign_in"></span>
+            </span>
+              <span ng-show="currentAccount">
+                <i class="fa fa-sign-out"></i>&nbsp;&nbsp;<span translate="translate.sign_out"></span>
+            </span>
+            </a>
+          </li>           
         </ul>
       </div>
     </nav>
@@ -267,11 +219,65 @@
 
     <nav ng-if="isNodeJS" class="navbar navbar-default navbar-fixed-bottom">
       <div class="container-fluid">
-        <div ng-repeat="p in systemPlugins">
-          <ng-include src="p.templateURL"></ng-include>
+        <div>
+          <span>
+            <ul class="nav navbar-nav navbar-right" style="margin-right: 0px;">
+              <li>&nbsp;</li>
+              <li style="padding-top: 2px">
+                <div class="btn-group dropup">
+
+                  <a href class="btn btn-default navbar-btn">FIMK</a>
+
+                  <!-- global network - always displays the height of the connected public node -->              
+                  <a style="text-align: left;" class="btn btn-default navbar-btn" 
+                      href="#/activity/fim/activity/latest">
+                    <i class="fa fa-globe"></i><span>&nbsp;&nbsp;{{fimDownloadProvider.remoteheight}}</span>
+                  </a>
+
+                  <!-- local network - when server is off it displays -->
+                  <a style="text-align: left; padding-left:10px" class="btn btn-default navbar-btn" 
+                      href="#/server/fim/console">
+                    <i class="fa fa-desktop"></i><span ng-show="fimDownloadProvider.server_running">&nbsp;&nbsp;{{fimDownloadProvider.blockheight}}</span>
+                    <div style="position: absolute; width: 100%; left: 5px; top: 2px; padding-right: 10px;">
+                      <progressbar ng-if="fimDownloadProvider.downloading" style="max-height:5px; padding: 0px; border: 0px;" class="progress-striped active" 
+                      type="default" max="100" value="fimDownloadProvider.progress" >&nbsp;</progressbar>
+                    </div>
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </span>
+        </div>
+        <div ng-if="enableDualEngines">
+          <span>
+            <ul class="nav navbar-nav navbar-right" style="margin-right: 0px;">
+              <li>&nbsp;</li>
+              <li style="padding-top: 2px">
+                <div class="btn-group dropup">
+
+                  <a href class="btn btn-default navbar-btn">NXT</a>
+
+                  <!-- global network - always displays the height of the connected public node -->              
+                  <a style="text-align: left;" class="btn btn-default navbar-btn" 
+                      href="#/activity/nxt/activity/latest">
+                    <i class="fa fa-globe"></i><span>&nbsp;&nbsp;{{nxtDownloadProvider.remoteheight}}</span>
+                  </a>
+
+                  <!-- local network - when server is off it displays -->
+                  <a style="text-align: left; padding-left:10px" class="btn btn-default navbar-btn" 
+                      href="#/server/nxt/console">
+                    <i class="fa fa-desktop"></i><span ng-show="nxtDownloadProvider.server_running">&nbsp;&nbsp;{{nxtDownloadProvider.blockheight}}</span>
+                    <div style="position: absolute; width: 100%; left: 5px; top: 2px; padding-right: 10px;">
+                      <progressbar ng-if="nxtDownloadProvider.downloading" style="max-height:5px; padding: 0px; border: 0px;" class="progress-striped active" 
+                      type="default" max="100" value="nxtDownloadProvider.progress" >&nbsp;</progressbar>
+                    </div>
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </span>
         </div>
       </div>
     </nav>
   </body> 
-</html><!--Mon Jul  6 15:28:52 CEST 2015-->
-<!--Fri Jul 31 14:56:01 CEST 2015-->
+</html><!--Fri Jul 31 15:18:07 CEST 2015-->

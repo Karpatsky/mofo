@@ -6,12 +6,17 @@
           <i class="fa fa-book"></i>&nbsp;&nbsp;<span translate="translate.activity"/>
         </a>
       </li>
+      <!-- <li role="presentation" route-active="messenger/{{id_rs}}" ng-show="isCurrentAccount(id_rs)">
+        <a href="#/messenger/{{id_rs}}">
+          <i class="fa fa-comment-o"></i>&nbsp;&nbsp;<span translate="translate.messenger"/>
+        </a>
+      </li> -->      
       <li role="presentation" route-active="accounts/{{id_rs}}/pulse">
         <a href="#/accounts/{{id_rs}}/pulse/{{paramPeriod}}">
           <i class="fa fa-heartbeat"></i>&nbsp;&nbsp;<span translate="translate.pulse"/>
         </a>
       </li>
-      <li role="presentation" >
+      <li role="presentation" ng-hide="isCurrentAccount(id_rs)">
         <a ng-if="!following" href ng-click="followUser()" translate="translate.follow_me"></a>
         <a ng-if="following" href ng-click="unFollowUser()" translate="translate.un_follow_me"></a>
       </li>
@@ -25,7 +30,7 @@
         <a href ng-click="tipUser()" translate="translate.tip_me"></a>
       </li> -->
       <li>
-        <a href ng-init="moreCollapse=true" ng-click="moreCollapse=!moreCollapse">
+        <a href ng-init="moreCollapse=(isCurrentAccount(id_rs))" ng-click="moreCollapse=!moreCollapse" ng-show="isCurrentAccount(id_rs)">
           <span translate="translate.more"/>&nbsp;<span class="caret"></span>
         </a>
         <ul class="nav navbar-stacked" collapse="moreCollapse">
@@ -80,14 +85,14 @@
             </a>
           </li>
           <!-- mass pay -->
-          <li role="presentation" route-active="accounts/{{id_rs}}/payments" ng-hide="TRADE_UI_ONLY">
+          <li role="presentation" route-active="accounts/{{id_rs}}/payments" ng-hide="TRADE_UI_ONLY || !isCurrentAccount(id_rs)">
             <a ng-href="#/accounts/{{id_rs}}/payments/latest" role="menuitem">
               <i class="fa fa-diamond"></i>&nbsp;&nbsp;<span translate="translate.payments"/>
             </a>
           </li>          
         </ul>
       </li>
-      <li>
+      <li ng-if="isCurrentAccount(id_rs)">
         <a href ng-init="accountCollapse=true" ng-click="accountCollapse=!accountCollapse">
           <span translate="translate.account"/>&nbsp;<span class="caret"></span>
         </a>
@@ -222,7 +227,7 @@
 
     <!-- =============================================== -->
 
-    <div class="row">
+    <div class="row hidden-xs">
       <div class="col-md-12">
         <ol class="breadcrumb">
           <li ng-repeat="b in breadcrumb" ng-class="{active: b.active}">
@@ -281,10 +286,10 @@
               <td><i class="fa fa-circle-o-notch fa-spin text-success"></i></td>
               <td colspan="2">Expected to forge block in {{forger.remaining}}&nbsp;|&nbsp;<a ng-href="#/accounts/{{id_rs}}/blocks/latest">history</a></td>
             </tr>            
-            <tr>
+            <!-- <tr>
               <td colspan="2"><a href ng-click="sendMoney()">Send me {{symbol}}</a></td>
               <td colspan="2"><a href ng-click="sendMessage()">Send me a message</a></td>
-            </tr>
+            </tr> -->
           </table>
         </div>
       </div>
@@ -415,7 +420,14 @@
                       </td>
                       <td nowrap style="padding-left: 0px" class="hidden-xs text-muted">{{a.date}}</td>
                       <td style="word-wrap: break-word; word-break: break-all; white-space: normal; width: 100%;" 
-                        ng-bind-html="a.renderedHTML"></td>
+                        ng-if="!IS_SMALL_DEVICE" ng-bind-html="a.renderedHTML"></td>
+                      <td style="word-wrap: break-word; word-break: break-all; white-space: normal; width: 100%;" 
+                        ng-if="IS_SMALL_DEVICE">
+                        <div>
+                          <span ng-bind-html="a.renderedHTML"></span>
+                          <small class="pull-right">{{a.date}}</small>
+                        </div>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
@@ -440,7 +452,14 @@
                   <tr ng-repeat="m in provider.entities">
                     <td nowrap style="padding-left: 0px" class="hidden-xs text-muted">{{m.date}}</td>
                     <td style="word-wrap: break-word; word-break: break-all; white-space: normal; width: 100%;" 
-                      ng-bind-html="m.renderedHTML"></td>
+                      ng-if="!IS_SMALL_DEVICE" ng-bind-html="m.renderedHTML"></td>
+                    <td style="word-wrap: break-word; word-break: break-all; white-space: normal; width: 100%;" 
+                      ng-if="IS_SMALL_DEVICE">
+                      <div>
+                        <span ng-bind-html="m.renderedHTML"></span>
+                        <small class="pull-right">{{m.date}}</small>
+                      </div>
+                    </td>                      
                   </tr>
                 </tbody>
               </table>
