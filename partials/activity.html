@@ -306,7 +306,7 @@
                 <tbody>
                   <tr ng-repeat="a in provider.entities">
                     <td>
-                      <span ng-if="a.transient">
+                      <span ng-if="a.transient" tooltip="Transient (will disapear)">
                         <i class="fa fa-clock-o text-muted"></i>
                       </span>
                       <span ng-if="!a.transient">
