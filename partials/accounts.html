@@ -7,7 +7,7 @@
         </a>
       </li>
       <!-- <li role="presentation" route-active="messenger/{{id_rs}}" ng-show="isCurrentAccount(id_rs)">
-        <a href="#/messenger/{{id_rs}}">
+        <a href="#/messenger/{{id_rs}}/gossip">
           <i class="fa fa-comment-o"></i>&nbsp;&nbsp;<span translate="translate.messenger"/>
         </a>
       </li> -->      
@@ -16,6 +16,9 @@
           <i class="fa fa-heartbeat"></i>&nbsp;&nbsp;<span translate="translate.pulse"/>
         </a>
       </li>
+      <li role="presentation" ng-hide="isCurrentAccount(id_rs)">
+        <a href ng-click="privateChat()">Private chat</a>
+      </li>      
       <li role="presentation" ng-hide="isCurrentAccount(id_rs)">
         <a ng-if="!following" href ng-click="followUser()" translate="translate.follow_me"></a>
         <a ng-if="following" href ng-click="unFollowUser()" translate="translate.un_follow_me"></a>
