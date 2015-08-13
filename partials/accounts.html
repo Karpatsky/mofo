@@ -16,7 +16,7 @@
           <i class="fa fa-heartbeat"></i>&nbsp;&nbsp;<span translate="translate.pulse"/>
         </a>
       </li>
-      <li role="presentation" ng-hide="isCurrentAccount(id_rs)">
+      <li role="presentation" ng-hide="!currentAccount || isCurrentAccount(id_rs)">
         <a href ng-click="privateChat()">Private chat</a>
       </li>      
       <li role="presentation" ng-hide="isCurrentAccount(id_rs)">
@@ -262,9 +262,11 @@
     <div class="row">
       <div class="col-md-6">
         <div class="media">
-          <a class="pull-left" style="width: 100px">
-            <i class="fa fa-user fa-5x text-muted"></i>
-          </a>
+          <span class="pull-left">
+            <a style="width: 100px">
+              <i class="fa fa-user fa-5x text-muted"></i>
+            </a>
+          </span>
           <div class="media-body" style="min-height: 120px">
             <h4 class="media-heading">{{account.name||id_rs}}<small ng-if="account.name"><br>{{id_rs}}</small></h4>
             <p>{{account.description}}<span ng-if="!account.description">no description</span></p>
@@ -272,7 +274,10 @@
         </div>
       </div>
       <div class="col-md-6">
-        <div>
+        <div class="btn-group" style="margin-bottom: 8px" ng-if="!currentAccount">
+          <a href="#/login-to" class="btn btn-primary"><b translate="translate.sign_in"></b></a>          
+        </div>
+        <div class="table-responsive">
           <table class="table table-condensed">
             <tr><td>Balance</td><td><b>{{account.balanceNXT}}</b></td><td colspan="2"><a ng-href="#/accounts/{{id_rs}}/activity/latest">{{id_rs}}</a></td></tr>
             <tr><td>Forged</td><td>{{account.forgedBalanceNXT}}</td><td>Effective</td><td>{{account.effectiveBalanceNXT}}</td></tr>
