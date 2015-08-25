@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="fim.base" ng-controller="AppController">
+<html lang="en" ng-app="fim.base" ng-controller="AppController" ng-strict-di>
   <head>
     <meta charset="utf-8" />
     <title ng-bind="TITLE"></title>
@@ -39,7 +39,7 @@
     <!-- Bootswatch theme switcher -->
     <link type="text/css" rel="stylesheet" href="plugins/themes/css/spacelab.bootstrap.min.css" id="bootswatch.style" />
 
-    <link rel="stylesheet" href="styles/main.660cf03d.css">
+    <link rel="stylesheet" href="styles/main.b8ee4c46.css">
 
     <!--<link type="text/css" rel="stylesheet" href="/amstockchart/amcharts/style.css"> 
     <style>
@@ -56,7 +56,11 @@
     <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
-    <script src="scripts/scripts.3e9b1332.js"></script>
+    <!-- <script src="scripts/lib/Dexie.js"></script>
+    <script src="scripts/lib/Dexie.Observable.js"></script> -->
+
+
+    <script src="scripts/scripts.22d26431.js"></script>
 
   </head>
   <body ng-class="{'showing-landing-page': showingLandingPage}">
@@ -242,7 +246,8 @@
 
                   <!-- global network - always displays the height of the connected public node -->              
                   <a style="text-align: left;" class="btn btn-default navbar-btn" 
-                      href="#/activity/fim/activity/latest">
+                      href="#/activity/fim/activity/latest" 
+                      ng-hide="fimDownloadProvider.server_running && !fimDownloadProvider.downloading">
                     <i class="fa fa-globe"></i><span>&nbsp;&nbsp;{{fimDownloadProvider.remoteheight}}</span>
                   </a>
 
@@ -271,7 +276,8 @@
 
                   <!-- global network - always displays the height of the connected public node -->              
                   <a style="text-align: left;" class="btn btn-default navbar-btn" 
-                      href="#/activity/nxt/activity/latest">
+                      href="#/activity/nxt/activity/latest"
+                      ng-hide="nxtDownloadProvider.server_running && !nxtDownloadProvider.downloading">
                     <i class="fa fa-globe"></i><span>&nbsp;&nbsp;{{nxtDownloadProvider.remoteheight}}</span>
                   </a>
 
@@ -292,4 +298,4 @@
       </div>
     </nav>
   </body> 
-</html><!--Sun Aug 23 20:50:29 CEST 2015-->
+</html><!--Tue Aug 25 21:56:19 CEST 2015-->
