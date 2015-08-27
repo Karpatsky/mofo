@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="fim.base" ng-controller="AppController" ng-strict-di>
+<html lang="en" ng-app="fim.base" ng-controller="AppController">
   <head>
     <meta charset="utf-8" />
     <title ng-bind="TITLE"></title>
@@ -39,7 +39,7 @@
     <!-- Bootswatch theme switcher -->
     <link type="text/css" rel="stylesheet" href="plugins/themes/css/spacelab.bootstrap.min.css" id="bootswatch.style" />
 
-    <link rel="stylesheet" href="styles/main.b8ee4c46.css">
+    <link rel="stylesheet" href="styles/main.10aeb230.css">
 
     <!--<link type="text/css" rel="stylesheet" href="/amstockchart/amcharts/style.css"> 
     <style>
@@ -60,7 +60,7 @@
     <script src="scripts/lib/Dexie.Observable.js"></script> -->
 
 
-    <script src="scripts/scripts.22d26431.js"></script>
+    <script src="scripts/scripts.62bfe05f.js"></script>
 
   </head>
   <body ng-class="{'showing-landing-page': showingLandingPage}">
@@ -135,7 +135,7 @@
             </a>
           </li> -->
           <li role="presentation" route-active="messenger/{{currentAccount.id_rs}}" ng-show="currentAccount">
-            <a href="#/messenger/{{currentAccount.id_rs}}/gossip">
+            <a href="#/messenger">
               <i class="fa fa-comment-o"></i><span ng-hide="currentAccount && !IS_SMALL_DEVICE" class="hidden-md hidden-sm">&nbsp;&nbsp;<span translate="translate.messenger"/></span>
             </a>
           </li>
@@ -298,4 +298,4 @@
       </div>
     </nav>
   </body> 
-</html><!--Thu Aug 27 22:26:24 CEST 2015-->
+</html><!--Thu Aug 27 22:35:54 CEST 2015-->
