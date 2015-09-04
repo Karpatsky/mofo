@@ -39,7 +39,7 @@
     <!-- Bootswatch theme switcher -->
     <link type="text/css" rel="stylesheet" href="plugins/themes/css/spacelab.bootstrap.min.css" id="bootswatch.style" />
 
-    <link rel="stylesheet" href="styles/main.10aeb230.css">
+    <link rel="stylesheet" href="styles/main.dbb0647d.css">
 
     <!--<link type="text/css" rel="stylesheet" href="/amstockchart/amcharts/style.css"> 
     <style>
@@ -60,7 +60,7 @@
     <script src="scripts/lib/Dexie.Observable.js"></script> -->
 
 
-    <script src="scripts/scripts.62bfe05f.js"></script>
+    <script src="scripts/scripts.e61dc3f9.js"></script>
 
   </head>
   <body ng-class="{'showing-landing-page': showingLandingPage}">
@@ -86,6 +86,11 @@
           <!-- <strong ng-bind="WALLET_NAME"></strong><span class="text-danger"><b>{{isTestnet? ' TEST' : ''}}</b></span> -->
           <img alt="Brand" style="max-height:none; min-height:5px !important; height:100%" src="images/lompsa.png">
         </a>
+
+        <a ng-hide="!currentAccount" class="navbar-brand visible-xs" ng-href="#/messenger" style="padding:5px 10px 0px 8px">
+          <i class="fa fa-comment-o fa-2x" style="max-height:none; min-height:5px !important; height:100%"></i>
+        </a>
+
         <a ng-show="TRADE_UI_ONLY" class="navbar-brand" ng-href="#/activity/fim/assets/latest"><strong ng-bind="WALLET_NAME"></strong>Wallet&nbsp;<span class="text-danger"><b>{{isTestnet? 'TEST' : 'BETA'}}</b></span>
         </a>
       </div>
@@ -94,8 +99,8 @@
         <ul class="nav navbar-nav" nav-menu="active">
           <li route-active="accounts/{{currentAccount.id_rs}}/" ng-if="currentAccount && !IS_SMALL_DEVICE">
             <a ng-href="#/accounts/{{currentAccount.id_rs}}/activity/latest">
-              <strong>{{currentAccount.name||currentAccount.id_rs}}</strong>
-              <span ng-show="currentAccount.balanceNXT">&nbsp;&nbsp;<b>{{currentAccount.balanceNXTWhole}}</b><small ng-show="currentAccount.balanceNXTRemainder">.{{currentAccount.balanceNXTRemainder}}</small></span>
+              <strong>{{userData.label}}</strong>
+              <span ng-bind-html="userData.html"></span>
             </a>
           </li>
           <li ng-if="IS_SMALL_DEVICE">
@@ -208,6 +213,11 @@
               <li>
                 <a href="#/translation/en"><i class="fa fa-globe"></i>&nbsp;&nbsp;{{'translate.translator' | translate}}</a> 
               </li>
+              <li>
+                <a href ng-click="showAboutModal()">
+                  <i class="fa fa-question-circle"></i>&nbsp;&nbsp;{{'translate.about' | translate}}&nbsp;Lompsa
+                </a> 
+              </li>              
             </ul>
           </li>
           <li ng-if="multiLanguage">
@@ -298,4 +308,4 @@
       </div>
     </nav>
   </body> 
-</html><!--Thu Aug 27 22:35:54 CEST 2015-->
+</html><!--Fri Sep  4 13:12:57 CEST 2015-->
