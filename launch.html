@@ -39,28 +39,19 @@
     <!-- Bootswatch theme switcher -->
     <link type="text/css" rel="stylesheet" href="plugins/themes/css/spacelab.bootstrap.min.css" id="bootswatch.style" />
 
-    <link rel="stylesheet" href="styles/main.58658d3d.css">
-
-    <!--<link type="text/css" rel="stylesheet" href="/amstockchart/amcharts/style.css"> 
-    <style>
-      a[title="JavaScript charts"] {
-        display: none !important;
-      }
-    </style>
-    <script src="amstockchart/amcharts/amcharts.js"></script> 
-    <script src="amstockchart/amcharts/serial.js"></script> 
-    <script src="amstockchart/amcharts/amstock.js"></script>-->
+    <link rel="stylesheet" href="styles/main.134e7ae5.css">
 
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
-    <!-- <script src="scripts/lib/Dexie.js"></script>
-    <script src="scripts/lib/Dexie.Observable.js"></script> -->
 
+    <!-- This depends on the WalletService which was removed, instead make it use the
+         key-service and enable it afterwards.
+         <script src="scripts/controllers/login.js"></script> -->
 
-    <script src="scripts/scripts.7ccb1807.js"></script>
+    <script src="scripts/scripts.99f8d366.js"></script>
 
   </head>
   <body ng-class="{'showing-landing-page': showingLandingPage}">
@@ -143,6 +134,7 @@
             <a href="#/messenger">
               <i class="fa fa-comment-o"></i><span ng-hide="currentAccount && !IS_SMALL_DEVICE" class="hidden-md hidden-sm">&nbsp;&nbsp;<span translate="translate.messenger"/></span>
             </a>
+            <i class="fa fa-circle unread" ng-show= "unread"></i>
           </li>
        
           <li route-active="home/" ng-hide="TRADE_UI_ONLY">
@@ -161,14 +153,10 @@
               <span ng-hide="currentAccount && !IS_SMALL_DEVICE" class="hidden-sm">&nbsp;&nbsp;{{'translate.assets' | translate}}</span></a>
           </li> 
 
-          <li ng-show="TRADE_UI_ONLY && selectedAccount">
-            <!-- <span>Account:&nbsp;<b>{{selectedAccount.name || selectedAccount.id_rs}}</b></span>&nbsp;&nbsp; -->            
-            <a href>
-              <span>Trading balance:&nbsp;<b>{{selectedAccount.unconfirmedBalanceNXT}}</b>
-                <span class="text-muted" ng-show="selectedAccount.unconfirmedBalanceNXT!=selectedAccount.balanceNXT">({{selectedAccount.balanceNXT}})</span> {{selectedAccount.symbol}}
-              </span>
-            </a>
-          </li>      
+          <li>
+            <a ng-href="#/goods/{{paramEngine}}/listing"><i class="fa fa-shopping-cart"></i>
+              <span ng-hide="currentAccount && !IS_SMALL_DEVICE" class="hidden-sm">&nbsp;&nbsp;{{'translate.marketplace' | translate}}</span></a>
+          </li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right" nav-menu="active">
@@ -308,4 +296,4 @@
       </div>
     </nav>
   </body> 
-</html><!--Thu Sep 24 11:15:29 CEST 2015-->
+</html><!--Sun Oct  4 10:28:00 CEST 2015-->
