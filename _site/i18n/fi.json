@@ -131,7 +131,7 @@
     "balance_leasing": "Saldon liisaus",
     "buy_orders": "Ostotoimeksiannot",
     "sell_orders": "Myyntitoimeksiannot",
-    "about_me": "Noin",
+    "about_me": "Infoa",
     "follow_me": "Seuraa käyttäjää",
     "un_follow_me": "Lopeta käyttäjän seuraaminen",
     "following": "Seuraava",
@@ -239,12 +239,12 @@
     "my_translation": "Oma käännös",
     "translate_intro": "<p> 1. Valitse kieli, jota haluat kääntää<br> 2. Paranna käännöksiä kolmannessa sarakkeessa.<br> 3. Kun kirjoitat, korjaukset tallennetaan automaattisesti. Voit sulkea selaimen ja tulla takaisin niin muutokset säilyvät. <br> 4. Kun olet valmis klikkaa <b>Share käännös</b> -painiketta ja seuraa ohjeita. <br><br></p><p> On tärkeää, että jätät HTML markup (esimerkiksi <code>&lt;b&gt;Text here&lt;/b&gt;</code> ) ja muuttujat (esimerkiksi <code>❴❴variable❵❵</code> ) käännökseen.</p> Käännöstä ei tarvitse tehdä loppuun asti ennen jakamista. </p>",
     "translate_sharehowto": "Jakaaksesi käännöksen lataa käännöstiedosto ja lähetä se allaolevaan sähköpostiosoitteeseen.",
-    "edit": "Muokata",
-    "delete": "Poistaa",
+    "edit": "Muokkaa",
+    "delete": "Poista",
     "private": "Yksityinen",
-    "order_fee": "Jotta maksu",
-    "trade_fee": "Kauppa maksu",
-    "set_fees": "Set palkkiot",
+    "order_fee": "Toimeksiantomaksu",
+    "trade_fee": "Kauppakulu",
+    "set_fees": "Aseta kulut",
     "show": "Show",
     "all": "Kaikki",
     "allowed": "Sallittu",
@@ -376,7 +376,7 @@
       "4": "{{sender}} osti {{quantity}} {{goodsName}} käyttäjältä  {{recipient}} hintaan {{price}} {{symbol}} {{deadline}} {{details}} {{message}}",
       "5": "{{sender}} toimitti myyntikohteen {{purchase}} ostajalle {{recipient}} alennuksella {{discount}} {{symbol}} {{details}} {{message}}",
       "6": "{{sender}} antoi palautetta ostosta {{purchase}} {{details}} {{message}}",
-      "7": "{{sender}} antoi palautus {{discount}} {{symbol}} varten {{purchase}} {{details}} {{message}}"
+      "7": "{{sender}} maksoi palautusta {{discount}} {{symbol}} ostosta {{purchase}} {{details}} {{message}}"
     },
     "4": {
       "0": "{{sender}} vuokrasi saldonsa käyttäjälle {{recipient}}  {{period}} lohkon ajaksi {{details}} {{message}}"
@@ -396,7 +396,7 @@
       "0": "{{sender}} laittoi nimialiaksen {{aliasName}} kohteeseen {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} lisäsi {{recipient}} arvokkeen {{assetName}} sallittuihin tileihin {{details}} {{message}}",
       "2": "{{sender}} poisti {{recipient}} arvokkeen {{assetName}} sallituista tileistä {{details}} {{message}}",
-      "3": "{{sender}} asetti {{assetName}} prosenttikulun {{orderFee}} % kauppamaksun{{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} asetti {{assetName}} toimeksiantokulun {{orderFee}} % kauppamaksun{{tradeFee}} % {{details}} {{message}}"
     }
   },
   "lang": {
