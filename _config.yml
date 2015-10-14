@@ -1,11 +1,11 @@
 # Site settings
-title: Mofo Wallet
-description: Mofo Wallet is an advanced multi currency crypto wallet.
+title: Lompsa
+description: Lompsa is an advanced multi currency crypto wallet.
 baseurl: "/mofo"
 url: "https://www.mofowallet.com"
 twitter_username: fimkrypto
 github_username:  fimkrypto
-version: "0.4.8"
+version: "0.4.10"
 
 # Build settings
 markdown: kramdown
