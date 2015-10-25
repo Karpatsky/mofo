@@ -2,36 +2,12 @@
 <html lang="en" ng-app="fim.base" ng-controller="AppController">
   <head>
     <meta charset="utf-8" />
-    <title ng-bind="TITLE"></title>
+    <title ng-bind="((currentAccount && currentAccount.label)||TITLE)+(unread?' *':'')"></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>.ng-cloak { display:none; }</style>
     <script src="mode.js"></script>    
-    <script type="text/javascript">
-    try {
-      isNodeJS = typeof require == 'function' && require('child_process');
-    } catch (e) {
-      isNodeJS = false;
-    }
-    DEBUG = false;
-
-    if (IS_TEST_NET === false) {
-      if (("www.mofowallet.com" == window.location.host || 
-           "mofowallet.com" == window.location.host) && (window.location.protocol != "https:")) {
-        window.location.protocol = "https";
-      }
-      else if ("fimkrypto.github.io" == window.location.host) {
-        window.location = "https://www.mofowallet.com/launch.html" + window.location.hash;
-      }
-    }
-
-    var entityMap = {"&":"&amp;","<":"&lt;",">":"&gt;",'"':'&quot;',"'":'&#39;',"/":'&#x2F;',"\n":'<br>'};
-    function escapeHtml(string) {
-      return String(string).replace(/[&<>"'\/]|[\n]/g, function (s) {
-        return entityMap[s];
-      });
-    }
-    </script>
+    <script src="scripts/lib/init_lompsa.js"></script>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="shortcut icon" href="/favicon.ico?v=7" />
@@ -39,7 +15,7 @@
     <!-- Bootswatch theme switcher -->
     <link type="text/css" rel="stylesheet" href="plugins/themes/css/spacelab.bootstrap.min.css" id="bootswatch.style" />
 
-    <link rel="stylesheet" href="styles/main.4b7d3410.css">
+    <link rel="stylesheet" href="styles/main.2891b2ac.css">
 
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
@@ -51,7 +27,7 @@
          key-service and enable it afterwards.
          <script src="scripts/controllers/login.js"></script> -->
 
-    <script src="scripts/scripts.757534d2.js"></script>
+    <script src="scripts/scripts.762b2f82.js"></script>
 
   </head>
   <body ng-class="{'showing-landing-page': showingLandingPage}">
@@ -83,6 +59,9 @@
           <img alt="Brand" style="max-height:none; min-height:5px !important; height:100%" src="images/fimk-coin.png">
         </a>
         -->
+        <span ng-hide="!isTestnet" class="navbar-brand">
+          <u><b class="text-danger">TESTNET</b></u>
+        </span>
 
         <a ng-hide="!currentAccount" class="navbar-brand visible-xs" ng-href="#/messenger" style="padding:5px 10px 0px 8px">
           <i class="fa fa-comment-o fa-2x" style="max-height:none; min-height:5px !important; height:100%"></i>
@@ -199,6 +178,12 @@
                 <a href="#/translation/en"><i class="fa fa-globe"></i>&nbsp;&nbsp;{{'translate.translator' | translate}}</a> 
               </li>
               <li>
+                <a href="" ng-click="toggleTestNet()">
+                  <i ng-class="{'text-success':isTestnet}" class="fa fa-bug"></i>&nbsp;&nbsp;
+                  <span ng-class="{'font-bold':isTestnet}">Testnet</span>
+                </a> 
+              </li>
+              <li>
                 <a href ng-click="showAboutModal()">
                   <i class="fa fa-question-circle"></i>&nbsp;&nbsp;{{'translate.about' | translate}}&nbsp;Lompsa
                 </a> 
@@ -211,7 +196,7 @@
             </a>
           </li>
           <li style="margin-right: 10px">
-            <a href="#/login-to">
+            <a href ng-click="loginTo()">
               <span ng-show="!currentAccount">
                 <i class="fa fa-sign-in"></i>&nbsp;&nbsp;<span translate="translate.sign_in"></span>
               </span>
@@ -293,4 +278,4 @@
       </div>
     </nav>
   </body> 
-</html><!--Wed Oct 14 19:42:22 CEST 2015-->
+</html><!--Sun Oct 25 20:20:35 CET 2015-->
