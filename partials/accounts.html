@@ -1,6 +1,92 @@
 <div ng-init="offCanvas=false" class="row row-offcanvas row-offcanvas-left" ng-class="{active: offCanvas}">
   <div class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar">
-    <ul class="nav navbar-stacked">
+
+    <!-- Sidebar while browsing -->
+    <ul class="nav navbar-stacked" ng-if="!isCurrentAccount(id_rs)">
+      <li role="presentation">
+        <a href="#/accounts/{{id_rs}}/pulse/{{paramPeriod}}" class="font-bold">
+          <i class="fa fa-angle-double-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.pulse"/>
+        </a>
+      </li>
+      <li role="presentation">
+        <a href="#/accounts/{{id_rs}}/activity/{{paramPeriod}}">
+          <i class="fa fa-angle-double-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.activity"></span>
+        </a>
+      </li>
+      <li role="presentation" ng-if="!TRADE_UI_ONLY">
+        <a href="#/accounts/{{id_rs}}/messages/{{paramPeriod}}">
+          <i class="fa fa-angle-double-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.messages"/>
+        </a>
+      </li>
+      <li role="presentation">
+        <a href="#/accounts/{{id_rs}}/assets/{{paramPeriod}}">
+          <i class="fa fa-angle-double-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.assets"/>
+        </a>
+      </li>
+      <li role="presentation">
+        <a href="#/accounts/{{id_rs}}/buy_orders/{{paramPeriod}}">
+          <i class="fa fa-angle-double-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.buy_orders"/>
+        </a>
+      </li>
+      <li role="presentation">
+        <a href="#/accounts/{{id_rs}}/sell_orders/{{paramPeriod}}">
+          <i class="fa fa-angle-double-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.sell_orders"/>
+        </a>
+      </li>
+      <li role="presentation">
+        <a href>
+          <i class="fa fa-angle-double-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.trades"/>
+        </a>
+      </li>
+      <li role="presentation" ng-if="!TRADE_UI_ONLY">
+        <a href="#/accounts/{{id_rs}}/listing/{{paramPeriod}}">
+          <i class="fa fa-angle-double-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.view_listing"/>
+        </a>
+      </li>
+      <li role="presentation" ng-if="!TRADE_UI_ONLY">
+        <a href="#/accounts/{{id_rs}}/pastorders/{{paramPeriod}}">
+          <i class="fa fa-angle-double-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.past_orders"/>
+        </a>
+      </li>
+      <li role="presentation" ng-if="!TRADE_UI_ONLY">
+        <a href="#/accounts/{{id_rs}}/solditems/{{paramPeriod}}">
+          <i class="fa fa-angle-double-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.sold_items"/>
+        </a>
+      </li>
+      <li role="presentation" ng-if="!TRADE_UI_ONLY">
+        <a href="#/accounts/{{id_rs}}/aliases/{{paramPeriod}}">
+          <i class="fa fa-angle-double-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.aliases"/>
+        </a>
+      </li>
+      <li role="presentation" ng-if="!TRADE_UI_ONLY">
+        <a href="#/accounts/{{id_rs}}/fim_aliases/{{paramPeriod}}">
+          <i class="fa fa-angle-double-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.namespaced_aliases"/>
+        </a>
+      </li>
+      <li role="presentation" ng-if="!TRADE_UI_ONLY">
+        <a href="#/accounts/{{id_rs}}/leasing/{{paramPeriod}}">
+          <i class="fa fa-angle-double-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.balance_leasing"/><span>
+        </a>
+      </li>
+      <li role="presentation" ng-if="!TRADE_UI_ONLY">
+        <a href="#/accounts/{{id_rs}}/blocks/{{paramPeriod}}">
+          <i class="fa fa-angle-double-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.blocks_forged"/><span>
+        </a>
+      </li>
+    </ul>
+
+    <!-- Sidebar for logged in account -->
+    <ul class="nav navbar-stacked" ng-if="isCurrentAccount(id_rs)">
+      <li role="presentation">
+        <a href="#/accounts/{{id_rs}}/activity/{{paramPeriod}}" class="font-bold">
+          <i class="fa fa-tachometer fa-fw"></i>&nbsp;&nbsp;<span translate="translate.dashboard"/>
+        </a>
+      </li>
+      <li role="presentation">
+        <a href ng-click="executeTransaction('sendMoney')" class="font-bold">
+          <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.send_money" translate-values="{symbol:currentAccount.symbol}"></span>
+        </a>
+      </li>
       <li role="presentation">
         <a href="#/accounts/{{id_rs}}/pulse/{{paramPeriod}}" class="font-bold">
           <i class="fa fa-heartbeat fa-fw"></i>&nbsp;&nbsp;<span translate="translate.pulse"/>
@@ -11,44 +97,39 @@
           <i class="fa fa-book fa-fw"></i>&nbsp;&nbsp;<span translate="translate.account"></span>&nbsp;<span class="caret"></span>
         </a>
         <ul class="nav navbar-stacked" collapse="!collapse['account']">
-          <li role="presentation">
+          <!-- <li role="presentation">
             <a href="#/accounts/{{id_rs}}/activity/{{paramPeriod}}">
               <i class="fa fa-angle-double-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.activity"></span>
             </a>
-          </li>
-          <li role="presentation">
+          </li> -->
+          <li role="presentation" ng-hide="TRADE_UI_ONLY">
             <a href="#/accounts/{{id_rs}}/payments/{{paramPeriod}}">
               <i class="fa fa-angle-double-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.payments"></span>
             </a>
           </li>
-          <li role="presentation" ng-show="isCurrentAccount(id_rs)">
-            <a href ng-click="executeTransaction('sendMoney')" class="font-bold">
-              <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.send_money" translate-values="{symbol:symbol}"></span>
-            </a>
-          </li>
-          <li role="presentation" ng-show="isCurrentAccount(id_rs)">
+          <li role="presentation">
             <a href ng-click="executeTransaction('setAccountInfo')">
               <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.set_account_info"></span>
             </a>
           </li>
-          <li role="presentation" ng-show="isCurrentAccount(id_rs)" ng-if="privateEnabled">
-            <a href ng-click="executeTransaction('setAccountIdentifier')">
-              <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.set_identifier"></span>
+          <li role="presentation" ng-if="privateEnabled" ng-hide="TRADE_UI_ONLY">
+            <a href ng-click="executeTransaction('setStandardAccountIdentifier')">
+              <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.set_standard_identifier"></span>
             </a>
           </li>
-          <li role="presentation" ng-show="isCurrentAccount(id_rs)" ng-if="privateEnabled">
-            <a href ng-click="executeTransaction('requestFreeAccountIdentifier')">
-              <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.request_identifier"></span>
+          <li role="presentation" ng-if="privateEnabled" ng-hide="TRADE_UI_ONLY">
+            <a href ng-click="executeTransaction('setCustomAccountIdentifier')">
+              <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.set_custom_identifier"></span>
             </a>
-          </li>
-          <li role="presentation" ng-show="isCurrentAccount(id_rs)" ng-if="privateEnabled">
+          </li>          
+          <li role="presentation" ng-if="privateEnabled" ng-hide="TRADE_UI_ONLY">
             <a href ng-click="executeTransaction('setVerificationAuthority')">
               <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.set_authority"></span>
             </a>
           </li>
         </ul>
       </li>
-      <li>
+      <li ng-if="!TRADE_UI_ONLY">
         <a href ng-click="toggleMenuCollapse('messages')" class="font-bold">
           <i class="fa fa-comments-o fa-fw"></i>&nbsp;&nbsp;<span translate="translate.messages"></span>&nbsp;<span class="caret"></span>
         </a>
@@ -63,12 +144,12 @@
               <i class="fa fa-angle-double-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.contacts"/>
             </a>
           </li>
-          <li role="presentation" ng-show="isCurrentAccount(id_rs)">
+          <li role="presentation">
             <a href ng-click="executeTransaction('sendMessage')" class="font-bold">
               <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.send_message"></span>
             </a>
           </li>
-          <li role="presentation" ng-show="isCurrentAccount(id_rs)">
+          <li role="presentation">
             <a href ng-click="executeTransaction('accountPost')">
               <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.write_post"></span>
             </a>
@@ -100,44 +181,44 @@
               <i class="fa fa-angle-double-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.trades"/>
             </a>
           </li>
-          <li role="presentation" ng-show="isCurrentAccount(id_rs)">
+          <li role="presentation">
             <a href ng-click="executeTransaction('issueAsset')" class="font-bold">
               <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.issue_asset"/>
             </a>
           </li>
-          <li role="presentation" ng-show="isCurrentAccount(id_rs)">
+          <li role="presentation">
             <a href ng-click="executeTransaction('transferAsset')">
               <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.transfer_asset"/>
             </a>
           </li>
-          <li role="presentation" ng-show="isCurrentAccount(id_rs)">
+          <li role="presentation">
             <a href ng-click="executeTransaction('buyAsset')">
               <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.place_buy_order"/>
             </a>
           </li>
-          <li role="presentation" ng-show="isCurrentAccount(id_rs)">
+          <li role="presentation">
             <a href ng-click="executeTransaction('sellAsset')">
               <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.place_sell_order"/>
             </a>
           </li>
-          <li role="presentation" ng-show="privateEnabled && isCurrentAccount(id_rs)">
+          <li role="presentation" ng-show="privateEnabled">
             <a href ng-click="executeTransaction('addPrivateAssetAccount')">
               <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.add_private"/>
             </a>
           </li>
-          <li role="presentation" ng-show="privateEnabled && isCurrentAccount(id_rs)">
+          <li role="presentation" ng-show="privateEnabled">
             <a href ng-click="executeTransaction('removePrivateAssetAccount')">
               <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.remove_private"/>
             </a>
           </li>
-          <li role="presentation" ng-show="privateEnabled && isCurrentAccount(id_rs)">
+          <li role="presentation" ng-show="privateEnabled">
             <a href ng-click="executeTransaction('setPrivateAssetFee')">
               <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.private_fee"/>
             </a>
           </li>
         </ul>
       </li>
-      <li>
+      <li ng-if="!TRADE_UI_ONLY">
         <a href ng-click="toggleMenuCollapse('goods')" class="font-bold">
           <i class="fa fa-shopping-cart fa-fw"></i>&nbsp;&nbsp;<span translate="translate.marketplace"></span>&nbsp;<span class="caret"></span>
         </a>
@@ -157,14 +238,14 @@
               <i class="fa fa-angle-double-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.sold_items"/>
             </a>
           </li>
-          <li role="presentation" ng-show="isCurrentAccount(id_rs)">
+          <li role="presentation">
             <a href ng-click="executeTransaction('dgsListing')" class="font-bold">
               <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.add_item"/>
             </a>
           </li>
         </ul>
       </li>
-      <li>
+      <li ng-if="!TRADE_UI_ONLY">
         <a href ng-click="toggleMenuCollapse('alias')" class="font-bold">
           <i class="fa fa-shopping-cart fa-fw"></i>&nbsp;&nbsp;<span translate="translate.aliases"></span>&nbsp;<span class="caret"></span>
         </a>
@@ -179,39 +260,39 @@
               <i class="fa fa-angle-double-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.namespaced_aliases"/>
             </a>
           </li>
-          <li role="presentation" ng-show="isCurrentAccount(id_rs)">
+          <li role="presentation">
             <a href ng-click="executeTransaction('setAlias')" class="font-bold">
               <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.set_alias"/>
             </a>
           </li>
-          <li role="presentation" ng-show="isCurrentAccount(id_rs)">
+          <li role="presentation">
             <a href ng-click="executeTransaction('setNamespacedAlias')">
               <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.namespaced_alias"/>
             </a>
           </li>
-          <li role="presentation" ng-show="isCurrentAccount(id_rs)">
+          <li role="presentation">
             <a href ng-click="executeTransaction('dgsListing')">
               <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.delete_alias"/>
             </a>
           </li>
-          <li role="presentation" ng-show="isCurrentAccount(id_rs)">
+          <li role="presentation">
             <a href ng-click="executeTransaction('sellAlias')">
               <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.sell_alias"/>
             </a>
           </li>
-          <li role="presentation" ng-show="isCurrentAccount(id_rs)">
+          <li role="presentation">
             <a href ng-click="executeTransaction('buyAlias')">
               <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.buy_alias_a"/>
             </a>
           </li>
-          <li role="presentation" ng-show="isCurrentAccount(id_rs)">
+          <li role="presentation">
             <a href ng-click="executeTransaction('transferAlias')">
               <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.transfer_alias"/>
             </a>
           </li>
         </ul>
       </li>
-      <li>
+      <li ng-if="!TRADE_UI_ONLY">
         <a href ng-click="toggleMenuCollapse('forging')" class="font-bold">
           <i class="fa fa-cubes fa-fw"></i>&nbsp;&nbsp;<span>Forging</span>&nbsp;<span class="caret"></span>
         </a>
@@ -226,27 +307,46 @@
               <i class="fa fa-angle-double-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.blocks_forged"/><span>
             </a>
           </li>
-          <li role="presentation" ng-show="isCurrentAccount(id_rs)">
-            <a href ng-click="executeTransaction('startForging')" class="font-bold">
+          <li role="presentation">
+            <a href ng-click="startForging()" class="font-bold">
               <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.start_forging"/><span>
             </a>
           </li>
-          <li role="presentation" ng-show="isCurrentAccount(id_rs)">
-            <a href ng-click="executeTransaction('stopForging')">
+          <li role="presentation">
+            <a href ng-click="stopForging()">
               <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.stop_forging"/><span>
             </a>
           </li>
-          <li role="presentation" ng-show="isCurrentAccount(id_rs)">
+          <li role="presentation">
             <a href ng-click="executeTransaction('leaseBalance')">
               <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.lease_balance"/><span>
             </a>
           </li>
         </ul>
       </li>
-      <li ng-show="showFilter">
+      <li>
+        <a href ng-click="toggleMenuCollapse('advanced')" class="font-bold">
+          <i class="fa fa-cog fa-fw"></i>&nbsp;&nbsp;<span>Advanced</span>&nbsp;<span class="caret"></span>
+        </a>
+        <ul class="nav navbar-stacked" collapse="!collapse['advanced']">
+          <li role="presentation">
+            <a href ng-click="executeTransaction('accountColorCreate')" class="font-bold">
+              <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.create_account_color"/><span>
+            </a>
+          </li>
+          <li role="presentation">
+            <a href ng-click="executeTransaction('accountColorAssign')" class="font-bold">
+              <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.assign_account_color"/><span>
+            </a>
+          </li>
+        </ul>
+      </li>      
+    </ul>
+    <ul class="nav navbar-stacked" ng-if="showFilter">
+      <li>
         <hr class="stacked-divider">
       </li>
-      <li ng-show="showFilter">
+      <li>
         <a href ng-init="filterCollapse=true" ng-click="filterCollapse=!filterCollapse">
           <span class="glyphicon glyphicon-wrench"></span>
           &nbsp;&nbsp;<span translate="translate.filter"/>&nbsp;<span class="caret"></span>
@@ -366,7 +466,23 @@
       </button>
     </p>
 
-    <div class="row">
+    <div class="row" ng-if="!isCurrentAccount(id_rs)">
+      <div class="col-md-12">
+        <div class="alert alert-warning" role="alert">
+          <span class="pull-right">
+            <i class="fa fa-exclamation-triangle fa-2x"></i>&nbsp;&nbsp;
+          </span>
+          <span>
+            Showing details for account <b>{{id_rs}}</b>.<br>
+            <span ng-show="currentAccount">
+              Click to go back to <a href="#/accounts/{{currentAccount.id_rs}}/activity/latest">{{currentAccount.label}}</a>.
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="row">
       <div class="col-md-6">
         <div class="media">
           <span class="pull-left">
@@ -400,11 +516,15 @@
               <td>Forging</td>
               <td><i class="fa fa-circle-o-notch fa-spin text-success"></i></td>
               <td colspan="2">Expected to forge block in {{forger.remaining}}&nbsp;|&nbsp;<a ng-href="#/accounts/{{id_rs}}/blocks/latest">history</a></td>
-            </tr>            
+            </tr>
+            <tr ng-show="account.publicKey">
+              <td>Public Key</td>
+              <td colspan="2">{{account.publicKey}}</td>
+            </tr>
           </table>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="row">
       <div class="col-md-12">
@@ -510,6 +630,231 @@
         <!-- Activity -->
 
         <div ng-if="paramSection=='activity'">
+          <div class="row" ng-if="isCurrentAccount(id_rs)">
+            <div class="col-lg-3 col-md-6">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <div class="row">
+                      <div class="col-xs-3">
+                        <i class="fa fa-money fa-5x"></i>
+                      </div>
+                      <div class="col-xs-9 text-right">
+                        <div style="font-size: 20px;height:60px;padding-top:10px">
+                          <span style="position:absolute;bottom:20px;right:12px">{{currentAccount.balance||'0'}}</span>
+                        </div>
+                        <div>Account Balance</div>
+                      </div>
+                  </div>
+                </div>
+                <a href="#/accounts/{{currentAccount.id_rs}}/balance">
+                  <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6" ng-if="!TRADE_UI_ONLY">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <div class="row">
+                      <div class="col-xs-3">
+                        <i class="fa fa-comments fa-5x"></i>
+                      </div>
+                      <div class="col-xs-9 text-right">
+                        <div style="font-size:40px;height:60px;padding-top:10px">*</div>
+                        <div>Messages</div>
+                      </div>
+                  </div>
+                </div>
+                <a href="#/accounts/{{currentAccount.id_rs}}/messages/latest">
+                  <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <div class="row">
+                      <div class="col-xs-3">
+                        <i class="fa fa-line-chart fa-5x"></i>
+                      </div>
+                      <div class="col-xs-9 text-right">
+                        <div style="font-size:40px;height:60px;padding-top:10px">{{account.assetCount}}</div>
+                        <div>Assets Owned</div>
+                      </div>
+                  </div>
+                </div>
+                <a href="#/accounts/{{currentAccount.id_rs}}/assets/latest">
+                  <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6" ng-if="!TRADE_UI_ONLY">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <div class="row">
+                      <div class="col-xs-3">
+                        <i class="fa fa-cubes fa-5x"></i>
+                      </div>
+                      <div class="col-xs-9 text-right">
+                        <div style="font-size:40px;height:60px;padding-top:10px">*</div>
+                        <div>Last Block</div>
+                      </div>
+                  </div>
+                </div>
+                <a href="#/activity/{{symbol_lower}}/blockchain/latest">
+                  <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6" ng-if="!TRADE_UI_ONLY">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <div class="row">
+                      <div class="col-xs-3">
+                        <i class="fa fa-power-off fa-5x"></i>
+                      </div>
+                      <div class="col-xs-9 text-right">
+                        <div style="font-size:40px;height:60px;padding-top:10px">*</div>
+                        <div>Forging</div>
+                      </div>
+                  </div>
+                </div>
+                <a href="#/accounts/{{currentAccount.id_rs}}/blocks/latest">
+                  <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6" ng-if="!TRADE_UI_ONLY">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <div class="row">
+                    <div class="col-xs-3">
+                      <i class="fa fa-clock-o fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                      <div style="font-size:40px;height:60px;padding-top:10px">*</div>
+                      <div>Last Activity</div>
+                    </div>
+                  </div>
+                </div>
+                <a href="#">
+                  <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6" ng-if="!TRADE_UI_ONLY">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <div class="row">
+                    <div class="col-xs-3">
+                      <i class="fa fa-shopping-cart fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                      <div style="font-size:40px;height:60px;padding-top:10px">{{account.purchasedProductsCount}}</div>
+                      <div>Purchased Products</div>
+                    </div>
+                  </div>
+                </div>
+                <a href="#/accounts/{{currentAccount.id_rs}}/pastorders/latest">
+                  <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6" ng-if="!TRADE_UI_ONLY">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <div class="row">
+                      <div class="col-xs-3">
+                        <i class="fa fa-cart-arrow-down fa-5x"></i>
+                      </div>
+                      <div class="col-xs-9 text-right">
+                        <div style="font-size:40px;height:60px;padding-top:10px">{{account.soldProductsCount}}</div>
+                        <div>Pending/Completed Sales</div>
+                      </div>
+                  </div>
+                </div>
+                <a href="#/accounts/{{currentAccount.id_rs}}/solditems/latest">
+                  <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6" ng-if="TRADE_UI_ONLY">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <div class="row">
+                    <div class="col-xs-3">
+                      <i class="fa fa-plus-square fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                      <div style="font-size:40px;height:60px;padding-top:10px">{{account.bidOrderCount}}</div>
+                      <div>Buy Orders</div>
+                    </div>
+                  </div>
+                </div>
+                <a href="#/accounts/{{currentAccount.id_rs}}/buy_orders/latest">
+                  <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6" ng-if="TRADE_UI_ONLY">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <div class="row">
+                    <div class="col-xs-3">
+                      <i class="fa fa-minus-square fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                      <div style="font-size:40px;height:60px;padding-top:10px">{{account.askOrderCount}}</div>
+                      <div>Sell Orders</div>
+                    </div>
+                  </div>
+                </div>
+                <a href="#/accounts/{{currentAccount.id_rs}}/sell_orders/latest">
+                  <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <h3 style="margin-top:4px">Activity</h3>
           <div ng-if="!provider.entities.length">
             <div ng-if="provider.isLoading">
               Loading please wait&nbsp;&nbsp;<i class="fa fa-refresh fa-spin"></i>
@@ -567,6 +912,7 @@
         <!-- Messages -->
 
         <div ng-if="paramSection=='messages'">
+          <h3>Messages</h3>
           <div infinite-scroll="provider.loadMore()" infinite-scroll-distance="0" infinite-scroll-immediate-check="false">
             <div class="table-responsive">
               <table class="table table-striped">
@@ -598,11 +944,13 @@
         <!-- Assets -->
 
         <div ng-if="paramSection=='assets'">
+          <h3 style="margin-top:8px">Assets</h3>
           <div infinite-scroll="provider.loadMore()" infinite-scroll-distance="0" infinite-scroll-immediate-check="false">
             <div class="table-responsive">
               <table class="table table-striped">
                 <thead>
                   <tr>
+                    <th translate="translate.private"></th>
                     <th translate="translate.name"></th>
                     <th translate="translate.identifier"></th>
                     <th translate="translate.amount"></th>
@@ -613,7 +961,8 @@
                 </thead>
                 <tbody>
                   <tr ng-repeat="a in provider.entities">
-                    <td><a ng-href="#/assets/{{symbol_lower}}/{{a.asset}}/trade">{{a.name}}</a></td>
+                    <td><span class="text-success" ng-show="a.isPrivate"><i class="fa fa-lock"></i></span></td>
+                    <td><a ng-href="#/assets/{{symbol_lower}}/{{a.asset}}/trade">{{a.label}}</a></td>
                     <td><a ng-href="#/assets/{{symbol_lower}}/{{a.asset}}/trade">{{a.asset}}</a></td>
                     <td>{{a.quantity}}</td>
                     <td>{{a.totalQuantity}}</td>
@@ -646,6 +995,7 @@
         <!-- Currency -->
 
         <div ng-if="paramSection=='currency'">
+          <h3>Currency</h3>
           <div infinite-scroll="provider.loadMore()" infinite-scroll-distance="0" infinite-scroll-immediate-check="false">
             <div class="table-responsive">
               <table class="table table-striped">
@@ -683,6 +1033,7 @@
         <!-- Blocks -->
 
         <div ng-if="paramSection=='blocks'">
+          <h3>Blocks</h3>
           <div class="well" translate="translate.blocks_explained"></div>
           <div ng-if="provider.entities.length > 0">
             <div infinite-scroll="provider.loadMore()" infinite-scroll-distance="0" infinite-scroll-immediate-check="false">
@@ -725,6 +1076,7 @@
         <!-- Aliases -->
 
         <div ng-if="paramSection=='aliases'">
+          <h3>Aliases</h3>
           <div infinite-scroll="provider.loadMore()" infinite-scroll-distance="0" infinite-scroll-immediate-check="false">
             <div class="table-responsive">
               <table class="table table-striped">
@@ -775,6 +1127,7 @@
         <!-- Namespaced Alias -->
 
         <div ng-if="paramSection=='fim_aliases'">
+          <h3>Namespaced Aliases</h3>
           <div infinite-scroll="provider.loadMore()" infinite-scroll-distance="0" infinite-scroll-immediate-check="false">
             <form class="form-inline">
               <div class="form-group">
@@ -820,6 +1173,7 @@
         <!-- Balance Leasing -->
 
         <div ng-if="paramSection=='leasing'">
+          <h3>Leasing</h3>
           <div class="well" translate="translate.leasing_explained"></div>          
           <div ng-if="provider.entities.length > 0">
             <div class="table-responsive">
@@ -850,6 +1204,7 @@
         <!-- Buy orders -->
 
         <div ng-if="paramSection=='buy_orders'">
+          <h3>Buy Orders</h3>
           <div infinite-scroll="provider.loadMore()" infinite-scroll-distance="0" infinite-scroll-immediate-check="false">
             <div class="table-responsive">
               <table class="table table-striped">
@@ -866,13 +1221,13 @@
                 </thead>
                 <tbody>
                   <tr ng-repeat="a in provider.entities">
-                    <td><a ng-href="#/assets/{{symbol_lower}}/{{a.asset}}/trade">{{a.name}}</a></td>
+                    <td><a ng-href="#/assets/{{symbol_lower}}/{{a.asset}}/trade">{{account.symbol}}/{{a.name}}</a></td>
                     <td><a ng-href="#/assets/{{symbol_lower}}/{{a.asset}}/trade">{{a.asset}}</a></td>
                     <td>{{a.order}}</td>
                     <td>{{a.quantity}}</td>
                     <td>{{a.price}}</td>
                     <!-- <td>{{a.total}}</td> -->
-                    <td><a href 
+                    <td ng-if="isCurrentAccount(id_rs)"><a href 
                       ng-click="executeTransaction('cancelBidOrder',{order:a.order})"
                       translate="translate.cancel"></a></td>
                   </tr>
@@ -891,6 +1246,7 @@
         <!-- Sell orders -->
 
         <div ng-if="paramSection=='sell_orders'">
+          <h3>Sell Orders</h3>
           <div infinite-scroll="provider.loadMore()" infinite-scroll-distance="0" infinite-scroll-immediate-check="false">
             <div class="table-responsive">
               <table class="table table-striped">
@@ -907,7 +1263,7 @@
                 </thead>
                 <tbody>
                   <tr ng-repeat="a in provider.entities">
-                    <td><a ng-href="#/assets/{{symbol_lower}}/{{a.asset}}/trade">{{a.name}}</a></td>
+                    <td><a ng-href="#/assets/{{symbol_lower}}/{{a.asset}}/trade">{{account.symbol}}/{{a.name}}</a></td>
                     <td><a ng-href="#/assets/{{symbol_lower}}/{{a.asset}}/trade">{{a.asset}}</a></td>
                     <td>{{a.order}}</td>
                     <td>{{a.quantity}}</td>
@@ -931,6 +1287,7 @@
 
         <!-- Payments (sends multiple payments) -->
         <div ng-if="paramSection=='payments'">
+          <h3>Payments</h3>
           <tabset>
             <tab active="provider.PREPARE">
               <tab-heading>
@@ -996,6 +1353,7 @@
         <!-- Listing (goods) -->
 
         <div ng-if="paramSection=='listing'">
+          <h3>Marketplace Listing</h3>
           <form class="form-inline" style="margin-bottom: 15px;">
             <div class="form-group">
               <span translate="translate.filter_item_label"></span>&nbsp;&nbsp;
@@ -1042,6 +1400,7 @@
         <!-- Past orders (goods) -->
 
         <div ng-if="paramSection=='pastorders'">
+          <h3>Marketplace Orders</h3>
           <div infinite-scroll="provider.loadMore()" infinite-scroll-distance="0" infinite-scroll-immediate-check="false">
             <div class="table-responsive">
               <table class="table table-striped">

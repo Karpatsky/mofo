@@ -26,7 +26,7 @@
          key-service and enable it afterwards.
          <script src="scripts/controllers/login.js"></script> -->
 
-    <script src="scripts/scripts.858e77e9.js"></script>
+    <script src="scripts/scripts.194993c1.js"></script>
 
   </head>
   <body ng-class="{'showing-landing-page': showingLandingPage}">
@@ -49,35 +49,37 @@
           <span class="icon-bar"></span>
         </button>
 
-        <a ng-hide="TRADE_UI_ONLY" class="navbar-brand" ng-href="#/start" style="padding:9px 10px 9px 15px">
+        <a class="navbar-brand" ng-href="#/start" style="padding:9px 10px 9px 15px" ng-hide="currentAccount || TRADE_UI_ONLY">
           <img alt="Brand" style="max-height:none; min-height:5px !important; height:100%" src="images/lompsa.png">
         </a> 
 
-        <!--
-        <a ng-hide="TRADE_UI_ONLY" class="navbar-brand" ng-href="#/start" style="padding:9px 5px 9px 5px">
-          <img alt="Brand" style="max-height:none; min-height:5px !important; height:100%" src="images/fimk-coin.png">
-        </a>
-        -->
-        <span ng-hide="!isTestnet" class="navbar-brand">
+        <span ng-hide="!isTestnet || currentAccount || TRADE_UI_ONLY" class="navbar-brand">
           <u><b class="text-danger">TESTNET</b></u>
         </span>
 
-        <a ng-hide="!currentAccount" class="navbar-brand visible-xs" ng-href="#/messenger" style="padding:5px 10px 0px 8px">
-          <i class="fa fa-comment-o fa-2x" style="max-height:none; min-height:5px !important; height:100%"></i>
+        <a href="#/start" ng-show="TRADE_UI_ONLY && !currentAccount" class="navbar-brand">
+          <b>FIMK</b>Trader
         </a>
 
-        <a ng-show="TRADE_UI_ONLY" class="navbar-brand" ng-href="#/activity/fim/assets/latest"><strong ng-bind="WALLET_NAME"></strong>Wallet&nbsp;<span class="text-danger"><b>{{isTestnet? 'TEST' : 'BETA'}}</b></span>
+        <a href="#/accounts/{{currentAccount.id_rs}}/activity/latest" ng-show="currentAccount" 
+            class="navbar-brand" style="padding-top:8px">
+          <div><b>{{currentAccount.balance}}</b></div>
+          <div style="font-size:13px;padding-right:4px">{{currentAccount.label}}</div>
+        </a>
+
+        <a ng-hide="!currentAccount" class="navbar-brand visible-xs" ng-href="#/messenger" style="padding:5px 10px 0px 8px">
+          <i class="fa fa-comment-o fa-2x" style="max-height:none; min-height:5px !important; height:100%"></i>
         </a>
       </div>
 
       <div class="collapse navbar-collapse navbar-default" collapse="mainMenuCollapsed" menu-close="mainMenuCollapsed=true">
         <ul class="nav navbar-nav" nav-menu="active">
-          <li route-active="accounts/{{currentAccount.id_rs}}/" ng-if="currentAccount && !IS_SMALL_DEVICE">
-            <a ng-href="#/accounts/{{currentAccount.id_rs}}/activity/latest">
+          <!-- <li route-active="accounts/{{currentAccount.id_rs}}/" ng-if="currentAccount && !IS_SMALL_DEVICE">
+            <a ng-href="#/accounts/{{currentAccount.id_rs}}/activity/latest" class="dropdown-toggle">
               <u>{{userData.label}}</u>
               <span ng-bind-html="userData.html"></span>
             </a>
-          </li>
+          </li> -->
           <li ng-if="IS_SMALL_DEVICE">
             <div class="btn-group btn-group-justified">
               <div class="btn-group" role="group" ng-if="currentAccount">
@@ -105,7 +107,7 @@
             <a href="javascript:window.history.forward()"><i class="fa fa-arrow-right"></i></a>
           </li>
 
-          <li role="presentation" route-active="messenger/{{currentAccount.id_rs}}" ng-show="currentAccount">
+          <li role="presentation" route-active="messenger/{{currentAccount.id_rs}}" ng-show="currentAccount && !TRADE_UI_ONLY">
             <a href="#/messenger">
               <i class="fa fa-comment-o"></i><span ng-hide="currentAccount && !IS_SMALL_DEVICE" class="hidden-md hidden-sm">&nbsp;&nbsp;<span translate="translate.messenger"/></span>
             </a>
@@ -114,7 +116,7 @@
        
           <li route-active="home/" ng-hide="TRADE_UI_ONLY">
             <a ng-href="#/home/{{paramEngine}}/activity/latest">
-              <i class="fa fa-users"></i><span ng-hide="currentAccount && !IS_SMALL_DEVICE" class="hidden-md hidden-sm">&nbsp;&nbsp;{{'translate.dashboard' | translate}}</span>
+              <i class="fa fa-users"></i><span ng-hide="!IS_SMALL_DEVICE" class="hidden-md hidden-sm">&nbsp;&nbsp;{{'translate.dashboard' | translate}}</span>
             </a>
           </li>          
           
@@ -123,12 +125,12 @@
               <span ng-hide="currentAccount && !IS_SMALL_DEVICE" class="hidden-sm">&nbsp;&nbsp;{{'translate.explorer' | translate}}</span></a>
           </li>
 
-          <li>
+          <li ng-hide="TRADE_UI_ONLY">
             <a ng-href="#/activity/{{paramEngine}}/assets/latest"><i class="fa fa-line-chart"></i>
-              <span ng-hide="currentAccount && !IS_SMALL_DEVICE" class="hidden-sm">&nbsp;&nbsp;{{'translate.assets' | translate}}</span></a>
+              <span ng-hide="IS_SMALL_DEVICE" class="hidden-sm">&nbsp;&nbsp;{{'translate.assets' | translate}}</span></a>
           </li> 
 
-          <li>
+          <li ng-hide="TRADE_UI_ONLY">
             <a ng-href="#/goods/{{paramEngine}}/listing"><i class="fa fa-shopping-cart"></i>
               <span ng-hide="currentAccount && !IS_SMALL_DEVICE" class="hidden-sm">&nbsp;&nbsp;{{'translate.marketplace' | translate}}</span></a>
           </li>
@@ -139,13 +141,26 @@
             <a href="#/search/fim/accounts/">
               <i class="fa fa-search"></i><span class="hidden-md hidden-sm">&nbsp;&nbsp;{{'translate.search' | translate}}</span>
             </a>
+          </li>
+          <li ng-show="TRADE_UI_ONLY">
+            <a ng-href="#/activity/{{paramEngine}}/activity/latest">
+              <i class="fa fa-cloud"></i><span>&nbsp;&nbsp;{{'translate.explorer' | translate}}</span>
+            </a>
           </li>          
-
+          <li ng-show="TRADE_UI_ONLY">
+            <a ng-href="#/activity/{{paramEngine}}/assets/latest"><i class="fa fa-line-chart"></i>
+              <span ng-hide="IS_SMALL_DEVICE" class="hidden-sm">&nbsp;&nbsp;{{'translate.assets' | translate}}</span></a>
+          </li> 
           <li route-active="settings" dropdown>
             <a href class="dropdown-toggle" dropdown-toggle>
               <span class="glyphicon glyphicon-wrench"></span><span class="hidden-md hidden-sm">&nbsp;&nbsp;{{'translate.settings' | translate}}</span>&nbsp;<span class="caret"></span>
             </a>
             <ul class="dropdown-menu" role="menu">
+              <li ng-if="multiLanguage">
+                <a href ng-click="showLanguageModal()">
+                  <i class="fa fa-language"></i>&nbsp;&nbsp;{{'translate.language'|translate}}
+                </a>
+              </li>
               <li route-active>
                 <a ng-href="#/settings/themes"><span class="glyphicon glyphicon-fire"></span>&nbsp;&nbsp;{{'translate.themes' | translate}}</a>
               </li>
@@ -189,21 +204,50 @@
               </li>
             </ul>
           </li>
-          <li ng-if="multiLanguage">
+          <!-- <li ng-if="multiLanguage">
             <a href ng-click="showLanguageModal()">
               <i class="fa fa-globe"></i><span class="hidden-md hidden-sm">&nbsp;&nbsp;{{'translate.language'|translate}}</span>
             </a>
-          </li>
-          <li style="margin-right: 10px">
+          </li> -->
+          <li style="margin-right: 10px" ng-hide="currentAccount">
             <a href ng-click="loginTo()">
               <span ng-show="!currentAccount">
+                <i class="fa fa-sign-in"></i>&nbsp;&nbsp;<span translate="translate.sign_in"></span>
+              </span>              
+              <!-- <span ng-show="!currentAccount">
                 <i class="fa fa-sign-in"></i>&nbsp;&nbsp;<span translate="translate.sign_in"></span>
               </span>
               <span ng-show="currentAccount">
                 <i class="fa fa-sign-out"></i>&nbsp;&nbsp;<span translate="translate.sign_out"></span>
-              </span>
+              </span> -->
             </a>
-          </li>           
+          </li>
+
+          <li style="margin-right: 10px" dropdown ng-show="currentAccount" on-toggle="loadUserAccountData(open)">
+            <a href class="dropdown-toggle" dropdown-toggle>
+              <!-- <i class="fa fa-user"></i>&nbsp;&nbsp;<span>{{currentAccount.label}}</span>&nbsp; -->
+              <i class="fa fa-user"></i>&nbsp;&nbsp;<span translate="translate.users"></span>
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li ng-repeat="a in userAccounts">
+                <a href ng-click="setCurrentAccount(a)">
+                  <table style="width:100%">
+                    <tr>
+                      <td class="text-muted"><b>{{a.label}}</b>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                      <td class="text-right">{{a.balance}}</td>
+                    </tr>
+                  </table>
+                  <!-- <span><b>{{a.label}}</b>&nbsp;|&nbsp;{{a.balance}}</span> -->
+                </a>
+              </li>
+              <li>
+                <a href ng-click="loginTo()">
+                  <i class="fa fa-sign-out"></i>&nbsp;&nbsp;<span translate="translate.sign_out"></span>
+                </a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </div>
     </nav>
@@ -277,4 +321,4 @@
       </div>
     </nav>
   </body> 
-</html><!--Wed Oct 28 14:08:20 CET 2015-->
+</html><!--Sun Nov 22 00:27:32 CET 2015-->

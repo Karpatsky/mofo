@@ -325,7 +325,10 @@
     "set_account_info":     "Set Account Info",
     "set_identifier":       "Set Identifier",
     "request_identifier":   "Request Identifier",
-    "set_authority":        "Set Authority"
+    "set_authority":        "Set Authority",
+    "users":                "Users",
+    "create_account_color": "Create Color",
+    "assign_account_color": "Assign Color"
   },
 
   "time": {
@@ -422,7 +425,9 @@
       "2":                  "{{sender}} removed {{recipient}} from {{assetName}} allowed accounts {{details}} {{message}}",
       "3":                  "{{sender}} set {{assetName}} order fee {{orderFee}}% trade fee {{tradeFee}}% {{details}} {{message}}",
       "4":                  "{{sender}} asigned account identifier {{identifier}} to {{recipient}} {{details}} {{message}}",
-      "5":                  "{{sender}} made {{recipient}} a verification authority for {{period}} blocks {{details}} {{message}}"
+      "5":                  "{{sender}} made {{recipient}} a verification authority for {{period}} blocks {{details}} {{message}}",
+      "6":                  "{{sender}} created account color {{name}} {{details}} {{message}}",
+      "7":                  "{{sender}} assigned account color {{color}} to {{recipient}} {{details}} {{message}}"
     }
   },
 

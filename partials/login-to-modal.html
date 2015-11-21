@@ -174,8 +174,11 @@
         <div class="alert alert-success" style="margin-bottom: 8px" ng-show="alerts.clipped" translate="translate.msg_secret_copied"></div>
       </div>
       <div class="col-md-12 col-xs-12" ng-repeat="a in input.accounts">
-        <button class="btn btn-primary btn-block elipses monospace" style="margin-bottom: 8px"
-          ng-click="input.account=a;selectedAccountChanged();selectAccountFromWallet()">{{a.label}}</button>
+        <button class="btn btn-primary btn-block elipses monospace" style="margin-bottom: 8px; text-align:left; padding-left:6px"
+          ng-click="input.account=a;selectedAccountChanged();selectAccountFromWallet()">{{a.label}}
+          <span class="pull-right" ng-mouseenter="a.__hover=true" ng-mouseleave="a.__hover=false">{{a.balance}}&nbsp;
+                <i class="fa fa-times" ng-class="{'text-danger':a.__hover}" ng-click="removeAccount($event, a.id_rs)"></i></span>
+        </button>
       </div>
       <div class="col-md-12 col-xs-12">
         <button class="btn btn-default btn-block" style="margin-bottom: 8px"
@@ -536,9 +539,13 @@
           <button class="btn btn-primary btn-block" ng-click="goto(10)" 
               ng-disabled="!input.secretPhrase" translate="translate.continue" style="margin-bottom: 8px"></button>
         </div>
-        <div class="col-md-6 col-xs-12">
+        <div class="col-md-6 col-xs-12" ng-if="!TRADE_UI_ONLY">
           <button class="btn btn-default btn-block" ng-click="input.engine=null;goto(9)" 
               translate="translate.back" style="margin-bottom: 8px"></button>
+        </div>
+        <div class="col-md-6 col-xs-12" ng-if="TRADE_UI_ONLY">
+          <button class="btn btn-default btn-block" ng-click="close()" 
+              translate="translate.close" style="margin-bottom: 8px"></button>
         </div>
       </div>
     </div>

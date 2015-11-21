@@ -1,6 +1,6 @@
 <div class="panel panel-primary" ng-init="items.initialize && items.initialize(items)" ng-hide="items.autoSubmit">
   <div class="panel-heading">
-    <h3 class="panel-title" ng-bind="items.title"></h3>
+    <h3 class="panel-title"><center><b ng-bind="items.title"></b></center></h3>
   </div>
 
   <!-- Perform payment -->
@@ -24,7 +24,7 @@
           <span ng-if="!items.editRecipient" class="form-control">
             <b>{{items.recipient}}</b>
           </span>
-          <div ng-if="items.editRecipient" class="input-group" ng-init="recipientName=''">
+          <div ng-if="items.editRecipient && !items.disableAutoCompleteRecipient" class="input-group" ng-init="recipientName=''">
             <input type="text" class="form-control" 
                     ng-model="items.recipient" 
                     ng-change="items.onRecipientChange && items.onRecipientChange(items)"
@@ -44,6 +44,15 @@
               <span ng-show="loadingAccountResults"><i class="fa fa-refresh fa-spin"></i></span>
               <span ng-hide="loadingAccountResults"><i class="fa fa-search"></i></span>
             </span>
+          </div>
+          <div ng-if="items.editRecipient && items.disableAutoCompleteRecipient">
+            <input type="text" class="form-control" 
+                    ng-model="items.recipient" 
+                    ng-change="items.onRecipientChange && items.onRecipientChange(items)"
+                    autocomplete="false"
+                    required ui-validate=" 'validateAddress($value)' "
+                    ui-validate-watch=" 'items.recipient' "
+                    name="recipientField">
           </div>
         </span>
       </div>
@@ -85,15 +94,134 @@
         </span>
       </div>
 
-      <div ng-repeat="f in items.fields" ng-show="f.label && f.__show">
+      <div ng-repeat="f in items.fields" ng-show="f.__show && !f.hide">
         <ng-form name="userFieldForm">
-          <div class="form-group col-xs-12" 
+          <div class="form-group col-xs-12" style="padding-bottom:5px"
             ng-class="{ 'has-error' : userFieldForm.userFieldName.$invalid && ! userFieldForm.userFieldName.$pristine }">
-            <div>
-              <label class="control-label">{{f.label}}</label>
+            <div ng-show="f.label">
+              <label class="control-label">{{f.label}}<span ng-show="f.required" class="text-danger">&nbsp;<b>*</b></span></label>
               <span class="text-danger pull-right" ng-show="f.errorMsg">{{f.errorMsg}}</span>
+              <span class="text-warning pull-right" ng-show="f.warnMsg && !f.errorMsg">{{f.warnMsg}}</span>
             </div>
             <div ng-switch on="f.type">
+              <!-- STATIC -->
+              <div ng-switch-when="static">
+                <span class="form-control-static" ng-bind-html="f.value"></span>
+              </div>
+              <!-- INPUT (used for text and password) -->
+              <div ng-switch-when="input">
+                <input class="form-control" 
+                       ng-model="f.value" 
+                       type="{{f.inputType||'text'}}" 
+                       placeholder="{{f.placeHolder}}" 
+                       ng-required="f.required"
+                       ng-attr-ui-validate="{{f.validate ? '\'f.validate($value, items)\'' : true }}"
+                       ui-validate-watch="f.watch" 
+                       name="userFieldName" 
+                       ng-disabled="sendSuccess"
+                       ng-readonly="f.readonly"
+                       ng-change="f.onchange(items)">
+              </div>
+              <!-- MONEY VERSION 2 -->
+              <div ng-switch-when="money-v2">
+                <input money 
+                       precision="{{f.precision||8}}" 
+                       class="form-control" 
+                       name="userFieldName" 
+                       placeholder="{{f.placeHolder}}"
+                       type="text" 
+                       ng-model="f.value" 
+                       ng-disabled="sendSuccess" 
+                       ng-required="f.required"
+                       ng-readonly="f.readonly"
+                       ng-change="f.onchange(items)"
+                       ng-required="f.required"
+                       ng-attr-ui-validate="{{f.validate ? '\'f.validate($value, items)\'' : true }}"
+                       ui-validate-watch="f.watch">
+              </div>
+              <!-- TEXTAREA VERSION 2 -->
+              <div ng-switch-when="textarea-v2">
+                <textarea rows="{{f.rows}}" 
+                          class="form-control" 
+                          ng-model="f.value" 
+                          placeholder="{{f.placeHolder}}" 
+                          ng-attr-ui-validate="{{f.validate ? '\'f.validate($value, items)\'' : true }}"
+                          ui-validate-watch="f.watch"  
+                          name="userFieldName" 
+                          ng-disabled="sendSuccess"
+                          ng-readonly="f.readonly"
+                          ng-change="f.onchange(items)"
+                          ng-required="f.required"></textarea>                
+              </div>
+              <!-- AUTOCOMPLETE -->
+              <div ng-switch-when="autocomplete">
+                <div class="input-group" ng-init="f.__label='';f.__loading=false;f.__noResults=false">
+                  <span ng-show="f.__label" class="input-group-addon" ng-bind-html="f.__label"></span> 
+                  <input type="text" 
+                         class="form-control" 
+                         ng-model="f.value" 
+                         ng-change="f.__label=''; f.onchange(items)"
+                         typeahead-on-select="f.__label = $item.label; f.onchange && f.onchange(items)"
+                         placeholder="{{f.placeHolder}}" 
+                         typeahead="result.value as result for result in f.getResults($viewValue)"
+                         typeahead-template-url="{{f.templateURL}}" 
+                         typeahead-wait-ms="10"
+                         typeahead-loading="f.__loading"
+                         typeahead-no-results="f.__noResults"
+                         autocomplete="false"
+                         ng-required="f.required"
+                         ng-attr-ui-validate="{{f.validate ? '\'f.validate($value, items)\'' : true }}"
+                         ui-validate-watch="f.watch"
+                         name="userFieldName"
+                         ng-disabled="sendSuccess"
+                         ng-readonly="f.readonly"
+                         typeahead-wait-ms="f.typeahead_wait">
+                  <span ng-hide="f.__label" class="input-group-addon">
+                    <span ng-show="f.__loading"><i class="fa fa-refresh fa-spin"></i></span>
+                    <span ng-hide="f.__loading"><i class="fa fa-search"></i></span>
+                  </span>
+                </div>
+              </div>
+              <!-- RADIO -->
+              <div ng-switch-when="radio-v2">
+                <span ng-repeat="option in f.options">
+                  <span ng-if="!$first">&nbsp;&nbsp;</span>
+                  <input type="radio" 
+                         ng-checked="option.value==f.value"
+                         name="userFieldName" 
+                         ng-model="f.value"
+                         ng-disabled="sendSuccess" 
+                         ng-readonly="f.readonly" 
+                         ng-value="option.value"
+                         ng-attr-ui-validate="{{f.validate ? '\'f.validate($value, items)\'' : true }}"
+                         ui-validate-watch="f.watch"
+                         ng-change="f.onchange(items)">&nbsp;&nbsp;{{option.label}}
+                </span>
+              </div>
+              <!-- CHECKBOX -->
+              <div ng-switch-when="checkbox">
+                <input type="checkbox" 
+                       name="userFieldName" 
+                       ng-model="f.value"
+                       ng-disabled="sendSuccess" 
+                       ng-readonly="f.readonly" 
+                       ng-true-value="true"
+                       ng-false-value="false"
+                       ng-attr-ui-validate="{{f.validate ? '\'f.validate($value, items)\'' : true }}"
+                       ui-validate-watch="f.watch"
+                       ng-change="f.onchange(items)">&nbsp;&nbsp;{{f.inline_label}}
+              </div>
+              <!-- HIDDEN -->
+              <div ng-switch-when="hidden">
+                <input type="hidden" 
+                       name="userFieldName" 
+                       ng-model="f.value"
+                       ng-attr-ui-validate="{{f.validate ? '\'f.validate($value, items)\'' : true }}"
+                       ui-validate-watch="f.watch"
+                       ng-change="f.onchange(items)">
+              </div>
+
+
               <div ng-switch-default>
                 <div ng-if="f.required">
                   <input ng-if="!f.validate" class="form-control" ng-model="f.value" type="text" 
@@ -102,7 +230,7 @@
                          ng-change="f.onchange && f.onchange(items)">
                   <input ng-if="f.validate" class="form-control" ng-model="f.value" type="text" 
                          placeholder="{{f.placeHolder}}" required
-                         ui-validate=" 'f.validate($value)' " ui-validate-watch=" 'f.value' " 
+                         ui-validate=" 'f.validate($value, items)' " ui-validate-watch="'f.value'" 
                          name="userFieldName" ng-disabled="sendSuccess"
                          ng-readonly="f.readonly"
                          ng-change="f.onchange && f.onchange(items)">
@@ -114,7 +242,7 @@
                          ng-change="f.onchange && f.onchange(items)">
                   <input ng-if="f.validate" class="form-control" ng-model="f.value" type="text" 
                          placeholder="{{f.placeHolder}}" 
-                         ui-validate=" 'f.validate($value)' " ui-validate-watch=" 'f.value' " 
+                         ui-validate=" 'f.validate($value, items)' " ui-validate-watch="'f.value'" 
                          name="userFieldName" ng-disabled="sendSuccess"
                          ng-readonly="f.readonly"
                          ng-change="f.onchange && f.onchange(items)">
@@ -164,7 +292,7 @@
                             ng-change="f.onchange && f.onchange(items)"></textarea>
                   <textarea ng-if="f.validate" rows="3" class="form-control" ng-model="f.value" 
                             placeholder="{{f.placeHolder}}" required
-                            ui-validate=" 'f.validate($value)' " ui-validate-watch=" 'f.value' " 
+                            ui-validate=" 'f.validate($value, items)' " ui-validate-watch=" 'f.value' " 
                             name="userFieldName" ng-disabled="sendSuccess"
                             ng-readonly="f.readonly"
                             ng-change="f.onchange && f.onchange(items)"></textarea>
@@ -176,14 +304,15 @@
                             ng-change="f.onchange && f.onchange(items)"></textarea>
                   <textarea ng-if="f.validate" rows="3" class="form-control" ng-model="f.value" 
                             placeholder="{{f.placeHolder}}" 
-                            ui-validate=" 'f.validate($value)' " ui-validate-watch=" 'f.value' " 
+                            ui-validate=" 'f.validate($value, items)' " ui-validate-watch=" 'f.value' " 
                             name="userFieldName" ng-disabled="sendSuccess"
                             ng-readonly="f.readonly"
                             ng-change="f.onchange && f.onchange(items)"></textarea>
                 </div>
               </div>
-            </div>
 
+              
+            </div>
           </div>
         </ng-form>
       </div>

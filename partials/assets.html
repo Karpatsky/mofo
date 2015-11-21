@@ -1,20 +1,54 @@
 <div ng-init="offCanvas=false" class="row row-offcanvas row-offcanvas-left" ng-class="{active: offCanvas}">
   <div class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar">
     <ul class="nav navbar-stacked">
-      <li role="presentation" route-active="assets/{{paramEngine}}/{{paramAsset}}/trade">
-        <a href="#/assets/{{paramEngine}}/{{paramAsset}}/trade" translate-cloak>
+      <li role="presentation" ng-if="currentAccount">
+        <a href="#/accounts/{{currentAccount.id_rs}}/activity/latest" class="font-bold">
+          <i class="fa fa-tachometer fa-fw"></i>&nbsp;&nbsp;<span translate="translate.dashboard"/>
+        </a>
+      </li>      
+      <li role="presentation">
+        <a href="#/assets/{{paramEngine}}/{{paramAsset}}/trade" class="font-bold">
           <i class="fa fa-line-chart"></i>&nbsp;&nbsp;<span translate="translate.trade" />
         </a>
       </li>
-      <li role="presentation" route-active="assets/{{paramEngine}}/{{paramAsset}}/pulse">
-        <a href="#/assets/{{paramEngine}}/{{paramAsset}}/pulse" translate-cloak>
+      <li role="presentation">
+        <a href="#/assets/{{paramEngine}}/{{paramAsset}}/pulse" class="font-bold">
           <i class="fa fa-heartbeat"></i>&nbsp;&nbsp;<span translate="translate.pulse" />
         </a>
       </li>
-      <li role="presentation" route-active="assets/{{paramEngine}}/{{paramAsset}}/private" 
-          ng-show="privateEnabled && isPrivate && showPrivate">
-        <a href="#/assets/{{paramEngine}}/{{paramAsset}}/private" translate-cloak>
+      <li role="presentation" ng-show="privateEnabled && isPrivate && showPrivate">
+        <a href="#/assets/{{paramEngine}}/{{paramAsset}}/private" class="font-bold">
           <i class="fa fa-university"></i>&nbsp;&nbsp;<span>Private</span>
+        </a>
+      </li>
+      <li role="presentation" ng-if="currentAccount">
+        <a href ng-click="executeTransaction('transferAsset',{ asset:asset })">
+          <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.transfer_asset"/>
+        </a>
+      </li>
+      <li role="presentation" ng-if="currentAccount">
+        <a href ng-click="executeTransaction('buyAsset',{ asset:asset })">
+          <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.place_buy_order"/>
+        </a>
+      </li>
+      <li role="presentation" ng-if="currentAccount">
+        <a href ng-click="executeTransaction('sellAsset',{ asset:asset })">
+          <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.place_sell_order"/>
+        </a>
+      </li>
+      <li role="presentation" ng-show="privateEnabled && isPrivate && showPrivate">
+        <a href ng-click="executeTransaction('setPrivateAssetFee',{ asset:asset })">
+          <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.set_fees"/>
+        </a>
+      </li>
+      <li role="presentation" ng-show="privateEnabled && isPrivate && showPrivate">
+        <a href ng-click="executeTransaction('addPrivateAssetAccount',{ asset:asset })">
+          <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.add_account"/>
+        </a>
+      </li>
+      <li role="presentation" ng-show="privateEnabled && isPrivate && showPrivate">
+        <a href ng-click="executeTransaction('removePrivateAssetAccount',{ asset:asset })">
+          <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.remove_account"/>
         </a>
       </li>
     </ul>
@@ -191,20 +225,39 @@
                 <span translate="translate.show_pulse" />
               </a>
             </div>
-            <div class="panel-body" style="height: 250px;">
-              <p><span translate="translate.marketcap"></span>:&nbsp;{{details.data.marketcapNXT}}&nbsp;{{symbol}}</p>
-              <p><span translate="translate.last_price"></span>:&nbsp;{{details.data.lastPriceNXT}}&nbsp;{{symbol}}</p>
-              <p><span translate="translate.volume_today"></span>:&nbsp;{{details.data.volumeToday}}&nbsp;{{assetName}}&nbsp;({{details.data.numberOfTradesToday}}&nbsp;{{ 'translate.trades' | translate }})</p>
-              <p><span translate="translate.volume_total"></span>:&nbsp;{{details.data.volumeTotal}}&nbsp;{{assetName}}&nbsp;({{details.data.numberOfTrades}}&nbsp;{{ 'translate.trades' | translate }})</p>
-              <p ng-show="isPrivate"><span translate="translate.order_fee"></span>:&nbsp;{{details.data.orderFee}}%&nbsp;<span translate="translate.trade_fee"></span>:&nbsp;{{details.data.tradeFee}}%</p>
-              <p ng-show="unconfirmedAssetBalance">
-                Balance:&nbsp;
-                <span>
-                  <b>{{unconfirmedAssetBalance}}</b> 
-                  <span class="text-muted" ng-show="unconfirmedAssetBalance!=assetBalance">({{assetBalance}})</span> {{assetName}}
-                </span>
-              </p>
-              <p class="text-muted">{{details.data.description}}</p>
+            <div class="panel-body" style="height: 250px;overflow-y:auto">
+              <table class="table table-condensed">
+                <tr ng-show="currentAccount">
+                  <td translate="translate.balance"></td>
+                  <td><b>{{accountAsset.unconfirmedQuantity}}&nbsp;{{assetName}}</b></td>
+                </tr>
+                <tr>
+                  <td translate="translate.issuer"></td>
+                  <td><a ng-href="#/accounts/{{assetIssuerRS}}/activity/latest">{{assetIssuerName||assetIssuerRS}}</a></td>
+                </tr>                
+                <tr>
+                  <td translate="translate.marketcap"></td>
+                  <td>{{details.data.marketcapNXT}}&nbsp;{{symbol}}</td>
+                </tr>
+                <tr>
+                  <td translate="translate.last_price"></td>
+                  <td>{{details.data.lastPriceNXT}}&nbsp;{{symbol}}</td>
+                </tr>
+                <tr>
+                  <td translate="translate.volume_today"></td>
+                  <td>{{details.data.volumeToday}}&nbsp;{{assetName}}&nbsp;({{details.data.numberOfTradesToday}}&nbsp;{{ 'translate.trades' | translate }})</td>
+                </tr>
+                <tr>
+                  <td translate="translate.volume_total"></td>
+                  <td>{{details.data.volumeTotal}}&nbsp;{{assetName}}&nbsp;({{details.data.numberOfTrades}}&nbsp;{{ 'translate.trades' | translate }})</td>
+                </tr>
+                <tr ng-show="isPrivate">
+                  <td colspan="2"><span translate="translate.order_fee"></span>:&nbsp;{{details.data.orderFee}}%&nbsp;<span translate="translate.trade_fee"></span>:&nbsp;{{details.data.tradeFee}}%</td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="text-muted">{{details.data.description}}</td>
+                </tr>
+              </table>
             </div>
           </div>
         </div>
@@ -531,12 +584,12 @@
                 <input type="radio" name="showAllowed" ng-value="'prohibited'" 
                     ng-model="provider.showWhat" ng-change="provider.reload()">&nbsp;{{ 'translate.prohibited' | translate }}
               </div>
-              <div class="pull-right">
+              <!-- <div class="pull-right">
                 <button class="btn btn-success" translate="translate.add_account"
                   ng-click="addPrivateAssetAccount(a.id_rs)"></button>
                 <button class="btn btn-primary" translate="translate.set_fees"
                   ng-click="setPrivateAssetFee(a.id_rs)"></button>
-              </div>
+              </div> -->
             </form>
           </div>
           
