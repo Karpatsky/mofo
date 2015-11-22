@@ -3,7 +3,7 @@
 
     <!-- Sidebar while browsing -->
     <ul class="nav navbar-stacked" ng-if="!isCurrentAccount(id_rs)">
-      <li role="presentation">
+      <li role="presentation" ng-if="!TRADE_UI_ONLY">
         <a href="#/accounts/{{id_rs}}/pulse/{{paramPeriod}}" class="font-bold">
           <i class="fa fa-angle-double-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.pulse"/>
         </a>
@@ -34,7 +34,7 @@
         </a>
       </li>
       <li role="presentation">
-        <a href>
+        <a href="#/accounts/{{id_rs}}/trades/{{paramPeriod}}">
           <i class="fa fa-angle-double-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.trades"/>
         </a>
       </li>
@@ -87,7 +87,7 @@
           <i class="fa fa-angle-right fa-fw"></i>&nbsp;&nbsp;<span translate="translate.send_money" translate-values="{symbol:currentAccount.symbol}"></span>
         </a>
       </li>
-      <li role="presentation">
+      <li role="presentation" ng-if="!TRADE_UI_ONLY">
         <a href="#/accounts/{{id_rs}}/pulse/{{paramPeriod}}" class="font-bold">
           <i class="fa fa-heartbeat fa-fw"></i>&nbsp;&nbsp;<span translate="translate.pulse"/>
         </a>
@@ -1213,9 +1213,9 @@
                     <th translate="translate.name"></th>
                     <th translate="translate.identifier"></th>
                     <th translate="translate.order"></th>
-                    <th translate="translate.quantity"></th>
-                    <th translate="translate.price"></th>
-                    <!-- <th translate="translate.total"></th> -->
+                    <th style="text-align:right" translate="translate.quantity"></th>
+                    <th style="text-align:right" translate="translate.price"></th>
+                    <th style="text-align:right" translate="translate.total"></th>
                     <th ng-if="isCurrentAccount(id_rs)"></th>
                   </tr>
                 </thead>
@@ -1224,12 +1224,12 @@
                     <td><a ng-href="#/assets/{{symbol_lower}}/{{a.asset}}/trade">{{account.symbol}}/{{a.name}}</a></td>
                     <td><a ng-href="#/assets/{{symbol_lower}}/{{a.asset}}/trade">{{a.asset}}</a></td>
                     <td>{{a.order}}</td>
-                    <td>{{a.quantity}}</td>
-                    <td>{{a.price}}</td>
-                    <!-- <td>{{a.total}}</td> -->
+                    <td style="text-align:right">{{a.quantity}}</td>
+                    <td style="text-align:right">{{a.price}}</td>
+                    <td style="text-align:right">{{a.total}}</td>
                     <td ng-if="isCurrentAccount(id_rs)"><a href 
                       ng-click="executeTransaction('cancelBidOrder',{order:a.order})"
-                      translate="translate.cancel"></a></td>
+                      translate="translate.cancel" ng-hide="TRADE_UI_ONLY"></a></td>
                   </tr>
                 </tbody>
               </table>
@@ -1255,9 +1255,9 @@
                     <th translate="translate.name"></th>
                     <th translate="translate.identifier"></th>
                     <th translate="translate.order"></th>
-                    <th translate="translate.quantity"></th>
-                    <th translate="translate.price"></th>
-                    <!-- <th translate="translate.total"></th> -->
+                    <th style="text-align:right" translate="translate.quantity"></th>
+                    <th style="text-align:right" translate="translate.price"></th>
+                    <th style="text-align:right" translate="translate.total"></th>
                     <th ng-if="isCurrentAccount(id_rs)"></th>
                   </tr>
                 </thead>
@@ -1266,12 +1266,12 @@
                     <td><a ng-href="#/assets/{{symbol_lower}}/{{a.asset}}/trade">{{account.symbol}}/{{a.name}}</a></td>
                     <td><a ng-href="#/assets/{{symbol_lower}}/{{a.asset}}/trade">{{a.asset}}</a></td>
                     <td>{{a.order}}</td>
-                    <td>{{a.quantity}}</td>
-                    <td>{{a.price}}</td>
-                    <!-- <td>{{a.total}}</td> -->
+                    <td style="text-align: right;">{{a.quantity}}</td>
+                    <td style="text-align: right;">{{a.price}}</td>
+                    <td style="text-align: right;">{{a.total}}</td>
                     <td ng-if="isCurrentAccount(id_rs)"><a href 
                       ng-click="executeTransaction('cancelAskOrder',{order:a.order})"
-                      translate="translate.cancel"></a></td>
+                      translate="translate.cancel" ng-hide="TRADE_UI_ONLY"></a></td>
                   </tr>
                 </tbody>
               </table>

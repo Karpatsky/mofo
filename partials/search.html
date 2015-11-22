@@ -10,10 +10,10 @@
       <!-- <li role="presentation" route-active="search/{{paramEngine}}/currencies">
         <a href="#/search/{{paramEngine}}/currencies/{{paramQuery}}">Currencies</a>
       </li> -->
-      <li role="presentation" route-active="search/{{paramEngine}}/market">
+      <li role="presentation" route-active="search/{{paramEngine}}/market" ng-hide="TRADE_UI_ONLY">
         <a href="#/search/{{paramEngine}}/market/{{paramQuery}}">Market</a>
       </li>
-      <li role="presentation" route-active="search/{{paramEngine}}/aliases">
+      <li role="presentation" route-active="search/{{paramEngine}}/aliases" ng-hide="TRADE_UI_ONLY">
         <a href="#/search/{{paramEngine}}/aliases/{{paramQuery}}">Aliases</a>
       </li>
     </ul> 
@@ -117,7 +117,7 @@
           <div ng-if="provider.entities.length > 0" infinite-scroll="provider.loadMore()" infinite-scroll-distance="0">
             <div ng-repeat="o in provider.entities" class="well well-sm">
               <div>
-                <big>{{o.name}}</big>&nbsp;<a href="#/assets/{{paramEngine}}/{{o.asset}}/trade">{{o.asset}}</a>
+                <big>{{o.accountColorName||symbol}}/{{o.name}}</big>&nbsp;<a href="#/assets/{{paramEngine}}/{{o.asset}}/trade">{{o.asset}}</a>
                 <br><small>Issuer</small>&nbsp;<a href="#/accounts/{{o.accountRS}}/activity/latest">{{o.accountRS}}</a>
               </div>
               <div>{{o.description}}</div>

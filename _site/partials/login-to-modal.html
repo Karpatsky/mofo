@@ -232,7 +232,7 @@
             <img src="images/fimk-coin.png" style="height:28px;margin-bottom:4px"><br>FIMK</button>
         </div>
         <div class="col-md-6 col-xs-12">
-          <button class="btn btn-default btn-block" ng-click="input.engine='nxt'" style="margin-bottom: 8px">
+          <button class="btn btn-default btn-block" ng-click="input.engine='nxt'" style="margin-bottom: 8px" ng-hide="TRADE_UI_ONLY">
             <img src="images/nxt-coin.png" style="height:28px;margin-bottom:4px"><br>NXT</button>
         </div>
         <div class="col-md-6 col-md-offset-3 col-xs-12">
@@ -459,7 +459,7 @@
             <img src="images/fimk-coin.png" style="height:28px;margin-bottom:4px"><br>FIMK</button>
         </div>
         <div class="col-md-6 col-xs-12">
-          <button class="btn btn-default btn-block" ng-click="input.engine='nxt'" style="margin-bottom: 8px">
+          <button class="btn btn-default btn-block" ng-click="input.engine='nxt'" style="margin-bottom: 8px" ng-hide="TRADE_UI_ONLY">
             <img src="images/nxt-coin.png" style="height:28px;margin-bottom:4px"><br>NXT</button>
         </div>
         <div class="col-md-6 col-md-offset-3 col-xs-12">
@@ -539,13 +539,9 @@
           <button class="btn btn-primary btn-block" ng-click="goto(10)" 
               ng-disabled="!input.secretPhrase" translate="translate.continue" style="margin-bottom: 8px"></button>
         </div>
-        <div class="col-md-6 col-xs-12" ng-if="!TRADE_UI_ONLY">
+        <div class="col-md-6 col-xs-12">
           <button class="btn btn-default btn-block" ng-click="input.engine=null;goto(9)" 
               translate="translate.back" style="margin-bottom: 8px"></button>
-        </div>
-        <div class="col-md-6 col-xs-12" ng-if="TRADE_UI_ONLY">
-          <button class="btn btn-default btn-block" ng-click="close()" 
-              translate="translate.close" style="margin-bottom: 8px"></button>
         </div>
       </div>
     </div>
