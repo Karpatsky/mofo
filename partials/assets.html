@@ -206,7 +206,7 @@
                 Show&nbsp;<a href ng-click="chartType='old'">old</a>&nbsp;/&nbsp;<a href ng-click="chartType='new'">new</a>
               </span> -->
               <span class="pull-right"> 
-                <a href ng-class="{'font-bold': chart.window==0}" ng-click="chart.setWindow(0)">10 Minutes</a>,
+                <a href ng-class="{'font-bold': chart.window==0}" ng-click="chart.setWindow(0)" ng-show="TRADE_UI_ONLY">10 Minutes</a>,
                 <a href ng-class="{'font-bold': chart.window==1}" ng-click="chart.setWindow(1)">Hour</a>
                 <span ng-hide="TRADE_UI_ONLY">
                   ,<a href ng-class="{'font-bold': chart.window==2}" ng-click="chart.setWindow(2)">Day</a>
