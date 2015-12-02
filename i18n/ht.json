@@ -300,7 +300,31 @@
     "decrypt_message": "Dechifre mesaj",
     "no_messages": "Pa gen mesaj dechifre",
     "confirm_delivery": "Konfime akouchman",
-    "marketplace": "Marketplace"
+    "marketplace": "Marketplace",
+    "issue_asset": "Nimewo Byen",
+    "transfer_asset": "Byen Transfè",
+    "place_buy_order": "Kote Achte Lòd",
+    "place_sell_order": "Mete Vann Lòd",
+    "add_private": "Ajoute Prive",
+    "remove_private": "Retire Prive",
+    "private_fee": "Frè Prive",
+    "set_alias": "Mete Alyas",
+    "namespaced_alias": "Namespaced Alyas",
+    "delete_alias": "Debarase m de Alyas",
+    "sell_alias": "Vann Alyas",
+    "buy_alias_a": "Achte Alyas",
+    "transfer_alias": "Transfè Alyas",
+    "start_forging": "Start Forge",
+    "stop_forging": "One Stop Forge",
+    "lease_balance": "Kontra-Lwaye Balans",
+    "view_listing": "Gade Listing",
+    "set_account_info": "Mete Kont Info",
+    "set_identifier": "Mete Idantifikatè",
+    "request_identifier": "Mande Idantifikatè",
+    "set_authority": "Mete Otorite",
+    "users": "Itilizatè yo",
+    "create_account_color": "Kreye Koulè",
+    "assign_account_color": "Bay Koulè"
   },
   "filter": {
     "filter": "Filter",
@@ -375,7 +399,11 @@
       "0": "{{sender}} seri namespaced alyas {{aliasName}} {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} ajoute {{recipient}} {{assetName}} kont pèmèt {{details}} {{message}}",
       "2": "{{sender}} retire {{recipient}} soti nan {{assetName}} kont pèmèt {{details}} {{message}}",
-      "3": "{{sender}} seri {{assetName}} frè lòd {{orderFee}} % Frè komès {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} seri {{assetName}} frè lòd {{orderFee}} % Frè komès {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} lye idantifyan kont {{identifier}} {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} fè {{recipient}} yon otorite verifikasyon pou {{period}} blòk {{details}} {{message}}",
+      "6": "{{sender}} kreye koulè kont {{name}} {{details}} {{message}}",
+      "7": "{{sender}} asiyen koulè kont {{color}} {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

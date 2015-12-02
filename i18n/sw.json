@@ -300,7 +300,31 @@
     "decrypt_message": "Decrypt ujumbe",
     "no_messages": "Hakuna Ujumbe kwa Decrypt",
     "confirm_delivery": "Kuthibitisha utoaji",
-    "marketplace": "Soko"
+    "marketplace": "Soko",
+    "issue_asset": "Suala Mali",
+    "transfer_asset": "Uhamisho wa Mali",
+    "place_buy_order": "Weka kununua Agizo",
+    "place_sell_order": "Mahali Sell Agizo",
+    "add_private": "Kuongeza Binafsi",
+    "remove_private": "Ondoa Binafsi",
+    "private_fee": "Binafsi Ada",
+    "set_alias": "Kuweka Alias",
+    "namespaced_alias": "Namespaced Alias",
+    "delete_alias": "Kufuta Alias",
+    "sell_alias": "Kuuza Alias",
+    "buy_alias_a": "Kununua Alias",
+    "transfer_alias": "Kuhamisha Alias",
+    "start_forging": "Kuanza Waanzisha",
+    "stop_forging": "Acheni Waanzisha",
+    "lease_balance": "Kukodisha Mizani",
+    "view_listing": "View Listing",
+    "set_account_info": "Kuweka Maelezo ya akaunti",
+    "set_identifier": "Kuweka kitambulisho",
+    "request_identifier": "Ombi kitambulisho",
+    "set_authority": "Mamlaka ya kuweka",
+    "users": "Watumiaji",
+    "create_account_color": "Kujenga Rangi",
+    "assign_account_color": "Kuwapa Rangi"
   },
   "filter": {
     "filter": "Filter",
@@ -375,7 +399,11 @@
       "0": "{{sender}} kuweka namespaced uwanja {{aliasName}} kwa {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} Anaongeza {{recipient}} kwa {{assetName}} kuruhusiwa akaunti {{details}} {{message}}",
       "2": "{{sender}} kuondolewa {{recipient}} kutoka {{assetName}} kuruhusiwa akaunti {{details}} {{message}}",
-      "3": "{{sender}} kuweka {{assetName}} ada ili {{orderFee}} Ada% biashara {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} kuweka {{assetName}} ada ili {{orderFee}} Ada% biashara {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} asigned akaunti kitambulisho {{identifier}} kwa {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} alifanya {{recipient}} mamlaka uhakiki kwa {{period}} vitalu {{details}} {{message}}",
+      "6": "{{sender}} umba akaunti rangi {{name}} {{details}} {{message}}",
+      "7": "{{sender}} kupewa akaunti rangi {{color}} kwa {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

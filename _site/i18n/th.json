@@ -300,7 +300,31 @@
     "decrypt_message": "ถอดรหัสข้อความ",
     "no_messages": "ไม่มีข้อความถอดรหัส",
     "confirm_delivery": "ยืนยันการจัดส่งสินค้า",
-    "marketplace": "ตลาด"
+    "marketplace": "ตลาด",
+    "issue_asset": "ปัญหาสินทรัพย์",
+    "transfer_asset": "โอนสินทรัพย์",
+    "place_buy_order": "ซื้อสั่งซื้อ",
+    "place_sell_order": "สถานที่สั่งซื้อขาย",
+    "add_private": "เพิ่มส่วนตัว",
+    "remove_private": "ลบส่วนตัว",
+    "private_fee": "ค่าบริการส่วนตัว",
+    "set_alias": "ตั้งนามแฝง",
+    "namespaced_alias": "namespaced นามแฝง",
+    "delete_alias": "ลบนามแฝง",
+    "sell_alias": "ขายนามแฝง",
+    "buy_alias_a": "ซื้อนามแฝง",
+    "transfer_alias": "โอนนามแฝง",
+    "start_forging": "เริ่มต้นตี",
+    "stop_forging": "หยุดตี",
+    "lease_balance": "คงเหลือเซ้ง",
+    "view_listing": "ดูรายชื่อ",
+    "set_account_info": "ระบุข้อมูลบัญชี",
+    "set_identifier": "Set Identifier",
+    "request_identifier": "รวมเข้ากับตัวบ่งชี้",
+    "set_authority": "ชุดผู้มีอำนาจ",
+    "users": "ผู้ใช้",
+    "create_account_color": "สร้างสี",
+    "assign_account_color": "กำหนดสี"
   },
   "filter": {
     "filter": "กรอง",
@@ -375,7 +399,11 @@
       "0": "{{sender}} ชุด namespaced นามแฝง {{aliasName}} ไปยัง {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} เพิ่ม {{recipient}} ไปยัง {{assetName}} บัญชีรับอนุญาต {{details}} {{message}}",
       "2": "{{sender}} ลบออก {{recipient}} จาก {{assetName}} บัญชีรับอนุญาต {{details}} {{message}}",
-      "3": "{{sender}} ชุด {{assetName}} ค่าธรรมเนียมการสั่งซื้อ {{orderFee}} % ค่าธรรมเนียมการค้า {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} ชุด {{assetName}} ค่าธรรมเนียมการสั่งซื้อ {{orderFee}} % ค่าธรรมเนียมการค้า {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} ระบุบัญชี asigned {{identifier}} ไปยัง {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} ทำ {{recipient}} ผู้มีอำนาจในการตรวจสอบสำหรับ {{period}} บล็อก {{details}} {{message}}",
+      "6": "{{sender}} สีสร้างบัญชี {{name}} {{details}} {{message}}",
+      "7": "{{sender}} สีที่ได้รับมอบหมายบัญชี {{color}} ไปยัง {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

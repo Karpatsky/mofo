@@ -300,7 +300,31 @@
     "decrypt_message": "செய்தி மறைவிலக்கம்",
     "no_messages": "இல்லை டிக்ரிப்ட் செய்திகளை",
     "confirm_delivery": "டெலிவரி உறுதிப்படுத்தவும்",
-    "marketplace": "சந்தை"
+    "marketplace": "சந்தை",
+    "issue_asset": "வெளியீடு சொத்து",
+    "transfer_asset": "மாற்றம் சொத்து",
+    "place_buy_order": "வாங்க கட்டளை",
+    "place_sell_order": "இடம் பொருட்டு விற்பனை",
+    "add_private": "தனியார் சேர்க்கவும்",
+    "remove_private": "தனியார் நீக்கவும்",
+    "private_fee": "தனியார் கட்டணம்",
+    "set_alias": "அலைஸ் அமைக்கவும்",
+    "namespaced_alias": "Namespaced அலைஸ்",
+    "delete_alias": "அலைஸ் நீக்கு",
+    "sell_alias": "அலைஸ் விற்க",
+    "buy_alias_a": "வாங்க அலைஸ்",
+    "transfer_alias": "அலைஸ் பரிமாற்றம்",
+    "start_forging": "தொடக்க மோசடி",
+    "stop_forging": "நிறுத்து மோசடி",
+    "lease_balance": "லீஸ் இருப்பு",
+    "view_listing": "காண்க பட்டியல்",
+    "set_account_info": "கணக்கு தகவல் அமைக்கவும்",
+    "set_identifier": "குழு அடையாளம்",
+    "request_identifier": "வேண்டுகோள் அடையாளங்காட்டி",
+    "set_authority": "அமை அதிகார",
+    "users": "பயனர்கள்",
+    "create_account_color": "கலர் உருவாக்கவும்",
+    "assign_account_color": "வண்ண ஒதுக்க"
   },
   "filter": {
     "filter": "வடிகட்டி",
@@ -375,7 +399,11 @@
       "0": "{{sender}} தொகுப்பு namespaced என்கிற {{aliasName}} செய்ய {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} சேர்க்கிறது {{recipient}} வேண்டும் {{assetName}} அனுமதி கணக்குகள் {{details}} {{message}}",
       "2": "{{sender}} நீக்கப்பட்டது {{recipient}} இருந்து {{assetName}} அனுமதி கணக்குகள் {{details}} {{message}}",
-      "3": "{{sender}} தொகுப்பு {{assetName}} பொருட்டு கட்டணம் {{orderFee}} % வர்த்தக கட்டணம் {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} தொகுப்பு {{assetName}} பொருட்டு கட்டணம் {{orderFee}} % வர்த்தக கட்டணம் {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} asigned கணக்கு அடையாளங்காட்டி {{identifier}} செய்ய {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} செய்து {{recipient}} சரிபார்ப்புக் அதிகாரம் {{period}} தொகுதிகள் {{details}} {{message}}",
+      "6": "{{sender}} உருவாக்கப்பட்ட கணக்கின் வண்ண {{name}} {{details}} {{message}}",
+      "7": "{{sender}} ஒதுக்கப்பட்ட கணக்கைச் வண்ண {{color}} செய்ய {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

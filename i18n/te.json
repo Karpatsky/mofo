@@ -300,7 +300,31 @@
     "decrypt_message": "సందేశం వ్యక్తీకరించడానికి",
     "no_messages": "సందేశాలు ఏవీ వ్యక్తీకరించడానికి",
     "confirm_delivery": "డెలివరీ నిర్ధారించండి",
-    "marketplace": "మార్కెట్"
+    "marketplace": "మార్కెట్",
+    "issue_asset": "ఇష్యూ అసెట్",
+    "transfer_asset": "ట్రాన్స్ఫర్ అసెట్",
+    "place_buy_order": "కొనుగోలు ఆర్డర్",
+    "place_sell_order": "ప్లేస్ అమ్మకపు ఆర్డర్",
+    "add_private": "ప్రైవేట్ జోడించండి",
+    "remove_private": "ప్రైవేట్ తొలగించు",
+    "private_fee": "ప్రైవేట్ రుసుము",
+    "set_alias": "అలియాస్ సెట్",
+    "namespaced_alias": "Namespaced అలియాస్",
+    "delete_alias": "అలియాస్ తొలగించు",
+    "sell_alias": "అలియాస్ అమ్మే",
+    "buy_alias_a": "కొనుగోలు అలియాస్",
+    "transfer_alias": "అలియాస్ బదిలీ",
+    "start_forging": "Start ఫోర్జింగ్",
+    "stop_forging": "ఆపు ఫోర్జింగ్",
+    "lease_balance": "లీజ్ సంతులనం",
+    "view_listing": "చూడండి జాబితా",
+    "set_account_info": "ఖాతా సమాచారం సెట్",
+    "set_identifier": "సెట్ గుర్తించేది",
+    "request_identifier": "అభ్యర్థన గుర్తించేది",
+    "set_authority": "సెట్ అథారిటీ",
+    "users": "వినియోగదారులు",
+    "create_account_color": "రంగు సృష్టించు",
+    "assign_account_color": "రంగు అప్పగించుము"
   },
   "filter": {
     "filter": "వడపోత",
@@ -375,7 +399,11 @@
       "0": "{{sender}} సెట్ namespaced అలియాస్ {{aliasName}} కు {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} జతచేస్తుంది {{recipient}} కు {{assetName}} ఎకౌంట్లు {{details}} {{message}}",
       "2": "{{sender}} తొలగించబడింది {{recipient}} నుండి {{assetName}} ఎకౌంట్లు {{details}} {{message}}",
-      "3": "{{sender}} సెట్ {{assetName}} ఆర్డర్ రుసుము {{orderFee}} % వాణిజ్య రుసుము {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} సెట్ {{assetName}} ఆర్డర్ రుసుము {{orderFee}} % వాణిజ్య రుసుము {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} asigned ఖాతా ఐడెంటిఫైయర్ {{identifier}} కు {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} చేసిన {{recipient}} ధృవీకరణ అధికారం {{period}} బ్లాక్స్ {{details}} {{message}}",
+      "6": "{{sender}} రూపొందించినవారు ఖాతా రంగు {{name}} {{details}} {{message}}",
+      "7": "{{sender}} కేటాయించిన ఖాతాకు రంగు {{color}} కు {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

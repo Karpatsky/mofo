@@ -300,7 +300,31 @@
     "decrypt_message": "پیغام بےرمز",
     "no_messages": "فی الحال کوئی پیغامات بےرمز کرنے کے لئے",
     "confirm_delivery": "ترسیل کی تصدیق",
-    "marketplace": "مارکیٹ"
+    "marketplace": "مارکیٹ",
+    "issue_asset": "مسئلہ ایسیٹ",
+    "transfer_asset": "منتقلی ایسیٹ",
+    "place_buy_order": "خرید آرڈر",
+    "place_sell_order": "جگہ فروخت کے لئے",
+    "add_private": "ذاتی شامل",
+    "remove_private": "ذاتی ہٹا دیں",
+    "private_fee": "ذاتی فیس",
+    "set_alias": "عرف سیٹ",
+    "namespaced_alias": "Namespaced عرفی",
+    "delete_alias": "عرف حذف",
+    "sell_alias": "عرف فروخت",
+    "buy_alias_a": "خرید عرفی",
+    "transfer_alias": "عرف منتقلی",
+    "start_forging": "شروع قائم",
+    "stop_forging": "سٹاپ قائم",
+    "lease_balance": "لیز بیلنس",
+    "view_listing": "لنک کی فہرست",
+    "set_account_info": "اکاؤنٹ کی معلومات مقرر کریں",
+    "set_identifier": "سیٹ شناخت کار",
+    "request_identifier": "پروپوزل کی شناخت",
+    "set_authority": "سیٹ اتھارٹی",
+    "users": "صارفین",
+    "create_account_color": "رنگ بنائیں",
+    "assign_account_color": "رنگ تفویض"
   },
   "filter": {
     "filter": "فلٹر کریں",
@@ -375,7 +399,11 @@
       "0": "{{sender}} سیٹ namespaced عرف {{aliasName}} کرنے کے لئے {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} کا اضافہ کر دیتی {{recipient}} کرنے کے لئے {{assetName}} اجازت دی اکاؤنٹس {{details}} {{message}}",
       "2": "{{sender}} ہٹا {{recipient}} سے {{assetName}} اجازت دی اکاؤنٹس {{details}} {{message}}",
-      "3": "{{sender}} سیٹ {{assetName}} حکم کی فیس {{orderFee}} ٪ تجارت فیس {{tradeFee}} ٪ {{details}} {{message}}"
+      "3": "{{sender}} سیٹ {{assetName}} حکم کی فیس {{orderFee}} ٪ تجارت فیس {{tradeFee}} ٪ {{details}} {{message}}",
+      "4": "{{sender}} asigned اکاؤنٹ شناخت {{identifier}} کرنے کے لئے {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} بنایا {{recipient}} کے لئے ایک تصدیقی اتھارٹی {{period}} بلاکس {{details}} {{message}}",
+      "6": "{{sender}} پیدا اکاؤنٹ رنگ {{name}} {{details}} {{message}}",
+      "7": "{{sender}} تفویض اکاؤنٹ رنگ {{color}} کرنے کے لئے {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

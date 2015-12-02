@@ -300,7 +300,31 @@
     "decrypt_message": "رمزگشایی پیام",
     "no_messages": "هیچ پیام به رمزگشایی",
     "confirm_delivery": "منظور تحویل",
-    "marketplace": "بازار"
+    "marketplace": "بازار",
+    "issue_asset": "شماره دارایی",
+    "transfer_asset": "دارایی انتقال",
+    "place_buy_order": "محل خرید سفارش",
+    "place_sell_order": "محل فروش سفارش",
+    "add_private": "اضافه کردن خصوصی",
+    "remove_private": "حذف خصوصی",
+    "private_fee": "هزینه شخصی",
+    "set_alias": "تنظیم نام مستعار",
+    "namespaced_alias": "فضای نام مستعار",
+    "delete_alias": "حذف نام مستعار",
+    "sell_alias": "فروش نام مستعار",
+    "buy_alias_a": "خرید نام مستعار",
+    "transfer_alias": "انتقال نام مستعار",
+    "start_forging": "شروع واحد فورج",
+    "stop_forging": "توقف واحد فورج",
+    "lease_balance": "اجاره تعادل",
+    "view_listing": "نمایش لیست",
+    "set_account_info": "تنظیم اطلاعات حساب",
+    "set_identifier": "تنظیم شناسه",
+    "request_identifier": "درخواست شناسه",
+    "set_authority": "مجموعه ای سازمان",
+    "users": "کاربران",
+    "create_account_color": "ایجاد رنگ",
+    "assign_account_color": "اختصاص رنگ"
   },
   "filter": {
     "filter": "صافی",
@@ -375,7 +399,11 @@
       "0": "{{sender}} مجموعه namespaced نام مستعار {{aliasName}} به {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} اضافه می کند {{recipient}} به {{assetName}} حساب اجازه {{details}} {{message}}",
       "2": "{{sender}} حذف {{recipient}} از {{assetName}} حساب اجازه {{details}} {{message}}",
-      "3": "{{sender}} مجموعه {{assetName}} هزینه منظور {{orderFee}} ٪ هزینه تجارت {{tradeFee}} ٪ {{details}} {{message}}"
+      "3": "{{sender}} مجموعه {{assetName}} هزینه منظور {{orderFee}} ٪ هزینه تجارت {{tradeFee}} ٪ {{details}} {{message}}",
+      "4": "{{sender}} شناسه حساب asigned در {{identifier}} به {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} ساخته {{recipient}} یک مقام تایید برای {{period}} بلوک {{details}} {{message}}",
+      "6": "{{sender}} رنگ حساب کاربری ایجاد {{name}} {{details}} {{message}}",
+      "7": "{{sender}} رنگ حساب اختصاص داده {{color}} به {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

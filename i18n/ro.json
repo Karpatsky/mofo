@@ -300,7 +300,31 @@
     "decrypt_message": "Decripta mesaje",
     "no_messages": "Niciun mesaj pentru a decripta",
     "confirm_delivery": "Confirmați livrare",
-    "marketplace": "Piata de desfacere"
+    "marketplace": "Piata de desfacere",
+    "issue_asset": "Problemă Asset",
+    "transfer_asset": "Asset de transfer",
+    "place_buy_order": "Plasați Cumpara Comanda",
+    "place_sell_order": "Locul Vindem comandă",
+    "add_private": "Adaugă Private",
+    "remove_private": "Scoateți Private",
+    "private_fee": "Taxa privat",
+    "set_alias": "Set Alias",
+    "namespaced_alias": "Namespaced Alias",
+    "delete_alias": "Ștergeți Alias",
+    "sell_alias": "Vindem Alias",
+    "buy_alias_a": "Cumpara Alias",
+    "transfer_alias": "Transfer Alias",
+    "start_forging": "Start Forjare",
+    "stop_forging": "Oprire de forjare",
+    "lease_balance": "Lease Balance",
+    "view_listing": "Vezi site",
+    "set_account_info": "Set cont Info",
+    "set_identifier": "Set Identifier",
+    "request_identifier": "Cerere Identifier",
+    "set_authority": "Autoritatea set",
+    "users": "Utilizatori",
+    "create_account_color": "Creați Color",
+    "assign_account_color": "Atribuirea de culoare"
   },
   "filter": {
     "filter": "Filtru",
@@ -375,7 +399,11 @@
       "0": "{{sender}} set namespaced alias {{aliasName}} pentru {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} adaugă {{recipient}} la {{assetName}} Conturile de companie {{details}} {{message}}",
       "2": "{{sender}} îndepărtat {{recipient}} de la {{assetName}} Conturile de companie {{details}} {{message}}",
-      "3": "{{sender}} set {{assetName}} Taxa de ordine {{orderFee}} % Comision comerț {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} set {{assetName}} Taxa de ordine {{orderFee}} % Comision comerț {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} asigned identificator cont {{identifier}} la {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} făcut {{recipient}} o autoritate de verificare pentru {{period}} Blocuri {{details}} {{message}}",
+      "6": "{{sender}} a creat culoare cont {{name}} {{details}} {{message}}",
+      "7": "{{sender}} atribuit culoare cont {{color}} la {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

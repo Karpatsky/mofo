@@ -300,7 +300,31 @@
     "decrypt_message": "Αποκρυπτογράφηση Μήνυμα",
     "no_messages": "Δεν υπάρχουν μηνύματα για την αποκρυπτογράφηση",
     "confirm_delivery": "Επιβεβαίωση παράδοσης",
-    "marketplace": "Αγορά"
+    "marketplace": "Αγορά",
+    "issue_asset": "Asset θέμα",
+    "transfer_asset": "Μεταβίβαση περιουσιακών στοιχείων",
+    "place_buy_order": "Τοποθετήστε Αγορά Παραγγελία",
+    "place_sell_order": "Τόπος Πώληση Παραγγελία",
+    "add_private": "Προσθήκη Ιδιωτική",
+    "remove_private": "Κατάργηση Προσωπικά",
+    "private_fee": "Ιδιωτική Χρέωση",
+    "set_alias": "Ορισμός Alias",
+    "namespaced_alias": "Namespaced Alias",
+    "delete_alias": "Διαγραφή Alias",
+    "sell_alias": "Πουλήστε Alias",
+    "buy_alias_a": "Αγοράστε Alias",
+    "transfer_alias": "Μεταφορά Alias",
+    "start_forging": "Έναρξη Σφυρηλάτηση",
+    "stop_forging": "Σταματήστε σφυρηλάτησης",
+    "lease_balance": "Μίσθωση Υπόλοιπο",
+    "view_listing": "Προβολή Καταχωρήσεων",
+    "set_account_info": "Ρύθμιση Λογαριασμού Πληροφορίες",
+    "set_identifier": "Set Identifier",
+    "request_identifier": "Αναγνωριστικό Αίτηση",
+    "set_authority": "Σετ Αρχή",
+    "users": "Χρήστες",
+    "create_account_color": "Δημιουργία Χρώμα",
+    "assign_account_color": "Εκχώρηση Χρώμα"
   },
   "filter": {
     "filter": "Φίλτρο",
@@ -375,7 +399,11 @@
       "0": "{{sender}} σετ namespaced ψευδώνυμο {{aliasName}} για να {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} Προσθέτει {{recipient}} να {{assetName}} επιτρέπεται λογαριασμών {{details}} {{message}}",
       "2": "{{sender}} αφαιρεθεί {{recipient}} από {{assetName}} επιτρέπεται λογαριασμών {{details}} {{message}}",
-      "3": "{{sender}} σετ {{assetName}} τέλος, προκειμένου {{orderFee}} % Χρέωση εμπορίου {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} σετ {{assetName}} τέλος, προκειμένου {{orderFee}} % Χρέωση εμπορίου {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} Αναγνωριστικό asigned λογαριασμού {{identifier}} να {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} κατασκευασμένος {{recipient}} μια αρχή ελέγχου για {{period}} μπλοκ {{details}} {{message}}",
+      "6": "{{sender}} δημιουργήθηκε το χρώμα του λογαριασμού {{name}} {{details}} {{message}}",
+      "7": "{{sender}} ανατεθεί χρώμα λογαριασμού {{color}} να {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

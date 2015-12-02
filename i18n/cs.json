@@ -300,7 +300,31 @@
     "decrypt_message": "Dešifrovat zprávu",
     "no_messages": "Žádné zprávy dešifrovat",
     "confirm_delivery": "Potvrzení doručení",
-    "marketplace": "Marketplace"
+    "marketplace": "Marketplace",
+    "issue_asset": "Vydání Asset",
+    "transfer_asset": "Převod majetku",
+    "place_buy_order": "Umístěte nákupního pokynu",
+    "place_sell_order": "Místo Prodáváme Objednat",
+    "add_private": "Přidat Private",
+    "remove_private": "Odstranit Private",
+    "private_fee": "Private Fee",
+    "set_alias": "Nastavit alias",
+    "namespaced_alias": "Namespaced Alias",
+    "delete_alias": "Smazat alias",
+    "sell_alias": "Prodáváme alias",
+    "buy_alias_a": "Koupit Alias",
+    "transfer_alias": "Přenos alias",
+    "start_forging": "Začátek Kování",
+    "stop_forging": "Zastavit Kování",
+    "lease_balance": "Pronájem Balance",
+    "view_listing": "View Listing",
+    "set_account_info": "Set Informace o účtech",
+    "set_identifier": "Set Identifier",
+    "request_identifier": "Žádost o Identifier",
+    "set_authority": "Set úřad",
+    "users": "Uživatelé",
+    "create_account_color": "Vytvoření barvy",
+    "assign_account_color": "Přiřadit barvy"
   },
   "filter": {
     "filter": "Filtr",
@@ -375,7 +399,11 @@
       "0": "{{sender}} Set namespaced alias {{aliasName}} k tomu {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} Dodává {{recipient}} na {{assetName}} povolené účty {{details}} {{message}}",
       "2": "{{sender}} odstraněn {{recipient}} z {{assetName}} povolené účty {{details}} {{message}}",
-      "3": "{{sender}} sada {{assetName}} objednat poplatek {{orderFee}} % Obchod poplatek {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} sada {{assetName}} objednat poplatek {{orderFee}} % Obchod poplatek {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} Identifikátor asigned účet {{identifier}} na {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} vyrobený {{recipient}} ověření orgánem pro {{period}} Bloky {{details}} {{message}}",
+      "6": "{{sender}} vytvořil barva účet {{name}} {{details}} {{message}}",
+      "7": "{{sender}} přidělen barva účet {{color}} na {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

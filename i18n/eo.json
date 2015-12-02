@@ -300,7 +300,31 @@
     "decrypt_message": "Malĉifri Mesaĝo",
     "no_messages": "Neniu Mesaĝoj malĉifri",
     "confirm_delivery": "Konfirmi Delivery",
-    "marketplace": "Foirejo"
+    "marketplace": "Foirejo",
+    "issue_asset": "Issue Asset",
+    "transfer_asset": "Translokigo Asset",
+    "place_buy_order": "Plaĉas Aĉeti Ordo",
+    "place_sell_order": "Loko Vendi Ordo",
+    "add_private": "Aldoni Privata",
+    "remove_private": "Forigi Privata",
+    "private_fee": "Privata Fee",
+    "set_alias": "Ŝanĝu Alias",
+    "namespaced_alias": "Namespaced Alias",
+    "delete_alias": "Forigi Alias",
+    "sell_alias": "Vendu Alias",
+    "buy_alias_a": "Aĉeti Alias",
+    "transfer_alias": "Transfer Alias",
+    "start_forging": "Komenci Forging",
+    "stop_forging": "Ĉesu Forging",
+    "lease_balance": "Lease Ekvilibro",
+    "view_listing": "Vidi Listing",
+    "set_account_info": "Ŝanĝu Konto Info",
+    "set_identifier": "Ara Identifier",
+    "request_identifier": "Peto Identigilo",
+    "set_authority": "Aro Aŭtoritato",
+    "users": "Uzantoj",
+    "create_account_color": "Krei Koloro",
+    "assign_account_color": "Asigni Koloro"
   },
   "filter": {
     "filter": "Filtrilo",
@@ -375,7 +399,11 @@
       "0": "{{sender}} aro namespaced alias {{aliasName}} por {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} aldonas {{recipient}} por {{assetName}} permesis kontoj {{details}} {{message}}",
       "2": "{{sender}} forigita {{recipient}} el {{assetName}} permesis kontoj {{details}} {{message}}",
-      "3": "{{sender}} aro {{assetName}} Por kotizo {{orderFee}} % Komerco kotizo {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} aro {{assetName}} Por kotizo {{orderFee}} % Komerco kotizo {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} asigned konton ensalutilo {{identifier}} por {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} faris {{recipient}} kontrolan aŭtoritaton por {{period}} blokoj {{details}} {{message}}",
+      "6": "{{sender}} kreis konton koloro {{name}} {{details}} {{message}}",
+      "7": "{{sender}} atribuita konton koloro {{color}} por {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

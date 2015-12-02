@@ -300,7 +300,31 @@
     "decrypt_message": "Dešifrovať správu",
     "no_messages": "Žiadne správy dešifrovať",
     "confirm_delivery": "Potvrdenie doručenia",
-    "marketplace": "Marketplace"
+    "marketplace": "Marketplace",
+    "issue_asset": "Vydanie Asset",
+    "transfer_asset": "Prevod majetku",
+    "place_buy_order": "Umiestnite nákupného pokynu",
+    "place_sell_order": "Miesto Predávame Objednať",
+    "add_private": "Pridať Private",
+    "remove_private": "Odstrániť Private",
+    "private_fee": "Private Fee",
+    "set_alias": "Nastaviť alias",
+    "namespaced_alias": "Namespaced Alias",
+    "delete_alias": "Zmazať alias",
+    "sell_alias": "Predávame alias",
+    "buy_alias_a": "Kúpiť Alias",
+    "transfer_alias": "Prenos alias",
+    "start_forging": "Začiatok Kovanie",
+    "stop_forging": "Zastaviť Kovanie",
+    "lease_balance": "Prenájom Balance",
+    "view_listing": "View Listing",
+    "set_account_info": "Set Informácie o účtoch",
+    "set_identifier": "Set Identifier",
+    "request_identifier": "Žiadosť o Identifier",
+    "set_authority": "Set úrad",
+    "users": "Užívatelia",
+    "create_account_color": "Vytvorenie farby",
+    "assign_account_color": "Priradiť farby"
   },
   "filter": {
     "filter": "Filter",
@@ -375,7 +399,11 @@
       "0": "{{sender}} Set namespaced alias {{aliasName}} k tomu {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} Dodáva {{recipient}} na {{assetName}} povolenej účty {{details}} {{message}}",
       "2": "{{sender}} odstránený {{recipient}} z {{assetName}} povolenej účty {{details}} {{message}}",
-      "3": "{{sender}} sada {{assetName}} objednať poplatok {{orderFee}} % Obchod poplatok {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} sada {{assetName}} objednať poplatok {{orderFee}} % Obchod poplatok {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} Identifikátor asigned účet {{identifier}} na {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} vyrobený {{recipient}} overenie orgánom pre {{period}} Bloky {{details}} {{message}}",
+      "6": "{{sender}} vytvoril farba účet {{name}} {{details}} {{message}}",
+      "7": "{{sender}} pridelený farba účet {{color}} na {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

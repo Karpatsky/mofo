@@ -300,7 +300,31 @@
     "decrypt_message": "Mesaj azalmak",
     "no_messages": "Hiçbir Mesajlar azalmak için",
     "confirm_delivery": "Teslimi Onayla",
-    "marketplace": "Pazaryeri"
+    "marketplace": "Pazaryeri",
+    "issue_asset": "Sayı Varlık",
+    "transfer_asset": "Aktarım Varlık",
+    "place_buy_order": "Satın Sipariş yerleştirin",
+    "place_sell_order": "Yer Sat Sipariş",
+    "add_private": "Özel ekle",
+    "remove_private": "Özel kaldır",
+    "private_fee": "Özel Ücret",
+    "set_alias": "Alias ​​Set",
+    "namespaced_alias": "Alanlı Alias",
+    "delete_alias": "Alias ​​Sil",
+    "sell_alias": "Alias ​​Satıyoruz",
+    "buy_alias_a": "Satın Alias",
+    "transfer_alias": "Alias ​​Transferi",
+    "start_forging": "Başlangıç ​​Dövme",
+    "stop_forging": "Dur Dövme",
+    "lease_balance": "Kira Dengesi",
+    "view_listing": "Görünüm İlan",
+    "set_account_info": "Hesap Bilgisi Set",
+    "set_identifier": "Set Identifier",
+    "request_identifier": "İstek tanıtıcı",
+    "set_authority": "Set Kurumu",
+    "users": "Kullanıcılar",
+    "create_account_color": "Renk oluştur",
+    "assign_account_color": "Renk Atama"
   },
   "filter": {
     "filter": "Filtre",
@@ -375,7 +399,11 @@
       "0": "{{sender}} set alanlı takma {{aliasName}} için {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} ekler {{recipient}} için {{assetName}} izin hesaplar {{details}} {{message}}",
       "2": "{{sender}} kaldırıldı {{recipient}} itibaren {{assetName}} izin hesaplar {{details}} {{message}}",
-      "3": "{{sender}} set {{assetName}} sipariş ücreti {{orderFee}} % Ticaret ücreti {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} set {{assetName}} sipariş ücreti {{orderFee}} % Ticaret ücreti {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} asigned hesap tanımlayıcı {{identifier}} için {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} yapılmış {{recipient}} bir doğrulama yetkisi {{period}} bloklar {{details}} {{message}}",
+      "6": "{{sender}} oluşturulan hesap rengi {{name}} {{details}} {{message}}",
+      "7": "{{sender}} atanan hesap rengi {{color}} için {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

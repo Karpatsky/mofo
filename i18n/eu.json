@@ -300,7 +300,31 @@
     "decrypt_message": "Desenkriptatu Mezua",
     "no_messages": "Ez mezuak desenkriptatu",
     "confirm_delivery": "Baieztatu banaketa",
-    "marketplace": "Marketplace"
+    "marketplace": "Marketplace",
+    "issue_asset": "Alea Asset",
+    "transfer_asset": "Transferentzia Asset",
+    "place_buy_order": "Jarri Erosi Agindua",
+    "place_sell_order": "Lekua saldu ordena",
+    "add_private": "Gehitu Pribatua",
+    "remove_private": "Kendu Pribatua",
+    "private_fee": "Matrikula Pribatua",
+    "set_alias": "Ezarri Alias",
+    "namespaced_alias": "Namespaced Alias",
+    "delete_alias": "Ezabatu Alias",
+    "sell_alias": "Saldu Alias",
+    "buy_alias_a": "Erosi Alias",
+    "transfer_alias": "Transferitzeko Alias",
+    "start_forging": "Start Forging",
+    "stop_forging": "Gelditu Forging",
+    "lease_balance": "Errentamendu Balance",
+    "view_listing": "Ikusi Zerrenda",
+    "set_account_info": "Ezarri kontua Info",
+    "set_identifier": "Multzo Identifier",
+    "request_identifier": "Eskaera egiteko Identifier",
+    "set_authority": "Multzo Agintaritza",
+    "users": "Erabiltzaileak",
+    "create_account_color": "Sortu Color",
+    "assign_account_color": "Esleitu Color"
   },
   "filter": {
     "filter": "Filter",
@@ -375,7 +399,11 @@
       "0": "{{sender}} set namespaced alias {{aliasName}} ra {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} gehitzen {{recipient}} ra {{assetName}} onartzen kontuak {{details}} {{message}}",
       "2": "{{sender}} kendu {{recipient}} batetik {{assetName}} onartzen kontuak {{details}} {{message}}",
-      "3": "{{sender}} set {{assetName}} Ordena kuota {{orderFee}} % Merkataritzaren kuota {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} set {{assetName}} Ordena kuota {{orderFee}} % Merkataritzaren kuota {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} Egotzitako kontua identifikatzailea {{identifier}} ra {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} egin {{recipient}} egiaztatze agintaritza bat {{period}} bloke {{details}} {{message}}",
+      "6": "{{sender}} sortu kontu kolorea {{name}} {{details}} {{message}}",
+      "7": "{{sender}} esleitutako kontua kolorea {{color}} ra {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

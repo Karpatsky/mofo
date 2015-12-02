@@ -300,7 +300,31 @@
     "decrypt_message": "Lahtikrüptimise Message",
     "no_messages": "Ei sõnumeid dekrüpteerida",
     "confirm_delivery": "Kinnita kättesaamist",
-    "marketplace": "Turuplats"
+    "marketplace": "Turuplats",
+    "issue_asset": "Väljaanne Asset",
+    "transfer_asset": "Transfer Asset",
+    "place_buy_order": "Aseta Osta Telli",
+    "place_sell_order": "Koht Sell Order",
+    "add_private": "Lisa Private",
+    "remove_private": "Eemalda Private",
+    "private_fee": "Eraldi tasu",
+    "set_alias": "Määra Alias",
+    "namespaced_alias": "Namespaced Alias",
+    "delete_alias": "Kustuta Alias",
+    "sell_alias": "Müük Alias",
+    "buy_alias_a": "Osta Alias",
+    "transfer_alias": "Transfer Alias",
+    "start_forging": "Start sepistamine",
+    "stop_forging": "Stopp sepistamine",
+    "lease_balance": "Lease Balance",
+    "view_listing": "Vaata veel pakkumisi",
+    "set_account_info": "Määra Konto Info",
+    "set_identifier": "Set Identifier",
+    "request_identifier": "Kutse tunnus",
+    "set_authority": "Määra Authority",
+    "users": "Kasutajad",
+    "create_account_color": "Loo Värv",
+    "assign_account_color": "Määra Color"
   },
   "filter": {
     "filter": "Filter",
@@ -375,7 +399,11 @@
       "0": "{{sender}} set namespaced alias {{aliasName}} kuni {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} lisab {{recipient}} kuni {{assetName}} lubatud kontod {{details}} {{message}}",
       "2": "{{sender}} kõrvaldatud {{recipient}} pärit {{assetName}} lubatud kontod {{details}} {{message}}",
-      "3": "{{sender}} komplekt {{assetName}} Selleks eest {{orderFee}} % Kaubanduse eest {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} komplekt {{assetName}} Selleks eest {{orderFee}} % Kaubanduse eest {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} asigned konto identifitseerimine {{identifier}} kuni {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} tehtud {{recipient}} kontrollkäik asutus {{period}} plokid {{details}} {{message}}",
+      "6": "{{sender}} loodud konto värvi {{name}} {{details}} {{message}}",
+      "7": "{{sender}} määratud kontole värvi {{color}} kuni {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

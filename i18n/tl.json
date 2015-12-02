@@ -300,7 +300,31 @@
     "decrypt_message": "I-decrypt ng Mensahe",
     "no_messages": "Walang mga mensahe sa decrypt",
     "confirm_delivery": "Kumpirmahin Delivery",
-    "marketplace": "Marketplace"
+    "marketplace": "Marketplace",
+    "issue_asset": "Asset Issue",
+    "transfer_asset": "Transfer Asset",
+    "place_buy_order": "Ilagay Bumili Order",
+    "place_sell_order": "Place Sell Order",
+    "add_private": "Idagdag Private",
+    "remove_private": "Alisin Private",
+    "private_fee": "Private Fee",
+    "set_alias": "Itakda Alias",
+    "namespaced_alias": "Namespaced Alias",
+    "delete_alias": "Burahin Alias",
+    "sell_alias": "Ibenta Alias",
+    "buy_alias_a": "Bumili Alias",
+    "transfer_alias": "Maglipat ng Alias",
+    "start_forging": "Start pagbubuo",
+    "stop_forging": "Stop pagbubuo",
+    "lease_balance": "Balanse Lease",
+    "view_listing": "View ng Listahan",
+    "set_account_info": "Itakda Info Account",
+    "set_identifier": "Itakda identifier",
+    "request_identifier": "Tagatukoy Request",
+    "set_authority": "Set Authority",
+    "users": "Mga gumagamit",
+    "create_account_color": "Lumikha ng Kulay",
+    "assign_account_color": "Magtalaga ng Kulay"
   },
   "filter": {
     "filter": "Salain",
@@ -375,7 +399,11 @@
       "0": "{{sender}} namespaced hanay ng alias {{aliasName}} sa {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} nagdadagdag {{recipient}} sa {{assetName}} pinahihintulutan account {{details}} {{message}}",
       "2": "{{sender}} dahil {{recipient}} mula sa {{assetName}} pinahihintulutan account {{details}} {{message}}",
-      "3": "{{sender}} itakda {{assetName}} fee sunod {{orderFee}} % Kalakalan fee {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} itakda {{assetName}} fee sunod {{orderFee}} % Kalakalan fee {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} asigned identifier account {{identifier}} sa {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} ginawa {{recipient}} isang awtoridad ng pag-verify para sa {{period}} bloke {{details}} {{message}}",
+      "6": "{{sender}} kulay na nilikha account {{name}} {{details}} {{message}}",
+      "7": "{{sender}} kulay itinalaga account {{color}} sa {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

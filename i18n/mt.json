@@ -300,7 +300,31 @@
     "decrypt_message": "Decrypt Messaġġ",
     "no_messages": "Nru messaġġi li Decrypt",
     "confirm_delivery": "Ikkonferma Kunsinna",
-    "marketplace": "Suq"
+    "marketplace": "Suq",
+    "issue_asset": "Assi Ħruġ",
+    "transfer_asset": "Trasferiment Assi",
+    "place_buy_order": "Poġġi Buy Ordni",
+    "place_sell_order": "Ordni Biegħ post",
+    "add_private": "Żid Private",
+    "remove_private": "Neħħi Private",
+    "private_fee": "Dritt Privat",
+    "set_alias": "Set Alias",
+    "namespaced_alias": "Namespaced Alias",
+    "delete_alias": "Ħassar Alias",
+    "sell_alias": "Biegħ Alias",
+    "buy_alias_a": "Buy Alias",
+    "transfer_alias": "Trasferiment Alias",
+    "start_forging": "Bidu Funderija",
+    "stop_forging": "Stop Funderija",
+    "lease_balance": "Kiri Bilanċ",
+    "view_listing": "View Elenku",
+    "set_account_info": "Set Kont Info",
+    "set_identifier": "Identifikatur Set",
+    "request_identifier": "Identifikatur talba",
+    "set_authority": "Set Awtorità",
+    "users": "Utenti",
+    "create_account_color": "Oħloq Kulur",
+    "assign_account_color": "Jassenja Kulur"
   },
   "filter": {
     "filter": "Iffiltra",
@@ -375,7 +399,11 @@
       "0": "{{sender}} sett namespaced alias {{aliasName}} biex {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} iżid {{recipient}} li {{assetName}} kontijiet permessi {{details}} {{message}}",
       "2": "{{sender}} jitneħħew {{recipient}} minn {{assetName}} kontijiet permessi {{details}} {{message}}",
-      "3": "{{sender}} sett {{assetName}} miżata ordni {{orderFee}} % Miżata kummerċ {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} sett {{assetName}} miżata ordni {{orderFee}} % Miżata kummerċ {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} identifikatur tal-kont asigned {{identifier}} li {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} magħmula {{recipient}} awtorità ta 'verifika għall {{period}} blokki {{details}} {{message}}",
+      "6": "{{sender}} kulur kont maħluqa {{name}} {{details}} {{message}}",
+      "7": "{{sender}} kulur kont assenjat {{color}} li {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

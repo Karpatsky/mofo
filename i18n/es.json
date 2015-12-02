@@ -300,7 +300,31 @@
     "decrypt_message": "Descifrar mensaje",
     "no_messages": "No hay mensajes para descifrar",
     "confirm_delivery": "Confirmar Entrega",
-    "marketplace": "Mercado"
+    "marketplace": "Mercado",
+    "issue_asset": "Activos de Emisión",
+    "transfer_asset": "Activos Transferencia",
+    "place_buy_order": "Coloque Comprar Orden",
+    "place_sell_order": "Lugar Orden de Venta",
+    "add_private": "Añadir privada",
+    "remove_private": "Retire privada",
+    "private_fee": "Cuota privada",
+    "set_alias": "Establecer Alias",
+    "namespaced_alias": "Espacio de nombres Alias",
+    "delete_alias": "Eliminar Alias",
+    "sell_alias": "Vender Alias",
+    "buy_alias_a": "Comprar Alias",
+    "transfer_alias": "Traslado Alias",
+    "start_forging": "Inicio Forja",
+    "stop_forging": "Detener Forja",
+    "lease_balance": "Arrendamiento de Balance",
+    "view_listing": "Ver entradas",
+    "set_account_info": "Establezca Información de la cuenta",
+    "set_identifier": "Set Identifier",
+    "request_identifier": "Solicitud identificador",
+    "set_authority": "Autoridad Set",
+    "users": "Usuarios",
+    "create_account_color": "Crear color",
+    "assign_account_color": "Asignar color"
   },
   "filter": {
     "filter": "Filtro",
@@ -375,7 +399,11 @@
       "0": "{{sender}} set namespaced alias {{aliasName}} a la {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} agrega {{recipient}} a {{assetName}} cuentas permitidos {{details}} {{message}}",
       "2": "{{sender}} eliminado {{recipient}} de {{assetName}} cuentas permitidos {{details}} {{message}}",
-      "3": "{{sender}} conjunto {{assetName}} tarifa fin {{orderFee}} % De comisión por el comercio {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} conjunto {{assetName}} tarifa fin {{orderFee}} % De comisión por el comercio {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} identificador de cuenta ASIGNADO {{identifier}} a {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} hecho {{recipient}} una autoridad de verificación para {{period}} bloques {{details}} {{message}}",
+      "6": "{{sender}} color de cuenta creada {{name}} {{details}} {{message}}",
+      "7": "{{sender}} color de cuenta asignado {{color}} a {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

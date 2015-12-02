@@ -300,7 +300,31 @@
     "decrypt_message": "Dekryptere besked",
     "no_messages": "Ingen Beskeder til at dekryptere",
     "confirm_delivery": "Bekræft Levering",
-    "marketplace": "Markedsplads"
+    "marketplace": "Markedsplads",
+    "issue_asset": "Udstedelse Asset",
+    "transfer_asset": "Overførsel Asset",
+    "place_buy_order": "Placer Køb Bestil",
+    "place_sell_order": "Placer Sælg Order",
+    "add_private": "Tilføj Privat",
+    "remove_private": "Fjern Privat",
+    "private_fee": "Privat Gebyr",
+    "set_alias": "Set Alias",
+    "namespaced_alias": "Namespaced Alias",
+    "delete_alias": "Slet Alias",
+    "sell_alias": "Sælg Alias",
+    "buy_alias_a": "Køb Alias",
+    "transfer_alias": "Overfør Alias",
+    "start_forging": "Start Smedning",
+    "stop_forging": "Stop Smedning",
+    "lease_balance": "Lease Balance",
+    "view_listing": "Se oversigt",
+    "set_account_info": "Set Konto Info",
+    "set_identifier": "Set Identifier",
+    "request_identifier": "Anmodning Identifier",
+    "set_authority": "Set Authority",
+    "users": "Brugere",
+    "create_account_color": "Opret Color",
+    "assign_account_color": "Tildel farve"
   },
   "filter": {
     "filter": "Filter",
@@ -375,7 +399,11 @@
       "0": "{{sender}} sæt namespaced alias {{aliasName}} til {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} tilføjer {{recipient}} til {{assetName}} tilladte konti {{details}} {{message}}",
       "2": "{{sender}} fjernet {{recipient}} fra {{assetName}} tilladte konti {{details}} {{message}}",
-      "3": "{{sender}} sæt {{assetName}} orden gebyr {{orderFee}} % Gebyr handel {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} sæt {{assetName}} orden gebyr {{orderFee}} % Gebyr handel {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} asigned kontoidentifikator {{identifier}} til {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} lavet {{recipient}} en verificering myndighed {{period}} blokke {{details}} {{message}}",
+      "6": "{{sender}} oprettet konto farve {{name}} {{details}} {{message}}",
+      "7": "{{sender}} tildelt konto farve {{color}} til {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

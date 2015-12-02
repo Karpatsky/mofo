@@ -305,7 +305,31 @@
     "decrypt_message": "Pura viesti",
     "no_messages": "Ei viestejä purettavana",
     "confirm_delivery": "Hyväksy toimitus",
-    "marketplace": "Markkinat"
+    "marketplace": "Markkinat",
+    "issue_asset": "Kysymys Asset",
+    "transfer_asset": "Siirto Asset",
+    "place_buy_order": "Aseta Osta Tilaa",
+    "place_sell_order": "Paikka myyntitoimeksiannon",
+    "add_private": "Lisää Yksityinen",
+    "remove_private": "Poista Yksityinen",
+    "private_fee": "Yksityinen Fee",
+    "set_alias": "Aseta Alias",
+    "namespaced_alias": "Namespaced Alias",
+    "delete_alias": "Poista Alias",
+    "sell_alias": "Myy Alias",
+    "buy_alias_a": "Osta Alias",
+    "transfer_alias": "Siirrä Alias",
+    "start_forging": "Käynnistä takominen",
+    "stop_forging": "Lopeta takominen",
+    "lease_balance": "Lease Balance",
+    "view_listing": "Näytä Listing",
+    "set_account_info": "Aseta tilitiedot",
+    "set_identifier": "Set Identifier",
+    "request_identifier": "Pyydä tunniste",
+    "set_authority": "Set Authority",
+    "users": "Käyttäjät",
+    "create_account_color": "Luo Väri",
+    "assign_account_color": "Määritä Color"
   },
   "time": {
     "suffixAgo": "sitten",
@@ -396,7 +420,11 @@
       "0": "{{sender}} laittoi nimialiaksen {{aliasName}} kohteeseen {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} lisäsi {{recipient}} arvokkeen {{assetName}} sallittuihin tileihin {{details}} {{message}}",
       "2": "{{sender}} poisti {{recipient}} arvokkeen {{assetName}} sallituista tileistä {{details}} {{message}}",
-      "3": "{{sender}} asetti {{assetName}} toimeksiantokulun {{orderFee}} % kauppamaksun{{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} asetti {{assetName}} toimeksiantokulun {{orderFee}} % kauppamaksun{{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} asigned Tilitunnuksen {{identifier}} että {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} valmistettu {{recipient}} todentaminen viranomainen {{period}} lohkot {{details}} {{message}}",
+      "6": "{{sender}} luotu tili väri {{name}} {{details}} {{message}}",
+      "7": "{{sender}} osoitettu tili väri {{color}} että {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

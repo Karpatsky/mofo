@@ -300,7 +300,31 @@
     "decrypt_message": "Dekryptera meddelande",
     "no_messages": "Inga meddelanden att dekryptera",
     "confirm_delivery": "Bekräfta Leverans",
-    "marketplace": "Marknads"
+    "marketplace": "Marknads",
+    "issue_asset": "Utgåva tillgång",
+    "transfer_asset": "Överföring av tillgångar",
+    "place_buy_order": "Placera köp Beställnings",
+    "place_sell_order": "Placera säljorder",
+    "add_private": "Lägg Privat",
+    "remove_private": "Avlägsna Privat",
+    "private_fee": "Privat Fee",
+    "set_alias": "Ställ Alias",
+    "namespaced_alias": "Namnområde Alias",
+    "delete_alias": "Radera Alias",
+    "sell_alias": "Sälj Alias",
+    "buy_alias_a": "Köp Alias",
+    "transfer_alias": "Överför Alias",
+    "start_forging": "Starta Smidning",
+    "stop_forging": "Stopp Smidning",
+    "lease_balance": "Lease Balans",
+    "view_listing": "Visa Listing",
+    "set_account_info": "Ange kontoinformation",
+    "set_identifier": "Set Identifier",
+    "request_identifier": "Begär Identifier",
+    "set_authority": "Set myndighet",
+    "users": "Användare",
+    "create_account_color": "Skapa Color",
+    "assign_account_color": "Tilldela Färg"
   },
   "filter": {
     "filter": "Filtrera",
@@ -375,7 +399,11 @@
       "0": "{{sender}} set med namnområde alias {{aliasName}} till {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} tillägger {{recipient}} till {{assetName}} tillåtna konton {{details}} {{message}}",
       "2": "{{sender}} avlägsnades {{recipient}} från {{assetName}} tillåtna konton {{details}} {{message}}",
-      "3": "{{sender}} uppsättning {{assetName}} Avgift för {{orderFee}} % Handelsavgift {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} uppsättning {{assetName}} Avgift för {{orderFee}} % Handelsavgift {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} asigned kontoidentifierare {{identifier}} till {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} gjord {{recipient}} en verifierings myndighet för {{period}} block {{details}} {{message}}",
+      "6": "{{sender}} skapade konto färg {{name}} {{details}} {{message}}",
+      "7": "{{sender}} tilldelade konto färg {{color}} till {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

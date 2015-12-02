@@ -300,7 +300,31 @@
     "decrypt_message": "Díchriptigh Teachtaireacht",
     "no_messages": "Níl aon Teachtaireachtaí a Díchriptigh",
     "confirm_delivery": "Deimhnigh Seachadadh",
-    "marketplace": "Marketplace"
+    "marketplace": "Marketplace",
+    "issue_asset": "Sócmhainní Eisiúint",
+    "transfer_asset": "Sócmhainní Aistrithe",
+    "place_buy_order": "Áit Ordú Ceannaigh",
+    "place_sell_order": "Ordú Dhíol áit",
+    "add_private": "Cuir Príobháideacha",
+    "remove_private": "Bain Príobháideacha",
+    "private_fee": "Táille Príobháideacha",
+    "set_alias": "Socraigh Ailias",
+    "namespaced_alias": "Namespaced Ailias",
+    "delete_alias": "Scrios Ailias",
+    "sell_alias": "Dhíol Ailias",
+    "buy_alias_a": "Ceannaigh Ailias",
+    "transfer_alias": "Aistriú Ailias",
+    "start_forging": "Tosaigh gaibhnithe",
+    "stop_forging": "Stop gaibhnithe",
+    "lease_balance": "Iarmhéid Léas",
+    "view_listing": "View Listing",
+    "set_account_info": "Socraigh Info Cuntas",
+    "set_identifier": "Socraigh Aitheantóir",
+    "request_identifier": "Iarratas Aitheantóir",
+    "set_authority": "Údarás Set",
+    "users": "Úsáideoirí",
+    "create_account_color": "Cruthaigh Dath",
+    "assign_account_color": "Sann Dath"
   },
   "filter": {
     "filter": "Scagaire",
@@ -375,7 +399,11 @@
       "0": "{{sender}} leagtha namespaced, tá réimse seo {{aliasName}} go {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} Cuireann {{recipient}} go {{assetName}} Cuntais cheadaítear {{details}} {{message}}",
       "2": "{{sender}} bhaint {{recipient}} ó {{assetName}} Cuntais cheadaítear {{details}} {{message}}",
-      "3": "{{sender}} leagtar {{assetName}} táille ordú {{orderFee}} % Táille trádála {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} leagtar {{assetName}} táille ordú {{orderFee}} % Táille trádála {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} aitheantóir cuntais asigned {{identifier}} chun {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} rinneadh {{recipient}} údarás fhíoraithe {{period}} bloic {{details}} {{message}}",
+      "6": "{{sender}} dath cuntas a cruthaíodh {{name}} {{details}} {{message}}",
+      "7": "{{sender}} dath cuntas sannadh {{color}} chun {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

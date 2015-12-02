@@ -300,7 +300,31 @@
     "decrypt_message": "Разкодирай Message",
     "no_messages": "Не Съобщения за декриптиране",
     "confirm_delivery": "Потвърдете Доставка",
-    "marketplace": "Пазар"
+    "marketplace": "Пазар",
+    "issue_asset": "Asset Issue",
+    "transfer_asset": "Прехвърляне на активи",
+    "place_buy_order": "Поставя се купи Поръчка",
+    "place_sell_order": "Място Продавам Поръчка",
+    "add_private": "Добави Private",
+    "remove_private": "Махни Private",
+    "private_fee": "Private Такса",
+    "set_alias": "Определете Alias",
+    "namespaced_alias": "Namespaced Alias",
+    "delete_alias": "Изтрий Alias",
+    "sell_alias": "Продавай Alias",
+    "buy_alias_a": "Купуване Alias",
+    "transfer_alias": "Трансфер Alias",
+    "start_forging": "Start Коване",
+    "stop_forging": "Stop Коване",
+    "lease_balance": "Отдава Balance",
+    "view_listing": "Вижте Обява",
+    "set_account_info": "Определете Account Info",
+    "set_identifier": "Set Identifier",
+    "request_identifier": "Заявка Identifier",
+    "set_authority": "Set Authority",
+    "users": "Потребители",
+    "create_account_color": "Създайте Color",
+    "assign_account_color": "Присвояване Color"
   },
   "filter": {
     "filter": "Филтър",
@@ -375,7 +399,11 @@
       "0": "{{sender}} поставените namespaced псевдоним {{aliasName}} да се {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} добавя, {{recipient}} към {{assetName}} допускат сметки {{details}} {{message}}",
       "2": "{{sender}} отстранен {{recipient}} от {{assetName}} допускат сметки {{details}} {{message}}",
-      "3": "{{sender}} комплект {{assetName}} За да такса {{orderFee}} % Търговска такса {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} комплект {{assetName}} За да такса {{orderFee}} % Търговска такса {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} идентификатор asigned акаунт {{identifier}} да се {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} изработен {{recipient}} орган за проверка {{period}} блокове {{details}} {{message}}",
+      "6": "{{sender}} създаден цвят акаунт {{name}} {{details}} {{message}}",
+      "7": "{{sender}} възложени цвят акаунт {{color}} да се {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

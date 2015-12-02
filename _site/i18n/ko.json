@@ -300,7 +300,31 @@
     "decrypt_message": "메시지를 해독",
     "no_messages": "어떤 메시지는 해독 없습니다",
     "confirm_delivery": "배달 확인",
-    "marketplace": "시장"
+    "marketplace": "시장",
+    "issue_asset": "문제의 자산",
+    "transfer_asset": "전송 자산",
+    "place_buy_order": "구매 주문을 배치",
+    "place_sell_order": "장소 판매 주문",
+    "add_private": "개인 추가",
+    "remove_private": "개인 제거",
+    "private_fee": "개인 요금",
+    "set_alias": "별칭을 설정",
+    "namespaced_alias": "네임 스페이스 별칭",
+    "delete_alias": "별칭 삭제",
+    "sell_alias": "별칭 판매",
+    "buy_alias_a": "구입 별칭",
+    "transfer_alias": "별칭 이동",
+    "start_forging": "시작 단조",
+    "stop_forging": "정지 단조",
+    "lease_balance": "임대 밸런스",
+    "view_listing": "리스팅",
+    "set_account_info": "계정 정보 설정",
+    "set_identifier": "집합 식별자",
+    "request_identifier": "요청 인식",
+    "set_authority": "설정 기관",
+    "users": "사용자",
+    "create_account_color": "색상 만들기",
+    "assign_account_color": "색상 지정"
   },
   "filter": {
     "filter": "필터",
@@ -375,7 +399,11 @@
       "0": "{{sender}} 세트 네임 스페이스 별칭 {{aliasName}} 에 {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} 추가 {{recipient}} 에 {{assetName}} 허용 된 계정 {{details}} {{message}}",
       "2": "{{sender}} 제거 {{recipient}} 부터 {{assetName}} 허용 된 계정 {{details}} {{message}}",
-      "3": "{{sender}} 세트 {{assetName}} 주문 요금 {{orderFee}} % 거래 수수료 {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} 세트 {{assetName}} 주문 요금 {{orderFee}} % 거래 수수료 {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} asigned 계정 식별자 {{identifier}} 에 {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} 만든 {{recipient}} 에 대한 검증 기관 {{period}} 블록 {{details}} {{message}}",
+      "6": "{{sender}} 생성 된 계정 색 {{name}} {{details}} {{message}}",
+      "7": "{{sender}} 할당 된 계정 색 {{color}} 에 {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

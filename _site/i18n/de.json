@@ -300,7 +300,31 @@
     "decrypt_message": "Entschlüsseln der Nachricht",
     "no_messages": "Keine Nachrichten entschlüsseln",
     "confirm_delivery": "Lieferung zu bestätigen",
-    "marketplace": "Markt"
+    "marketplace": "Markt",
+    "issue_asset": "Thema Asset-",
+    "transfer_asset": "Transfer Vermögens",
+    "place_buy_order": "Zeigen Kauf Bestell",
+    "place_sell_order": "Platz Verkaufsauftrag",
+    "add_private": "Private",
+    "remove_private": "Entfernen Privat",
+    "private_fee": "Private Fee",
+    "set_alias": "Set Alias",
+    "namespaced_alias": "Namensräume Alias",
+    "delete_alias": "Alias ​​löschen",
+    "sell_alias": "Verkaufen Alias",
+    "buy_alias_a": "Kaufen Alias",
+    "transfer_alias": "Übertragen Sie Alias",
+    "start_forging": "Starten Schmieden",
+    "stop_forging": "Stop-Schmieden",
+    "lease_balance": "Lease Abgleich",
+    "view_listing": "Einträge anzeigen",
+    "set_account_info": "Stellen Sie Kundendaten",
+    "set_identifier": "Set Identifier",
+    "request_identifier": "Anfrage Identifier",
+    "set_authority": "Set Authority",
+    "users": "Benutzer",
+    "create_account_color": "Erstellen Sie Farbe",
+    "assign_account_color": "Weisen Sie Farbe"
   },
   "filter": {
     "filter": "Filter",
@@ -375,7 +399,11 @@
       "0": "{{sender}} Set Namensraum-Alias {{aliasName}} bis zur {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} fügt {{recipient}} bis {{assetName}} erlaubt Konten {{details}} {{message}}",
       "2": "{{sender}} entfernt {{recipient}} von {{assetName}} erlaubt Konten {{details}} {{message}}",
-      "3": "{{sender}} Satz {{assetName}} Zuschlag {{orderFee}} % Handelsgebühr {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} Satz {{assetName}} Zuschlag {{orderFee}} % Handelsgebühr {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} asigned Kontokennung {{identifier}} nach {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} gemacht {{recipient}} ein Verifikationsbehörde {{period}} Blöcke {{details}} {{message}}",
+      "6": "{{sender}} erstellte Konto Farb {{name}} {{details}} {{message}}",
+      "7": "{{sender}} zugeordnet Konto Farbe {{color}} nach {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

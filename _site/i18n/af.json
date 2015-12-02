@@ -300,7 +300,31 @@
     "decrypt_message": "Boodskap decrypt",
     "no_messages": "Geen boodskappe om Decrypten",
     "confirm_delivery": "Bevestig Delivery",
-    "marketplace": "Marketplace"
+    "marketplace": "Marketplace",
+    "issue_asset": "Kwessie Asset",
+    "transfer_asset": "Oordrag Asset",
+    "place_buy_order": "Plaas Koop Order",
+    "place_sell_order": "Plaas Sell Order",
+    "add_private": "Voeg Private",
+    "remove_private": "Verwyder Private",
+    "private_fee": "Private Fee",
+    "set_alias": "Stel Alias",
+    "namespaced_alias": "Namespaced Alias",
+    "delete_alias": "Verwyder Alias",
+    "sell_alias": "Verkoop Alias",
+    "buy_alias_a": "Koop Alias",
+    "transfer_alias": "Oordra Alias",
+    "start_forging": "Begin Smeed",
+    "stop_forging": "Stop Smeed",
+    "lease_balance": "Huurkontrak Balance",
+    "view_listing": "View Listing",
+    "set_account_info": "Stel rekening Info",
+    "set_identifier": "Identifiseerder",
+    "request_identifier": "Versoek Identifier",
+    "set_authority": "Stel Owerheid",
+    "users": "Gebruikers",
+    "create_account_color": "Skep Kleur",
+    "assign_account_color": "Toewys Kleur"
   },
   "filter": {
     "filter": "Filter",
@@ -375,7 +399,11 @@
       "0": "{{sender}} stel namespaced alias {{aliasName}} te {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} voeg {{recipient}} om {{assetName}} toegelaat rekeninge {{details}} {{message}}",
       "2": "{{sender}} verwyder {{recipient}} uit {{assetName}} toegelaat rekeninge {{details}} {{message}}",
-      "3": "{{sender}} stel {{assetName}} Om fooi {{orderFee}} % Handel fooi {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} stel {{assetName}} Om fooi {{orderFee}} % Handel fooi {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} asigned rekening identifiseer {{identifier}} om {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} gemaak {{recipient}} 'n verifikasie gesag {{period}} blokke {{details}} {{message}}",
+      "6": "{{sender}} geskep rekening kleur {{name}} {{details}} {{message}}",
+      "7": "{{sender}} opgedra rekening kleur {{color}} om {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

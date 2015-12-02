@@ -300,7 +300,31 @@
     "decrypt_message": "Eyði skilaboð",
     "no_messages": "Engin bréf til Eyði",
     "confirm_delivery": "Staðfesta Delivery",
-    "marketplace": "Marketplace"
+    "marketplace": "Marketplace",
+    "issue_asset": "Issue Asset",
+    "transfer_asset": "Transfer Asset",
+    "place_buy_order": "Staður Kaupa Order",
+    "place_sell_order": "Place Selja Order",
+    "add_private": "Bæta Private",
+    "remove_private": "Fjarlægja Private",
+    "private_fee": "Private Fee",
+    "set_alias": "Setja Alias",
+    "namespaced_alias": "Namespaced Alias",
+    "delete_alias": "Eyða Alias",
+    "sell_alias": "Selja Alias",
+    "buy_alias_a": "Kaupa Alias",
+    "transfer_alias": "Flytja Alias",
+    "start_forging": "Start Eldsmíði",
+    "stop_forging": "Stop Eldsmíði",
+    "lease_balance": "Lease Balance",
+    "view_listing": "View Listing",
+    "set_account_info": "Setja Account Info",
+    "set_identifier": "Set Identifier",
+    "request_identifier": "Beiðni Identifier",
+    "set_authority": "Set Authority",
+    "users": "Notendur",
+    "create_account_color": "Búa Litur",
+    "assign_account_color": "Úthluta Litur"
   },
   "filter": {
     "filter": "Sía",
@@ -375,7 +399,11 @@
       "0": "{{sender}} setja namespaced alias {{aliasName}} að {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} bætir {{recipient}} að {{assetName}} leyft reikninga {{details}} {{message}}",
       "2": "{{sender}} fjarlægð {{recipient}} frá {{assetName}} leyft reikninga {{details}} {{message}}",
-      "3": "{{sender}} sett {{assetName}} Til gjald {{orderFee}} % Viðskipti gjald {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} sett {{assetName}} Til gjald {{orderFee}} % Viðskipti gjald {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} asigned reikning kennimerki {{identifier}} að {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} gert {{recipient}} sannprófun heimild fyrir {{period}} blokkir {{details}} {{message}}",
+      "6": "{{sender}} búin reikning lit {{name}} {{details}} {{message}}",
+      "7": "{{sender}} úthlutað reikning lit {{color}} að {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

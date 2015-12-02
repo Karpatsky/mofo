@@ -300,7 +300,31 @@
     "decrypt_message": "Dekodiranje poruku",
     "no_messages": "Nema poruka za dešifriranje",
     "confirm_delivery": "Potvrda isporuke",
-    "marketplace": "Tržište"
+    "marketplace": "Tržište",
+    "issue_asset": "Pitanje imovine",
+    "transfer_asset": "Prijenos imovine",
+    "place_buy_order": "Postavite Kupi nalog",
+    "place_sell_order": "Mjesto Prodaja narudžbe",
+    "add_private": "Dodaj Privatno",
+    "remove_private": "Uklonite Privatno",
+    "private_fee": "Privatna naknada",
+    "set_alias": "Postavi Alias",
+    "namespaced_alias": "Namespaced Alias",
+    "delete_alias": "Brisanje Alias",
+    "sell_alias": "Prodaja Alias",
+    "buy_alias_a": "Kupi Alias",
+    "transfer_alias": "Prebaci Alias",
+    "start_forging": "Početak Kovanje",
+    "stop_forging": "Zaustavite Kovanje",
+    "lease_balance": "Najam Stanje",
+    "view_listing": "Pregled oglas",
+    "set_account_info": "Postavite podatke o računu",
+    "set_identifier": "Set Identifier",
+    "request_identifier": "Zahtjev Identifikator",
+    "set_authority": "Postavi uprava",
+    "users": "Korisnici",
+    "create_account_color": "Napravite Color",
+    "assign_account_color": "Dodjela boji"
   },
   "filter": {
     "filter": "Filter",
@@ -375,7 +399,11 @@
       "0": "{{sender}} Postavite namespaced alias {{aliasName}} za {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} dodaje {{recipient}} za {{assetName}} dopušteni računi {{details}} {{message}}",
       "2": "{{sender}} uklonjen {{recipient}} iz {{assetName}} dopušteni računi {{details}} {{message}}",
-      "3": "{{sender}} set {{assetName}} Naknada poredak {{orderFee}} % Trgovini naknada {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} set {{assetName}} Naknada poredak {{orderFee}} % Trgovini naknada {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} Oznaka raspoređenim račun {{identifier}} do {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} napravljen {{recipient}} provjera ovlasti za {{period}} blokovi {{details}} {{message}}",
+      "6": "{{sender}} stvorena u boji račun {{name}} {{details}} {{message}}",
+      "7": "{{sender}} dodijeljena boja račun {{color}} do {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

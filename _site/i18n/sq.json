@@ -300,7 +300,31 @@
     "decrypt_message": "Decrypt mesazh",
     "no_messages": "Nuk ka mesazhe për të decrypt",
     "confirm_delivery": "Konfirmo dorëzimit",
-    "marketplace": "Marketplace"
+    "marketplace": "Marketplace",
+    "issue_asset": "Pasurive Issue",
+    "transfer_asset": "Pasurive Transferimi",
+    "place_buy_order": "Vendin Blej Rendit",
+    "place_sell_order": "Vendi Shitet Rendit",
+    "add_private": "Shto Private",
+    "remove_private": "Hiq Private",
+    "private_fee": "Tarifa Private",
+    "set_alias": "Set Alias",
+    "namespaced_alias": "Namespaced Alias",
+    "delete_alias": "Fshij Alias",
+    "sell_alias": "Shitet Alias",
+    "buy_alias_a": "Blej Alias",
+    "transfer_alias": "Transferimi Alias",
+    "start_forging": "Fillimi Formëzimi",
+    "stop_forging": "Stop Formëzimi",
+    "lease_balance": "Qirasë Bilanci",
+    "view_listing": "Shiko Listing",
+    "set_account_info": "Set Info llogari",
+    "set_identifier": "Identifikuesi Set",
+    "request_identifier": "Identifikuesi kërkesë",
+    "set_authority": "Autoriteti Set",
+    "users": "Përdoruesit",
+    "create_account_color": "Krijo Color",
+    "assign_account_color": "Cakto Color"
   },
   "filter": {
     "filter": "Filtër",
@@ -375,7 +399,11 @@
       "0": "{{sender}} vendosur namespaced alias {{aliasName}} në {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} shton {{recipient}} në {{assetName}} Llogaritë e lejuara {{details}} {{message}}",
       "2": "{{sender}} hequr {{recipient}} nga {{assetName}} Llogaritë e lejuara {{details}} {{message}}",
-      "3": "{{sender}} komplet {{assetName}} Pagesa mënyrë {{orderFee}} % Tarifë tregtisë {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} komplet {{assetName}} Pagesa mënyrë {{orderFee}} % Tarifë tregtisë {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} identifikues llogari asigned {{identifier}} në {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} i bërë {{recipient}} një autoritet verifikimi për {{period}} blloqe {{details}} {{message}}",
+      "6": "{{sender}} ngjyra llogari krijuar {{name}} {{details}} {{message}}",
+      "7": "{{sender}} ngjyra llogari caktuar {{color}} në {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

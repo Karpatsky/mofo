@@ -300,7 +300,31 @@
     "decrypt_message": "संदेश को डिक्रिप्ट",
     "no_messages": "कोई संदेश को डिक्रिप्ट करने",
     "confirm_delivery": "डिलिवरी की पुष्टि",
-    "marketplace": "बाजार"
+    "marketplace": "बाजार",
+    "issue_asset": "मुद्दा एसेट",
+    "transfer_asset": "स्थानांतरण एसेट",
+    "place_buy_order": "खरीदें आदेश जगह",
+    "place_sell_order": "जगह बेचने के आदेश",
+    "add_private": "निजी जोड़ें",
+    "remove_private": "निजी हटाये",
+    "private_fee": "निजी शुल्क",
+    "set_alias": "उर्फ सेट",
+    "namespaced_alias": "Namespaced उर्फ",
+    "delete_alias": "उर्फ मिटायें",
+    "sell_alias": "उर्फ बेचें",
+    "buy_alias_a": "खरीदें उर्फ",
+    "transfer_alias": "उर्फ स्थानांतरण",
+    "start_forging": "प्रारंभ फोर्जिंग",
+    "stop_forging": "बंद करो फोर्जिंग",
+    "lease_balance": "लीज़ शेष",
+    "view_listing": "देखें लिस्टिंग",
+    "set_account_info": "खाता सूचना सेट करें",
+    "set_identifier": "सेट पहचानकर्ता",
+    "request_identifier": "अनुरोध पहचानकर्ता",
+    "set_authority": "सेट प्राधिकरण",
+    "users": "उपयोगकर्ता",
+    "create_account_color": "रंग बनाने",
+    "assign_account_color": "रंग प्रदान"
   },
   "filter": {
     "filter": "फ़िल्टर",
@@ -375,7 +399,11 @@
       "0": "{{sender}} सेट namespaced उर्फ {{aliasName}} को {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} कहते हैं {{recipient}} को {{assetName}} अनुमत खातों {{details}} {{message}}",
       "2": "{{sender}} हटाया {{recipient}} से {{assetName}} अनुमत खातों {{details}} {{message}}",
-      "3": "{{sender}} सेट {{assetName}} आदेश शुल्क {{orderFee}} % व्यापार शुल्क {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} सेट {{assetName}} आदेश शुल्क {{orderFee}} % व्यापार शुल्क {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} asigned खाता पहचानकर्ता {{identifier}} को {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} निर्मित {{recipient}} के लिए एक सत्यापन अधिकार {{period}} ब्लॉकों {{details}} {{message}}",
+      "6": "{{sender}} निर्मित खाते रंग {{name}} {{details}} {{message}}",
+      "7": "{{sender}} सौंपा खाते रंग {{color}} को {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

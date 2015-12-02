@@ -300,7 +300,31 @@
     "decrypt_message": "Децрипт Мессаге",
     "no_messages": "Нема порука за дешифровање",
     "confirm_delivery": "Потврди Испорука",
-    "marketplace": "Тржиште"
+    "marketplace": "Тржиште",
+    "issue_asset": "Издање имовине",
+    "transfer_asset": "Пренос имовине",
+    "place_buy_order": "Поставите Налог за куповину",
+    "place_sell_order": "Место Налог за продају",
+    "add_private": "Додај Приватна",
+    "remove_private": "Уклоните Приватна",
+    "private_fee": "Приватна Накнада",
+    "set_alias": "Сет Алиас",
+    "namespaced_alias": "Намеспацед Алиас",
+    "delete_alias": "Делете Алиас",
+    "sell_alias": "Продаја Алиас",
+    "buy_alias_a": "Купи Алиас",
+    "transfer_alias": "Трансфер Алиас",
+    "start_forging": "Почетак ковање",
+    "stop_forging": "Заустави ковање",
+    "lease_balance": "Закуп Стање",
+    "view_listing": "Погледај Оглас",
+    "set_account_info": "Сет Аццоунт Инфо",
+    "set_identifier": "Сет Идентифиер",
+    "request_identifier": "Упит идентификатор",
+    "set_authority": "Комплет орган",
+    "users": "Корисници",
+    "create_account_color": "Цреате Цолор",
+    "assign_account_color": "Додела Цолор"
   },
   "filter": {
     "filter": "Филтер",
@@ -375,7 +399,11 @@
       "0": "{{sender}} сет намеспацед алиас {{aliasName}} на {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} додаје {{recipient}} у {{assetName}} дозвољена рачуни {{details}} {{message}}",
       "2": "{{sender}} уклоњена {{recipient}} од {{assetName}} дозвољена рачуни {{details}} {{message}}",
-      "3": "{{sender}} комплет {{assetName}} ред такса {{orderFee}} % Трговини накнада {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} комплет {{assetName}} ред такса {{orderFee}} % Трговини накнада {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} идентификатор асигнед рачун {{identifier}} у {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} направљен {{recipient}} верификација орган за {{period}} блокови {{details}} {{message}}",
+      "6": "{{sender}} створена у боји рачун {{name}} {{details}} {{message}}",
+      "7": "{{sender}} добио боја рачун {{color}} у {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

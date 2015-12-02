@@ -300,7 +300,31 @@
     "decrypt_message": "বার্তা ডিক্রিপ্ট",
     "no_messages": "কোন বার্তা ডিক্রিপ্ট করা",
     "confirm_delivery": "ডেলিভারি নিশ্চিত",
-    "marketplace": "পসার"
+    "marketplace": "পসার",
+    "issue_asset": "ইস্যু অ্যাসেট",
+    "transfer_asset": "স্থানান্তর সম্পদ",
+    "place_buy_order": "এখনই অর্ডার রাখুন",
+    "place_sell_order": "প্লেস বিক্রয় আদেশ",
+    "add_private": "ব্যক্তিগত করো",
+    "remove_private": "ব্যক্তিগত সরান",
+    "private_fee": "বেসরকারী ফি",
+    "set_alias": "উপনাম সেট",
+    "namespaced_alias": "Namespaced উপনাম",
+    "delete_alias": "উপনাম মুছে",
+    "sell_alias": "উপনাম বিক্রি",
+    "buy_alias_a": "এখনই উপনাম",
+    "transfer_alias": "উপনাম স্থানান্তর",
+    "start_forging": "স্টার্ট কামারশালা",
+    "stop_forging": "বন্ধ করুন কামারশালা",
+    "lease_balance": "লিজের ব্যালেন্স",
+    "view_listing": "দেখুন তালিকাতে",
+    "set_account_info": "অ্যাকাউন্টের তথ্য সেট",
+    "set_identifier": "সেট আইডেন্টিফায়ার",
+    "request_identifier": "অনুরোধ আইডেন্টিফাইয়ার",
+    "set_authority": "সেট কর্তৃপক্ষ",
+    "users": "ব্যবহারকারী",
+    "create_account_color": "রঙ তৈরি",
+    "assign_account_color": "রঙ ধার্য"
   },
   "filter": {
     "filter": "ফিল্টার",
@@ -375,7 +399,11 @@
       "0": "{{sender}} সেট namespaced ওরফে {{aliasName}} থেকে {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} যোগ {{recipient}} থেকে {{assetName}} অনুমতি অ্যাকাউন্ট {{details}} {{message}}",
       "2": "{{sender}} অপসারিত {{recipient}} থেকে {{assetName}} অনুমতি অ্যাকাউন্ট {{details}} {{message}}",
-      "3": "{{sender}} সেট {{assetName}} যাতে ফি {{orderFee}} % বিনিময় হার {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} সেট {{assetName}} যাতে ফি {{orderFee}} % বিনিময় হার {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} asigned অ্যাকাউন্ট শনাক্তকারী {{identifier}} থেকে {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} প্রণীত {{recipient}} জন্য একটি যাচাইকরণ কর্তৃপক্ষ {{period}} ব্লক {{details}} {{message}}",
+      "6": "{{sender}} তৈরি করা অ্যাকাউন্টের রঙ {{name}} {{details}} {{message}}",
+      "7": "{{sender}} নির্ধারিত অ্যাকাউন্ট রঙ {{color}} থেকে {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

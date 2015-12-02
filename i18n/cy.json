@@ -300,7 +300,31 @@
     "decrypt_message": "Dadgryptio Neges",
     "no_messages": "Dim negeseuon i dadgryptio",
     "confirm_delivery": "Cadarnhau Cyflenwi",
-    "marketplace": "Marchnad"
+    "marketplace": "Marchnad",
+    "issue_asset": "Asedau Cyhoeddi",
+    "transfer_asset": "Asset Trosglwyddo",
+    "place_buy_order": "Rhowch Gorchymyn Prynu",
+    "place_sell_order": "Gorchymyn Gwerthu Place",
+    "add_private": "Ychwanegu Preifat",
+    "remove_private": "Tynnu Preifat",
+    "private_fee": "Ffi Preifat",
+    "set_alias": "Gosod Alias",
+    "namespaced_alias": "Namespaced Alias",
+    "delete_alias": "Dileu Alias",
+    "sell_alias": "Gwerthu Alias",
+    "buy_alias_a": "Prynu Alias",
+    "transfer_alias": "Trosglwyddo Alias",
+    "start_forging": "Dechrau Bwrw",
+    "stop_forging": "Stop Bwrw",
+    "lease_balance": "Balans Prydles",
+    "view_listing": "View Listing",
+    "set_account_info": "Gosod Info Cyfrif",
+    "set_identifier": "Dynodwr Set",
+    "request_identifier": "Cais Dynodwr",
+    "set_authority": "Awdurdod Set",
+    "users": "Defnyddwyr",
+    "create_account_color": "Creu Lliw",
+    "assign_account_color": "Neilltuo Lliw"
   },
   "filter": {
     "filter": "Hidlo",
@@ -375,7 +399,11 @@
       "0": "{{sender}} set namespaced alias {{aliasName}} i {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} ychwanegu {{recipient}} i {{assetName}} cyfrifon a ganiateir {{details}} {{message}}",
       "2": "{{sender}} tynnu {{recipient}} o {{assetName}} cyfrifon a ganiateir {{details}} {{message}}",
-      "3": "{{sender}} set {{assetName}} Ffi gorchymyn {{orderFee}} % Ffi fasnach {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} set {{assetName}} Ffi gorchymyn {{orderFee}} % Ffi fasnach {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} dynodwr cyfrif asigned {{identifier}} i {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} gwneud {{recipient}} awdurdod dilysu ar gyfer {{period}} blociau {{details}} {{message}}",
+      "6": "{{sender}} Lliw cyfrif a grëwyd {{name}} {{details}} {{message}}",
+      "7": "{{sender}} Lliw cyfrif neilltuo {{color}} i {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

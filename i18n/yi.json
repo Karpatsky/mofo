@@ -300,7 +300,31 @@
     "decrypt_message": "דעקריפּט אַרטיקל",
     "no_messages": "קיין אַרטיקלען צו דעקריפּט",
     "confirm_delivery": "באַשטעטיקן עקספּרעס",
-    "marketplace": "מאַרק"
+    "marketplace": "מאַרק",
+    "issue_asset": "ישו אַססעט",
+    "transfer_asset": "אַריבערפירן אַססעט",
+    "place_buy_order": "אָרט Buy סדר",
+    "place_sell_order": "אָרט סעל סדר",
+    "add_private": "לייג צו פּריוואַט",
+    "remove_private": "אַראָפּנעמען פּריוואַט",
+    "private_fee": "פּריוואַט אָפּצאָל",
+    "set_alias": "באַשטעטיקט אַליאַס",
+    "namespaced_alias": "נאַמעספּאַסעד אַליאַס",
+    "delete_alias": "דיליט אַליאַס",
+    "sell_alias": "פאַרקויפן אַליאַס",
+    "buy_alias_a": "קויפן אַליאַס",
+    "transfer_alias": "אַריבערפירן אַליאַס",
+    "start_forging": "אָנהייב פאָרגינג",
+    "stop_forging": "האַלטן פאָרגינג",
+    "lease_balance": "דינגען באַלאַנס",
+    "view_listing": "View ליסטינג",
+    "set_account_info": "באַשטעטיקט אַקאַונט אינפֿאָרמאַציע",
+    "set_identifier": "באַשטעטיקט identifier",
+    "request_identifier": "בעטן identifier",
+    "set_authority": "שטעלן אויטאָריטעט",
+    "users": "ניצערס",
+    "create_account_color": "שאַפֿן קאָליר",
+    "assign_account_color": "באַשטימען קאָליר"
   },
   "filter": {
     "filter": "פילטער",
@@ -375,7 +399,11 @@
       "0": "{{sender}} שטעלן נאַמעספּאַסעד אַליאַס {{aliasName}} צו {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} אַדז {{recipient}} צו {{assetName}} ערלויבט אַקאַונץ {{details}} {{message}}",
       "2": "{{sender}} אַוועקגענומען {{recipient}} פון {{assetName}} ערלויבט אַקאַונץ {{details}} {{message}}",
-      "3": "{{sender}} שטעלן {{assetName}} סדר אָפּצאָל {{orderFee}} % האַנדל אָפּצאָל {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} שטעלן {{assetName}} סדר אָפּצאָל {{orderFee}} % האַנדל אָפּצאָל {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} אַסיגנעד חשבון identifier {{identifier}} צו {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} געמאכט {{recipient}} אַ verification אויטאָריטעט פֿאַר {{period}} בלאַקס {{details}} {{message}}",
+      "6": "{{sender}} Created חשבון קאָליר {{name}} {{details}} {{message}}",
+      "7": "{{sender}} אַסיינד חשבון קאָליר {{color}} צו {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

@@ -300,7 +300,31 @@
     "decrypt_message": "Расшифровать сообщение",
     "no_messages": "Нет сообщений для Расшифровать",
     "confirm_delivery": "Подтвердите Доставка",
-    "marketplace": "Базарная площадь"
+    "marketplace": "Базарная площадь",
+    "issue_asset": "Выпуск активами",
+    "transfer_asset": "Передача активов",
+    "place_buy_order": "Поместите Buy Order",
+    "place_sell_order": "Место Продам Заказать",
+    "add_private": "Добавить частные",
+    "remove_private": "Удалить Личное",
+    "private_fee": "Личное Плата",
+    "set_alias": "Установите псевдоним",
+    "namespaced_alias": "Псевдоним пространствами имен",
+    "delete_alias": "Удалить псевдоним",
+    "sell_alias": "Продам псевдоним",
+    "buy_alias_a": "Купить Псевдоним",
+    "transfer_alias": "Перевести псевдоним",
+    "start_forging": "Начало Ковка",
+    "stop_forging": "Стоп Ковка",
+    "lease_balance": "Аренда Баланс",
+    "view_listing": "Просмотреть",
+    "set_account_info": "Установите регистрационные данные",
+    "set_identifier": "Идентификатор",
+    "request_identifier": "Запрос Идентификатор",
+    "set_authority": "Набор орган",
+    "users": "Пользователи",
+    "create_account_color": "Создать цвет",
+    "assign_account_color": "Связать цвет"
   },
   "filter": {
     "filter": "Фильтр",
@@ -375,7 +399,11 @@
       "0": "{{sender}} Набор в пространстве имен псевдоним {{aliasName}} для {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} добавляет {{recipient}} в {{assetName}} позволили счета {{details}} {{message}}",
       "2": "{{sender}} удалить {{recipient}} от {{assetName}} позволили счета {{details}} {{message}}",
-      "3": "{{sender}} набор {{assetName}} Плата за заказ {{orderFee}} % Взнос торговля {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} набор {{assetName}} Плата за заказ {{orderFee}} % Взнос торговля {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} asigned идентификатор учетной записи {{identifier}} для {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} сделал {{recipient}} верификация орган для {{period}} блоки {{details}} {{message}}",
+      "6": "{{sender}} создано цвет счет {{name}} {{details}} {{message}}",
+      "7": "{{sender}} другой цвет счет {{color}} для {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

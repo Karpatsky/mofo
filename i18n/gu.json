@@ -300,7 +300,31 @@
     "decrypt_message": "ડિક્રિપ્ટ સંદેશ",
     "no_messages": "કોઈ ડિક્રિપ્ટ સંદેશાઓ માટે",
     "confirm_delivery": "ડ લવર ખાતરી",
-    "marketplace": "માર્કેટપ્લેસ"
+    "marketplace": "માર્કેટપ્લેસ",
+    "issue_asset": "ઇશ્યૂ એસેટ",
+    "transfer_asset": "ટ્રાન્સફર એસેટ",
+    "place_buy_order": "ખરીદો ઓર્ડર મૂકો",
+    "place_sell_order": "પ્લેસ વેચાણ ઓર્ડર",
+    "add_private": "ખાનગી ઉમેરો",
+    "remove_private": "ખાનગી દૂર",
+    "private_fee": "ખાનગી ફી",
+    "set_alias": "ઉપનામ સેટ",
+    "namespaced_alias": "Namespaced ઉપનામ",
+    "delete_alias": "ઉપનામ કાઢી નાખો",
+    "sell_alias": "ઉપનામ વેચાણ",
+    "buy_alias_a": "ખરીદો ઉપનામ",
+    "transfer_alias": "ઉપનામ પરિવહન",
+    "start_forging": "પ્રારંભ ફોર્જિંગ",
+    "stop_forging": "સ્ટોપ ફોર્જિંગ",
+    "lease_balance": "લીઝ બેલેન્સ",
+    "view_listing": "જુઓ યાદી",
+    "set_account_info": "એકાઉન્ટ માહિતી આપેલ છે",
+    "set_identifier": "સેટ ઓળખકર્તા",
+    "request_identifier": "વિનંતી આઇડેન્ટિફાયર",
+    "set_authority": "સેટ ઓથોરિટી",
+    "users": "વપરાશકર્તાઓ",
+    "create_account_color": "રંગ બનાવી",
+    "assign_account_color": "રંગ સોંપી"
   },
   "filter": {
     "filter": "ફિલ્ટર",
@@ -375,7 +399,11 @@
       "0": "{{sender}} સમૂહ namespaced ઉર્ફે {{aliasName}} માટે {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} ઉમેરે છે {{recipient}} માટે {{assetName}} મંજૂરી એકાઉન્ટ્સ {{details}} {{message}}",
       "2": "{{sender}} દૂર {{recipient}} થી {{assetName}} મંજૂરી એકાઉન્ટ્સ {{details}} {{message}}",
-      "3": "{{sender}} સમૂહ {{assetName}} ક્રમમાં ફી {{orderFee}} % વેપાર ફી {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} સમૂહ {{assetName}} ક્રમમાં ફી {{orderFee}} % વેપાર ફી {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} asigned એકાઉન્ટ ઓળખકર્તા {{identifier}} માટે {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} કરવામાં {{recipient}} માટે ચકાસણી સત્તા {{period}} બ્લોક્સ {{details}} {{message}}",
+      "6": "{{sender}} બનાવેલ એકાઉન્ટ રંગ {{name}} {{details}} {{message}}",
+      "7": "{{sender}} સોંપેલ એકાઉન્ટ રંગ {{color}} માટે {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

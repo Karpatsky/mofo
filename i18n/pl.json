@@ -300,7 +300,31 @@
     "decrypt_message": "Odszyfrować wiadomość",
     "no_messages": "Brak wiadomości na Deszyfruj",
     "confirm_delivery": "Potwierdź Dostawa",
-    "marketplace": "Plac targowy"
+    "marketplace": "Plac targowy",
+    "issue_asset": "Aktywów Wydanie",
+    "transfer_asset": "Przeniesienie aktywów",
+    "place_buy_order": "Złóż zlecenie Buy",
+    "place_sell_order": "Miejsce Sprzedam Zamówienie",
+    "add_private": "Dodaj prywatna",
+    "remove_private": "Usuń prywatne",
+    "private_fee": "Prywatne Opłata",
+    "set_alias": "Ustaw Alias",
+    "namespaced_alias": "Przestrzeni nazw Alias",
+    "delete_alias": "Usuń Alias",
+    "sell_alias": "Sprzedam Alias",
+    "buy_alias_a": "Kup Alias",
+    "transfer_alias": "Przejazd Alias",
+    "start_forging": "Rozpocznij Kucie",
+    "stop_forging": "Zatrzymaj Kucie",
+    "lease_balance": "Bilans najmu",
+    "view_listing": "Zobacz Wpis",
+    "set_account_info": "Ustaw informacje o koncie",
+    "set_identifier": "Set Identifier",
+    "request_identifier": "Zapytanie Identyfikator",
+    "set_authority": "Ustaw Urząd",
+    "users": "Użytkownicy",
+    "create_account_color": "Tworzenie Kolor",
+    "assign_account_color": "Przypisywanie Kolor"
   },
   "filter": {
     "filter": "Filtr",
@@ -375,7 +399,11 @@
       "0": "{{sender}} ustaw alias przestrzeni nazw {{aliasName}} na {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} dodaje {{recipient}} do {{assetName}} domowe rachunki {{details}} {{message}}",
       "2": "{{sender}} usunięte {{recipient}} od {{assetName}} domowe rachunki {{details}} {{message}}",
-      "3": "{{sender}} zestaw {{assetName}} Opłata za zamówienie {{orderFee}} % Opłaty handlowej {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} zestaw {{assetName}} Opłata za zamówienie {{orderFee}} % Opłaty handlowej {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} asigned identyfikator konta {{identifier}} do {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} zrobiony {{recipient}} organ weryfikacja {{period}} Bloki {{details}} {{message}}",
+      "6": "{{sender}} stworzył kolor konto {{name}} {{details}} {{message}}",
+      "7": "{{sender}} przypisany kolor konto {{color}} do {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

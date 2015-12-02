@@ -300,7 +300,31 @@
     "decrypt_message": "Bericht decoderen",
     "no_messages": "Geen berichten te decoderen",
     "confirm_delivery": "Bevestig Delivery",
-    "marketplace": "Marktplaats"
+    "marketplace": "Marktplaats",
+    "issue_asset": "Kwestie Asset",
+    "transfer_asset": "Transfer Asset",
+    "place_buy_order": "Plaats kopen Bestel",
+    "place_sell_order": "Plaats verkooporder",
+    "add_private": "Voeg Private",
+    "remove_private": "Verwijder Private",
+    "private_fee": "Private Fee",
+    "set_alias": "Stel Alias",
+    "namespaced_alias": "Naamruimten Alias",
+    "delete_alias": "Delete Alias",
+    "sell_alias": "Verkopen Alias",
+    "buy_alias_a": "Kopen Alias",
+    "transfer_alias": "Transfer Alias",
+    "start_forging": "Start Smeden",
+    "stop_forging": "Stop Smeden",
+    "lease_balance": "Lease Balance",
+    "view_listing": "Bekijk link",
+    "set_account_info": "Set Account Info",
+    "set_identifier": "Set Identifier",
+    "request_identifier": "Verzoek Identifier",
+    "set_authority": "Set Autoriteit",
+    "users": "Gebruikers",
+    "create_account_color": "Maak Color",
+    "assign_account_color": "Toewijzen Color"
   },
   "filter": {
     "filter": "Filter",
@@ -375,7 +399,11 @@
       "0": "{{sender}} set naamruimten alias {{aliasName}} om het {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} voegt {{recipient}} naar {{assetName}} toegestaan ​​accounts {{details}} {{message}}",
       "2": "{{sender}} verwijderd {{recipient}} van {{assetName}} toegestaan ​​accounts {{details}} {{message}}",
-      "3": "{{sender}} reeks {{assetName}} Om vergoeding {{orderFee}} % Handel fee {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} reeks {{assetName}} Om vergoeding {{orderFee}} % Handel fee {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} worden gerelateerd rekening identifier {{identifier}} naar {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} gemaakt {{recipient}} een verificatie-autoriteit {{period}} blokken {{details}} {{message}}",
+      "6": "{{sender}} gemaakte account kleur {{name}} {{details}} {{message}}",
+      "7": "{{sender}} toegewezen rekening kleur {{color}} naar {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

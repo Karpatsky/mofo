@@ -300,7 +300,31 @@
     "decrypt_message": "Декриптирање на пораката",
     "no_messages": "Нема пораки за декриптирање",
     "confirm_delivery": "Потврди испорака",
-    "marketplace": "Пазар"
+    "marketplace": "Пазар",
+    "issue_asset": "Асет прашање",
+    "transfer_asset": "Пренос на средствата;",
+    "place_buy_order": "Место Купи нарачка",
+    "place_sell_order": "Место продаде цел",
+    "add_private": "Додади Приватен",
+    "remove_private": "Извадете Приватен",
+    "private_fee": "Приватни Провизија",
+    "set_alias": "Постави Алијас",
+    "namespaced_alias": "Namespaced Алијас",
+    "delete_alias": "Избришете Алијас",
+    "sell_alias": "Продаде Алијас",
+    "buy_alias_a": "Купи Алијас",
+    "transfer_alias": "Алијас префрлите",
+    "start_forging": "Започни Ковање",
+    "stop_forging": "Стоп Ковање",
+    "lease_balance": "Закуп Биланс",
+    "view_listing": "Поглед на оглас",
+    "set_account_info": "Поставени на информации за сметката",
+    "set_identifier": "Идентификатор за поставена",
+    "request_identifier": "Барање Идентификатор",
+    "set_authority": "Сет орган",
+    "users": "Корисници",
+    "create_account_color": "Создаде боја",
+    "assign_account_color": "Доделите Боја"
   },
   "filter": {
     "filter": "Филтер",
@@ -375,7 +399,11 @@
       "0": "{{sender}} сет namespaced алијас {{aliasName}} на {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} додава {{recipient}} да {{assetName}} дозволено сметки {{details}} {{message}}",
       "2": "{{sender}} отстранети {{recipient}} од {{assetName}} дозволено сметки {{details}} {{message}}",
-      "3": "{{sender}} сет {{assetName}} со цел плаќање {{orderFee}} % На трговијата плаќање {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} сет {{assetName}} со цел плаќање {{orderFee}} % На трговијата плаќање {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} Идентификатор asigned сметка {{identifier}} до {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} направени {{recipient}} орган за верификација {{period}} блокови {{details}} {{message}}",
+      "6": "{{sender}} создадена боја сметка {{name}} {{details}} {{message}}",
+      "7": "{{sender}} доделени боја сметка {{color}} до {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

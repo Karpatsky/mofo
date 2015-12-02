@@ -300,7 +300,31 @@
     "decrypt_message": "Nuntius minutum",
     "no_messages": "Non Nuntius ut Decrypt",
     "confirm_delivery": "Confirm Delivery",
-    "marketplace": "Marketplace"
+    "marketplace": "Marketplace",
+    "issue_asset": "Issue Asset",
+    "transfer_asset": "Transfer Asset",
+    "place_buy_order": "Pone Buy Order",
+    "place_sell_order": "Sell ​​loco Order",
+    "add_private": "Add Private",
+    "remove_private": "Remove Private",
+    "private_fee": "Private Fee",
+    "set_alias": "Set Alias",
+    "namespaced_alias": "Alias ​​namespaced",
+    "delete_alias": "Alias ​​delete",
+    "sell_alias": "Sell ​​Alias",
+    "buy_alias_a": "Buy Alias",
+    "transfer_alias": "Transferrent Alias",
+    "start_forging": "Start Forging",
+    "stop_forging": "Statur Forging",
+    "lease_balance": "Locationis Libra",
+    "view_listing": "View Listing",
+    "set_account_info": "Set Account Info",
+    "set_identifier": "Set Identifier",
+    "request_identifier": "Request Identifier",
+    "set_authority": "Set Auctoritate",
+    "users": "Users",
+    "create_account_color": "Create Color",
+    "assign_account_color": "Color assignare"
   },
   "filter": {
     "filter": "Filter",
@@ -375,7 +399,11 @@
       "0": "{{sender}} set alias namespaced {{aliasName}} ad {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} adds {{recipient}} ad {{assetName}} liceat rationibus {{details}} {{message}}",
       "2": "{{sender}} removed {{recipient}} a {{assetName}} liceat rationibus {{details}} {{message}}",
-      "3": "{{sender}} set {{assetName}} order fee {{orderFee}} % Fee trade {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} set {{assetName}} order fee {{orderFee}} % Fee trade {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} asigned propter identifier {{identifier}} ad {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} fecit {{recipient}} potestatem enim a verificationem {{period}} Stipitibus {{details}} {{message}}",
+      "6": "{{sender}} creata propter colorem {{name}} {{details}} {{message}}",
+      "7": "{{sender}} assignari propter colorem {{color}} ad {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

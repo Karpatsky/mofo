@@ -300,7 +300,31 @@
     "decrypt_message": "לפענח הודעות",
     "no_messages": "אין הודעות לפענוח",
     "confirm_delivery": "לאשר משלוח",
-    "marketplace": "שוק"
+    "marketplace": "שוק",
+    "issue_asset": "נכס נושא",
+    "transfer_asset": "העברת נכסים",
+    "place_buy_order": "הנח לקניה להזמין",
+    "place_sell_order": "להזמין אמכור מקום",
+    "add_private": "להוסיף פרטי",
+    "remove_private": "הסר פרטי",
+    "private_fee": "דמי פרטיים",
+    "set_alias": "להגדיר כינוי",
+    "namespaced_alias": "Namespaced כינוי",
+    "delete_alias": "מחיקת כינוי",
+    "sell_alias": "למכור כינוי",
+    "buy_alias_a": "אמכור כינוי",
+    "transfer_alias": "העבר את הכינוי",
+    "start_forging": "התחל חישול",
+    "stop_forging": "תחנת חישול",
+    "lease_balance": "חכירה מאזן",
+    "view_listing": "צפה ברשימה",
+    "set_account_info": "להגדיר פרטי חשבון",
+    "set_identifier": "מזהה ערכה",
+    "request_identifier": "מזהה בקשה",
+    "set_authority": "סט רשות",
+    "users": "משתמשים",
+    "create_account_color": "צור צבע",
+    "assign_account_color": "להקצות צבע"
   },
   "filter": {
     "filter": "מסנן",
@@ -375,7 +399,11 @@
       "0": "{{sender}} כינוי סט namespaced {{aliasName}} ל {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} מוסיף {{recipient}} ל {{assetName}} חשבונות אפשרו {{details}} {{message}}",
       "2": "{{sender}} הוסר {{recipient}} מ {{assetName}} חשבונות אפשרו {{details}} {{message}}",
-      "3": "{{sender}} סט {{assetName}} תשלום על מנת {{orderFee}} % דמי סחר {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} סט {{assetName}} תשלום על מנת {{orderFee}} % דמי סחר {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} מזהה חשבון asigned {{identifier}} ל {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} עָשׂוּי {{recipient}} סמכות אימות ל {{period}} בלוקים {{details}} {{message}}",
+      "6": "{{sender}} צבע חשבון שנוצר {{name}} {{details}} {{message}}",
+      "7": "{{sender}} צבע חשבון שהוקצה {{color}} ל {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

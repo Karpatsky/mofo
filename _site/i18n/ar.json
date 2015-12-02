@@ -300,7 +300,31 @@
     "decrypt_message": "فك تشفير رسالة",
     "no_messages": "لا رسائل فك تشفير",
     "confirm_delivery": "تأكيد التسليم",
-    "marketplace": "السوق"
+    "marketplace": "السوق",
+    "issue_asset": "الأصول القضية",
+    "transfer_asset": "نقل الأصول",
+    "place_buy_order": "وضع أمر الشراء",
+    "place_sell_order": "مكان بيع ترتيب",
+    "add_private": "إضافة الخاصة",
+    "remove_private": "إزالة الخاصة",
+    "private_fee": "رسوم الخاص",
+    "set_alias": "تعيين الاسم المستعار",
+    "namespaced_alias": "Namespaced الاسم المستعار",
+    "delete_alias": "حذف الاسم المستعار",
+    "sell_alias": "بيع الاسم المستعار",
+    "buy_alias_a": "شراء الاسم المستعار",
+    "transfer_alias": "نقل الاسم المستعار",
+    "start_forging": "بداية تزوير",
+    "stop_forging": "وقف تزوير",
+    "lease_balance": "الإيجار الميزان",
+    "view_listing": "عرض الموقع",
+    "set_account_info": "تعيين معلومات الحساب",
+    "set_identifier": "معرف مجموعة",
+    "request_identifier": "طلب معرف",
+    "set_authority": "السلطة مجموعة",
+    "users": "المستخدمين",
+    "create_account_color": "إنشاء اللون",
+    "assign_account_color": "تعيين اللون"
   },
   "filter": {
     "filter": "فلتر",
@@ -375,7 +399,11 @@
       "0": "{{sender}} مجموعة namespaced الاسم المستعار {{aliasName}} إلى {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} ويضيف {{recipient}} إلى {{assetName}} حسابات سمح {{details}} {{message}}",
       "2": "{{sender}} إزالة {{recipient}} من {{assetName}} حسابات سمح {{details}} {{message}}",
-      "3": "{{sender}} مجموعة {{assetName}} رسوم أجل {{orderFee}} ٪ رسوم التجارة {{tradeFee}} ٪ {{details}} {{message}}"
+      "3": "{{sender}} مجموعة {{assetName}} رسوم أجل {{orderFee}} ٪ رسوم التجارة {{tradeFee}} ٪ {{details}} {{message}}",
+      "4": "{{sender}} معرف حساب asigned {{identifier}} إلى {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} صنع {{recipient}} سلطة التحقق ل {{period}} كتل {{details}} {{message}}",
+      "6": "{{sender}} خلق لون الحساب {{name}} {{details}} {{message}}",
+      "7": "{{sender}} تعيين لون الحساب {{color}} إلى {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

@@ -300,7 +300,31 @@
     "decrypt_message": "Розшифрувати повідомлення",
     "no_messages": "Немає повідомлень для Розшифрувати",
     "confirm_delivery": "Підтвердіть Доставка",
-    "marketplace": "Базарна площа"
+    "marketplace": "Базарна площа",
+    "issue_asset": "Випуск активами",
+    "transfer_asset": "Передача активів",
+    "place_buy_order": "Помістіть Buy Order",
+    "place_sell_order": "Місце Продам Замовити",
+    "add_private": "Додати приватні",
+    "remove_private": "Видалити Приватне",
+    "private_fee": "Приватне Плата",
+    "set_alias": "Встановіть псевдонім",
+    "namespaced_alias": "Псевдонім просторами імен",
+    "delete_alias": "Видалити псевдонім",
+    "sell_alias": "Продам псевдонім",
+    "buy_alias_a": "Купити Псевдонім",
+    "transfer_alias": "Провести псевдонім",
+    "start_forging": "Початок Кування",
+    "stop_forging": "Стоп Кування",
+    "lease_balance": "Оренда Баланс",
+    "view_listing": "Переглянути",
+    "set_account_info": "Встановіть реєстраційні дані",
+    "set_identifier": "Ідентифікатор",
+    "request_identifier": "Запит Ідентифікатор",
+    "set_authority": "Набір орган",
+    "users": "Користувачі",
+    "create_account_color": "Створити колір",
+    "assign_account_color": "Зв'язати колір"
   },
   "filter": {
     "filter": "Фільтр",
@@ -375,7 +399,11 @@
       "0": "{{sender}} Набір в просторі імен псевдонім {{aliasName}} для {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} додає {{recipient}} в {{assetName}} дозволили рахунки {{details}} {{message}}",
       "2": "{{sender}} видалити {{recipient}} від {{assetName}} дозволили рахунки {{details}} {{message}}",
-      "3": "{{sender}} набір {{assetName}} Плата за замовлення {{orderFee}} % Внесок торгівля {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} набір {{assetName}} Плата за замовлення {{orderFee}} % Внесок торгівля {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} asigned ідентифікатор облікового запису {{identifier}} для {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} зроблений {{recipient}} верифікація орган для {{period}} блоки {{details}} {{message}}",
+      "6": "{{sender}} створено колір рахунок {{name}} {{details}} {{message}}",
+      "7": "{{sender}} інший колір рахунок {{color}} для {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

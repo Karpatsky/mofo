@@ -300,7 +300,31 @@
     "decrypt_message": "解密信息",
     "no_messages": "沒有消息解密",
     "confirm_delivery": "確認發貨",
-    "marketplace": "市井"
+    "marketplace": "市井",
+    "issue_asset": "問題資產",
+    "transfer_asset": "轉讓資產",
+    "place_buy_order": "將採購訂單",
+    "place_sell_order": "將銷售訂單",
+    "add_private": "添加私人",
+    "remove_private": "刪除私人",
+    "private_fee": "私人費",
+    "set_alias": "設置別名",
+    "namespaced_alias": "命名空間的別名",
+    "delete_alias": "刪除別名",
+    "sell_alias": "賣別名",
+    "buy_alias_a": "購買別名",
+    "transfer_alias": "轉移別名",
+    "start_forging": "開始鍛造",
+    "stop_forging": "停止鍛造",
+    "lease_balance": "租賃餘額",
+    "view_listing": "查看清單",
+    "set_account_info": "設置帳戶信息",
+    "set_identifier": "集標識符",
+    "request_identifier": "請求標識符",
+    "set_authority": "集管理局",
+    "users": "用戶",
+    "create_account_color": "創建顏色",
+    "assign_account_color": "指定顏色"
   },
   "filter": {
     "filter": "過濾器",
@@ -375,7 +399,11 @@
       "0": "{{sender}}集命名空間別名{{aliasName}}到{{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}}增加{{recipient}}至{{assetName}}允許賬戶{{details}} {{message}}",
       "2": "{{sender}}移除{{recipient}}從{{assetName}}允許賬戶{{details}} {{message}}",
-      "3": "{{sender}}集{{assetName}}為了費{{orderFee}} ％貿易費用{{tradeFee}} ％ {{details}} {{message}}"
+      "3": "{{sender}}集{{assetName}}為了費{{orderFee}} ％貿易費用{{tradeFee}} ％ {{details}} {{message}}",
+      "4": "{{sender}} asigned賬戶標識符{{identifier}}至{{recipient}} {{details}} {{message}}",
+      "5": "{{sender}}發{{recipient}}驗證權限{{period}}塊{{details}} {{message}}",
+      "6": "{{sender}}創建的帳戶顏色{{name}} {{details}} {{message}}",
+      "7": "{{sender}}指定賬戶顏色{{color}}至{{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

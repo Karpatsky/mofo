@@ -300,7 +300,31 @@
     "decrypt_message": "Visszafejteni üzenet",
     "no_messages": "Nincs üzenet dekódolásához",
     "confirm_delivery": "Erősítse Szállítás",
-    "marketplace": "Piactér"
+    "marketplace": "Piactér",
+    "issue_asset": "Füzet Asset",
+    "transfer_asset": "Transzfer Asset",
+    "place_buy_order": "Vidd vételi megbízás",
+    "place_sell_order": "Hely eladási megbízás",
+    "add_private": "Add Egyéni",
+    "remove_private": "Távolítsuk Egyéni",
+    "private_fee": "Privát díj",
+    "set_alias": "Állítsa Alias",
+    "namespaced_alias": "Névtér Alias",
+    "delete_alias": "Törlés Alias",
+    "sell_alias": "Eladjuk Alias",
+    "buy_alias_a": "Vásárlás Alias",
+    "transfer_alias": "Transzfer Alias",
+    "start_forging": "Indítás Kovácsolás",
+    "stop_forging": "Állj Kovácsolás",
+    "lease_balance": "Bérlet Balance",
+    "view_listing": "Jegyzék megtekintése",
+    "set_account_info": "Állítsa Account Info",
+    "set_identifier": "Set Identifier",
+    "request_identifier": "Kérjen Azonosító",
+    "set_authority": "Set Hatóság",
+    "users": "Felhasználók",
+    "create_account_color": "Hozzon létre Szín",
+    "assign_account_color": "Rendeljen Szín"
   },
   "filter": {
     "filter": "Szűrő",
@@ -375,7 +399,11 @@
       "0": "{{sender}} set névtér alias {{aliasName}} hogy {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} Hozzáteszi {{recipient}} hogy {{assetName}} megengedett számlák {{details}} {{message}}",
       "2": "{{sender}} eltávolított {{recipient}} -tól {{assetName}} megengedett számlák {{details}} {{message}}",
-      "3": "{{sender}} készlet {{assetName}} érdekében díj {{orderFee}} % Kereskedelmet díj {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} készlet {{assetName}} érdekében díj {{orderFee}} % Kereskedelmet díj {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} asigned számla azonosítója {{identifier}} nak nek {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} készült {{recipient}} ellenőrző hatóság {{period}} blokkok {{details}} {{message}}",
+      "6": "{{sender}} létrehozott fiókot szín {{name}} {{details}} {{message}}",
+      "7": "{{sender}} rendelt fiók színe {{color}} nak nek {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

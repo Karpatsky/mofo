@@ -300,7 +300,31 @@
     "decrypt_message": "Decrypt mesaj",
     "no_messages": "No şifresini həll messages üçün",
     "confirm_delivery": "Çatdırılma təsdiq",
-    "marketplace": "Marketplace"
+    "marketplace": "Marketplace",
+    "issue_asset": "Issue Asset",
+    "transfer_asset": "Transfer Asset",
+    "place_buy_order": "Almaq sifariş",
+    "place_sell_order": "Place Satış Sifariş",
+    "add_private": "Private əlavə",
+    "remove_private": "Şəxsi aradan qaldırılması",
+    "private_fee": "Şəxsi haqqı",
+    "set_alias": "Ləqəb Set",
+    "namespaced_alias": "Namespaced Alias",
+    "delete_alias": "Ləqəb sil",
+    "sell_alias": "Ləqəb Satış",
+    "buy_alias_a": "Almaq Alias",
+    "transfer_alias": "Ləqəb Transfer",
+    "start_forging": "Start Forging",
+    "stop_forging": "Stop Forging",
+    "lease_balance": "Lease Balance",
+    "view_listing": "View Listing",
+    "set_account_info": "Haqq-hesab məlumat Set",
+    "set_identifier": "Set Identifier",
+    "request_identifier": "Filmlərin Identifier",
+    "set_authority": "Set Authority",
+    "users": "İstifadəçilər",
+    "create_account_color": "Rəng yaradın",
+    "assign_account_color": "Rəng Təyin"
   },
   "filter": {
     "filter": "Filtr",
@@ -375,7 +399,11 @@
       "0": "{{sender}} set namespaced bu {{aliasName}} qədər {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} əlavə {{recipient}} qədər {{assetName}} icazə hesabları {{details}} {{message}}",
       "2": "{{sender}} aradan {{recipient}} etibarən {{assetName}} icazə hesabları {{details}} {{message}}",
-      "3": "{{sender}} dəst {{assetName}} sifariş haqqı {{orderFee}} % Ticarət haqqı {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} dəst {{assetName}} sifariş haqqı {{orderFee}} % Ticarət haqqı {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} asigned hesab identifikatoru {{identifier}} qədər {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} etdi {{recipient}} bir yoxlama orqanı {{period}} blokları {{details}} {{message}}",
+      "6": "{{sender}} yaradılmış hesab rəng {{name}} {{details}} {{message}}",
+      "7": "{{sender}} təyin hesab rəng {{color}} qədər {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

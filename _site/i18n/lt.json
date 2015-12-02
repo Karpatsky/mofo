@@ -300,7 +300,31 @@
     "decrypt_message": "Iššifruoti pranešimas",
     "no_messages": "Nėra Žinutės iššifruoti",
     "confirm_delivery": "Patvirtinkite Pristatymas",
-    "marketplace": "Prekyvietės"
+    "marketplace": "Prekyvietės",
+    "issue_asset": "Problemų Turto",
+    "transfer_asset": "Turto perdavimas",
+    "place_buy_order": "Vieta pirkti Užsakymo",
+    "place_sell_order": "Vieta Parduoda Užsakyti",
+    "add_private": "Pridėti Privati",
+    "remove_private": "Pašalinti Asmeninis",
+    "private_fee": "Asmeninis mokestis",
+    "set_alias": "Nustatykite Alias",
+    "namespaced_alias": "Vardų kurie Alias",
+    "delete_alias": "Ištrinti Alias",
+    "sell_alias": "Parduodu Alias",
+    "buy_alias_a": "Pirkti Alias",
+    "transfer_alias": "Perkelkite Alias",
+    "start_forging": "Pradėti kalimas",
+    "stop_forging": "Sustabdyti kalimas",
+    "lease_balance": "Nuomos Balansas",
+    "view_listing": "Peržiūrėti sąrašą",
+    "set_account_info": "Nustatykite sąskaitos informacija",
+    "set_identifier": "Rinkinio identifikatorius",
+    "request_identifier": "Prašymas identifikatorius",
+    "set_authority": "Nustatyti tarnyba",
+    "users": "Vartotojai",
+    "create_account_color": "Sukurti spalva",
+    "assign_account_color": "Priskirti spalva"
   },
   "filter": {
     "filter": "Filtras",
@@ -375,7 +399,11 @@
       "0": "{{sender}} rinkinys vardų kurie slapyvardis {{aliasName}} į {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} prideda {{recipient}} į {{assetName}} leidžiama sąskaitos {{details}} {{message}}",
       "2": "{{sender}} pašalintas {{recipient}} nuo {{assetName}} leidžiama sąskaitos {{details}} {{message}}",
-      "3": "{{sender}} rinkinys {{assetName}} Kad mokestis {{orderFee}} % Prekybos mokestis {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} rinkinys {{assetName}} Kad mokestis {{orderFee}} % Prekybos mokestis {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} asigned sąskaitos identifikatorius {{identifier}} į {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} pagamintas {{recipient}} tikrinimo institucija {{period}} blokai {{details}} {{message}}",
+      "6": "{{sender}} sukurta sąskaita spalva {{name}} {{details}} {{message}}",
+      "7": "{{sender}} priskirti sąskaitos spalva {{color}} į {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

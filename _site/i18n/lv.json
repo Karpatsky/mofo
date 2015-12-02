@@ -300,7 +300,31 @@
     "decrypt_message": "Atšifrēt ziņojumu",
     "no_messages": "Nav Ziņojumi atšifrēt",
     "confirm_delivery": "Apstiprināt Piegāde",
-    "marketplace": "Marketplace"
+    "marketplace": "Marketplace",
+    "issue_asset": "Issue Asset",
+    "transfer_asset": "Transfer Asset",
+    "place_buy_order": "Vieta Buy pasūtījumu",
+    "place_sell_order": "Vieta Pārdod Order",
+    "add_private": "Pievienot Private",
+    "remove_private": "Noņemt Private",
+    "private_fee": "Private Fee",
+    "set_alias": "Uzstādīt Alias",
+    "namespaced_alias": "Namespaced Alias",
+    "delete_alias": "Dzēst Alias",
+    "sell_alias": "Pārdod Alias",
+    "buy_alias_a": "Nopirkt Alias",
+    "transfer_alias": "Transfer Alias",
+    "start_forging": "Start kalšana",
+    "stop_forging": "Stop kalšana",
+    "lease_balance": "Nomas atlikums",
+    "view_listing": "View Listing",
+    "set_account_info": "Uzstādīt konta informācija",
+    "set_identifier": "Set Identifier",
+    "request_identifier": "Pieprasījums identifikators",
+    "set_authority": "Set iestāde",
+    "users": "Lietotāji",
+    "create_account_color": "Izveidot Color",
+    "assign_account_color": "Piešķirt Color"
   },
   "filter": {
     "filter": "Filtrs",
@@ -375,7 +399,11 @@
       "0": "{{sender}} komplekts namespaced alias {{aliasName}} līdz {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} piebilst {{recipient}} līdz {{assetName}} atļauts konti {{details}} {{message}}",
       "2": "{{sender}} noņemt {{recipient}} no {{assetName}} atļauts konti {{details}} {{message}}",
-      "3": "{{sender}} komplekts {{assetName}} pasūtījums maksa {{orderFee}} % Trade maksa {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} komplekts {{assetName}} pasūtījums maksa {{orderFee}} % Trade maksa {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} asigned konta identifikators {{identifier}} līdz {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} izgatavoti {{recipient}} pārbaudes iestāde {{period}} bloki {{details}} {{message}}",
+      "6": "{{sender}} izveidots konts krāsa {{name}} {{details}} {{message}}",
+      "7": "{{sender}} piešķirts konts krāsa {{color}} līdz {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

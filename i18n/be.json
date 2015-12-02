@@ -300,7 +300,31 @@
     "decrypt_message": "Расшыфраваць паведамленне",
     "no_messages": "Няма паведамленняў для Расшыфраваць",
     "confirm_delivery": "Пацвердзіце Дастаўка",
-    "marketplace": "Натоўп на пляцы"
+    "marketplace": "Натоўп на пляцы",
+    "issue_asset": "Выпуск актывамі",
+    "transfer_asset": "Перадача актываў",
+    "place_buy_order": "Змесціце Buy Order",
+    "place_sell_order": "Месца Прадам Замовіць",
+    "add_private": "Дадаць прыватныя",
+    "remove_private": "Выдаліць Асабістае",
+    "private_fee": "Асабістае Плата",
+    "set_alias": "Усталюйце псеўданім",
+    "namespaced_alias": "Псеўданім прасторамі імёнаў",
+    "delete_alias": "Выдаліць псеўданім",
+    "sell_alias": "Прадам псеўданім",
+    "buy_alias_a": "Купіць Псеўданім",
+    "transfer_alias": "Перавесці псеўданім",
+    "start_forging": "Пачатак Коўка",
+    "stop_forging": "Стоп Коўка",
+    "lease_balance": "Арэнда Баланс",
+    "view_listing": "Прагледзець",
+    "set_account_info": "Усталюйце рэгістрацыйныя дадзеныя",
+    "set_identifier": "Ідэнтыфікатар",
+    "request_identifier": "Запыт Ідэнтыфікатар",
+    "set_authority": "Набор орган",
+    "users": "Карыстальнікі",
+    "create_account_color": "Стварыць колер",
+    "assign_account_color": "Звязаць колер"
   },
   "filter": {
     "filter": "Фільтр",
@@ -375,7 +399,11 @@
       "0": "{{sender}} Набор у прасторы імёнаў псеўданім {{aliasName}} для {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} дадае {{recipient}} у {{assetName}} дазволілі рахункі {{details}} {{message}}",
       "2": "{{sender}} выдаліць {{recipient}} ад {{assetName}} дазволілі рахункі {{details}} {{message}}",
-      "3": "{{sender}} набор {{assetName}} Плата за заказ {{orderFee}} % Унёсак гандаль {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} набор {{assetName}} Плата за заказ {{orderFee}} % Унёсак гандаль {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} asigned ідэнтыфікатар ўліковага запісу {{identifier}} для {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} зроблены {{recipient}} верыфікацыя орган для {{period}} блокі {{details}} {{message}}",
+      "6": "{{sender}} створана колер кошт {{name}} {{details}} {{message}}",
+      "7": "{{sender}} іншы колер кошт {{color}} для {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

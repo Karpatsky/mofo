@@ -300,7 +300,31 @@
     "decrypt_message": "Menyahsulit Mesej",
     "no_messages": "Tiada Mesej untuk Nyahsulit",
     "confirm_delivery": "Sahkan Penghantaran",
-    "marketplace": "Marketplace"
+    "marketplace": "Marketplace",
+    "issue_asset": "Isu Aset",
+    "transfer_asset": "Pemindahan Aset",
+    "place_buy_order": "Letakkan Beli Order",
+    "place_sell_order": "Tempat Jual Order",
+    "add_private": "Tambah Swasta",
+    "remove_private": "Buang Swasta",
+    "private_fee": "Bayaran Swasta",
+    "set_alias": "Set Alias",
+    "namespaced_alias": "Namespaced Alias",
+    "delete_alias": "Padam Alias",
+    "sell_alias": "Jual Alias",
+    "buy_alias_a": "Beli Alias",
+    "transfer_alias": "Memindahkan Alias",
+    "start_forging": "Mula Forging",
+    "stop_forging": "Stop Forging",
+    "lease_balance": "Pajakan Baki",
+    "view_listing": "Penyenaraian Lihat",
+    "set_account_info": "Set Maklumat Akaun",
+    "set_identifier": "Set Identifier",
+    "request_identifier": "Permintaan Identifier",
+    "set_authority": "Set Berkuasa",
+    "users": "Pengguna",
+    "create_account_color": "Buat Warna",
+    "assign_account_color": "Berikan Warna"
   },
   "filter": {
     "filter": "Penapis",
@@ -375,7 +399,11 @@
       "0": "{{sender}} set namespaced alias {{aliasName}} kepada {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} menambah {{recipient}} kepada {{assetName}} dibenarkan akaun {{details}} {{message}}",
       "2": "{{sender}} dikeluarkan {{recipient}} daripada {{assetName}} dibenarkan akaun {{details}} {{message}}",
-      "3": "{{sender}} set {{assetName}} Bayaran perintah {{orderFee}} % Yuran perdagangan {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} set {{assetName}} Bayaran perintah {{orderFee}} % Yuran perdagangan {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} pengecam akaun asigned {{identifier}} kepada {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} dibuat {{recipient}} pihak berkuasa pengesahan untuk {{period}} blok {{details}} {{message}}",
+      "6": "{{sender}} warna akaun dicipta {{name}} {{details}} {{message}}",
+      "7": "{{sender}} warna akaun diberikan {{color}} kepada {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

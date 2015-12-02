@@ -300,7 +300,31 @@
     "decrypt_message": "Desxifrar missatge",
     "no_messages": "No hi ha missatges per desxifrar",
     "confirm_delivery": "Confirmar Lliurament",
-    "marketplace": "Mercat"
+    "marketplace": "Mercat",
+    "issue_asset": "Actius d'emissió",
+    "transfer_asset": "Actius Transferència",
+    "place_buy_order": "Col·loqui Comprar Ordre",
+    "place_sell_order": "Lloc Ordre de Venda",
+    "add_private": "Afegir privada",
+    "remove_private": "Traieu privada",
+    "private_fee": "Quota privada",
+    "set_alias": "Establir Alias",
+    "namespaced_alias": "Espai de noms Alias",
+    "delete_alias": "Eliminar Alias",
+    "sell_alias": "Vendre Alias",
+    "buy_alias_a": "Comprar Alias",
+    "transfer_alias": "Trasllat Alias",
+    "start_forging": "Inici Forja",
+    "stop_forging": "Aturar Forja",
+    "lease_balance": "Arrendament de Balanç",
+    "view_listing": "Veure entrades",
+    "set_account_info": "Estableixi Informació del compte",
+    "set_identifier": "Set Identifier",
+    "request_identifier": "Sol·licitud identificador",
+    "set_authority": "Autoritat setembre",
+    "users": "Usuaris",
+    "create_account_color": "Crear color",
+    "assign_account_color": "Assignar color"
   },
   "filter": {
     "filter": "Filtre",
@@ -375,7 +399,11 @@
       "0": "{{sender}} setembre namespaced àlies {{aliasName}} a {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} afegeix {{recipient}} a {{assetName}} comptes permesos {{details}} {{message}}",
       "2": "{{sender}} eliminat {{recipient}} de {{assetName}} comptes permesos {{details}} {{message}}",
-      "3": "{{sender}} conjunt {{assetName}} tarifa cap {{orderFee}} % De comissió pel comerç {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} conjunt {{assetName}} tarifa cap {{orderFee}} % De comissió pel comerç {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} identificador de compte ASSIGNAT {{identifier}} a {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} fet {{recipient}} una autoritat de verificació per {{period}} blocs {{details}} {{message}}",
+      "6": "{{sender}} color de compte creat {{name}} {{details}} {{message}}",
+      "7": "{{sender}} color de compte assignat {{color}} a {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {

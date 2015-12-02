@@ -300,7 +300,31 @@
     "decrypt_message": "გაშიფვრა შეტყობინება",
     "no_messages": "არარის შეტყობინებები გაშიფვრა",
     "confirm_delivery": "დაადასტურეთ მიწოდების",
-    "marketplace": "ბაზარი"
+    "marketplace": "ბაზარი",
+    "issue_asset": "Issue აქტივების",
+    "transfer_asset": "გადაცემის აქტივების",
+    "place_buy_order": "ყიდვა ბრძანება",
+    "place_sell_order": "ადგილი გაყიდვა დაალაგე",
+    "add_private": "კერძო განცხადების დამატება",
+    "remove_private": "ამოღება პირადი",
+    "private_fee": "პირადი საფასური",
+    "set_alias": "უცნობია Alias",
+    "namespaced_alias": "Namespaced Alias",
+    "delete_alias": "წაშალე Alias",
+    "sell_alias": "გაყიდვა Alias",
+    "buy_alias_a": "ყიდვა Alias",
+    "transfer_alias": "ტრანსფერი Alias",
+    "start_forging": "დაწყება გაყალბება",
+    "stop_forging": "Stop გაყალბება",
+    "lease_balance": "გირავდება ბალანსი",
+    "view_listing": "იხილეთ ჩამონათვალი",
+    "set_account_info": "უცნობია ანგარიშის ინფორმაცია",
+    "set_identifier": "Set იდენტიფიკატორი",
+    "request_identifier": "მოთხოვნა იდენტიფიკატორი",
+    "set_authority": "Set ორგანო",
+    "users": "მომხმარებელი",
+    "create_account_color": "შექმნა ფერი",
+    "assign_account_color": "მიანიჭეთ ფერი"
   },
   "filter": {
     "filter": "ფილტრი",
@@ -375,7 +399,11 @@
       "0": "{{sender}} კომპლექტი namespaced alias {{aliasName}} to {{aliasURI}} {{details}} {{message}}",
       "1": "{{sender}} დასძენს {{recipient}} to {{assetName}} დაშვებული ანგარიშები {{details}} {{message}}",
       "2": "{{sender}} მოხსნა {{recipient}} საწყისი {{assetName}} დაშვებული ანგარიშები {{details}} {{message}}",
-      "3": "{{sender}} კომპლექტი {{assetName}} იმისათვის, გადასახადი {{orderFee}} % სავაჭრო საფასური {{tradeFee}} % {{details}} {{message}}"
+      "3": "{{sender}} კომპლექტი {{assetName}} იმისათვის, გადასახადი {{orderFee}} % სავაჭრო საფასური {{tradeFee}} % {{details}} {{message}}",
+      "4": "{{sender}} asigned ანგარიშის იდენტიფიკატორი {{identifier}} უნდა {{recipient}} {{details}} {{message}}",
+      "5": "{{sender}} გააკეთა {{recipient}} შემოწმების უფლებამოსილება {{period}} ბლოკები {{details}} {{message}}",
+      "6": "{{sender}} ის ანგარიშზე ფერი {{name}} {{details}} {{message}}",
+      "7": "{{sender}} დანიშნული ანგარიშის ფერი {{color}} უნდა {{recipient}} {{details}} {{message}}"
     }
   },
   "lang": {
